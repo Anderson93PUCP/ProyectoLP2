@@ -16,5 +16,25 @@ namespace Formularios
         {
             InitializeComponent();
         }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+            String usr = txtusuario.Text;
+            String psw = txtcontraseña.Text;
+
+            if (usr=="administrador" & psw == "administrador")
+            {
+                Panel fb = new Panel();
+                if (fb.ShowDialog() ==DialogResult.OK)
+                {
+
+                }
+
+
+            }else
+            {
+                MessageBox.Show("Ingrese un usuario correcto");
+            }
+        }
     }
 }
