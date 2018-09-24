@@ -41,6 +41,8 @@
             this.itemProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.itemAlmacen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.movimientoDeAlmacenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoDeAlmacenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,31 +75,31 @@
             // itemClientes
             // 
             this.itemClientes.Name = "itemClientes";
-            this.itemClientes.Size = new System.Drawing.Size(152, 22);
+            this.itemClientes.Size = new System.Drawing.Size(148, 22);
             this.itemClientes.Text = "Clientes";
             // 
             // itemVendedores
             // 
             this.itemVendedores.Name = "itemVendedores";
-            this.itemVendedores.Size = new System.Drawing.Size(152, 22);
+            this.itemVendedores.Size = new System.Drawing.Size(148, 22);
             this.itemVendedores.Text = "Vendedores";
             // 
             // itemOperarios
             // 
             this.itemOperarios.Name = "itemOperarios";
-            this.itemOperarios.Size = new System.Drawing.Size(152, 22);
+            this.itemOperarios.Size = new System.Drawing.Size(148, 22);
             this.itemOperarios.Text = "Operarios";
             // 
             // itemTransportes
             // 
             this.itemTransportes.Name = "itemTransportes";
-            this.itemTransportes.Size = new System.Drawing.Size(152, 22);
+            this.itemTransportes.Size = new System.Drawing.Size(148, 22);
             this.itemTransportes.Text = "Transportistas";
             // 
             // itemProveedores
             // 
             this.itemProveedores.Name = "itemProveedores";
-            this.itemProveedores.Size = new System.Drawing.Size(152, 22);
+            this.itemProveedores.Size = new System.Drawing.Size(148, 22);
             this.itemProveedores.Text = "Proveedores";
             // 
             // menuPedido
@@ -131,6 +133,9 @@
             // 
             // itemAlmacen
             // 
+            this.itemAlmacen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.movimientoDeAlmacenesToolStripMenuItem,
+            this.mantenimientoDeAlmacenesToolStripMenuItem});
             this.itemAlmacen.Name = "itemAlmacen";
             this.itemAlmacen.Size = new System.Drawing.Size(191, 22);
             this.itemAlmacen.Text = "Gestion de Almacenes";
@@ -140,6 +145,18 @@
             this.menuReportes.Name = "menuReportes";
             this.menuReportes.Size = new System.Drawing.Size(65, 20);
             this.menuReportes.Text = "Reportes";
+            // 
+            // movimientoDeAlmacenesToolStripMenuItem
+            // 
+            this.movimientoDeAlmacenesToolStripMenuItem.Name = "movimientoDeAlmacenesToolStripMenuItem";
+            this.movimientoDeAlmacenesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.movimientoDeAlmacenesToolStripMenuItem.Text = "Movimiento de Almacenes";
+            // 
+            // mantenimientoDeAlmacenesToolStripMenuItem
+            // 
+            this.mantenimientoDeAlmacenesToolStripMenuItem.Name = "mantenimientoDeAlmacenesToolStripMenuItem";
+            this.mantenimientoDeAlmacenesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.mantenimientoDeAlmacenesToolStripMenuItem.Text = "Mantenimiento de Almacenes";
             // 
             // Panel
             // 
@@ -173,5 +190,7 @@
         private System.Windows.Forms.ToolStripMenuItem itemProductos;
         private System.Windows.Forms.ToolStripMenuItem itemAlmacen;
         private System.Windows.Forms.ToolStripMenuItem menuReportes;
+        private System.Windows.Forms.ToolStripMenuItem movimientoDeAlmacenesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoDeAlmacenesToolStripMenuItem;
     }
 }
