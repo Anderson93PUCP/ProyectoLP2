@@ -16,5 +16,12 @@ namespace Formularios
         {
             InitializeComponent();
         }
+
+        private void Panel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
