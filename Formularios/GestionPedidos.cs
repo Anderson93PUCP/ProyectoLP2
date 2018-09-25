@@ -19,7 +19,11 @@ namespace Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AgregarPedido ventanaAgregarpedido = new AgregarPedido();
+            //this.Hide();
+            ventanaAgregarpedido.ShowDialog();
+            
+            //this.ShowDialog(); // esto si tenog dudas bueno de casi todo xd 
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)

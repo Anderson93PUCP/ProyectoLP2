@@ -137,7 +137,7 @@
             this.colEstadoPedido});
             this.dataGridView1.Location = new System.Drawing.Point(28, 105);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(699, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(711, 355);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -146,7 +146,8 @@
             this.colIdPedido.HeaderText = "ID";
             this.colIdPedido.Name = "colIdPedido";
             this.colIdPedido.ReadOnly = true;
-            this.colIdPedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colIdPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colIdPedido.Width = 40;
             // 
             // colRUCPedido
             // 
@@ -154,6 +155,7 @@
             this.colRUCPedido.Name = "colRUCPedido";
             this.colRUCPedido.ReadOnly = true;
             this.colRUCPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRUCPedido.Width = 80;
             // 
             // colClientePedido
             // 
@@ -161,6 +163,7 @@
             this.colClientePedido.Name = "colClientePedido";
             this.colClientePedido.ReadOnly = true;
             this.colClientePedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colClientePedido.Width = 200;
             // 
             // colVendedorPedido
             // 
@@ -168,6 +171,7 @@
             this.colVendedorPedido.Name = "colVendedorPedido";
             this.colVendedorPedido.ReadOnly = true;
             this.colVendedorPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colVendedorPedido.Width = 150;
             // 
             // colfechaPedido
             // 
@@ -179,9 +183,12 @@
             // colEstadoPedido
             // 
             this.colEstadoPedido.HeaderText = "Estado";
+            this.colEstadoPedido.Items.AddRange(new object[] {
+            "Pendiente",
+            "En Proceso",
+            "Terminado"});
             this.colEstadoPedido.Name = "colEstadoPedido";
-            this.colEstadoPedido.ReadOnly = true;
-            this.colEstadoPedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstadoPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colEstadoPedido.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // GestionPedidos
