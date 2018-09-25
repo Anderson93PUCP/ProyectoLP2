@@ -21,5 +21,14 @@ namespace Formularios
         {
 
         }
+
+        private void gestionDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionPedidos nuevaVentana = new GestionPedidos();
+            nuevaVentana.ShowDialog();
+
+
+
+        }
     }
 }
