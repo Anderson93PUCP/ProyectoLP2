@@ -42,7 +42,8 @@
             this.colClientePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendedorPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colfechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoPedido = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colEstadoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelarPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,12 +138,13 @@
             this.colEstadoPedido});
             this.dataGridView1.Location = new System.Drawing.Point(28, 105);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(711, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(711, 251);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colIdPedido
             // 
+            this.colIdPedido.Frozen = true;
             this.colIdPedido.HeaderText = "ID";
             this.colIdPedido.Name = "colIdPedido";
             this.colIdPedido.ReadOnly = true;
@@ -151,6 +153,7 @@
             // 
             // colRUCPedido
             // 
+            this.colRUCPedido.Frozen = true;
             this.colRUCPedido.HeaderText = "RUC";
             this.colRUCPedido.Name = "colRUCPedido";
             this.colRUCPedido.ReadOnly = true;
@@ -159,6 +162,7 @@
             // 
             // colClientePedido
             // 
+            this.colClientePedido.Frozen = true;
             this.colClientePedido.HeaderText = "Cliente";
             this.colClientePedido.Name = "colClientePedido";
             this.colClientePedido.ReadOnly = true;
@@ -167,6 +171,7 @@
             // 
             // colVendedorPedido
             // 
+            this.colVendedorPedido.Frozen = true;
             this.colVendedorPedido.HeaderText = "Vendedor";
             this.colVendedorPedido.Name = "colVendedorPedido";
             this.colVendedorPedido.ReadOnly = true;
@@ -175,6 +180,7 @@
             // 
             // colfechaPedido
             // 
+            this.colfechaPedido.Frozen = true;
             this.colfechaPedido.HeaderText = "Fecha";
             this.colfechaPedido.Name = "colfechaPedido";
             this.colfechaPedido.ReadOnly = true;
@@ -182,20 +188,28 @@
             // 
             // colEstadoPedido
             // 
+            this.colEstadoPedido.Frozen = true;
             this.colEstadoPedido.HeaderText = "Estado";
-            this.colEstadoPedido.Items.AddRange(new object[] {
-            "Pendiente",
-            "En Proceso",
-            "Terminado"});
             this.colEstadoPedido.Name = "colEstadoPedido";
+            this.colEstadoPedido.ReadOnly = true;
             this.colEstadoPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colEstadoPedido.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // btnCancelarPedido
+            // 
+            this.btnCancelarPedido.Location = new System.Drawing.Point(331, 385);
+            this.btnCancelarPedido.Name = "btnCancelarPedido";
+            this.btnCancelarPedido.Size = new System.Drawing.Size(113, 31);
+            this.btnCancelarPedido.TabIndex = 9;
+            this.btnCancelarPedido.Text = "Cancelar";
+            this.btnCancelarPedido.UseVisualStyleBackColor = true;
+            this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 492);
+            this.ClientSize = new System.Drawing.Size(773, 446);
+            this.Controls.Add(this.btnCancelarPedido);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBusquedaPedido);
             this.Controls.Add(this.rbtnBusqRuc);
@@ -229,6 +243,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colClientePedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendedorPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colfechaPedido;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colEstadoPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoPedido;
+        private System.Windows.Forms.Button btnCancelarPedido;
     }
 }

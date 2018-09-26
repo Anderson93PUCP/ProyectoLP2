@@ -63,6 +63,16 @@ namespace Formularios.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _017_magnifier_tool {
+            get {
+                object obj = ResourceManager.GetObject("017-magnifier-tool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap password_ico_2 {
             get {
                 object obj = ResourceManager.GetObject("password_ico_2", resourceCulture);

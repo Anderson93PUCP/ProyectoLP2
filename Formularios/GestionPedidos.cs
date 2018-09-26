@@ -19,9 +19,11 @@ namespace Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AgregarPedido ventanaAgregarpedido = new AgregarPedido();
+            frmAddPedido ventaAddPedio = new frmAddPedido();
+            ventaAddPedio.ShowDialog();
+           // AgregarPedido ventanaAgregarpedido = new AgregarPedido();
             //this.Hide();
-            ventanaAgregarpedido.ShowDialog();
+            //ventanaAgregarpedido.ShowDialog();
             
             //this.ShowDialog(); // esto si tenog dudas bueno de casi todo xd 
         }
@@ -39,6 +41,11 @@ namespace Formularios
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnCancelarPedido_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
