@@ -81,31 +81,31 @@
             // itemClientes
             // 
             this.itemClientes.Name = "itemClientes";
-            this.itemClientes.Size = new System.Drawing.Size(152, 22);
+            this.itemClientes.Size = new System.Drawing.Size(147, 22);
             this.itemClientes.Text = "Clientes";
             // 
             // itemVendedores
             // 
             this.itemVendedores.Name = "itemVendedores";
-            this.itemVendedores.Size = new System.Drawing.Size(152, 22);
+            this.itemVendedores.Size = new System.Drawing.Size(147, 22);
             this.itemVendedores.Text = "Vendedores";
             // 
             // itemOperarios
             // 
             this.itemOperarios.Name = "itemOperarios";
-            this.itemOperarios.Size = new System.Drawing.Size(152, 22);
+            this.itemOperarios.Size = new System.Drawing.Size(147, 22);
             this.itemOperarios.Text = "Operarios";
             // 
             // itemTransportes
             // 
             this.itemTransportes.Name = "itemTransportes";
-            this.itemTransportes.Size = new System.Drawing.Size(152, 22);
+            this.itemTransportes.Size = new System.Drawing.Size(147, 22);
             this.itemTransportes.Text = "Transportistas";
             // 
             // itemProveedores
             // 
             this.itemProveedores.Name = "itemProveedores";
-            this.itemProveedores.Size = new System.Drawing.Size(152, 22);
+            this.itemProveedores.Size = new System.Drawing.Size(147, 22);
             this.itemProveedores.Text = "Proveedores";
             // 
             // menuPedido
@@ -120,13 +120,14 @@
             // itemFacturas
             // 
             this.itemFacturas.Name = "itemFacturas";
-            this.itemFacturas.Size = new System.Drawing.Size(175, 22);
+            this.itemFacturas.Size = new System.Drawing.Size(180, 22);
             this.itemFacturas.Text = "Facturas";
+            this.itemFacturas.Click += new System.EventHandler(this.itemFacturas_Click);
             // 
             // gestionDePedidosToolStripMenuItem
             // 
             this.gestionDePedidosToolStripMenuItem.Name = "gestionDePedidosToolStripMenuItem";
-            this.gestionDePedidosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.gestionDePedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionDePedidosToolStripMenuItem.Text = "Gestion de Pedidos";
             this.gestionDePedidosToolStripMenuItem.Click += new System.EventHandler(this.gestionDePedidosToolStripMenuItem_Click);
             // 
@@ -177,7 +178,7 @@
             // vendedoresToolStripMenuItem
             // 
             this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.vendedoresToolStripMenuItem.Text = "Vendedores";
             // 
             // menuReportes

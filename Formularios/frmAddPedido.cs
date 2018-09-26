@@ -43,6 +43,7 @@ namespace Formularios
         {
             confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
             v.ShowDialog();
+            Close();
         }
 
         private void btnBuscarCliAddPedido_Click(object sender, EventArgs e)
@@ -69,6 +70,18 @@ namespace Formularios
             detallePedido v = new detallePedido();
             v.ShowDialog();
 
+        }
+
+        private void btnElimDetPedido_Click(object sender, EventArgs e)
+        {
+            confirmarEliminarPedido v = new confirmarEliminarPedido();
+            v.ShowDialog();
+        }
+
+        private void btnModDetPedido_Click(object sender, EventArgs e)
+        {
+            detallePedido v = new detallePedido();
+            v.ShowDialog();
         }
     }
 }

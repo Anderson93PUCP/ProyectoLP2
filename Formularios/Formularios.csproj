@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agregarFactura.Designer.cs">
+      <DependentUpon>agregarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="buscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +76,35 @@
     <Compile Include="confCancelarAddPedido.Designer.cs">
       <DependentUpon>confCancelarAddPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="confirmaAceptarAddFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmaAceptarAddFactura.Designer.cs">
+      <DependentUpon>confirmaAceptarAddFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="confirmacionAceptarAddPedido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="confirmacionAceptarAddPedido.Designer.cs">
       <DependentUpon>confirmacionAceptarAddPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarCancelarAddFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarCancelarAddFact.Designer.cs">
+      <DependentUpon>confirmarCancelarAddFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarElimFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarElimFactura.Designer.cs">
+      <DependentUpon>confirmarElimFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarEliminarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarEliminarPedido.Designer.cs">
+      <DependentUpon>confirmarEliminarPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="detallePedido.cs">
       <SubType>Form</SubType>
@@ -87,6 +117,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestorFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestorFacturas.Designer.cs">
+      <DependentUpon>gestorFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modificarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificarPedido.Designer.cs">
+      <DependentUpon>modificarPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="registradoPedido.cs">
       <SubType>Form</SubType>
@@ -120,6 +162,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="verFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="verFactura.Designer.cs">
+      <DependentUpon>verFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="verPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="verPedido.Designer.cs">
+      <DependentUpon>verPedido.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="agregarFactura.resx">
+      <DependentUpon>agregarFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="buscarCliente.resx">
       <DependentUpon>buscarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,11 +189,29 @@
     <EmbeddedResource Include="confCancelarAddPedido.resx">
       <DependentUpon>confCancelarAddPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="confirmaAceptarAddFactura.resx">
+      <DependentUpon>confirmaAceptarAddFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="confirmacionAceptarAddPedido.resx">
       <DependentUpon>confirmacionAceptarAddPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="confirmarCancelarAddFact.resx">
+      <DependentUpon>confirmarCancelarAddFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmarElimFactura.resx">
+      <DependentUpon>confirmarElimFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmarEliminarPedido.resx">
+      <DependentUpon>confirmarEliminarPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="detallePedido.resx">
       <DependentUpon>detallePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestorFacturas.resx">
+      <DependentUpon>gestorFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificarPedido.resx">
+      <DependentUpon>modificarPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registradoPedido.resx">
       <DependentUpon>registradoPedido.cs</DependentUpon>
@@ -163,6 +238,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="verFactura.resx">
+      <DependentUpon>verFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="verPedido.resx">
+      <DependentUpon>verPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,6 +271,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\017-magnifier-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012-printer-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

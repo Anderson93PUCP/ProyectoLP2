@@ -44,6 +44,7 @@
             this.colfechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             this.btnModPedido.TabIndex = 1;
             this.btnModPedido.Text = "Modificar";
             this.btnModPedido.UseVisualStyleBackColor = true;
+            this.btnModPedido.Click += new System.EventHandler(this.btnModPedido_Click);
             // 
             // btnElimPedido
             // 
@@ -74,6 +76,7 @@
             this.btnElimPedido.TabIndex = 2;
             this.btnElimPedido.Text = "Eliminar";
             this.btnElimPedido.UseVisualStyleBackColor = true;
+            this.btnElimPedido.Click += new System.EventHandler(this.btnElimPedido_Click);
             // 
             // txtBusqPedido
             // 
@@ -204,11 +207,22 @@
             this.btnCancelarPedido.UseVisualStyleBackColor = true;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(660, 75);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(67, 23);
+            this.btnVer.TabIndex = 10;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 446);
+            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnCancelarPedido);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBusquedaPedido);
@@ -221,6 +235,7 @@
             this.Controls.Add(this.btnAddPedido);
             this.Name = "GestionPedidos";
             this.Text = "Gestion de Pedidos";
+            this.Load += new System.EventHandler(this.GestionPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,5 +260,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colfechaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoPedido;
         private System.Windows.Forms.Button btnCancelarPedido;
+        private System.Windows.Forms.Button btnVer;
     }
 }

@@ -47,5 +47,29 @@ namespace Formularios
         {
             Close();
         }
+
+        private void btnElimPedido_Click(object sender, EventArgs e)
+        {
+            confirmarEliminarPedido v = new confirmarEliminarPedido();
+            v.ShowDialog();
+            // se actualiza la tabla ps 
+        }
+
+        private void btnModPedido_Click(object sender, EventArgs e)
+        {
+            modificarPedido ventana = new modificarPedido();
+            ventana.ShowDialog();
+        }
+
+        private void GestionPedidos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            verPedido ventana = new verPedido();
+            ventana.ShowDialog();
+        }
     }
 }

@@ -30,5 +30,11 @@ namespace Formularios
 
 
         }
+
+        private void itemFacturas_Click(object sender, EventArgs e)
+        {
+            gestorFacturas ventana = new gestorFacturas();
+            ventana.ShowDialog();
+        }
     }
 }
