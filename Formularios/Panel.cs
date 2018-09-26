@@ -43,5 +43,12 @@ namespace Formularios
             Login lg = new Login();
             lg.ShowDialog();
         }
+
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdministradorComisiones ventana = new AdministradorComisiones();
+            ventana.ShowDialog();
+
+        }
     }
 }
