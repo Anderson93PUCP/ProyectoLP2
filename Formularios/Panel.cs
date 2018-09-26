@@ -21,5 +21,27 @@ namespace Formularios
         {
 
         }
+
+        private void gestionDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionPedidos nuevaVentana = new GestionPedidos();
+            nuevaVentana.ShowDialog();
+
+
+
+        }
+
+        private void itemFacturas_Click(object sender, EventArgs e)
+        {
+            gestorFacturas ventana = new gestorFacturas();
+            ventana.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Login lg = new Login();
+            lg.ShowDialog();
+        }
     }
 }
