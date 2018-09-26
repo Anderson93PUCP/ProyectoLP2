@@ -43,5 +43,17 @@ namespace Formularios
             Login lg = new Login();
             lg.ShowDialog();
         }
+
+        private void reporteDeProductoDeAltoMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reporteprod rp = new reporteprod();
+            rp.ShowDialog();
+        }
+
+        private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reporteclientes rc = new reporteclientes();
+            rc.ShowDialog();
+        }
     }
 }
