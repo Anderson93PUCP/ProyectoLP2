@@ -22,14 +22,16 @@ namespace Formularios
             String usr = txtusuario.Text;
             String psw = txtcontraseña.Text;
 
-            if (usr=="administrador" & psw == "administrador")
+            if (usr=="adm" & psw == "adm")
             {
+                this.Hide();
                 Panel fb = new Panel();
                 if (fb.ShowDialog() ==DialogResult.OK)
                 {
 
                 }
 
+                this.Dispose();
 
             }else
             {

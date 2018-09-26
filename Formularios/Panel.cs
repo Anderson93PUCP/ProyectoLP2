@@ -36,5 +36,12 @@ namespace Formularios
             gestorFacturas ventana = new gestorFacturas();
             ventana.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Login lg = new Login();
+            lg.ShowDialog();
+        }
     }
 }
