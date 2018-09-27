@@ -82,31 +82,32 @@
             // itemClientes
             // 
             this.itemClientes.Name = "itemClientes";
-            this.itemClientes.Size = new System.Drawing.Size(147, 22);
+            this.itemClientes.Size = new System.Drawing.Size(180, 22);
             this.itemClientes.Text = "Clientes";
+            this.itemClientes.Click += new System.EventHandler(this.itemClientes_Click);
             // 
             // itemVendedores
             // 
             this.itemVendedores.Name = "itemVendedores";
-            this.itemVendedores.Size = new System.Drawing.Size(147, 22);
+            this.itemVendedores.Size = new System.Drawing.Size(180, 22);
             this.itemVendedores.Text = "Vendedores";
             // 
             // itemOperarios
             // 
             this.itemOperarios.Name = "itemOperarios";
-            this.itemOperarios.Size = new System.Drawing.Size(147, 22);
+            this.itemOperarios.Size = new System.Drawing.Size(180, 22);
             this.itemOperarios.Text = "Operarios";
             // 
             // itemTransportes
             // 
             this.itemTransportes.Name = "itemTransportes";
-            this.itemTransportes.Size = new System.Drawing.Size(147, 22);
+            this.itemTransportes.Size = new System.Drawing.Size(180, 22);
             this.itemTransportes.Text = "Transportistas";
             // 
             // itemProveedores
             // 
             this.itemProveedores.Name = "itemProveedores";
-            this.itemProveedores.Size = new System.Drawing.Size(147, 22);
+            this.itemProveedores.Size = new System.Drawing.Size(180, 22);
             this.itemProveedores.Text = "Proveedores";
             // 
             // menuPedido
@@ -201,7 +202,7 @@
             // reporteDeClientesToolStripMenuItem
             // 
             this.reporteDeClientesToolStripMenuItem.Name = "reporteDeClientesToolStripMenuItem";
-            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(295, 22);
             this.reporteDeClientesToolStripMenuItem.Text = "Reporte de Clientes";
             this.reporteDeClientesToolStripMenuItem.Click += new System.EventHandler(this.reporteDeClientesToolStripMenuItem_Click);
             // 

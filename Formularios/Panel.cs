@@ -12,9 +12,11 @@ namespace Formularios
 {
     public partial class Panel : Form
     {
+        private static GestionClientes fgc;
         public Panel()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
 
         private void Panel_Load(object sender, EventArgs e)
@@ -54,6 +56,29 @@ namespace Formularios
         {
             reporteclientes rc = new reporteclientes();
             rc.ShowDialog();
+        }
+
+        private void itemClientes_Click(object sender, EventArgs e)
+        {
+            if(fgc!=null)
+            {
+                fgc.Close();
+                fgc = null;
+            }
+            else
+            {
+                fgc = new GestionClientes();
+                fgc.MdiParent = this;
+                fgc.WindowState = FormWindowState.Maximized;
+                fgc.Visible = true;
+                fgc.FormClosing += volverNulo;
+            }
+        }
+
+        public void volverNulo(object sender,
+            FormClosingEventArgs e)
+        {
+            fgc = null;
         }
     }
 }
