@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(detallePedido));
             this.rbtnID = new System.Windows.Forms.RadioButton();
             this.rbtnDescp = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,8 +41,8 @@
             this.colIDDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescpDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStockDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptarAddDetPedido = new System.Windows.Forms.Button();
+            this.btnCancelarAddDetPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +77,11 @@
             // 
             // button1
             // 
+            this.button1.Image = global::Formularios.Properties.Resources._015_search1;
             this.button1.Location = new System.Drawing.Point(154, 34);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(31, 24);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Buscar..";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // dudCantidadPro
@@ -119,6 +120,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDDetallePedido,
@@ -147,33 +149,39 @@
             this.colStockDetallePedido.Name = "colStockDetallePedido";
             this.colStockDetallePedido.ReadOnly = true;
             // 
-            // btnAceptar
+            // btnAceptarAddDetPedido
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(281, 303);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 9;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptarAddDetPedido.Image = global::Formularios.Properties.Resources.check;
+            this.btnAceptarAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptarAddDetPedido.Location = new System.Drawing.Point(278, 294);
+            this.btnAceptarAddDetPedido.Name = "btnAceptarAddDetPedido";
+            this.btnAceptarAddDetPedido.Size = new System.Drawing.Size(78, 32);
+            this.btnAceptarAddDetPedido.TabIndex = 18;
+            this.btnAceptarAddDetPedido.Text = "Aceptar";
+            this.btnAceptarAddDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptarAddDetPedido.UseVisualStyleBackColor = true;
+            this.btnAceptarAddDetPedido.Click += new System.EventHandler(this.btnAceptarAddDetPedido_Click);
             // 
-            // btnCancelar
+            // btnCancelarAddDetPedido
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(200, 303);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelarAddDetPedido.Image = global::Formularios.Properties.Resources.cross;
+            this.btnCancelarAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarAddDetPedido.Location = new System.Drawing.Point(182, 294);
+            this.btnCancelarAddDetPedido.Name = "btnCancelarAddDetPedido";
+            this.btnCancelarAddDetPedido.Size = new System.Drawing.Size(80, 32);
+            this.btnCancelarAddDetPedido.TabIndex = 17;
+            this.btnCancelarAddDetPedido.Text = "Cancelar";
+            this.btnCancelarAddDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelarAddDetPedido.UseVisualStyleBackColor = true;
+            this.btnCancelarAddDetPedido.Click += new System.EventHandler(this.btnCancelarAddDetPedido_Click);
             // 
             // detallePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 338);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnAceptarAddDetPedido);
+            this.Controls.Add(this.btnCancelarAddDetPedido);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dudDescuento);
             this.Controls.Add(this.label1);
@@ -183,8 +191,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rbtnDescp);
             this.Controls.Add(this.rbtnID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "detallePedido";
-            this.Text = "Detalle Pedido";
+            this.Text = "Agregar Detalle Pedido";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,7 +214,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDDetallePedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescpDetallePedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockDetallePedido;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptarAddDetPedido;
+        private System.Windows.Forms.Button btnCancelarAddDetPedido;
     }
 }

@@ -24,8 +24,14 @@ namespace Formularios
 
         private void btnElimFactura_Click(object sender, EventArgs e)
         {
-            confirmarElimFactura ventana = new confirmarElimFactura();
-            ventana.ShowDialog();
+            //confirmarElimFactura ventana = new confirmarElimFactura();
+            //ventana.ShowDialog();
+            var v = MessageBox.Show("¿Desea eliminar la factura seleccionada?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (v == DialogResult.OK)
+            {
+                // se actualiza la tabla 
+            }
+
             // se tiene q actualizar la tabla y tmb el estado del pedido 
         }
 

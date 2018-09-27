@@ -40,16 +40,26 @@ namespace Formularios
 
         private void btnCancelarModPedido_Click(object sender, EventArgs e)
         {
-            confCancelarAddPedido v = new confCancelarAddPedido();
-            v.ShowDialog();
-            Close();
+            //confCancelarAddPedido v = new confCancelarAddPedido();
+            //v.ShowDialog();
+            var v = MessageBox.Show("¿Desea salir, no se guardaran los cambios?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);
+            if (v == DialogResult.OK)
+            {
+                Close();
+            }
+            
         }
 
         private void btnAceptarModPedido_Click(object sender, EventArgs e)
         {
-            confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
-            v.ShowDialog();
-            Close();
+            //confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
+            //v.ShowDialog();
+            var v = MessageBox.Show("¿Guardar Cambios?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (v == DialogResult.OK)
+            {
+                var v2 = MessageBox.Show("Se modifico el pedido", "Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Close();
+            }
         }
 
         private void btnAddModDetPed_Click(object sender, EventArgs e)

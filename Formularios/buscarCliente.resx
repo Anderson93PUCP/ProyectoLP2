@@ -141,4 +141,29 @@
   <metadata name="colTelefBuscarCliente.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAHUAAAB1AAAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAABAAAAhwAA
+        AOUAAABy////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAABAAAAnAAA
+        AP8AAAD/AAAA5f///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAABAAAAmgAA
+        AP8AAAD/AAAA/wAAAIf///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAABAAAAmAAA
+        AP8AAAD/AAAA/wAAAJwAAAAB////AP///wAAAAABAAAAZQAAALMAAADmAAAA5gAAALMAAABlAAAADAAA
+        AMgAAAD/AAAA/wAAAJoAAAAB////AP///wAAAAAaAAAAvwAAAP8AAADPAAAAmQAAAJkAAADPAAAA/wAA
+        AL8AAAAnAAAAyAAAAJgAAAAB////AP///wAAAAABAAAAvwAAAPAAAABZ////AP///wD///8A////AAAA
+        AFkAAADwAAAAvwAAAAwAAAAB////AP///wD///8AAAAAZQAAAP8AAABZ////AP///wD///8A////AP//
+        /wD///8AAAAAWQAAAP8AAABl////AP///wD///8A////AAAAALMAAADP////AP///wD///8A////AP//
+        /wD///8A////AP///wAAAADPAAAAs////wD///8A////AP///wAAAADmAAAAmf///wD///8A////AP//
+        /wD///8A////AP///wD///8AAAAAmQAAAOb///8A////AP///wD///8AAAAA5gAAAJn///8A////AP//
+        /wD///8A////AP///wD///8A////AAAAAJkAAADm////AP///wD///8A////AAAAALMAAADP////AP//
+        /wD///8A////AP///wD///8A////AP///wAAAADPAAAAs////wD///8A////AP///wAAAABlAAAA/wAA
+        AFn///8A////AP///wD///8A////AP///wAAAABZAAAA/wAAAGX///8A////AP///wD///8AAAAAAQAA
+        AL8AAADwAAAAWf///wD///8A////AP///wAAAABZAAAA8AAAAL8AAAAB////AP///wD///8A////AP//
+        /wAAAAAaAAAAvwAAAP8AAADPAAAAmQAAAJkAAADPAAAA/wAAAL8AAAAa////AP///wD///8A////AP//
+        /wD///8A////AAAAAAEAAABlAAAAswAAAOYAAADmAAAAswAAAGUAAAAB////AP///wD///8A////AP//
+        /wD///8A//AAAP/gAAD/wAAA/4AAAMABAACAAwAADwcAAB+PAAA/zwAAP88AAD/PAAA/zwAAH48AAA8P
+        AACAHwAAwD8AAA==
+</value>
+  </data>
 </root>

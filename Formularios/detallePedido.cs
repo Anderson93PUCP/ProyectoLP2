@@ -26,5 +26,16 @@ namespace Formularios
         {
             Close();
         }
+
+        private void btnAceptarAddDetPedido_Click(object sender, EventArgs e)
+        {
+            Close();
+
+        }
+
+        private void btnCancelarAddDetPedido_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

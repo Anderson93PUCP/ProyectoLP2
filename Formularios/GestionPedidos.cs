@@ -50,9 +50,14 @@ namespace Formularios
 
         private void btnElimPedido_Click(object sender, EventArgs e)
         {
-            confirmarEliminarPedido v = new confirmarEliminarPedido();
-            v.ShowDialog();
-            // se actualiza la tabla ps 
+            //confirmarEliminarPedido v = new confirmarEliminarPedido();
+            //v.ShowDialog();
+            var v = MessageBox.Show("¿Desea eliminar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (v == DialogResult.OK)
+            {
+                // elimina la la fila seleccionada
+            }
+            // se actualiza la tabla 
         }
 
         private void btnModPedido_Click(object sender, EventArgs e)
