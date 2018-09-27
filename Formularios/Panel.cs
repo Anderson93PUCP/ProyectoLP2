@@ -12,14 +12,11 @@ namespace Formularios
 {
     public partial class Panel : Form
     {
+        private static GestionClientes fgc;
         public Panel()
         {
             InitializeComponent();
-        }
-
-        private void Panel_Load(object sender, EventArgs e)
-        {
-
+            this.IsMdiContainer = true;
         }
 
         private void gestionDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,5 +52,39 @@ namespace Formularios
             reporteclientes rc = new reporteclientes();
             rc.ShowDialog();
         }
+
+        private void itemClientes_Click(object sender, EventArgs e)
+        {
+            GestionClientes fgc = new GestionClientes();
+            fgc.ShowDialog();
+            //if(fgc!=null)
+            //{
+            //    fgc.Close();
+            //    fgc = null;
+            //}
+            //else
+            //{
+            //    fgc = new GestionClientes();
+            //    fgc.MdiParent = this;
+            //    fgc.WindowState = FormWindowState.Maximized;
+            //    fgc.Visible = true;
+            //    fgc.FormClosing += volverNulo;
+            //}
+
+
+        }
+
+        public void volverNulo(object sender,
+            FormClosingEventArgs e)
+        {
+            fgc = null;
+        }
+
+        private void itemTransportes_Click(object sender, EventArgs e)
+        {
+            GestionTransportistas fgt = new GestionTransportistas();
+            fgt.ShowDialog();
+        }
     }
 }
+  

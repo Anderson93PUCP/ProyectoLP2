@@ -47,11 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarCliente.designer.cs">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarDirecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarDirecciones.Designer.cs">
+      <DependentUpon>AgregarDirecciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="agregarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="agregarFactura.Designer.cs">
       <DependentUpon>agregarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarTransportista.Designer.cs">
+      <DependentUpon>AgregarTransportista.cs</DependentUpon>
     </Compile>
     <Compile Include="buscarCliente.cs">
       <SubType>Form</SubType>
@@ -118,6 +136,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClientes.designer.cs">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTransportistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionTransportistas.Designer.cs">
+      <DependentUpon>GestionTransportistas.cs</DependentUpon>
     </Compile>
     <Compile Include="gestorFacturas.cs">
       <SubType>Form</SubType>
@@ -187,8 +217,17 @@
     <Compile Include="verPedido.Designer.cs">
       <DependentUpon>verPedido.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarDirecciones.resx">
+      <DependentUpon>AgregarDirecciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="agregarFactura.resx">
       <DependentUpon>agregarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarTransportista.resx">
+      <DependentUpon>AgregarTransportista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="buscarCliente.resx">
       <DependentUpon>buscarCliente.cs</DependentUpon>
@@ -219,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="detallePedido.resx">
       <DependentUpon>detallePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionClientes.resx">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionTransportistas.resx">
+      <DependentUpon>GestionTransportistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gestorFacturas.resx">
       <DependentUpon>gestorFacturas.cs</DependentUpon>

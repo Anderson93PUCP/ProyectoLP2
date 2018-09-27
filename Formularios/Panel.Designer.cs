@@ -48,7 +48,7 @@
             this.menuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductoDeAltoMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,7 @@
             this.itemClientes.Name = "itemClientes";
             this.itemClientes.Size = new System.Drawing.Size(147, 22);
             this.itemClientes.Text = "Clientes";
+            this.itemClientes.Click += new System.EventHandler(this.itemClientes_Click);
             // 
             // itemVendedores
             // 
@@ -100,8 +101,9 @@
             // itemTransportes
             // 
             this.itemTransportes.Name = "itemTransportes";
-            this.itemTransportes.Size = new System.Drawing.Size(147, 22);
+            this.itemTransportes.Size = new System.Drawing.Size(180, 22);
             this.itemTransportes.Text = "Transportistas";
+            this.itemTransportes.Click += new System.EventHandler(this.itemTransportes_Click);
             // 
             // itemProveedores
             // 
@@ -201,31 +203,35 @@
             // reporteDeClientesToolStripMenuItem
             // 
             this.reporteDeClientesToolStripMenuItem.Name = "reporteDeClientesToolStripMenuItem";
-            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(295, 22);
             this.reporteDeClientesToolStripMenuItem.Text = "Reporte de Clientes";
             this.reporteDeClientesToolStripMenuItem.Click += new System.EventHandler(this.reporteDeClientesToolStripMenuItem_Click);
             // 
-            // button1
+            // btnlogout
             // 
-            this.button1.Location = new System.Drawing.Point(725, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Log Out";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnlogout.AutoSize = true;
+            this.btnlogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnlogout.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnlogout.Location = new System.Drawing.Point(745, 1);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnlogout.Size = new System.Drawing.Size(55, 23);
+            this.btnlogout.TabIndex = 1;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.button1_Click);
             // 
             // Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Panel";
             this.Text = "Panel";
-            this.Load += new System.EventHandler(this.Panel_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -255,6 +261,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDePedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnlogout;
     }
 }
