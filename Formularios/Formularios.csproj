@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="administradorComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administradorComision.Designer.cs">
+      <DependentUpon>administradorComision.cs</DependentUpon>
+    </Compile>
     <Compile Include="agregarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
     </Compile>
     <Compile Include="confirmarEliminarPedido.Designer.cs">
       <DependentUpon>confirmarEliminarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarPagarComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarPagarComision.Designer.cs">
+      <DependentUpon>confirmarPagarComision.cs</DependentUpon>
     </Compile>
     <Compile Include="detallePedido.cs">
       <SubType>Form</SubType>
@@ -174,6 +186,9 @@
     <Compile Include="verPedido.Designer.cs">
       <DependentUpon>verPedido.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="administradorComision.resx">
+      <DependentUpon>administradorComision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="agregarFactura.resx">
       <DependentUpon>agregarFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="confirmarEliminarPedido.resx">
       <DependentUpon>confirmarEliminarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmarPagarComision.resx">
+      <DependentUpon>confirmarPagarComision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="detallePedido.resx">
       <DependentUpon>detallePedido.cs</DependentUpon>
