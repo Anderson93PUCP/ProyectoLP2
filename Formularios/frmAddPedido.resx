@@ -141,34 +141,35 @@
   <metadata name="colStockDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colItemDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colProductoDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colDescDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colCantidadDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colPUDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colDescuentoDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colSubTDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colStockDetPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>41</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAANEDAADRAwAAAAAAAAAA
+        AADd6+6Y3uvv/97r7//e6+//3uvv/97r7//e6+//3uvv/97r7//e6+//utu7/5PJhP+LxXf8hsNxt4bD
+        cib///8A3evumN7r7//e6+//3uvv/97r7//e6+//3uvv/97r7//e6+//udq6/4bDcf+Gw3H/p9OX/4bD
+        cf+Gw3HngL9wEN3r7pje6+//3uvv/97r7//e6+//3uvv/97r7//e6+//3uvv/5HIgf+Gw3H/hsNx/8rl
+        wf+Gw3H/hsNx/4fDcWrd6+6Y3uvv/97r7//L3eH/ytzg/8rc4P/K3OD/ytzg/8rc4P+IxHT/qdSa/8rl
+        wf/o9OT/yuXB/4zGeP+Gw3GH3evumN7r7//e6+//3uvv/97r7//e6+//3uvv/97r7//e6+//m82P/4bD
+        cf+Gw3H/yuXB/4bDcf+Gw3H/hsNyTN3r7pje6+//3uvv/83e4v/L3eH/y93h/8vd4f/L3eH/y93h/77Y
+        zP+MxXn/hsNx/47Hev+Gw3H/hcRxrP///wDd6+6Y3uvv/97r7//e6+//3uvv/97r7//e6+//3uvv/97r
+        7//e6+//1efi/7XYtP+n06Hrh8RyV///AAH///8A3evumN7r7//e6+//y93h/8rc4P/K3OD/ytzg/8rc
+        4P/K3OD/ytzg/9ro7P/e6+//3uvv0P///wD///8A////AN3r7pje6+//3uvv/97r7//e6+//3uvv/97r
+        7//e6+//3uvv/97r7//e6+//3uvv/97r79D///8A////AP///wDd6+6Y3uvv/97r7//T4uf/0uLm/9Li
+        5v/S4ub/0uLm/9Li5v/S4ub/2+nt/97r7//e6+/Q////AP///wD///8A3evumN7r7//e6+//1+bq/9bl
+        6f/W5en/1uXp/9bl6f/W5en/1uXp/93q7v/e6+//3uvv0P///wD///8A////AN3r7pje6+//3uvv/9ro
+        7P/a6Oz/2ujs/97r7//e6+//3uvv/97r7//e6+//3uvv/97r79D///8A////AP///wDd6+6Y3uvv/97r
+        7//Q4eX/0ODk/9Dg5P/d6u7/3uvv/93q7v+/09j/v9PY/7/T2P/M3OGf////AP///wD///8A3evumN7r
+        7//e6+//3uvv/97r7//e6+//3uvv/97r7//d6u7/u9DV/7vQ1f/H2t6y////AP///wD///8A////AN3r
+        7pje6+//3uvv/97r7//e6+//3uvv/97r7//e6+//3eru/7vQ1f/I2t60////AP///wD///8A////AP//
+        /wDd6+6Y3uvv/97r7//e6+//3uvv/97r7//e6+//3uvv/93q7v/I29+2////AP///wD///8A////AP//
+        /wD///8AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAP
+        AAAAHwAAAD8AAA==
+</value>
+  </data>
 </root>

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestorFacturas));
             this.btnAddFactura = new System.Windows.Forms.Button();
             this.btnElimFactura = new System.Windows.Forms.Button();
-            this.btnCancelarFactura = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -44,38 +44,35 @@
             this.colFechaEGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVer = new System.Windows.Forms.Button();
+            this.btnCancelarFactura = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddFactura
             // 
-            this.btnAddFactura.Location = new System.Drawing.Point(72, 33);
+            this.btnAddFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFactura.Image = global::Formularios.Properties.Resources.plus__1_;
+            this.btnAddFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddFactura.Location = new System.Drawing.Point(56, 33);
             this.btnAddFactura.Name = "btnAddFactura";
-            this.btnAddFactura.Size = new System.Drawing.Size(75, 23);
+            this.btnAddFactura.Size = new System.Drawing.Size(102, 50);
             this.btnAddFactura.TabIndex = 0;
-            this.btnAddFactura.Text = "Agregar";
+            this.btnAddFactura.Text = "    Agregar";
             this.btnAddFactura.UseVisualStyleBackColor = true;
             this.btnAddFactura.Click += new System.EventHandler(this.btnAddFactura_Click);
             // 
             // btnElimFactura
             // 
-            this.btnElimFactura.Location = new System.Drawing.Point(190, 33);
+            this.btnElimFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElimFactura.Image = global::Formularios.Properties.Resources._008_document;
+            this.btnElimFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElimFactura.Location = new System.Drawing.Point(206, 33);
             this.btnElimFactura.Name = "btnElimFactura";
-            this.btnElimFactura.Size = new System.Drawing.Size(75, 23);
+            this.btnElimFactura.Size = new System.Drawing.Size(102, 50);
             this.btnElimFactura.TabIndex = 1;
-            this.btnElimFactura.Text = "Eliminar";
+            this.btnElimFactura.Text = "    Eliminar";
             this.btnElimFactura.UseVisualStyleBackColor = true;
             this.btnElimFactura.Click += new System.EventHandler(this.btnElimFactura_Click);
-            // 
-            // btnCancelarFactura
-            // 
-            this.btnCancelarFactura.Location = new System.Drawing.Point(293, 286);
-            this.btnCancelarFactura.Name = "btnCancelarFactura";
-            this.btnCancelarFactura.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarFactura.TabIndex = 2;
-            this.btnCancelarFactura.Text = "Cancelar";
-            this.btnCancelarFactura.UseVisualStyleBackColor = true;
-            this.btnCancelarFactura.Click += new System.EventHandler(this.btnCancelarFactura_Click);
             // 
             // textBox1
             // 
@@ -119,15 +116,20 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::Formularios.Properties.Resources._015_search1;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(504, 36);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Buscar...";
+            this.button4.Text = "Buscar";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDGestorFacturas,
@@ -179,13 +181,29 @@
             // 
             // btnVer
             // 
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Image = global::Formularios.Properties.Resources.file;
+            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVer.Location = new System.Drawing.Point(504, 65);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(75, 23);
+            this.btnVer.Size = new System.Drawing.Size(75, 28);
             this.btnVer.TabIndex = 9;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnCancelarFactura
+            // 
+            this.btnCancelarFactura.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancelarFactura.Image = global::Formularios.Properties.Resources._005_x_button__1_;
+            this.btnCancelarFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarFactura.Location = new System.Drawing.Point(311, 273);
+            this.btnCancelarFactura.Name = "btnCancelarFactura";
+            this.btnCancelarFactura.Size = new System.Drawing.Size(96, 42);
+            this.btnCancelarFactura.TabIndex = 2;
+            this.btnCancelarFactura.Text = "    Cancelar";
+            this.btnCancelarFactura.UseVisualStyleBackColor = true;
+            this.btnCancelarFactura.Click += new System.EventHandler(this.btnCancelarFactura_Click);
             // 
             // gestorFacturas
             // 
@@ -202,6 +220,7 @@
             this.Controls.Add(this.btnCancelarFactura);
             this.Controls.Add(this.btnElimFactura);
             this.Controls.Add(this.btnAddFactura);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "gestorFacturas";
             this.Text = "Gestion de Facturas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -214,7 +233,6 @@
 
         private System.Windows.Forms.Button btnAddFactura;
         private System.Windows.Forms.Button btnElimFactura;
-        private System.Windows.Forms.Button btnCancelarFactura;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -228,5 +246,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaEGestorFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoGestorFactura;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnCancelarFactura;
     }
 }

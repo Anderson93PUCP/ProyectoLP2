@@ -135,22 +135,29 @@
   <metadata name="colEstadoPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colIdPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colRUCPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colClientePedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colVendedorPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colfechaPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colEstadoPedido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAMEDAADBAwAAAAAAAAAA
+        AABzYFMoc15VuHNeVbhzXlW4c15VuHNeVbhzXlW4c15VuG1iXdOBfn/bemtlvnNeVbhzXlW4dF9UYf//
+        /wD///8AcmBSOJqSjf/U3uH/1N7h/9Te4f/U3uH/1N7h/9Te4f/U3uH/w9Tg/3Ou3/+MvOH/ubq5/3Je
+        VIj///8A////AHJgUjifmJP/3uvv/97r7//e6+//3uvv/97r7//e6+//3uvv/5rO8P9Gp+3/LZDi/4Ct
+        0P9yXlSI////AP///wByYFI4n5iT/97r7//N3uL/y93h/8vd4f/O3uP/3uvv/97r7//c6u//ZLjx/0an
+        7f8rjuD/Rnikuf///wD///8AcmBSOJ+Yk//e6+//2ujs/9ro7P/a6Oz/2ujs/9ro7P/a6Oz/2ujs/9jn
+        7P9kuPH/QJ/l/zGAyuZASKNn////AHJgUjifmJP/3uvv/9Hh5f/Q4OT/0ODk/9Dg5P/Q4OT/0ODk/9Dg
+        5P/Q4OT/2eft/2un2/9LVrjmQEej9DtOnQ1yYFI4n5iT/97r7//X5ur/1uXp/9bl6f/W5en/1uXp/9bl
+        6f/W5en/1uXp/93q7v+/w8T/VluvyUdUyWT///8AcmBSOJ+Yk//e6+//1OPn/9Pj5//T4+f/0+Pn/9Pj
+        5//T4+f/0+Pn/9Pj5//b6e3/wMTE/3JeVIj///8A////AHJgUjifmJP/3uvv/83e4v/L3eH/y93h/8vd
+        4f/Z6Oz/2efr/83e4v/L3eH/2ujs/8DExP9yXlSI////AP///wByYFI4n5iT/97r7//e6+//3uvv/97r
+        7//e6+//3uvv/97r7//e6+//3uvv/97r7//AxMT/cl5UiP///wD///8AcmBSOJ+Yk//e6+//zd7i/8vd
+        4f/L3eH/y93h/8vd4f/L3eH/y93h/8vd4f/a6Oz/wMTE/3JeVIj///8A////AHJgUjifmJP/3uvv/9Pi
+        5//S4ub/0uLm/9Pj5//e6+//3uvv/97r7//e6+//3uvv/8DExP9yXlSI////AP///wByYFI4n5iT/97r
+        7//Y5+v/1+bq/9fm6v/Z5+v/3uvv/97r7//e6+//3uvv/97r7//AxMT/cl5UiP///wD///8AcmBSOJ+Y
+        k//e6+//3uvv/87NzP/Oy8r/zsvK/87Lyv/Oy8r/zsvK/9ji5P/e6+//wMTE/3JeVIj///8A////AHJg
+        UjiQhH3/ubu6/7m7uv/JloX/yZaF/66EdeyuhHXswZCA+8uXhv+wnZf/ubu6/6Wgnf9yXlSI////AP//
+        /wB2Ylgac15VeHNeVXhzXlV4rIN1tamAc7RWRkD/VkZA/45tY7CsgnS4iGxhiXNeVXhzXlV4cV1VP///
+        /wD///8AAAMAAAADAAAAAwAAAAMAAAABAAAAAAAAAAEAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAAD
+        AAAAAwAAAAMAAA==
+</value>
+  </data>
 </root>

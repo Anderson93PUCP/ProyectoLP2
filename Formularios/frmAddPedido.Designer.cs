@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddPedido));
             this.label1 = new System.Windows.Forms.Label();
             this.txtClienteAddPedido = new System.Windows.Forms.TextBox();
             this.lblDirecAddPedido = new System.Windows.Forms.Label();
@@ -47,18 +48,18 @@
             this.colDescuentoDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubTDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStockDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnElimDetPedido = new System.Windows.Forms.Button();
-            this.btnModDetPedido = new System.Windows.Forms.Button();
-            this.btnAddDetPedido = new System.Windows.Forms.Button();
             this.lblDetPedido = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnCancelarAddPedido = new System.Windows.Forms.Button();
-            this.btnAceptarAddPedido = new System.Windows.Forms.Button();
             this.lblTotalAddPedido = new System.Windows.Forms.Label();
             this.txtTotalAddPedido = new System.Windows.Forms.TextBox();
             this.btnBuscarDireAddPedido = new System.Windows.Forms.Button();
             this.btnBuscarTransAddPedido = new System.Windows.Forms.Button();
             this.btnBuscarCliAddPedido = new System.Windows.Forms.Button();
+            this.btnAceptarAddPedido = new System.Windows.Forms.Button();
+            this.btnCancelarAddPedido = new System.Windows.Forms.Button();
+            this.btnAddDetPedido = new System.Windows.Forms.Button();
+            this.btnModDetPedido = new System.Windows.Forms.Button();
+            this.btnElimDetPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwAddPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +151,7 @@
             // 
             // dgwAddPedido
             // 
+            this.dgwAddPedido.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgwAddPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwAddPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colItemDetPedido,
@@ -160,6 +162,7 @@
             this.colDescuentoDetPedido,
             this.colSubTDetPedido,
             this.colStockDetPedido});
+            this.dgwAddPedido.GridColor = System.Drawing.SystemColors.Control;
             this.dgwAddPedido.Location = new System.Drawing.Point(32, 203);
             this.dgwAddPedido.Name = "dgwAddPedido";
             this.dgwAddPedido.Size = new System.Drawing.Size(758, 176);
@@ -223,36 +226,6 @@
             this.colStockDetPedido.Name = "colStockDetPedido";
             this.colStockDetPedido.ReadOnly = true;
             // 
-            // btnElimDetPedido
-            // 
-            this.btnElimDetPedido.Location = new System.Drawing.Point(532, 174);
-            this.btnElimDetPedido.Name = "btnElimDetPedido";
-            this.btnElimDetPedido.Size = new System.Drawing.Size(75, 23);
-            this.btnElimDetPedido.TabIndex = 11;
-            this.btnElimDetPedido.Text = "Eliminar";
-            this.btnElimDetPedido.UseVisualStyleBackColor = true;
-            this.btnElimDetPedido.Click += new System.EventHandler(this.btnElimDetPedido_Click);
-            // 
-            // btnModDetPedido
-            // 
-            this.btnModDetPedido.Location = new System.Drawing.Point(625, 174);
-            this.btnModDetPedido.Name = "btnModDetPedido";
-            this.btnModDetPedido.Size = new System.Drawing.Size(75, 23);
-            this.btnModDetPedido.TabIndex = 12;
-            this.btnModDetPedido.Text = "Modificar";
-            this.btnModDetPedido.UseVisualStyleBackColor = true;
-            this.btnModDetPedido.Click += new System.EventHandler(this.btnModDetPedido_Click);
-            // 
-            // btnAddDetPedido
-            // 
-            this.btnAddDetPedido.Location = new System.Drawing.Point(715, 174);
-            this.btnAddDetPedido.Name = "btnAddDetPedido";
-            this.btnAddDetPedido.Size = new System.Drawing.Size(75, 23);
-            this.btnAddDetPedido.TabIndex = 13;
-            this.btnAddDetPedido.Text = "Agregar";
-            this.btnAddDetPedido.UseVisualStyleBackColor = true;
-            this.btnAddDetPedido.Click += new System.EventHandler(this.btnAddDetPedido_Click);
-            // 
             // lblDetPedido
             // 
             this.lblDetPedido.AutoSize = true;
@@ -262,31 +235,11 @@
             this.lblDetPedido.TabIndex = 14;
             this.lblDetPedido.Text = "Detalle Pedido";
             // 
-            // btnCancelarAddPedido
-            // 
-            this.btnCancelarAddPedido.Location = new System.Drawing.Point(625, 425);
-            this.btnCancelarAddPedido.Name = "btnCancelarAddPedido";
-            this.btnCancelarAddPedido.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarAddPedido.TabIndex = 15;
-            this.btnCancelarAddPedido.Text = "Cancelar";
-            this.btnCancelarAddPedido.UseVisualStyleBackColor = true;
-            this.btnCancelarAddPedido.Click += new System.EventHandler(this.btnCancelarAddPedido_Click);
-            // 
-            // btnAceptarAddPedido
-            // 
-            this.btnAceptarAddPedido.Location = new System.Drawing.Point(715, 425);
-            this.btnAceptarAddPedido.Name = "btnAceptarAddPedido";
-            this.btnAceptarAddPedido.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptarAddPedido.TabIndex = 16;
-            this.btnAceptarAddPedido.Text = "Aceptar";
-            this.btnAceptarAddPedido.UseVisualStyleBackColor = true;
-            this.btnAceptarAddPedido.Click += new System.EventHandler(this.btnAceptarAddPedido_Click);
-            // 
             // lblTotalAddPedido
             // 
             this.lblTotalAddPedido.AutoSize = true;
             this.lblTotalAddPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAddPedido.Location = new System.Drawing.Point(514, 393);
+            this.lblTotalAddPedido.Location = new System.Drawing.Point(508, 382);
             this.lblTotalAddPedido.Name = "lblTotalAddPedido";
             this.lblTotalAddPedido.Size = new System.Drawing.Size(83, 24);
             this.lblTotalAddPedido.TabIndex = 23;
@@ -294,14 +247,15 @@
             // 
             // txtTotalAddPedido
             // 
-            this.txtTotalAddPedido.Location = new System.Drawing.Point(598, 396);
+            this.txtTotalAddPedido.Enabled = false;
+            this.txtTotalAddPedido.Location = new System.Drawing.Point(597, 385);
             this.txtTotalAddPedido.Name = "txtTotalAddPedido";
             this.txtTotalAddPedido.Size = new System.Drawing.Size(86, 20);
             this.txtTotalAddPedido.TabIndex = 24;
             // 
             // btnBuscarDireAddPedido
             // 
-            this.btnBuscarDireAddPedido.Image = global::Formularios.Properties.Resources._017_magnifier_tool;
+            this.btnBuscarDireAddPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBuscarDireAddPedido.Location = new System.Drawing.Point(351, 52);
             this.btnBuscarDireAddPedido.Name = "btnBuscarDireAddPedido";
             this.btnBuscarDireAddPedido.Size = new System.Drawing.Size(31, 24);
@@ -311,7 +265,7 @@
             // 
             // btnBuscarTransAddPedido
             // 
-            this.btnBuscarTransAddPedido.Image = global::Formularios.Properties.Resources._017_magnifier_tool;
+            this.btnBuscarTransAddPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBuscarTransAddPedido.Location = new System.Drawing.Point(351, 80);
             this.btnBuscarTransAddPedido.Name = "btnBuscarTransAddPedido";
             this.btnBuscarTransAddPedido.Size = new System.Drawing.Size(31, 24);
@@ -321,13 +275,78 @@
             // 
             // btnBuscarCliAddPedido
             // 
-            this.btnBuscarCliAddPedido.Image = global::Formularios.Properties.Resources._017_magnifier_tool;
+            this.btnBuscarCliAddPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBuscarCliAddPedido.Location = new System.Drawing.Point(351, 25);
             this.btnBuscarCliAddPedido.Name = "btnBuscarCliAddPedido";
             this.btnBuscarCliAddPedido.Size = new System.Drawing.Size(31, 24);
             this.btnBuscarCliAddPedido.TabIndex = 20;
             this.btnBuscarCliAddPedido.UseVisualStyleBackColor = true;
             this.btnBuscarCliAddPedido.Click += new System.EventHandler(this.btnBuscarCliAddPedido_Click);
+            // 
+            // btnAceptarAddPedido
+            // 
+            this.btnAceptarAddPedido.Image = global::Formularios.Properties.Resources.check;
+            this.btnAceptarAddPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptarAddPedido.Location = new System.Drawing.Point(712, 416);
+            this.btnAceptarAddPedido.Name = "btnAceptarAddPedido";
+            this.btnAceptarAddPedido.Size = new System.Drawing.Size(78, 32);
+            this.btnAceptarAddPedido.TabIndex = 16;
+            this.btnAceptarAddPedido.Text = "Aceptar";
+            this.btnAceptarAddPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptarAddPedido.UseVisualStyleBackColor = true;
+            this.btnAceptarAddPedido.Click += new System.EventHandler(this.btnAceptarAddPedido_Click);
+            // 
+            // btnCancelarAddPedido
+            // 
+            this.btnCancelarAddPedido.Image = global::Formularios.Properties.Resources.cross;
+            this.btnCancelarAddPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarAddPedido.Location = new System.Drawing.Point(616, 416);
+            this.btnCancelarAddPedido.Name = "btnCancelarAddPedido";
+            this.btnCancelarAddPedido.Size = new System.Drawing.Size(80, 32);
+            this.btnCancelarAddPedido.TabIndex = 15;
+            this.btnCancelarAddPedido.Text = "Cancelar";
+            this.btnCancelarAddPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelarAddPedido.UseVisualStyleBackColor = true;
+            this.btnCancelarAddPedido.Click += new System.EventHandler(this.btnCancelarAddPedido_Click);
+            // 
+            // btnAddDetPedido
+            // 
+            this.btnAddDetPedido.Image = global::Formularios.Properties.Resources.plus__1_;
+            this.btnAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddDetPedido.Location = new System.Drawing.Point(705, 160);
+            this.btnAddDetPedido.Name = "btnAddDetPedido";
+            this.btnAddDetPedido.Size = new System.Drawing.Size(85, 37);
+            this.btnAddDetPedido.TabIndex = 13;
+            this.btnAddDetPedido.Text = "Agregar";
+            this.btnAddDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddDetPedido.UseVisualStyleBackColor = true;
+            this.btnAddDetPedido.Click += new System.EventHandler(this.btnAddDetPedido_Click);
+            // 
+            // btnModDetPedido
+            // 
+            this.btnModDetPedido.Image = global::Formularios.Properties.Resources.exchange;
+            this.btnModDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModDetPedido.Location = new System.Drawing.Point(609, 160);
+            this.btnModDetPedido.Name = "btnModDetPedido";
+            this.btnModDetPedido.Size = new System.Drawing.Size(85, 37);
+            this.btnModDetPedido.TabIndex = 12;
+            this.btnModDetPedido.Text = "Modificar";
+            this.btnModDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModDetPedido.UseVisualStyleBackColor = true;
+            this.btnModDetPedido.Click += new System.EventHandler(this.btnModDetPedido_Click);
+            // 
+            // btnElimDetPedido
+            // 
+            this.btnElimDetPedido.Image = global::Formularios.Properties.Resources.package;
+            this.btnElimDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElimDetPedido.Location = new System.Drawing.Point(512, 160);
+            this.btnElimDetPedido.Name = "btnElimDetPedido";
+            this.btnElimDetPedido.Size = new System.Drawing.Size(85, 37);
+            this.btnElimDetPedido.TabIndex = 11;
+            this.btnElimDetPedido.Text = "Eliminar";
+            this.btnElimDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnElimDetPedido.UseVisualStyleBackColor = true;
+            this.btnElimDetPedido.Click += new System.EventHandler(this.btnElimDetPedido_Click);
             // 
             // frmAddPedido
             // 
@@ -356,6 +375,7 @@
             this.Controls.Add(this.lblDirecAddPedido);
             this.Controls.Add(this.txtClienteAddPedido);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddPedido";
             this.Text = "Añadir Pedido";
             this.Load += new System.EventHandler(this.frmAddPedido_Load);
