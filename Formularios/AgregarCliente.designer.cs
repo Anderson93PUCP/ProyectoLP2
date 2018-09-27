@@ -38,10 +38,10 @@
             this.txttelf = new System.Windows.Forms.TextBox();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtxvendedor = new System.Windows.Forms.TextBox();
             this.btnaceptar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.cmbvendedor = new System.Windows.Forms.ComboBox();
+            this.btndirecciones = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblruc
@@ -147,15 +147,6 @@
             this.label3.Text = "Vendedor";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // txtxvendedor
-            // 
-            this.txtxvendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtxvendedor.Location = new System.Drawing.Point(165, 252);
-            this.txtxvendedor.Name = "txtxvendedor";
-            this.txtxvendedor.Size = new System.Drawing.Size(146, 24);
-            this.txtxvendedor.TabIndex = 11;
-            this.txtxvendedor.TextChanged += new System.EventHandler(this.txtxvendedor_TextChanged);
-            // 
             // btnaceptar
             // 
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,31 +169,33 @@
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
-            // checkedListBox1
+            // cmbvendedor
             // 
-            this.checkedListBox1.AllowDrop = true;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "SMP",
-            "LOS OLIVOS",
-            "JESUS MARIA",
-            "SAN ISIDRO",
-            "MIRAFLORES",
-            "COMAS"});
-            this.checkedListBox1.Location = new System.Drawing.Point(165, 203);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(146, 34);
-            this.checkedListBox1.TabIndex = 14;
+            this.cmbvendedor.FormattingEnabled = true;
+            this.cmbvendedor.Location = new System.Drawing.Point(165, 257);
+            this.cmbvendedor.Name = "cmbvendedor";
+            this.cmbvendedor.Size = new System.Drawing.Size(146, 21);
+            this.cmbvendedor.TabIndex = 15;
+            // 
+            // btndirecciones
+            // 
+            this.btndirecciones.Location = new System.Drawing.Point(165, 203);
+            this.btndirecciones.Name = "btndirecciones";
+            this.btndirecciones.Size = new System.Drawing.Size(146, 23);
+            this.btndirecciones.TabIndex = 16;
+            this.btndirecciones.Text = "...";
+            this.btndirecciones.UseVisualStyleBackColor = true;
+            this.btndirecciones.Click += new System.EventHandler(this.btndirecciones_Click);
             // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(347, 343);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.btndirecciones);
+            this.Controls.Add(this.cmbvendedor);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);
-            this.Controls.Add(this.txtxvendedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txttelf);
@@ -233,9 +226,9 @@
         private System.Windows.Forms.TextBox txttelf;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtxvendedor;
         private System.Windows.Forms.Button btnaceptar;
         private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.ComboBox cmbvendedor;
+        private System.Windows.Forms.Button btndirecciones;
     }
 }

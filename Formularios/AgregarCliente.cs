@@ -92,5 +92,11 @@ namespace Formularios
         {
 
         }
+
+        private void btndirecciones_Click(object sender, EventArgs e)
+        {
+            AgregarDirecciones fgd = new AgregarDirecciones();
+            fgd.ShowDialog();
+        }
     }
 }
