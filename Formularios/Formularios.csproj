@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -162,6 +163,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporteclientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteclientes.Designer.cs">
+      <DependentUpon>reporteclientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteprod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteprod.Designer.cs">
+      <DependentUpon>reporteprod.cs</DependentUpon>
+    </Compile>
     <Compile Include="verFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +251,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reporteclientes.resx">
+      <DependentUpon>reporteclientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteprod.resx">
+      <DependentUpon>reporteprod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="verFactura.resx">
       <DependentUpon>verFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +293,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\012-printer-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,7 +27,7 @@ namespace Formularios
                 this.Hide();
                 Panel fb = new Panel();
                 if (fb.ShowDialog() ==DialogResult.OK)
-                {
+                {   
 
                 }
 
