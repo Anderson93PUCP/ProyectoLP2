@@ -85,6 +85,12 @@ namespace Formularios
             GestionTransportistas fgt = new GestionTransportistas();
             fgt.ShowDialog();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionUsuarios fgu = new GestionUsuarios();
+            fgu.ShowDialog();
+        }
     }
 }
   
