@@ -31,13 +31,15 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reporteprod));
             this.lblFecha = new System.Windows.Forms.Label();
             this.dateinicio = new System.Windows.Forms.DateTimePicker();
             this.graphProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblInicio = new System.Windows.Forms.Label();
             this.lblFin = new System.Windows.Forms.Label();
             this.dateFin = new System.Windows.Forms.DateTimePicker();
-            this.btnExportReporte = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.graphProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +63,7 @@
             // 
             // graphProductos
             // 
+            this.graphProductos.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             chartArea1.Name = "ChartArea1";
             this.graphProductos.ChartAreas.Add(chartArea1);
             legend1.Name = "Productos";
@@ -71,7 +74,7 @@
             series1.Legend = "Productos";
             series1.Name = "Productos";
             this.graphProductos.Series.Add(series1);
-            this.graphProductos.Size = new System.Drawing.Size(492, 300);
+            this.graphProductos.Size = new System.Drawing.Size(492, 273);
             this.graphProductos.TabIndex = 3;
             this.graphProductos.Text = "chart1";
             // 
@@ -102,29 +105,48 @@
             this.dateFin.Size = new System.Drawing.Size(92, 20);
             this.dateFin.TabIndex = 6;
             // 
-            // btnExportReporte
+            // btnRegresar
             // 
-            this.btnExportReporte.Location = new System.Drawing.Point(506, 30);
-            this.btnExportReporte.Name = "btnExportReporte";
-            this.btnExportReporte.Size = new System.Drawing.Size(122, 23);
-            this.btnExportReporte.TabIndex = 7;
-            this.btnExportReporte.Text = "Exportar Reporte";
-            this.btnExportReporte.UseVisualStyleBackColor = true;
+            this.btnRegresar.Image = global::Formularios.Properties.Resources.back__1_;
+            this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.Location = new System.Drawing.Point(287, 365);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(91, 35);
+            this.btnRegresar.TabIndex = 8;
+            this.btnRegresar.Text = "&Regresar";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Image = global::Formularios.Properties.Resources.file__2_;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportar.Location = new System.Drawing.Point(518, 22);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(116, 40);
+            this.btnExportar.TabIndex = 11;
+            this.btnExportar.Text = "Exportar Reporte";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // reporteprod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 393);
-            this.Controls.Add(this.btnExportReporte);
+            this.ClientSize = new System.Drawing.Size(667, 418);
+            this.Controls.Add(this.btnExportar);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.dateFin);
             this.Controls.Add(this.lblFin);
             this.Controls.Add(this.lblInicio);
             this.Controls.Add(this.graphProductos);
             this.Controls.Add(this.dateinicio);
             this.Controls.Add(this.lblFecha);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "reporteprod";
-            this.Text = "reporteprod";
+            this.Text = "Reporte Utilidad de Producto";
             ((System.ComponentModel.ISupportInitialize)(this.graphProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,6 +161,7 @@
         private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DateTimePicker dateFin;
-        private System.Windows.Forms.Button btnExportReporte;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

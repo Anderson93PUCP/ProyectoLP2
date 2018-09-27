@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reporteclientes));
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblInicio = new System.Windows.Forms.Label();
             this.dateinicio = new System.Windows.Forms.DateTimePicker();
-            this.btnExportReporte = new System.Windows.Forms.Button();
             this.dateFin = new System.Windows.Forms.DateTimePicker();
             this.lblFin = new System.Windows.Forms.Label();
             this.dataListaClientes = new System.Windows.Forms.DataGridView();
@@ -40,6 +40,8 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnExportReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,15 +72,6 @@
             this.dateinicio.Size = new System.Drawing.Size(95, 20);
             this.dateinicio.TabIndex = 6;
             // 
-            // btnExportReporte
-            // 
-            this.btnExportReporte.Location = new System.Drawing.Point(594, 28);
-            this.btnExportReporte.Name = "btnExportReporte";
-            this.btnExportReporte.Size = new System.Drawing.Size(122, 23);
-            this.btnExportReporte.TabIndex = 10;
-            this.btnExportReporte.Text = "Exportar Reporte";
-            this.btnExportReporte.UseVisualStyleBackColor = true;
-            // 
             // dateFin
             // 
             this.dateFin.CustomFormat = "MM-yyyy";
@@ -99,6 +92,7 @@
             // 
             // dataListaClientes
             // 
+            this.dataListaClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RUC,
@@ -106,9 +100,9 @@
             this.Cantidad,
             this.Producto,
             this.Monto});
-            this.dataListaClientes.Location = new System.Drawing.Point(105, 83);
+            this.dataListaClientes.Location = new System.Drawing.Point(76, 83);
             this.dataListaClientes.Name = "dataListaClientes";
-            this.dataListaClientes.Size = new System.Drawing.Size(543, 296);
+            this.dataListaClientes.Size = new System.Drawing.Size(577, 296);
             this.dataListaClientes.TabIndex = 11;
             // 
             // RUC
@@ -123,7 +117,7 @@
             // 
             // Cantidad
             // 
-            this.Cantidad.HeaderText = "Cantidad de productos comprados";
+            this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
             // Producto
@@ -133,14 +127,41 @@
             // 
             // Monto
             // 
-            this.Monto.HeaderText = "Monto total de la compra";
+            this.Monto.HeaderText = "Total (S/.)";
             this.Monto.Name = "Monto";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Formularios.Properties.Resources.back__1_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(310, 385);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 35);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "&Regresar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnExportReporte
+            // 
+            this.btnExportReporte.Image = global::Formularios.Properties.Resources.file__2_;
+            this.btnExportReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportReporte.Location = new System.Drawing.Point(557, 21);
+            this.btnExportReporte.Name = "btnExportReporte";
+            this.btnExportReporte.Size = new System.Drawing.Size(116, 40);
+            this.btnExportReporte.TabIndex = 10;
+            this.btnExportReporte.Text = "Exportar Reporte";
+            this.btnExportReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportReporte.UseVisualStyleBackColor = true;
+            this.btnExportReporte.Click += new System.EventHandler(this.btnExportReporte_Click);
             // 
             // reporteclientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(735, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataListaClientes);
             this.Controls.Add(this.btnExportReporte);
             this.Controls.Add(this.dateFin);
@@ -148,8 +169,9 @@
             this.Controls.Add(this.dateinicio);
             this.Controls.Add(this.lblInicio);
             this.Controls.Add(this.lblFecha);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "reporteclientes";
-            this.Text = "reporteclientes";
+            this.Text = "Reporte de Utilidad de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataListaClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,6 +187,7 @@
         private System.Windows.Forms.DateTimePicker dateFin;
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DataGridView dataListaClientes;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;

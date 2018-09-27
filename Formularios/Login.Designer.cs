@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.lblusuario = new System.Windows.Forms.Label();
             this.lblcontraseña = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
@@ -134,6 +135,7 @@
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.lblcontraseña);
             this.Controls.Add(this.lblusuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
