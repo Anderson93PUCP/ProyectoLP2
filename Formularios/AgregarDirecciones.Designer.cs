@@ -114,23 +114,29 @@
             // 
             // btnagregarDireccion
             // 
-            this.btnagregarDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarDireccion.Location = new System.Drawing.Point(251, 213);
+            this.btnagregarDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarDireccion.Image = global::Formularios.Properties.Resources.plus__1_;
+            this.btnagregarDireccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnagregarDireccion.Location = new System.Drawing.Point(251, 205);
             this.btnagregarDireccion.Name = "btnagregarDireccion";
-            this.btnagregarDireccion.Size = new System.Drawing.Size(94, 28);
+            this.btnagregarDireccion.Size = new System.Drawing.Size(80, 36);
             this.btnagregarDireccion.TabIndex = 26;
-            this.btnagregarDireccion.Text = "ACEPTAR";
+            this.btnagregarDireccion.Text = "Agregar";
+            this.btnagregarDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnagregarDireccion.UseVisualStyleBackColor = true;
             this.btnagregarDireccion.Click += new System.EventHandler(this.btnagregarDireccion_Click);
             // 
             // btncancelarDireccion
             // 
-            this.btncancelarDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelarDireccion.Location = new System.Drawing.Point(351, 213);
+            this.btncancelarDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelarDireccion.Image = global::Formularios.Properties.Resources.cross;
+            this.btncancelarDireccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelarDireccion.Location = new System.Drawing.Point(351, 205);
             this.btncancelarDireccion.Name = "btncancelarDireccion";
-            this.btncancelarDireccion.Size = new System.Drawing.Size(95, 28);
+            this.btncancelarDireccion.Size = new System.Drawing.Size(83, 36);
             this.btncancelarDireccion.TabIndex = 27;
-            this.btncancelarDireccion.Text = "CANCELAR";
+            this.btncancelarDireccion.Text = "Cancelar";
+            this.btncancelarDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelarDireccion.UseVisualStyleBackColor = true;
             this.btncancelarDireccion.Click += new System.EventHandler(this.btncancelarDireccion_Click);
             // 

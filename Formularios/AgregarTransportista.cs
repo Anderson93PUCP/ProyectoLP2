@@ -27,5 +27,16 @@ namespace Formularios
         {
             this.Dispose();
         }
+
+        private void btncancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnaceptar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se registro satisfactoriamente");
+            this.Dispose();
+        }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCancelarPedido = new System.Windows.Forms.Button();
-            this.btnBusquedaPedido = new System.Windows.Forms.Button();
             this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
             this.txtBusqPedido = new System.Windows.Forms.TextBox();
             this.btnElimCliente = new System.Windows.Forms.Button();
@@ -40,6 +39,8 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnBusquedaPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,19 +54,10 @@
             this.btnCancelarPedido.UseVisualStyleBackColor = true;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
-            // btnBusquedaPedido
-            // 
-            this.btnBusquedaPedido.Location = new System.Drawing.Point(677, 48);
-            this.btnBusquedaPedido.Name = "btnBusquedaPedido";
-            this.btnBusquedaPedido.Size = new System.Drawing.Size(67, 26);
-            this.btnBusquedaPedido.TabIndex = 17;
-            this.btnBusquedaPedido.Text = "Buscar...";
-            this.btnBusquedaPedido.UseVisualStyleBackColor = true;
-            // 
             // rbtnBusqRuc
             // 
             this.rbtnBusqRuc.AutoSize = true;
-            this.rbtnBusqRuc.Location = new System.Drawing.Point(459, 29);
+            this.rbtnBusqRuc.Location = new System.Drawing.Point(459, 19);
             this.rbtnBusqRuc.Name = "rbtnBusqRuc";
             this.rbtnBusqRuc.Size = new System.Drawing.Size(67, 17);
             this.rbtnBusqRuc.TabIndex = 16;
@@ -75,43 +67,56 @@
             // 
             // txtBusqPedido
             // 
-            this.txtBusqPedido.Location = new System.Drawing.Point(459, 52);
+            this.txtBusqPedido.Location = new System.Drawing.Point(459, 40);
             this.txtBusqPedido.Name = "txtBusqPedido";
             this.txtBusqPedido.Size = new System.Drawing.Size(212, 20);
             this.txtBusqPedido.TabIndex = 13;
             // 
             // btnElimCliente
             // 
+            this.btnElimCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnElimCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElimCliente.Image = global::Formularios.Properties.Resources._008_document;
+            this.btnElimCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnElimCliente.Location = new System.Drawing.Point(314, 36);
             this.btnElimCliente.Name = "btnElimCliente";
             this.btnElimCliente.Size = new System.Drawing.Size(114, 50);
             this.btnElimCliente.TabIndex = 12;
             this.btnElimCliente.Text = "Eliminar";
-            this.btnElimCliente.UseVisualStyleBackColor = true;
+            this.btnElimCliente.UseVisualStyleBackColor = false;
             // 
             // btnModCliente
             // 
+            this.btnModCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnModCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModCliente.Image = global::Formularios.Properties.Resources.file__3_;
+            this.btnModCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModCliente.Location = new System.Drawing.Point(180, 36);
             this.btnModCliente.Name = "btnModCliente";
             this.btnModCliente.Size = new System.Drawing.Size(114, 50);
             this.btnModCliente.TabIndex = 11;
             this.btnModCliente.Text = "Modificar";
-            this.btnModCliente.UseVisualStyleBackColor = true;
+            this.btnModCliente.UseVisualStyleBackColor = false;
             // 
             // btnAddCliente
             // 
+            this.btnAddCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCliente.Image = global::Formularios.Properties.Resources.plus__1_;
+            this.btnAddCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddCliente.Location = new System.Drawing.Point(45, 36);
             this.btnAddCliente.Name = "btnAddCliente";
             this.btnAddCliente.Size = new System.Drawing.Size(114, 50);
             this.btnAddCliente.TabIndex = 10;
             this.btnAddCliente.Text = "Agregar";
-            this.btnAddCliente.UseVisualStyleBackColor = true;
+            this.btnAddCliente.UseVisualStyleBackColor = false;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
             // 
             // dgvClientes
             // 
             this.dgvClientes.AllowUserToOrderColumns = true;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRUC,
@@ -143,14 +148,40 @@
             this.colEmail.HeaderText = "Email";
             this.colEmail.Name = "colEmail";
             // 
+            // btnVer
+            // 
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Image = global::Formularios.Properties.Resources.file;
+            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVer.Location = new System.Drawing.Point(677, 68);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(67, 31);
+            this.btnVer.TabIndex = 22;
+            this.btnVer.Text = "   Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaPedido
+            // 
+            this.btnBusquedaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusquedaPedido.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBusquedaPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusquedaPedido.Location = new System.Drawing.Point(677, 36);
+            this.btnBusquedaPedido.Name = "btnBusquedaPedido";
+            this.btnBusquedaPedido.Size = new System.Drawing.Size(67, 26);
+            this.btnBusquedaPedido.TabIndex = 21;
+            this.btnBusquedaPedido.Text = "Buscar";
+            this.btnBusquedaPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaPedido.UseVisualStyleBackColor = true;
+            // 
             // GestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.btnBusquedaPedido);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCancelarPedido);
-            this.Controls.Add(this.btnBusquedaPedido);
             this.Controls.Add(this.rbtnBusqRuc);
             this.Controls.Add(this.txtBusqPedido);
             this.Controls.Add(this.btnElimCliente);
@@ -167,7 +198,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnCancelarPedido;
-        private System.Windows.Forms.Button btnBusquedaPedido;
         private System.Windows.Forms.RadioButton rbtnBusqRuc;
         private System.Windows.Forms.TextBox txtBusqPedido;
         private System.Windows.Forms.Button btnElimCliente;
@@ -178,5 +208,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnBusquedaPedido;
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btndirecciones = new System.Windows.Forms.Button();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btnaceptar = new System.Windows.Forms.Button();
             this.txttelf = new System.Windows.Forms.TextBox();
             this.txtrazon = new System.Windows.Forms.TextBox();
             this.txtruc = new System.Windows.Forms.TextBox();
@@ -41,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btnaceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btndirecciones
@@ -52,27 +52,6 @@
             this.btndirecciones.Text = "...";
             this.btndirecciones.UseVisualStyleBackColor = true;
             this.btndirecciones.Click += new System.EventHandler(this.btndirecciones_Click);
-            // 
-            // btncancelar
-            // 
-            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Location = new System.Drawing.Point(202, 273);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(100, 27);
-            this.btncancelar.TabIndex = 28;
-            this.btncancelar.Text = "CANCELAR";
-            this.btncancelar.UseVisualStyleBackColor = true;
-            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
-            // btnaceptar
-            // 
-            this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaceptar.Location = new System.Drawing.Point(89, 273);
-            this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(95, 27);
-            this.btnaceptar.TabIndex = 27;
-            this.btnaceptar.Text = "REGISTRAR";
-            this.btnaceptar.UseVisualStyleBackColor = true;
             // 
             // txttelf
             // 
@@ -170,17 +149,45 @@
             this.radioButton2.Text = "Por Departamentos";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // btncancelar
+            // 
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(206, 269);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(85, 36);
+            this.btncancelar.TabIndex = 35;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click_1);
+            // 
+            // btnaceptar
+            // 
+            this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnaceptar.Image = global::Formularios.Properties.Resources.check;
+            this.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnaceptar.Location = new System.Drawing.Point(92, 269);
+            this.btnaceptar.Name = "btnaceptar";
+            this.btnaceptar.Size = new System.Drawing.Size(86, 36);
+            this.btnaceptar.TabIndex = 34;
+            this.btnaceptar.Text = "Registrar";
+            this.btnaceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
+            // 
             // AgregarTransportista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 327);
+            this.Controls.Add(this.btncancelar);
+            this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btndirecciones);
-            this.Controls.Add(this.btncancelar);
-            this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.txttelf);
             this.Controls.Add(this.txtrazon);
             this.Controls.Add(this.txtruc);
@@ -198,8 +205,6 @@
         #endregion
 
         private System.Windows.Forms.Button btndirecciones;
-        private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.Button btnaceptar;
         private System.Windows.Forms.TextBox txttelf;
         private System.Windows.Forms.TextBox txtrazon;
         private System.Windows.Forms.TextBox txtruc;
@@ -210,5 +215,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.Button btnaceptar;
     }
 }

@@ -33,13 +33,14 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBusquedaTransportista = new System.Windows.Forms.Button();
-            this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
-            this.txtBusqTransportista = new System.Windows.Forms.TextBox();
-            this.btnElimTransportista = new System.Windows.Forms.Button();
-            this.btnModTransportista = new System.Windows.Forms.Button();
-            this.btnagregarTransp = new System.Windows.Forms.Button();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnBusquedaPedido = new System.Windows.Forms.Button();
+            this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
+            this.txtBusqPedido = new System.Windows.Forms.TextBox();
+            this.btnElimCliente = new System.Windows.Forms.Button();
+            this.btnModCliente = new System.Windows.Forms.Button();
+            this.btnAddCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransportistas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             // 
             this.dgvTransportistas.AllowUserToOrderColumns = true;
             this.dgvTransportistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTransportistas.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvTransportistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransportistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRUC,
@@ -78,61 +80,6 @@
             this.colEmail.HeaderText = "Email";
             this.colEmail.Name = "colEmail";
             // 
-            // btnBusquedaTransportista
-            // 
-            this.btnBusquedaTransportista.Location = new System.Drawing.Point(670, 42);
-            this.btnBusquedaTransportista.Name = "btnBusquedaTransportista";
-            this.btnBusquedaTransportista.Size = new System.Drawing.Size(67, 26);
-            this.btnBusquedaTransportista.TabIndex = 26;
-            this.btnBusquedaTransportista.Text = "Buscar...";
-            this.btnBusquedaTransportista.UseVisualStyleBackColor = true;
-            // 
-            // rbtnBusqRuc
-            // 
-            this.rbtnBusqRuc.AutoSize = true;
-            this.rbtnBusqRuc.Location = new System.Drawing.Point(452, 23);
-            this.rbtnBusqRuc.Name = "rbtnBusqRuc";
-            this.rbtnBusqRuc.Size = new System.Drawing.Size(67, 17);
-            this.rbtnBusqRuc.TabIndex = 25;
-            this.rbtnBusqRuc.TabStop = true;
-            this.rbtnBusqRuc.Text = "Por RUC";
-            this.rbtnBusqRuc.UseVisualStyleBackColor = true;
-            // 
-            // txtBusqTransportista
-            // 
-            this.txtBusqTransportista.Location = new System.Drawing.Point(452, 46);
-            this.txtBusqTransportista.Name = "txtBusqTransportista";
-            this.txtBusqTransportista.Size = new System.Drawing.Size(212, 20);
-            this.txtBusqTransportista.TabIndex = 24;
-            // 
-            // btnElimTransportista
-            // 
-            this.btnElimTransportista.Location = new System.Drawing.Point(307, 30);
-            this.btnElimTransportista.Name = "btnElimTransportista";
-            this.btnElimTransportista.Size = new System.Drawing.Size(114, 50);
-            this.btnElimTransportista.TabIndex = 23;
-            this.btnElimTransportista.Text = "Eliminar";
-            this.btnElimTransportista.UseVisualStyleBackColor = true;
-            // 
-            // btnModTransportista
-            // 
-            this.btnModTransportista.Location = new System.Drawing.Point(173, 30);
-            this.btnModTransportista.Name = "btnModTransportista";
-            this.btnModTransportista.Size = new System.Drawing.Size(114, 50);
-            this.btnModTransportista.TabIndex = 22;
-            this.btnModTransportista.Text = "Modificar";
-            this.btnModTransportista.UseVisualStyleBackColor = true;
-            // 
-            // btnagregarTransp
-            // 
-            this.btnagregarTransp.Location = new System.Drawing.Point(38, 30);
-            this.btnagregarTransp.Name = "btnagregarTransp";
-            this.btnagregarTransp.Size = new System.Drawing.Size(114, 50);
-            this.btnagregarTransp.TabIndex = 21;
-            this.btnagregarTransp.Text = "Agregar";
-            this.btnagregarTransp.UseVisualStyleBackColor = true;
-            this.btnagregarTransp.Click += new System.EventHandler(this.btnagregarTransp_Click);
-            // 
             // btnCancelarPedido
             // 
             this.btnCancelarPedido.Location = new System.Drawing.Point(332, 344);
@@ -143,19 +90,103 @@
             this.btnCancelarPedido.UseVisualStyleBackColor = true;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
+            // btnVer
+            // 
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Image = global::Formularios.Properties.Resources.file;
+            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVer.Location = new System.Drawing.Point(670, 65);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(67, 31);
+            this.btnVer.TabIndex = 35;
+            this.btnVer.Text = "   Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaPedido
+            // 
+            this.btnBusquedaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusquedaPedido.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBusquedaPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusquedaPedido.Location = new System.Drawing.Point(670, 33);
+            this.btnBusquedaPedido.Name = "btnBusquedaPedido";
+            this.btnBusquedaPedido.Size = new System.Drawing.Size(67, 26);
+            this.btnBusquedaPedido.TabIndex = 34;
+            this.btnBusquedaPedido.Text = "Buscar";
+            this.btnBusquedaPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaPedido.UseVisualStyleBackColor = true;
+            // 
+            // rbtnBusqRuc
+            // 
+            this.rbtnBusqRuc.AutoSize = true;
+            this.rbtnBusqRuc.Location = new System.Drawing.Point(452, 16);
+            this.rbtnBusqRuc.Name = "rbtnBusqRuc";
+            this.rbtnBusqRuc.Size = new System.Drawing.Size(67, 17);
+            this.rbtnBusqRuc.TabIndex = 33;
+            this.rbtnBusqRuc.TabStop = true;
+            this.rbtnBusqRuc.Text = "Por RUC";
+            this.rbtnBusqRuc.UseVisualStyleBackColor = true;
+            // 
+            // txtBusqPedido
+            // 
+            this.txtBusqPedido.Location = new System.Drawing.Point(452, 37);
+            this.txtBusqPedido.Name = "txtBusqPedido";
+            this.txtBusqPedido.Size = new System.Drawing.Size(212, 20);
+            this.txtBusqPedido.TabIndex = 32;
+            // 
+            // btnElimCliente
+            // 
+            this.btnElimCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnElimCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElimCliente.Image = global::Formularios.Properties.Resources._008_document;
+            this.btnElimCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElimCliente.Location = new System.Drawing.Point(307, 33);
+            this.btnElimCliente.Name = "btnElimCliente";
+            this.btnElimCliente.Size = new System.Drawing.Size(114, 50);
+            this.btnElimCliente.TabIndex = 31;
+            this.btnElimCliente.Text = "Eliminar";
+            this.btnElimCliente.UseVisualStyleBackColor = false;
+            // 
+            // btnModCliente
+            // 
+            this.btnModCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnModCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModCliente.Image = global::Formularios.Properties.Resources.file__3_;
+            this.btnModCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModCliente.Location = new System.Drawing.Point(173, 33);
+            this.btnModCliente.Name = "btnModCliente";
+            this.btnModCliente.Size = new System.Drawing.Size(114, 50);
+            this.btnModCliente.TabIndex = 30;
+            this.btnModCliente.Text = "Modificar";
+            this.btnModCliente.UseVisualStyleBackColor = false;
+            // 
+            // btnAddCliente
+            // 
+            this.btnAddCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCliente.Image = global::Formularios.Properties.Resources.plus__1_;
+            this.btnAddCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCliente.Location = new System.Drawing.Point(38, 33);
+            this.btnAddCliente.Name = "btnAddCliente";
+            this.btnAddCliente.Size = new System.Drawing.Size(114, 50);
+            this.btnAddCliente.TabIndex = 29;
+            this.btnAddCliente.Text = "Agregar";
+            this.btnAddCliente.UseVisualStyleBackColor = false;
+            this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
+            // 
             // GestionTransportistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 387);
+            this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.btnBusquedaPedido);
+            this.Controls.Add(this.rbtnBusqRuc);
+            this.Controls.Add(this.txtBusqPedido);
+            this.Controls.Add(this.btnElimCliente);
+            this.Controls.Add(this.btnModCliente);
+            this.Controls.Add(this.btnAddCliente);
             this.Controls.Add(this.btnCancelarPedido);
             this.Controls.Add(this.dgvTransportistas);
-            this.Controls.Add(this.btnBusquedaTransportista);
-            this.Controls.Add(this.rbtnBusqRuc);
-            this.Controls.Add(this.txtBusqTransportista);
-            this.Controls.Add(this.btnElimTransportista);
-            this.Controls.Add(this.btnModTransportista);
-            this.Controls.Add(this.btnagregarTransp);
             this.Name = "GestionTransportistas";
             this.Text = "GestionTransportistas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransportistas)).EndInit();
@@ -171,12 +202,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
-        private System.Windows.Forms.Button btnBusquedaTransportista;
-        private System.Windows.Forms.RadioButton rbtnBusqRuc;
-        private System.Windows.Forms.TextBox txtBusqTransportista;
-        private System.Windows.Forms.Button btnElimTransportista;
-        private System.Windows.Forms.Button btnModTransportista;
-        private System.Windows.Forms.Button btnagregarTransp;
         private System.Windows.Forms.Button btnCancelarPedido;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnBusquedaPedido;
+        private System.Windows.Forms.RadioButton rbtnBusqRuc;
+        private System.Windows.Forms.TextBox txtBusqPedido;
+        private System.Windows.Forms.Button btnElimCliente;
+        private System.Windows.Forms.Button btnModCliente;
+        private System.Windows.Forms.Button btnAddCliente;
     }
 }
