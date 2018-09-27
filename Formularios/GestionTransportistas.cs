@@ -27,5 +27,11 @@ namespace Formularios
         {
             this.Dispose();
         }
+
+        private void btnAddCliente_Click(object sender, EventArgs e)
+        {
+            AgregarTransportista fga = new AgregarTransportista();
+            fga.ShowDialog();
+        }
     }
 }

@@ -149,23 +149,29 @@
             // 
             // btnaceptar
             // 
-            this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaceptar.Location = new System.Drawing.Point(66, 304);
+            this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnaceptar.Image = global::Formularios.Properties.Resources.check;
+            this.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnaceptar.Location = new System.Drawing.Point(66, 295);
             this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(95, 27);
+            this.btnaceptar.Size = new System.Drawing.Size(86, 36);
             this.btnaceptar.TabIndex = 12;
-            this.btnaceptar.Text = "REGISTRAR";
+            this.btnaceptar.Text = "Registrar";
+            this.btnaceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnaceptar.UseVisualStyleBackColor = true;
             this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
             // btncancelar
             // 
-            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Location = new System.Drawing.Point(180, 304);
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(180, 295);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(100, 27);
+            this.btncancelar.Size = new System.Drawing.Size(85, 36);
             this.btncancelar.TabIndex = 13;
-            this.btncancelar.Text = "CANCELAR";
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
@@ -191,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(347, 343);
             this.Controls.Add(this.btndirecciones);
             this.Controls.Add(this.cmbvendedor);
