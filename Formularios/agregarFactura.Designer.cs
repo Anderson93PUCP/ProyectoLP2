@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarFactura));
             this.rbtnVendedor = new System.Windows.Forms.RadioButton();
             this.rbtnCliente = new System.Windows.Forms.RadioButton();
             this.rbtnRuc = new System.Windows.Forms.RadioButton();
@@ -88,15 +89,16 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBuscar.Location = new System.Drawing.Point(597, 50);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(32, 23);
             this.btnBuscar.TabIndex = 4;
-            this.btnBuscar.Text = "Buscar...";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDGestorFacturas,
@@ -148,21 +150,27 @@
             // 
             // btnAceptarAddFactura
             // 
+            this.btnAceptarAddFactura.Image = global::Formularios.Properties.Resources.check;
+            this.btnAceptarAddFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptarAddFactura.Location = new System.Drawing.Point(551, 288);
             this.btnAceptarAddFactura.Name = "btnAceptarAddFactura";
-            this.btnAceptarAddFactura.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarAddFactura.Size = new System.Drawing.Size(78, 32);
             this.btnAceptarAddFactura.TabIndex = 10;
             this.btnAceptarAddFactura.Text = "Aceptar";
+            this.btnAceptarAddFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptarAddFactura.UseVisualStyleBackColor = true;
             this.btnAceptarAddFactura.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCancelarAddFactura
             // 
+            this.btnCancelarAddFactura.Image = global::Formularios.Properties.Resources.cross;
+            this.btnCancelarAddFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarAddFactura.Location = new System.Drawing.Point(453, 288);
             this.btnCancelarAddFactura.Name = "btnCancelarAddFactura";
-            this.btnCancelarAddFactura.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarAddFactura.Size = new System.Drawing.Size(80, 32);
             this.btnCancelarAddFactura.TabIndex = 11;
             this.btnCancelarAddFactura.Text = "Cancelar";
+            this.btnCancelarAddFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarAddFactura.UseVisualStyleBackColor = true;
             this.btnCancelarAddFactura.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -179,6 +187,7 @@
             this.Controls.Add(this.rbtnRuc);
             this.Controls.Add(this.rbtnCliente);
             this.Controls.Add(this.rbtnVendedor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "agregarFactura";
             this.Text = "Agregar Factura";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

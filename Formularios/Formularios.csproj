@@ -354,5 +354,41 @@
   <ItemGroup>
     <None Include="Resources\file %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-x-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-x-button %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015-search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

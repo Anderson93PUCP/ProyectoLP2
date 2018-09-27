@@ -34,8 +34,14 @@ namespace Formularios
 
         private void btnCancelarAddPedido_Click(object sender, EventArgs e)
         {
-            confCancelarAddPedido v = new confCancelarAddPedido();
-            v.ShowDialog();
+            var v = MessageBox.Show("¿Esta seguro de salir, no se guardara ningun cambio no guardado", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (v == DialogResult.OK)
+            {
+                Close();
+            }
+
+            //confCancelarAddPedido v = new confCancelarAddPedido();
+            //v.ShowDialog();
 
         }
 
@@ -43,7 +49,8 @@ namespace Formularios
         {
             confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
             v.ShowDialog();
-            Close();
+            
+            //Close();
         }
 
         private void btnBuscarCliAddPedido_Click(object sender, EventArgs e)
