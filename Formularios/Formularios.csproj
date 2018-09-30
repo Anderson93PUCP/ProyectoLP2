@@ -143,6 +143,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdministrarComisionVendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarComisionVendedores.Designer.cs">
+      <DependentUpon>frmAdministrarComisionVendedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="detallePedido.resx">
       <DependentUpon>detallePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarComisionVendedores.resx">
+      <DependentUpon>frmAdministrarComisionVendedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
@@ -407,6 +416,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\026-cash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
