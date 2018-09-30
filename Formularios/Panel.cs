@@ -91,6 +91,12 @@ namespace Formularios
             GestionUsuarios fgu = new GestionUsuarios();
             fgu.ShowDialog();
         }
+
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdministrarComisionVendedores ventana = new frmAdministrarComisionVendedores();
+            ventana.ShowDialog();
+        }
     }
 }
   
