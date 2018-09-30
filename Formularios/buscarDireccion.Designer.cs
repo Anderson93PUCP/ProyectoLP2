@@ -87,15 +87,16 @@
             // 
             // btnBuscarDire
             // 
-            this.btnBuscarDire.Location = new System.Drawing.Point(204, 33);
+            this.btnBuscarDire.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBuscarDire.Location = new System.Drawing.Point(193, 34);
             this.btnBuscarDire.Name = "btnBuscarDire";
-            this.btnBuscarDire.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarDire.Size = new System.Drawing.Size(31, 24);
             this.btnBuscarDire.TabIndex = 4;
-            this.btnBuscarDire.Text = "Buscar...";
             this.btnBuscarDire.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDBuscarDir,
@@ -141,21 +142,27 @@
             // 
             // btnAcpetarBuscDire
             // 
-            this.btnAcpetarBuscDire.Location = new System.Drawing.Point(474, 238);
+            this.btnAcpetarBuscDire.Image = global::Formularios.Properties.Resources.check;
+            this.btnAcpetarBuscDire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcpetarBuscDire.Location = new System.Drawing.Point(485, 238);
             this.btnAcpetarBuscDire.Name = "btnAcpetarBuscDire";
-            this.btnAcpetarBuscDire.Size = new System.Drawing.Size(75, 23);
+            this.btnAcpetarBuscDire.Size = new System.Drawing.Size(80, 32);
             this.btnAcpetarBuscDire.TabIndex = 6;
             this.btnAcpetarBuscDire.Text = "Aceptar";
+            this.btnAcpetarBuscDire.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAcpetarBuscDire.UseVisualStyleBackColor = true;
             this.btnAcpetarBuscDire.Click += new System.EventHandler(this.btnAcpetarBuscDire_Click);
             // 
             // btnCancelarBuscarDire
             // 
-            this.btnCancelarBuscarDire.Location = new System.Drawing.Point(380, 238);
+            this.btnCancelarBuscarDire.Image = global::Formularios.Properties.Resources.cross;
+            this.btnCancelarBuscarDire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarBuscarDire.Location = new System.Drawing.Point(399, 238);
             this.btnCancelarBuscarDire.Name = "btnCancelarBuscarDire";
-            this.btnCancelarBuscarDire.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarBuscarDire.Size = new System.Drawing.Size(80, 32);
             this.btnCancelarBuscarDire.TabIndex = 7;
             this.btnCancelarBuscarDire.Text = "Cancelar";
+            this.btnCancelarBuscarDire.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarBuscarDire.UseVisualStyleBackColor = true;
             this.btnCancelarBuscarDire.Click += new System.EventHandler(this.btnCancelarBuscarDire_Click);
             // 

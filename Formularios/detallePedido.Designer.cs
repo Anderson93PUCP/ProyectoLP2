@@ -86,7 +86,7 @@
             // 
             // dudCantidadPro
             // 
-            this.dudCantidadPro.Location = new System.Drawing.Point(97, 67);
+            this.dudCantidadPro.Location = new System.Drawing.Point(116, 231);
             this.dudCantidadPro.Name = "dudCantidadPro";
             this.dudCantidadPro.Size = new System.Drawing.Size(32, 20);
             this.dudCantidadPro.TabIndex = 4;
@@ -95,7 +95,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(26, 69);
+            this.lblCantidad.Location = new System.Drawing.Point(45, 233);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(52, 13);
             this.lblCantidad.TabIndex = 5;
@@ -104,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 95);
+            this.label1.Location = new System.Drawing.Point(45, 259);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 6;
@@ -112,7 +112,7 @@
             // 
             // dudDescuento
             // 
-            this.dudDescuento.Location = new System.Drawing.Point(97, 93);
+            this.dudDescuento.Location = new System.Drawing.Point(116, 257);
             this.dudDescuento.Name = "dudDescuento";
             this.dudDescuento.Size = new System.Drawing.Size(32, 20);
             this.dudDescuento.TabIndex = 7;
@@ -126,7 +126,7 @@
             this.colIDDetallePedido,
             this.colDescpDetallePedido,
             this.colStockDetallePedido});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 132);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(344, 150);
             this.dataGridView1.TabIndex = 8;
@@ -153,7 +153,7 @@
             // 
             this.btnAceptarAddDetPedido.Image = global::Formularios.Properties.Resources.check;
             this.btnAceptarAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarAddDetPedido.Location = new System.Drawing.Point(278, 294);
+            this.btnAceptarAddDetPedido.Location = new System.Drawing.Point(278, 240);
             this.btnAceptarAddDetPedido.Name = "btnAceptarAddDetPedido";
             this.btnAceptarAddDetPedido.Size = new System.Drawing.Size(78, 32);
             this.btnAceptarAddDetPedido.TabIndex = 18;
@@ -166,7 +166,7 @@
             // 
             this.btnCancelarAddDetPedido.Image = global::Formularios.Properties.Resources.cross;
             this.btnCancelarAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarAddDetPedido.Location = new System.Drawing.Point(182, 294);
+            this.btnCancelarAddDetPedido.Location = new System.Drawing.Point(177, 240);
             this.btnCancelarAddDetPedido.Name = "btnCancelarAddDetPedido";
             this.btnCancelarAddDetPedido.Size = new System.Drawing.Size(80, 32);
             this.btnCancelarAddDetPedido.TabIndex = 17;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 338);
+            this.ClientSize = new System.Drawing.Size(373, 292);
             this.Controls.Add(this.btnAceptarAddDetPedido);
             this.Controls.Add(this.btnCancelarAddDetPedido);
             this.Controls.Add(this.dataGridView1);

@@ -21,6 +21,7 @@ namespace Formularios
         {
             buscarCliente v = new buscarCliente();
             v.ShowDialog();
+            
 
         }
 
@@ -57,6 +58,7 @@ namespace Formularios
             var v = MessageBox.Show("¿Guardar Cambios?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
+               
                 var v2 = MessageBox.Show("Se modifico el pedido", "Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Close();
             }
@@ -76,8 +78,27 @@ namespace Formularios
 
         private void btnElimModDetPedido_Click(object sender, EventArgs e)
         {
-            confirmarEliminarPedido v = new confirmarEliminarPedido();
-            v.ShowDialog();
+            //confirmarEliminarPedido v = new confirmarEliminarPedido();
+            //v.ShowDialog();
+            var v = MessageBox.Show("¿Desea eliminar el producto?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+             if (v == DialogResult.OK)
+            {
+                Close();
+            }
+        }
+
+        private void modificarPedido_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.R)
+            {
+                var v = MessageBox.Show("¿Guardar Cambios?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (v == DialogResult.OK)
+                {
+
+                    var v2 = MessageBox.Show("Se modifico el pedido", "Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Close();
+                }
+            }
         }
     }
 }
