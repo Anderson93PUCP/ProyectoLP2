@@ -119,6 +119,12 @@
     <Compile Include="confirmarCancelarAddFact.Designer.cs">
       <DependentUpon>confirmarCancelarAddFact.cs</DependentUpon>
     </Compile>
+    <Compile Include="confirmarElimCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarElimCliente.Designer.cs">
+      <DependentUpon>confirmarElimCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="confirmarElimFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     </Compile>
     <Compile Include="gestorFacturas.Designer.cs">
       <DependentUpon>gestorFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarCliente.Designer.cs">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="modificarPedido.cs">
       <SubType>Form</SubType>
@@ -271,6 +283,9 @@
     <EmbeddedResource Include="confirmarCancelarAddFact.resx">
       <DependentUpon>confirmarCancelarAddFact.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="confirmarElimCliente.resx">
+      <DependentUpon>confirmarElimCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="confirmarElimFactura.resx">
       <DependentUpon>confirmarElimFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gestorFacturas.resx">
       <DependentUpon>gestorFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarPedido.resx">
       <DependentUpon>modificarPedido.cs</DependentUpon>
@@ -419,6 +437,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\026-cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clases\Clases.csproj">
+      <Project>{9c567c9c-717c-4495-9371-4065b109a211}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

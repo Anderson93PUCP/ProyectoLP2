@@ -80,28 +80,29 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // itemClientes
             // 
+            this.itemClientes.Image = global::Formularios.Properties.Resources.user_icon;
             this.itemClientes.Name = "itemClientes";
-            this.itemClientes.Size = new System.Drawing.Size(147, 22);
+            this.itemClientes.Size = new System.Drawing.Size(180, 22);
             this.itemClientes.Text = "Clientes";
             this.itemClientes.Click += new System.EventHandler(this.itemClientes_Click);
             // 
             // itemTransportes
             // 
             this.itemTransportes.Name = "itemTransportes";
-            this.itemTransportes.Size = new System.Drawing.Size(147, 22);
+            this.itemTransportes.Size = new System.Drawing.Size(180, 22);
             this.itemTransportes.Text = "Transportistas";
             this.itemTransportes.Click += new System.EventHandler(this.itemTransportes_Click);
             // 
             // itemProveedores
             // 
             this.itemProveedores.Name = "itemProveedores";
-            this.itemProveedores.Size = new System.Drawing.Size(147, 22);
+            this.itemProveedores.Size = new System.Drawing.Size(180, 22);
             this.itemProveedores.Text = "Proveedores";
             // 
             // menuPedido
@@ -174,7 +175,7 @@
             // vendedoresToolStripMenuItem
             // 
             this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.vendedoresToolStripMenuItem.Text = "Vendedores";
             this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
             // 
@@ -224,6 +225,7 @@
             this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Panel";
             this.Text = "Panel";
             this.menuStrip1.ResumeLayout(false);
