@@ -55,7 +55,6 @@
             this.lblruc.Size = new System.Drawing.Size(40, 16);
             this.lblruc.TabIndex = 0;
             this.lblruc.Text = "RUC:";
-            this.lblruc.Click += new System.EventHandler(this.lblruc_Click);
             // 
             // lblNombre
             // 
@@ -66,7 +65,6 @@
             this.lblNombre.Size = new System.Drawing.Size(113, 16);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre o Razon:";
-            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // lbltelefono
             // 
@@ -77,7 +75,6 @@
             this.lbltelefono.Size = new System.Drawing.Size(65, 16);
             this.lbltelefono.TabIndex = 2;
             this.lbltelefono.Text = "Telefono:";
-            this.lbltelefono.Click += new System.EventHandler(this.lbltelefono_Click);
             // 
             // lblEmail
             // 
@@ -88,7 +85,6 @@
             this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Email:";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // lbldirecciones
             // 
@@ -99,7 +95,6 @@
             this.lbldirecciones.Size = new System.Drawing.Size(83, 16);
             this.lbldirecciones.TabIndex = 4;
             this.lbldirecciones.Text = "Direcciones:";
-            this.lbldirecciones.Click += new System.EventHandler(this.lbldirecciones_Click);
             // 
             // txtrucCliente
             // 
@@ -143,7 +138,6 @@
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Vendedor";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cmbvendedorCliente
             // 

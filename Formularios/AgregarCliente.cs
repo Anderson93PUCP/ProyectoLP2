@@ -84,37 +84,7 @@ namespace Formularios
 
         }
 
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbltelefono_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblruc_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lsboxdireccion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbldirecciones_Click(object sender, EventArgs e)
         {
 
         }

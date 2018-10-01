@@ -80,7 +80,7 @@
             // 
             this.cmbvendedorCliente.Enabled = false;
             this.cmbvendedorCliente.FormattingEnabled = true;
-            this.cmbvendedorCliente.Location = new System.Drawing.Point(164, 271);
+            this.cmbvendedorCliente.Location = new System.Drawing.Point(164, 270);
             this.cmbvendedorCliente.Name = "cmbvendedorCliente";
             this.cmbvendedorCliente.Size = new System.Drawing.Size(146, 21);
             this.cmbvendedorCliente.TabIndex = 31;
