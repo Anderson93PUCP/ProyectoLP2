@@ -24,7 +24,12 @@ namespace Formularios
 
         private void btnAceptarConfirmacionCancelAddp_Click(object sender, EventArgs e)
         {
-            Close();
+            var r = MessageBox.Show("Se Guardo pedido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (r == DialogResult.OK)
+            {
+                Close();
+            }
+            
         }
     }
 }
