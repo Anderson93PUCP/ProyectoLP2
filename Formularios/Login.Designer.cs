@@ -37,6 +37,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblOlvidoContraseña = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +47,7 @@
             // 
             this.lblusuario.AutoSize = true;
             this.lblusuario.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuario.Location = new System.Drawing.Point(71, 30);
+            this.lblusuario.Location = new System.Drawing.Point(70, 70);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(90, 23);
             this.lblusuario.TabIndex = 0;
@@ -55,7 +57,7 @@
             // 
             this.lblcontraseña.AutoSize = true;
             this.lblcontraseña.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcontraseña.Location = new System.Drawing.Point(71, 102);
+            this.lblcontraseña.Location = new System.Drawing.Point(70, 142);
             this.lblcontraseña.Name = "lblcontraseña";
             this.lblcontraseña.Size = new System.Drawing.Size(125, 23);
             this.lblcontraseña.TabIndex = 1;
@@ -65,7 +67,7 @@
             // txtusuario
             // 
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(104, 65);
+            this.txtusuario.Location = new System.Drawing.Point(103, 105);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(197, 22);
             this.txtusuario.TabIndex = 2;
@@ -73,7 +75,7 @@
             // txtcontraseña
             // 
             this.txtcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcontraseña.Location = new System.Drawing.Point(104, 140);
+            this.txtcontraseña.Location = new System.Drawing.Point(103, 180);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(197, 22);
             this.txtcontraseña.TabIndex = 3;
@@ -81,7 +83,7 @@
             // 
             // btningresar
             // 
-            this.btningresar.Location = new System.Drawing.Point(143, 177);
+            this.btningresar.Location = new System.Drawing.Point(142, 217);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(104, 32);
             this.btningresar.TabIndex = 4;
@@ -92,7 +94,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Formularios.Properties.Resources.password_ico_2;
-            this.pictureBox2.Location = new System.Drawing.Point(75, 140);
+            this.pictureBox2.Location = new System.Drawing.Point(74, 180);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -102,7 +104,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Formularios.Properties.Resources.user_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(76, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(75, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -114,19 +116,37 @@
             this.lblOlvidoContraseña.AutoSize = true;
             this.lblOlvidoContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOlvidoContraseña.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblOlvidoContraseña.Location = new System.Drawing.Point(140, 223);
+            this.lblOlvidoContraseña.Location = new System.Drawing.Point(139, 263);
             this.lblOlvidoContraseña.Name = "lblOlvidoContraseña";
             this.lblOlvidoContraseña.Size = new System.Drawing.Size(119, 13);
             this.lblOlvidoContraseña.TabIndex = 7;
             this.lblOlvidoContraseña.Text = "¿Olvidó su contraseña?";
             this.lblOlvidoContraseña.Click += new System.EventHandler(this.label1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(153)))));
+            this.panel1.Location = new System.Drawing.Point(-2, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(417, 47);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(153)))));
+            this.panel2.Location = new System.Drawing.Point(-2, 301);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(417, 47);
+            this.panel2.TabIndex = 9;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(401, 254);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(414, 346);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblOlvidoContraseña);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -155,5 +175,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblOlvidoContraseña;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

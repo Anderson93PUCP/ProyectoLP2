@@ -19,7 +19,7 @@ namespace Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmAddPedido ventaAddPedio = new frmAddPedido();
+             frmAddPedido ventaAddPedio = new frmAddPedido();
             ventaAddPedio.ShowDialog();
            // AgregarPedido ventanaAgregarpedido = new AgregarPedido();
             //this.Hide();
