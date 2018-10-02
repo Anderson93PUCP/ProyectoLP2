@@ -126,7 +126,7 @@
             this.txtemailCliente.Location = new System.Drawing.Point(165, 195);
             this.txtemailCliente.Name = "txtemailCliente";
             this.txtemailCliente.Size = new System.Drawing.Size(146, 24);
-            this.txtemailCliente.TabIndex = 8;
+            this.txtemailCliente.TabIndex = 9;
             // 
             // label3
             // 
@@ -145,14 +145,14 @@
             this.cmbvendedorCliente.Location = new System.Drawing.Point(165, 276);
             this.cmbvendedorCliente.Name = "cmbvendedorCliente";
             this.cmbvendedorCliente.Size = new System.Drawing.Size(146, 21);
-            this.cmbvendedorCliente.TabIndex = 15;
+            this.cmbvendedorCliente.TabIndex = 11;
             // 
             // btndireccionesCliente
             // 
             this.btndireccionesCliente.Location = new System.Drawing.Point(284, 236);
             this.btndireccionesCliente.Name = "btndireccionesCliente";
             this.btndireccionesCliente.Size = new System.Drawing.Size(27, 23);
-            this.btndireccionesCliente.TabIndex = 16;
+            this.btndireccionesCliente.TabIndex = 10;
             this.btndireccionesCliente.Text = "...";
             this.btndireccionesCliente.UseVisualStyleBackColor = true;
             this.btndireccionesCliente.Click += new System.EventHandler(this.btndirecciones_Click);
@@ -201,7 +201,7 @@
             this.txtCelCliente.Location = new System.Drawing.Point(165, 155);
             this.txtCelCliente.Name = "txtCelCliente";
             this.txtCelCliente.Size = new System.Drawing.Size(146, 22);
-            this.txtCelCliente.TabIndex = 18;
+            this.txtCelCliente.TabIndex = 8;
             // 
             // AgregarCliente
             // 

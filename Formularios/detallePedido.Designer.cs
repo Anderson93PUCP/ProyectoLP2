@@ -88,6 +88,7 @@
             // 
             this.dudCantidadPro.Location = new System.Drawing.Point(116, 231);
             this.dudCantidadPro.Name = "dudCantidadPro";
+            this.dudCantidadPro.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dudCantidadPro.Size = new System.Drawing.Size(32, 20);
             this.dudCantidadPro.TabIndex = 4;
             this.dudCantidadPro.Text = "0";

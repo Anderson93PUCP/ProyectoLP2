@@ -53,7 +53,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Highlight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuMantenimiento,
             this.menuPedido,
@@ -80,7 +80,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -88,21 +88,21 @@
             // 
             this.itemClientes.Image = global::Formularios.Properties.Resources.user_icon;
             this.itemClientes.Name = "itemClientes";
-            this.itemClientes.Size = new System.Drawing.Size(180, 22);
+            this.itemClientes.Size = new System.Drawing.Size(147, 22);
             this.itemClientes.Text = "Clientes";
             this.itemClientes.Click += new System.EventHandler(this.itemClientes_Click);
             // 
             // itemTransportes
             // 
             this.itemTransportes.Name = "itemTransportes";
-            this.itemTransportes.Size = new System.Drawing.Size(180, 22);
+            this.itemTransportes.Size = new System.Drawing.Size(147, 22);
             this.itemTransportes.Text = "Transportistas";
             this.itemTransportes.Click += new System.EventHandler(this.itemTransportes_Click);
             // 
             // itemProveedores
             // 
             this.itemProveedores.Name = "itemProveedores";
-            this.itemProveedores.Size = new System.Drawing.Size(180, 22);
+            this.itemProveedores.Size = new System.Drawing.Size(147, 22);
             this.itemProveedores.Text = "Proveedores";
             // 
             // menuPedido
