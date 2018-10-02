@@ -76,7 +76,18 @@ namespace Formularios
             fs.Close();
             MessageBox.Show("El cliente se registro satisfactoriamente",
                 "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Dispose();
+            limpiarCamposCliente();
+            //this.Dispose();
+        }
+        
+        public void limpiarCamposCliente()
+        {
+            txtCelCliente.Clear();
+            txtemailCliente.Clear();
+            txtrazonCliente.Clear();
+            txtrucCliente.Clear();
+            txttelfCliente.Clear();
+            cmbvendedorCliente.SelectedIndex = -1;
         }
 
         private void AgregarCliente_Load(object sender, EventArgs e)

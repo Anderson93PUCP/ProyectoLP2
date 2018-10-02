@@ -44,6 +44,7 @@
             this.lblruc = new System.Windows.Forms.Label();
             this.btncancelarCliente = new System.Windows.Forms.Button();
             this.btnaceptarCliente = new System.Windows.Forms.Button();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCelCliente
@@ -187,10 +188,10 @@
             this.btncancelarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelarCliente.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelarCliente.Location = new System.Drawing.Point(179, 326);
+            this.btncancelarCliente.Location = new System.Drawing.Point(225, 327);
             this.btncancelarCliente.Name = "btncancelarCliente";
             this.btncancelarCliente.Size = new System.Drawing.Size(85, 36);
-            this.btncancelarCliente.TabIndex = 30;
+            this.btncancelarCliente.TabIndex = 31;
             this.btncancelarCliente.Text = "Cancelar";
             this.btncancelarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelarCliente.UseVisualStyleBackColor = true;
@@ -201,20 +202,35 @@
             this.btnaceptarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptarCliente.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptarCliente.Location = new System.Drawing.Point(65, 326);
+            this.btnaceptarCliente.Location = new System.Drawing.Point(39, 326);
             this.btnaceptarCliente.Name = "btnaceptarCliente";
             this.btnaceptarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnaceptarCliente.TabIndex = 29;
-            this.btnaceptarCliente.Text = "Modificar";
+            this.btnaceptarCliente.Text = "Registrar";
             this.btnaceptarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnaceptarCliente.UseVisualStyleBackColor = true;
             this.btnaceptarCliente.Click += new System.EventHandler(this.btnaceptarCliente_Click);
+            // 
+            // btnEditarCliente
+            // 
+            this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCliente.Image = global::Formularios.Properties.Resources.file__3_;
+            this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarCliente.Location = new System.Drawing.Point(131, 326);
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.Size = new System.Drawing.Size(86, 36);
+            this.btnEditarCliente.TabIndex = 30;
+            this.btnEditarCliente.Text = "Editar";
+            this.btnEditarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // ModificarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 377);
+            this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.txtCelCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btndireccionesCliente);
@@ -256,5 +272,6 @@
         private System.Windows.Forms.Label lbltelefono;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblruc;
+        private System.Windows.Forms.Button btnEditarCliente;
     }
 }

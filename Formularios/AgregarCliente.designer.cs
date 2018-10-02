@@ -149,11 +149,13 @@
             // 
             // btndireccionesCliente
             // 
+            this.btndireccionesCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndireccionesCliente.Location = new System.Drawing.Point(284, 236);
             this.btndireccionesCliente.Name = "btndireccionesCliente";
             this.btndireccionesCliente.Size = new System.Drawing.Size(27, 23);
             this.btndireccionesCliente.TabIndex = 10;
             this.btndireccionesCliente.Text = "...";
+            this.btndireccionesCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btndireccionesCliente.UseVisualStyleBackColor = true;
             this.btndireccionesCliente.Click += new System.EventHandler(this.btndirecciones_Click);
             // 
@@ -172,7 +174,7 @@
             this.btncancelarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelarCliente.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelarCliente.Location = new System.Drawing.Point(180, 331);
+            this.btncancelarCliente.Location = new System.Drawing.Point(185, 331);
             this.btncancelarCliente.Name = "btncancelarCliente";
             this.btncancelarCliente.Size = new System.Drawing.Size(85, 36);
             this.btncancelarCliente.TabIndex = 13;
@@ -186,7 +188,7 @@
             this.btnaceptarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptarCliente.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptarCliente.Location = new System.Drawing.Point(66, 331);
+            this.btnaceptarCliente.Location = new System.Drawing.Point(79, 331);
             this.btnaceptarCliente.Name = "btnaceptarCliente";
             this.btnaceptarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnaceptarCliente.TabIndex = 12;
