@@ -33,9 +33,11 @@ namespace Formularios
             if (MenuVertical.Width == 250)
             {
                 MenuVertical.Width = 70;
+                panel1.Width = 0;
             }else
             {
                 MenuVertical.Width = 250;
+                panel1.Width = 188;
             }
         }
 
@@ -71,33 +73,50 @@ namespace Formularios
 
         private void btnprod_Click(object sender, EventArgs e)
         {
-
-            //if (panelVertical2.Width == 188)
-            //{
-            //    panelVertical2.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVertical2.Width = 188;
-            //}
-            if (panelVertical2.Visible)
+            if (MenuVertical.Width != 250)
             {
-                panelVertical2.Visible = false;
+                MenuVertical.Width = 250;
+                panel1.Width = 188;
+
+                
+            }else
+            {
+                if (panelVertical2.Visible)
+                {
+                    panelVertical2.Visible = false;
+                    panel1.Width = 0;
+                    if (MenuVertical.Width == 250)
+                    {
+                        panelContenedor.Width = 180 + 862;
+                    }
+                    localizacionInicialPanelVertical2();
+                }
+                else
+                {
+                    estadosMantenimiento();
+                    
+                }
             }
-            else estadosMantenimiento();
+
+            
+        }
+
+        void localizacionInicialPanelVertical2()
+        {
+            panelVertical2.Location = new Point(0, 0);
+            panelVerticalAlmacen.Location = new Point(0, 0);
+            panelVerticalPagos.Location = new Point(0, 0);
+            panelVerticalReportes.Location = new Point(0, 0);
+            panelVerticalPedidos.Location = new Point(0, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            //if (panelVerticalPedidos.Width == 188)
-            //{
-            //    panelVerticalPedidos.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalPedidos.Width = 188;
-            //}
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 188;
+            }
             if (panelVerticalPedidos.Visible) panelVerticalPedidos.Visible = false;
             else
                 estadosPedido();
@@ -106,14 +125,11 @@ namespace Formularios
         private void button4_Click(object sender, EventArgs e)
         {
 
-            //if (panelVerticalAlmacen.Width == 188)
-            //{
-            //    panelVerticalAlmacen.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalAlmacen.Width = 188;
-            //}
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 188;
+            }
             if (panelVerticalAlmacen.Visible) panelVerticalAlmacen.Visible = false;
             else
                 estadosAlmacen();
@@ -121,15 +137,11 @@ namespace Formularios
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-            //if (panelVerticalPagos.Width == 188)
-            //{
-            //    panelVerticalPagos.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalPagos.Width = 188;
-            //}
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 188;
+            }
             if (panelVerticalPagos.Visible) panelVerticalPagos.Visible = false;
             else
                 estadosPagos();
@@ -138,14 +150,11 @@ namespace Formularios
         private void button6_Click(object sender, EventArgs e)
         {
 
-            //if (panelVerticalReportes.Width == 188)
-            //{
-            //    panelVerticalReportes.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalReportes.Width = 188;
-            //}
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 188;
+            }
             if (panelVerticalReportes.Visible) panelVerticalReportes.Visible = false;
             else
                 estadosReporte();
@@ -153,6 +162,8 @@ namespace Formularios
 
         private void estadosMantenimiento()
         {
+            panel1.Width = 188;
+            panelContenedor.Width=862;
             panelVertical2.Visible = true;
             panelVerticalAlmacen.Visible = false;
             panelVerticalPagos.Visible = false;

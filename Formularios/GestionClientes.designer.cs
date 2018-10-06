@@ -32,11 +32,11 @@
             this.txtBusqClientes = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBusquedaClientes = new System.Windows.Forms.Button();
             this.btnCancelarClientes = new System.Windows.Forms.Button();
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddCliente = new System.Windows.Forms.Button();
-            this.btnBusquedaClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,19 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
+            // 
+            // btnBusquedaClientes
+            // 
+            this.btnBusquedaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusquedaClientes.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBusquedaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusquedaClientes.Location = new System.Drawing.Point(233, 43);
+            this.btnBusquedaClientes.Name = "btnBusquedaClientes";
+            this.btnBusquedaClientes.Size = new System.Drawing.Size(67, 26);
+            this.btnBusquedaClientes.TabIndex = 21;
+            this.btnBusquedaClientes.Text = "Buscar";
+            this.btnBusquedaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaClientes.UseVisualStyleBackColor = true;
             // 
             // btnCancelarClientes
             // 
@@ -140,23 +153,10 @@
             this.btnAddCliente.UseVisualStyleBackColor = false;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
             // 
-            // btnBusquedaClientes
-            // 
-            this.btnBusquedaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusquedaClientes.Image = global::Formularios.Properties.Resources._015_search1;
-            this.btnBusquedaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusquedaClientes.Location = new System.Drawing.Point(233, 43);
-            this.btnBusquedaClientes.Name = "btnBusquedaClientes";
-            this.btnBusquedaClientes.Size = new System.Drawing.Size(67, 26);
-            this.btnBusquedaClientes.TabIndex = 21;
-            this.btnBusquedaClientes.Text = "Buscar";
-            this.btnBusquedaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusquedaClientes.UseVisualStyleBackColor = true;
-            // 
             // GestionClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 406);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCancelarClientes);

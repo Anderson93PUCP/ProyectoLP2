@@ -44,6 +44,7 @@ namespace Formularios
         private void cargarClientes()
         {
             clientes = new BindingList<Cliente>();
+            /*
             FileStream fs = new FileStream("clientes.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             while (true)
@@ -67,6 +68,7 @@ namespace Formularios
             dgvClientes.Columns[2].HeaderText = "RUC";
             dgvClientes.Columns[3].HeaderText = "EMAIL";
             dgvClientes.Columns[4].HeaderText = "TELEFONO";
+            */
         }
 
         private void btnCancelarPedido_Click(object sender, EventArgs e)
