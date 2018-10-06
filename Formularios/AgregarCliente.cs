@@ -76,7 +76,18 @@ namespace Formularios
             fs.Close();
             MessageBox.Show("El cliente se registro satisfactoriamente",
                 "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Dispose();
+            limpiarCamposCliente();
+            //this.Dispose();
+        }
+        
+        public void limpiarCamposCliente()
+        {
+            txtCelCliente.Clear();
+            txtemailCliente.Clear();
+            txtrazonCliente.Clear();
+            txtrucCliente.Clear();
+            txttelfCliente.Clear();
+            cmbvendedorCliente.SelectedIndex = -1;
         }
 
         private void AgregarCliente_Load(object sender, EventArgs e)
@@ -84,37 +95,7 @@ namespace Formularios
 
         }
 
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbltelefono_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblruc_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lsboxdireccion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbldirecciones_Click(object sender, EventArgs e)
         {
 
         }

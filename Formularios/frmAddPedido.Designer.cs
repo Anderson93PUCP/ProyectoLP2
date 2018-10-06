@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDireccAddPedido = new System.Windows.Forms.TextBox();
             this.txtTransAddPedido = new System.Windows.Forms.TextBox();
-            this.txtVendAddPedido = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblVendeAddPedido = new System.Windows.Forms.Label();
             this.dgwAddPedido = new System.Windows.Forms.DataGridView();
@@ -60,6 +59,8 @@
             this.btnAddDetPedido = new System.Windows.Forms.Button();
             this.btnModDetPedido = new System.Windows.Forms.Button();
             this.btnElimDetPedido = new System.Windows.Forms.Button();
+            this.cmbVendedor = new System.Windows.Forms.ComboBox();
+            this.lblPedidoAddpedido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwAddPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,13 +125,6 @@
             this.txtTransAddPedido.Name = "txtTransAddPedido";
             this.txtTransAddPedido.Size = new System.Drawing.Size(227, 20);
             this.txtTransAddPedido.TabIndex = 6;
-            // 
-            // txtVendAddPedido
-            // 
-            this.txtVendAddPedido.Location = new System.Drawing.Point(118, 106);
-            this.txtVendAddPedido.Name = "txtVendAddPedido";
-            this.txtVendAddPedido.Size = new System.Drawing.Size(227, 20);
-            this.txtVendAddPedido.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
@@ -229,9 +223,10 @@
             // lblDetPedido
             // 
             this.lblDetPedido.AutoSize = true;
-            this.lblDetPedido.Location = new System.Drawing.Point(6, 184);
+            this.lblDetPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetPedido.Location = new System.Drawing.Point(12, 177);
             this.lblDetPedido.Name = "lblDetPedido";
-            this.lblDetPedido.Size = new System.Drawing.Size(76, 13);
+            this.lblDetPedido.Size = new System.Drawing.Size(126, 20);
             this.lblDetPedido.TabIndex = 14;
             this.lblDetPedido.Text = "Detalle Pedido";
             // 
@@ -291,7 +286,7 @@
             this.btnAceptarAddPedido.Name = "btnAceptarAddPedido";
             this.btnAceptarAddPedido.Size = new System.Drawing.Size(78, 32);
             this.btnAceptarAddPedido.TabIndex = 16;
-            this.btnAceptarAddPedido.Text = "Aceptar";
+            this.btnAceptarAddPedido.Text = "Registrar";
             this.btnAceptarAddPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptarAddPedido.UseVisualStyleBackColor = true;
             this.btnAceptarAddPedido.Click += new System.EventHandler(this.btnAceptarAddPedido_Click);
@@ -311,14 +306,15 @@
             // 
             // btnAddDetPedido
             // 
+            this.btnAddDetPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDetPedido.Image = global::Formularios.Properties.Resources.plus__1_;
             this.btnAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddDetPedido.Location = new System.Drawing.Point(705, 160);
             this.btnAddDetPedido.Name = "btnAddDetPedido";
             this.btnAddDetPedido.Size = new System.Drawing.Size(85, 37);
             this.btnAddDetPedido.TabIndex = 13;
-            this.btnAddDetPedido.Text = "Agregar";
-            this.btnAddDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddDetPedido.Text = "Agregar producto";
+            this.btnAddDetPedido.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnAddDetPedido.UseVisualStyleBackColor = true;
             this.btnAddDetPedido.Click += new System.EventHandler(this.btnAddDetPedido_Click);
             // 
@@ -330,7 +326,7 @@
             this.btnModDetPedido.Name = "btnModDetPedido";
             this.btnModDetPedido.Size = new System.Drawing.Size(85, 37);
             this.btnModDetPedido.TabIndex = 12;
-            this.btnModDetPedido.Text = "Modificar";
+            this.btnModDetPedido.Text = "&Modificar";
             this.btnModDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModDetPedido.UseVisualStyleBackColor = true;
             this.btnModDetPedido.Click += new System.EventHandler(this.btnModDetPedido_Click);
@@ -343,16 +339,37 @@
             this.btnElimDetPedido.Name = "btnElimDetPedido";
             this.btnElimDetPedido.Size = new System.Drawing.Size(85, 37);
             this.btnElimDetPedido.TabIndex = 11;
-            this.btnElimDetPedido.Text = "Eliminar";
+            this.btnElimDetPedido.Text = "Eliminar producto";
             this.btnElimDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnElimDetPedido.UseVisualStyleBackColor = true;
             this.btnElimDetPedido.Click += new System.EventHandler(this.btnElimDetPedido_Click);
+            // 
+            // cmbVendedor
+            // 
+            this.cmbVendedor.FormattingEnabled = true;
+            this.cmbVendedor.Location = new System.Drawing.Point(117, 106);
+            this.cmbVendedor.Name = "cmbVendedor";
+            this.cmbVendedor.Size = new System.Drawing.Size(227, 21);
+            this.cmbVendedor.TabIndex = 25;
+            this.cmbVendedor.SelectedIndexChanged += new System.EventHandler(this.cmbVendedor_SelectedIndexChanged);
+            // 
+            // lblPedidoAddpedido
+            // 
+            this.lblPedidoAddpedido.AutoSize = true;
+            this.lblPedidoAddpedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedidoAddpedido.Location = new System.Drawing.Point(12, 9);
+            this.lblPedidoAddpedido.Name = "lblPedidoAddpedido";
+            this.lblPedidoAddpedido.Size = new System.Drawing.Size(69, 20);
+            this.lblPedidoAddpedido.TabIndex = 49;
+            this.lblPedidoAddpedido.Text = "Pedido:";
             // 
             // frmAddPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 460);
+            this.Controls.Add(this.lblPedidoAddpedido);
+            this.Controls.Add(this.cmbVendedor);
             this.Controls.Add(this.txtTotalAddPedido);
             this.Controls.Add(this.lblTotalAddPedido);
             this.Controls.Add(this.btnBuscarDireAddPedido);
@@ -367,7 +384,6 @@
             this.Controls.Add(this.dgwAddPedido);
             this.Controls.Add(this.lblVendeAddPedido);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txtVendAddPedido);
             this.Controls.Add(this.txtTransAddPedido);
             this.Controls.Add(this.txtDireccAddPedido);
             this.Controls.Add(this.label3);
@@ -394,7 +410,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDireccAddPedido;
         private System.Windows.Forms.TextBox txtTransAddPedido;
-        private System.Windows.Forms.TextBox txtVendAddPedido;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblVendeAddPedido;
         private System.Windows.Forms.DataGridView dgwAddPedido;
@@ -418,5 +433,7 @@
         private System.Windows.Forms.Button btnBuscarDireAddPedido;
         private System.Windows.Forms.Label lblTotalAddPedido;
         private System.Windows.Forms.TextBox txtTotalAddPedido;
+        private System.Windows.Forms.ComboBox cmbVendedor;
+        private System.Windows.Forms.Label lblPedidoAddpedido;
     }
 }

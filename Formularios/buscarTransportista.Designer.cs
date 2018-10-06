@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(buscarTransportista));
             this.rbtnRUC = new System.Windows.Forms.RadioButton();
             this.rbtnNombre = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -71,11 +72,11 @@
             // 
             // btnBuscarTran
             // 
-            this.btnBuscarTran.Location = new System.Drawing.Point(159, 37);
+            this.btnBuscarTran.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBuscarTran.Location = new System.Drawing.Point(148, 34);
             this.btnBuscarTran.Name = "btnBuscarTran";
-            this.btnBuscarTran.Size = new System.Drawing.Size(67, 20);
+            this.btnBuscarTran.Size = new System.Drawing.Size(31, 24);
             this.btnBuscarTran.TabIndex = 3;
-            this.btnBuscarTran.Text = "Buscar...";
             this.btnBuscarTran.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -106,21 +107,27 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(294, 258);
+            this.btnAceptar.Image = global::Formularios.Properties.Resources.check;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(289, 249);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(80, 32);
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(204, 258);
+            this.btnCancelar.Image = global::Formularios.Properties.Resources.cross;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(203, 249);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 32);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -136,6 +143,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rbtnNombre);
             this.Controls.Add(this.rbtnRUC);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "buscarTransportista";
             this.Text = "Buscar Transportista";
             this.Load += new System.EventHandler(this.buscarTransportista_Load);

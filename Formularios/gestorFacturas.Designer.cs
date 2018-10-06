@@ -195,13 +195,13 @@
             // btnCancelarFactura
             // 
             this.btnCancelarFactura.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancelarFactura.Image = global::Formularios.Properties.Resources._005_x_button__1_;
+            this.btnCancelarFactura.Image = global::Formularios.Properties.Resources.back__1_;
             this.btnCancelarFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarFactura.Location = new System.Drawing.Point(311, 273);
             this.btnCancelarFactura.Name = "btnCancelarFactura";
             this.btnCancelarFactura.Size = new System.Drawing.Size(96, 42);
             this.btnCancelarFactura.TabIndex = 2;
-            this.btnCancelarFactura.Text = "    Cancelar";
+            this.btnCancelarFactura.Text = "    &Regresar";
             this.btnCancelarFactura.UseVisualStyleBackColor = true;
             this.btnCancelarFactura.Click += new System.EventHandler(this.btnCancelarFactura_Click);
             // 

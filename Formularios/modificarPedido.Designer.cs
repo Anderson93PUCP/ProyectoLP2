@@ -30,7 +30,6 @@
         {
             this.lblFechaP = new System.Windows.Forms.Label();
             this.dtpFechaRModPedido = new System.Windows.Forms.DateTimePicker();
-            this.txtVendModPedido = new System.Windows.Forms.TextBox();
             this.txtTransModPedido = new System.Windows.Forms.TextBox();
             this.txtDireccModPedido = new System.Windows.Forms.TextBox();
             this.lblVend = new System.Windows.Forms.Label();
@@ -60,6 +59,8 @@
             this.btnCancelarModPedido = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblPedido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,17 +76,10 @@
             // 
             // dtpFechaRModPedido
             // 
-            this.dtpFechaRModPedido.Location = new System.Drawing.Point(113, 129);
+            this.dtpFechaRModPedido.Location = new System.Drawing.Point(113, 132);
             this.dtpFechaRModPedido.Name = "dtpFechaRModPedido";
             this.dtpFechaRModPedido.Size = new System.Drawing.Size(227, 20);
             this.dtpFechaRModPedido.TabIndex = 31;
-            // 
-            // txtVendModPedido
-            // 
-            this.txtVendModPedido.Location = new System.Drawing.Point(114, 105);
-            this.txtVendModPedido.Name = "txtVendModPedido";
-            this.txtVendModPedido.Size = new System.Drawing.Size(227, 20);
-            this.txtVendModPedido.TabIndex = 30;
             // 
             // txtTransModPedido
             // 
@@ -150,7 +144,7 @@
             // 
             // btnBuscarDireModPedido
             // 
-            this.btnBuscarDireModPedido.Image = global::Formularios.Properties.Resources._017_magnifier_tool;
+            this.btnBuscarDireModPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBuscarDireModPedido.Location = new System.Drawing.Point(347, 51);
             this.btnBuscarDireModPedido.Name = "btnBuscarDireModPedido";
             this.btnBuscarDireModPedido.Size = new System.Drawing.Size(31, 24);
@@ -160,7 +154,7 @@
             // 
             // btnBuscarTransModPedido
             // 
-            this.btnBuscarTransModPedido.Image = global::Formularios.Properties.Resources._017_magnifier_tool;
+            this.btnBuscarTransModPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBuscarTransModPedido.Location = new System.Drawing.Point(347, 79);
             this.btnBuscarTransModPedido.Name = "btnBuscarTransModPedido";
             this.btnBuscarTransModPedido.Size = new System.Drawing.Size(31, 24);
@@ -170,7 +164,7 @@
             // 
             // btnBuscarCliModPedido
             // 
-            this.btnBuscarCliModPedido.Image = global::Formularios.Properties.Resources._017_magnifier_tool;
+            this.btnBuscarCliModPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBuscarCliModPedido.Location = new System.Drawing.Point(347, 24);
             this.btnBuscarCliModPedido.Name = "btnBuscarCliModPedido";
             this.btnBuscarCliModPedido.Size = new System.Drawing.Size(31, 24);
@@ -187,7 +181,7 @@
             "Verificado",
             "Facturado",
             "Alerta Stock"});
-            this.cbEstadoPedido.Location = new System.Drawing.Point(538, 142);
+            this.cbEstadoPedido.Location = new System.Drawing.Point(624, 129);
             this.cbEstadoPedido.Name = "cbEstadoPedido";
             this.cbEstadoPedido.Size = new System.Drawing.Size(121, 21);
             this.cbEstadoPedido.TabIndex = 36;
@@ -195,14 +189,15 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(489, 148);
+            this.lblEstado.Location = new System.Drawing.Point(518, 132);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.Size = new System.Drawing.Size(91, 13);
             this.lblEstado.TabIndex = 37;
-            this.lblEstado.Text = "Estado:";
+            this.lblEstado.Text = "Etapa del Pedido:";
             // 
             // dgvModPedido
             // 
+            this.dgvModPedido.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvModPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colItemDetPedido,
@@ -279,59 +274,75 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 165);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 177);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 39;
             this.label1.Text = "Detalle Pedido:";
             // 
             // btnAddModDetPed
             // 
-            this.btnAddModDetPed.Location = new System.Drawing.Point(691, 174);
+            this.btnAddModDetPed.Image = global::Formularios.Properties.Resources.plus__1_;
+            this.btnAddModDetPed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddModDetPed.Location = new System.Drawing.Point(703, 160);
             this.btnAddModDetPed.Name = "btnAddModDetPed";
-            this.btnAddModDetPed.Size = new System.Drawing.Size(75, 23);
+            this.btnAddModDetPed.Size = new System.Drawing.Size(85, 37);
             this.btnAddModDetPed.TabIndex = 40;
-            this.btnAddModDetPed.Text = "Agregar";
+            this.btnAddModDetPed.Text = "&Agregar producto";
+            this.btnAddModDetPed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddModDetPed.UseVisualStyleBackColor = true;
             this.btnAddModDetPed.Click += new System.EventHandler(this.btnAddModDetPed_Click);
             // 
             // btnElimModDetPedido
             // 
-            this.btnElimModDetPedido.Location = new System.Drawing.Point(511, 174);
+            this.btnElimModDetPedido.Image = global::Formularios.Properties.Resources.package;
+            this.btnElimModDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElimModDetPedido.Location = new System.Drawing.Point(521, 160);
             this.btnElimModDetPedido.Name = "btnElimModDetPedido";
-            this.btnElimModDetPedido.Size = new System.Drawing.Size(75, 23);
+            this.btnElimModDetPedido.Size = new System.Drawing.Size(85, 37);
             this.btnElimModDetPedido.TabIndex = 41;
-            this.btnElimModDetPedido.Text = "Eliminar";
+            this.btnElimModDetPedido.Text = "Eliminar producto";
+            this.btnElimModDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnElimModDetPedido.UseVisualStyleBackColor = true;
             this.btnElimModDetPedido.Click += new System.EventHandler(this.btnElimModDetPedido_Click);
             // 
             // btnModModDetPedido
             // 
-            this.btnModModDetPedido.Location = new System.Drawing.Point(601, 174);
+            this.btnModModDetPedido.Image = global::Formularios.Properties.Resources.exchange;
+            this.btnModModDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModModDetPedido.Location = new System.Drawing.Point(612, 160);
             this.btnModModDetPedido.Name = "btnModModDetPedido";
-            this.btnModModDetPedido.Size = new System.Drawing.Size(75, 23);
+            this.btnModModDetPedido.Size = new System.Drawing.Size(85, 37);
             this.btnModModDetPedido.TabIndex = 42;
             this.btnModModDetPedido.Text = "Modificar";
+            this.btnModModDetPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModModDetPedido.UseVisualStyleBackColor = true;
             this.btnModModDetPedido.Click += new System.EventHandler(this.btnModModDetPedido_Click);
             // 
             // btnAceptarModPedido
             // 
-            this.btnAceptarModPedido.Location = new System.Drawing.Point(691, 415);
+            this.btnAceptarModPedido.Image = global::Formularios.Properties.Resources.check;
+            this.btnAceptarModPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptarModPedido.Location = new System.Drawing.Point(703, 414);
             this.btnAceptarModPedido.Name = "btnAceptarModPedido";
-            this.btnAceptarModPedido.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarModPedido.Size = new System.Drawing.Size(80, 32);
             this.btnAceptarModPedido.TabIndex = 43;
-            this.btnAceptarModPedido.Text = "Aceptar";
+            this.btnAceptarModPedido.Text = "&Registrar";
+            this.btnAceptarModPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptarModPedido.UseVisualStyleBackColor = true;
             this.btnAceptarModPedido.Click += new System.EventHandler(this.btnAceptarModPedido_Click);
             // 
             // btnCancelarModPedido
             // 
-            this.btnCancelarModPedido.Location = new System.Drawing.Point(601, 415);
+            this.btnCancelarModPedido.Image = global::Formularios.Properties.Resources.cross;
+            this.btnCancelarModPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarModPedido.Location = new System.Drawing.Point(612, 414);
             this.btnCancelarModPedido.Name = "btnCancelarModPedido";
-            this.btnCancelarModPedido.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarModPedido.Size = new System.Drawing.Size(80, 32);
             this.btnCancelarModPedido.TabIndex = 44;
             this.btnCancelarModPedido.Text = "Cancelar";
+            this.btnCancelarModPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarModPedido.UseVisualStyleBackColor = true;
             this.btnCancelarModPedido.Click += new System.EventHandler(this.btnCancelarModPedido_Click);
             // 
@@ -347,16 +358,37 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(593, 385);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(96, 20);
             this.txtTotal.TabIndex = 46;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(113, 105);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(227, 21);
+            this.comboBox1.TabIndex = 47;
+            // 
+            // lblPedido
+            // 
+            this.lblPedido.AutoSize = true;
+            this.lblPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedido.Location = new System.Drawing.Point(13, 9);
+            this.lblPedido.Name = "lblPedido";
+            this.lblPedido.Size = new System.Drawing.Size(69, 20);
+            this.lblPedido.TabIndex = 48;
+            this.lblPedido.Text = "Pedido:";
+            // 
             // modificarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 458);
+            this.Controls.Add(this.lblPedido);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelarModPedido);
@@ -373,7 +405,6 @@
             this.Controls.Add(this.btnBuscarCliModPedido);
             this.Controls.Add(this.lblFechaP);
             this.Controls.Add(this.dtpFechaRModPedido);
-            this.Controls.Add(this.txtVendModPedido);
             this.Controls.Add(this.txtTransModPedido);
             this.Controls.Add(this.txtDireccModPedido);
             this.Controls.Add(this.lblVend);
@@ -381,8 +412,10 @@
             this.Controls.Add(this.lblDirec);
             this.Controls.Add(this.txtClienteModPedido);
             this.Controls.Add(this.lblCliente);
+            this.KeyPreview = true;
             this.Name = "modificarPedido";
             this.Text = "Modificar Pedido";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.modificarPedido_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgvModPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -396,7 +429,6 @@
         private System.Windows.Forms.Button btnBuscarCliModPedido;
         private System.Windows.Forms.Label lblFechaP;
         private System.Windows.Forms.DateTimePicker dtpFechaRModPedido;
-        private System.Windows.Forms.TextBox txtVendModPedido;
         private System.Windows.Forms.TextBox txtTransModPedido;
         private System.Windows.Forms.TextBox txtDireccModPedido;
         private System.Windows.Forms.Label lblVend;
@@ -423,5 +455,7 @@
         private System.Windows.Forms.Button btnCancelarModPedido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblPedido;
     }
 }

@@ -22,10 +22,11 @@ namespace Formularios
             String usr = txtusuario.Text;
             String psw = txtcontraseña.Text;
 
-            if (usr=="adm" & psw == "adm")
+            if (usr == "" & psw == ""/*usr=="adm" & psw == "adm"*/)
             {
                 this.Hide();
-                Panel fb = new Panel();
+                //Panel fb = new Panel();
+                Menu fb = new Menu();
                 if (fb.ShowDialog() ==DialogResult.OK)
                 {   
 
@@ -48,7 +49,5 @@ namespace Formularios
         {
             // se va hacer el flujo de la pregunta (3 preguntas y se selecciona cual deseas contestas)
         }
-
-       
     }
 }

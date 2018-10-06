@@ -55,7 +55,6 @@
             this.lblruc.Size = new System.Drawing.Size(40, 16);
             this.lblruc.TabIndex = 0;
             this.lblruc.Text = "RUC:";
-            this.lblruc.Click += new System.EventHandler(this.lblruc_Click);
             // 
             // lblNombre
             // 
@@ -66,7 +65,6 @@
             this.lblNombre.Size = new System.Drawing.Size(113, 16);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre o Razon:";
-            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // lbltelefono
             // 
@@ -77,7 +75,6 @@
             this.lbltelefono.Size = new System.Drawing.Size(65, 16);
             this.lbltelefono.TabIndex = 2;
             this.lbltelefono.Text = "Telefono:";
-            this.lbltelefono.Click += new System.EventHandler(this.lbltelefono_Click);
             // 
             // lblEmail
             // 
@@ -88,7 +85,6 @@
             this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Email:";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // lbldirecciones
             // 
@@ -99,7 +95,6 @@
             this.lbldirecciones.Size = new System.Drawing.Size(83, 16);
             this.lbldirecciones.TabIndex = 4;
             this.lbldirecciones.Text = "Direcciones:";
-            this.lbldirecciones.Click += new System.EventHandler(this.lbldirecciones_Click);
             // 
             // txtrucCliente
             // 
@@ -131,7 +126,7 @@
             this.txtemailCliente.Location = new System.Drawing.Point(165, 195);
             this.txtemailCliente.Name = "txtemailCliente";
             this.txtemailCliente.Size = new System.Drawing.Size(146, 24);
-            this.txtemailCliente.TabIndex = 8;
+            this.txtemailCliente.TabIndex = 9;
             // 
             // label3
             // 
@@ -143,7 +138,6 @@
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Vendedor";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cmbvendedorCliente
             // 
@@ -151,15 +145,17 @@
             this.cmbvendedorCliente.Location = new System.Drawing.Point(165, 276);
             this.cmbvendedorCliente.Name = "cmbvendedorCliente";
             this.cmbvendedorCliente.Size = new System.Drawing.Size(146, 21);
-            this.cmbvendedorCliente.TabIndex = 15;
+            this.cmbvendedorCliente.TabIndex = 11;
             // 
             // btndireccionesCliente
             // 
+            this.btndireccionesCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndireccionesCliente.Location = new System.Drawing.Point(284, 236);
             this.btndireccionesCliente.Name = "btndireccionesCliente";
             this.btndireccionesCliente.Size = new System.Drawing.Size(27, 23);
-            this.btndireccionesCliente.TabIndex = 16;
+            this.btndireccionesCliente.TabIndex = 10;
             this.btndireccionesCliente.Text = "...";
+            this.btndireccionesCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btndireccionesCliente.UseVisualStyleBackColor = true;
             this.btndireccionesCliente.Click += new System.EventHandler(this.btndirecciones_Click);
             // 
@@ -178,7 +174,7 @@
             this.btncancelarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelarCliente.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelarCliente.Location = new System.Drawing.Point(180, 331);
+            this.btncancelarCliente.Location = new System.Drawing.Point(185, 331);
             this.btncancelarCliente.Name = "btncancelarCliente";
             this.btncancelarCliente.Size = new System.Drawing.Size(85, 36);
             this.btncancelarCliente.TabIndex = 13;
@@ -192,7 +188,7 @@
             this.btnaceptarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptarCliente.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptarCliente.Location = new System.Drawing.Point(66, 331);
+            this.btnaceptarCliente.Location = new System.Drawing.Point(79, 331);
             this.btnaceptarCliente.Name = "btnaceptarCliente";
             this.btnaceptarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnaceptarCliente.TabIndex = 12;
@@ -207,7 +203,7 @@
             this.txtCelCliente.Location = new System.Drawing.Point(165, 155);
             this.txtCelCliente.Name = "txtCelCliente";
             this.txtCelCliente.Size = new System.Drawing.Size(146, 22);
-            this.txtCelCliente.TabIndex = 18;
+            this.txtCelCliente.TabIndex = 8;
             // 
             // AgregarCliente
             // 

@@ -47,9 +47,13 @@ namespace Formularios
 
         private void btnAceptarAddPedido_Click(object sender, EventArgs e)
         {
-            confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
-            v.ShowDialog();
-            
+            // confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
+            //v.ShowDialog();
+            var v = MessageBox.Show("¿Desea agregar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (v == DialogResult.OK)
+            {
+                // se agrega a la base de datos
+            }
             //Close();
         }
 
@@ -62,7 +66,7 @@ namespace Formularios
 
         private void btnBuscarDireAddPedido_Click(object sender, EventArgs e)
         {
-            buscarTransportista ventana = new buscarTransportista();
+            buscarCliente ventana = new buscarCliente();
             ventana.ShowDialog();
         }
 
@@ -81,14 +85,24 @@ namespace Formularios
 
         private void btnElimDetPedido_Click(object sender, EventArgs e)
         {
-            confirmarEliminarPedido v = new confirmarEliminarPedido();
-            v.ShowDialog();
+            var v = MessageBox.Show("¿Seguro desee eliminar el producto", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if(v == DialogResult.OK)
+            {
+                // se actualiza la tabla ps S
+            }
+            //confirmarEliminarPedido v = new confirmarEliminarPedido();
+            //v.ShowDialog();
         }
 
         private void btnModDetPedido_Click(object sender, EventArgs e)
         {
-            detallePedido v = new detallePedido();
+                detallePedido v = new detallePedido();
             v.ShowDialog();
+        }
+
+        private void cmbVendedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
