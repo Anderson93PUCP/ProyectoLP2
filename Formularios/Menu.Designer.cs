@@ -88,7 +88,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 650);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 790);
             this.MenuVertical.TabIndex = 0;
             // 
             // button6
@@ -188,6 +188,7 @@
             // 
             // BarraTitulo
             // 
+            this.BarraTitulo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BarraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BarraTitulo.Controls.Add(this.iconminimizar);
             this.BarraTitulo.Controls.Add(this.iconrestaurar);
@@ -206,7 +207,7 @@
             this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
-            this.iconminimizar.Location = new System.Drawing.Point(975, 12);
+            this.iconminimizar.Location = new System.Drawing.Point(999, 12);
             this.iconminimizar.Name = "iconminimizar";
             this.iconminimizar.Size = new System.Drawing.Size(18, 18);
             this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -264,6 +265,7 @@
             this.iconmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconmaximizar.TabIndex = 3;
             this.iconmaximizar.TabStop = false;
+            this.iconmaximizar.Visible = false;
             this.iconmaximizar.Click += new System.EventHandler(this.iconmaximizar_Click);
             // 
             // panelContenedor
@@ -271,7 +273,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelContenedor.Location = new System.Drawing.Point(438, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(862, 600);
+            this.panelContenedor.Size = new System.Drawing.Size(862, 740);
             this.panelContenedor.TabIndex = 4;
             // 
             // panel1
@@ -285,7 +287,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(250, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 600);
+            this.panel1.Size = new System.Drawing.Size(189, 740);
             this.panel1.TabIndex = 5;
             // 
             // panelVerticalAlmacen
@@ -296,7 +298,7 @@
             this.panelVerticalAlmacen.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalAlmacen.Location = new System.Drawing.Point(752, 0);
             this.panelVerticalAlmacen.Name = "panelVerticalAlmacen";
-            this.panelVerticalAlmacen.Size = new System.Drawing.Size(220, 600);
+            this.panelVerticalAlmacen.Size = new System.Drawing.Size(220, 740);
             this.panelVerticalAlmacen.TabIndex = 28;
             // 
             // btnGestionAlmacenes
@@ -337,7 +339,7 @@
             this.panelVerticalPedidos.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalPedidos.Location = new System.Drawing.Point(564, 0);
             this.panelVerticalPedidos.Name = "panelVerticalPedidos";
-            this.panelVerticalPedidos.Size = new System.Drawing.Size(188, 600);
+            this.panelVerticalPedidos.Size = new System.Drawing.Size(188, 740);
             this.panelVerticalPedidos.TabIndex = 25;
             // 
             // btnGestionPedidos
@@ -378,7 +380,7 @@
             this.panelVerticalReportes.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalReportes.Location = new System.Drawing.Point(376, 0);
             this.panelVerticalReportes.Name = "panelVerticalReportes";
-            this.panelVerticalReportes.Size = new System.Drawing.Size(188, 600);
+            this.panelVerticalReportes.Size = new System.Drawing.Size(188, 740);
             this.panelVerticalReportes.TabIndex = 26;
             // 
             // btnReporteProductos
@@ -421,7 +423,7 @@
             this.panelVertical2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVertical2.Location = new System.Drawing.Point(188, 0);
             this.panelVertical2.Name = "panelVertical2";
-            this.panelVertical2.Size = new System.Drawing.Size(188, 600);
+            this.panelVertical2.Size = new System.Drawing.Size(188, 740);
             this.panelVertical2.TabIndex = 23;
             // 
             // btnProveedores
@@ -492,7 +494,7 @@
             this.panelVerticalPagos.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalPagos.Location = new System.Drawing.Point(0, 0);
             this.panelVerticalPagos.Name = "panelVerticalPagos";
-            this.panelVerticalPagos.Size = new System.Drawing.Size(188, 600);
+            this.panelVerticalPagos.Size = new System.Drawing.Size(188, 740);
             this.panelVerticalPagos.TabIndex = 24;
             // 
             // btnVendedores
@@ -512,9 +514,8 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1300, 790);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.BarraTitulo);
