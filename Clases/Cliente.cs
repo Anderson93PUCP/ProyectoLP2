@@ -16,7 +16,7 @@ namespace ProyectoLP2
 
         }
 
-        public Cliente(int ruc_vendedor, string nombre, List<int> lista, string ruc, string email, int telefono,int celular) : base
+        public Cliente(int ruc_vendedor, string nombre, List<Direccion> lista, string ruc, string email, int telefono,int celular) : base
             (nombre, lista, ruc, email, telefono,celular)
         {
             this.Ruc_vendedor = ruc_vendedor;

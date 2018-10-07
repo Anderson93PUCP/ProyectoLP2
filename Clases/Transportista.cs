@@ -16,7 +16,7 @@ namespace ProyectoLP2
 
         }
 
-        public Transportista(Alcance alcance, List<string> destinos, string nombre, List<int> lista, string ruc, string email, int telefono,int celular) : base
+        public Transportista(Alcance alcance, List<string> destinos, string nombre, List<Direccion> lista, string ruc, string email, int telefono,int celular) : base
             (nombre, lista, ruc, email, telefono,celular)
         {
             this.Alcance = alcance;
