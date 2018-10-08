@@ -62,6 +62,7 @@
             // dgvClientes
             // 
             this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -74,6 +75,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.btnBusquedaClientes);
             this.groupBox1.Controls.Add(this.txtBusqClientes);
             this.groupBox1.Controls.Add(this.rbtnBusqRucCLiente);
@@ -114,6 +116,7 @@
             // 
             // btnElimCliente
             // 
+            this.btnElimCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnElimCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnElimCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElimCliente.Image = global::Formularios.Properties.Resources._008_document;
@@ -128,6 +131,7 @@
             // 
             // btnModCliente
             // 
+            this.btnModCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnModCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnModCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModCliente.Image = global::Formularios.Properties.Resources.file__3_;
@@ -142,6 +146,7 @@
             // 
             // btnAddCliente
             // 
+            this.btnAddCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCliente.Image = global::Formularios.Properties.Resources.plus__1_;

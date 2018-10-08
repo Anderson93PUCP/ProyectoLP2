@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
-            this.txtBusqPedido = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.colRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +36,10 @@
             this.itememail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
+            this.txtBusqPedido = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnBusquedaPedido = new System.Windows.Forms.Button();
             this.btnElimCliente = new System.Windows.Forms.Button();
@@ -52,6 +52,7 @@
             // dgvClientes
             // 
             this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -67,48 +68,6 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(699, 217);
             this.dgvClientes.TabIndex = 28;
-            // 
-            // rbtnBusqRuc
-            // 
-            this.rbtnBusqRuc.AutoSize = true;
-            this.rbtnBusqRuc.Location = new System.Drawing.Point(453, 44);
-            this.rbtnBusqRuc.Name = "rbtnBusqRuc";
-            this.rbtnBusqRuc.Size = new System.Drawing.Size(63, 17);
-            this.rbtnBusqRuc.TabIndex = 27;
-            this.rbtnBusqRuc.TabStop = true;
-            this.rbtnBusqRuc.Text = "Por DNI";
-            this.rbtnBusqRuc.UseVisualStyleBackColor = true;
-            // 
-            // txtBusqPedido
-            // 
-            this.txtBusqPedido.Location = new System.Drawing.Point(532, 44);
-            this.txtBusqPedido.Name = "txtBusqPedido";
-            this.txtBusqPedido.Size = new System.Drawing.Size(119, 20);
-            this.txtBusqPedido.TabIndex = 26;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(453, 84);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(66, 17);
-            this.radioButton1.TabIndex = 31;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Por ROL";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "",
-            "Administrador",
-            "Operario",
-            "Vendedor"});
-            this.comboBox1.Location = new System.Drawing.Point(532, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 32;
             // 
             // colRUC
             // 
@@ -145,8 +104,55 @@
             this.ROL.HeaderText = "ROL";
             this.ROL.Name = "ROL";
             // 
+            // rbtnBusqRuc
+            // 
+            this.rbtnBusqRuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbtnBusqRuc.AutoSize = true;
+            this.rbtnBusqRuc.Location = new System.Drawing.Point(453, 44);
+            this.rbtnBusqRuc.Name = "rbtnBusqRuc";
+            this.rbtnBusqRuc.Size = new System.Drawing.Size(63, 17);
+            this.rbtnBusqRuc.TabIndex = 27;
+            this.rbtnBusqRuc.TabStop = true;
+            this.rbtnBusqRuc.Text = "Por DNI";
+            this.rbtnBusqRuc.UseVisualStyleBackColor = true;
+            // 
+            // txtBusqPedido
+            // 
+            this.txtBusqPedido.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBusqPedido.Location = new System.Drawing.Point(532, 44);
+            this.txtBusqPedido.Name = "txtBusqPedido";
+            this.txtBusqPedido.Size = new System.Drawing.Size(119, 20);
+            this.txtBusqPedido.TabIndex = 26;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(453, 84);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(66, 17);
+            this.radioButton1.TabIndex = 31;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Por ROL";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "",
+            "Administrador",
+            "Operario",
+            "Vendedor"});
+            this.comboBox1.Location = new System.Drawing.Point(532, 84);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 32;
+            // 
             // btnVer
             // 
+            this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Image = global::Formularios.Properties.Resources.file;
             this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,6 +165,7 @@
             // 
             // btnBusquedaPedido
             // 
+            this.btnBusquedaPedido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBusquedaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBusquedaPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBusquedaPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,6 +179,7 @@
             // 
             // btnElimCliente
             // 
+            this.btnElimCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnElimCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnElimCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElimCliente.Image = global::Formularios.Properties.Resources._008_document;
@@ -185,6 +193,7 @@
             // 
             // btnModCliente
             // 
+            this.btnModCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnModCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnModCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModCliente.Image = global::Formularios.Properties.Resources.file__3_;
@@ -198,6 +207,7 @@
             // 
             // btnAddUsuario
             // 
+            this.btnAddUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddUsuario.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUsuario.Image = global::Formularios.Properties.Resources.plus__1_;
@@ -222,6 +232,7 @@
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Visible = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // GestionUsuarios
