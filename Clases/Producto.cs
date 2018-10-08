@@ -15,13 +15,14 @@ namespace ProyectoLP2
         private Medida um;
         private char tipo;
         private int minimoStock;
+        private List<Proveedor> listaProveedores;
 
         public Producto()
         {
 
         }
 
-        public Producto(string codigo, string nombre, string descripcion, double precio, Medida um, char tipo, int minimoStock)
+        public Producto(string codigo, string nombre, string descripcion, double precio, Medida um, char tipo, int minimoStock, List<Proveedor> listaProveedores)
         {
             this.Codigo = codigo;
             this.Descripcion = descripcion;
@@ -29,6 +30,7 @@ namespace ProyectoLP2
             this.Um = um;
             this.Tipo = tipo;
             this.MinimoStock = minimoStock;
+            this.listaProveedores = listaProveedores;
         }
 
         public string Codigo { get => codigo; set => codigo = value; }
@@ -38,5 +40,6 @@ namespace ProyectoLP2
         public Medida Um { get => um; set => um = value; }
         public char Tipo { get => tipo; set => tipo = value; }
         public int MinimoStock { get => minimoStock; set => minimoStock = value; }
+        public List<Proveedor> ListaProveedores { get => listaProveedores; set => listaProveedores = value; }
     }
 }

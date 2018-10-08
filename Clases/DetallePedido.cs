@@ -9,7 +9,7 @@ namespace ProyectoLP2
     public class DetallePedido
     {
         private int idPedido;
-        private String Idproducto;
+        private Producto producto;
         private int cantidad;
         private double subtotal;
         private double desc;
@@ -20,19 +20,19 @@ namespace ProyectoLP2
 
         }
 
-        public DetallePedido(int idPedido, string idproducto, int cantidad, double subtotal, double desc)
+        public DetallePedido(int idPedido, Producto producto, int cantidad, double subtotal, double desc)
         {
             this.idPedido = idPedido;
-            Idproducto = idproducto;
+            this.Producto = producto;
             this.cantidad = cantidad;
             this.subtotal = subtotal;
             this.desc = desc;
         }
 
         public int IdPedido { get => idPedido; set => idPedido = value; }
-        public string Idproducto1 { get => Idproducto; set => Idproducto = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public double Subtotal { get => subtotal; set => subtotal = value; }
         public double Desc { get => desc; set => desc = value; }
+        public Producto Producto { get => producto; set => producto = value; }
     }
 }

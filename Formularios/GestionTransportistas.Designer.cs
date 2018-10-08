@@ -47,6 +47,7 @@
             // dgvTransportistas
             // 
             this.dgvTransportistas.AllowUserToOrderColumns = true;
+            this.dgvTransportistas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvTransportistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransportistas.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvTransportistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -88,10 +89,12 @@
             this.btnCancelarPedido.TabIndex = 28;
             this.btnCancelarPedido.Text = "Cancelar";
             this.btnCancelarPedido.UseVisualStyleBackColor = true;
+            this.btnCancelarPedido.Visible = false;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
             // btnVer
             // 
+            this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Image = global::Formularios.Properties.Resources.file;
             this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,6 +107,7 @@
             // 
             // btnBusquedaPedido
             // 
+            this.btnBusquedaPedido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBusquedaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBusquedaPedido.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBusquedaPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -117,6 +121,7 @@
             // 
             // rbtnBusqRuc
             // 
+            this.rbtnBusqRuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rbtnBusqRuc.AutoSize = true;
             this.rbtnBusqRuc.Location = new System.Drawing.Point(452, 16);
             this.rbtnBusqRuc.Name = "rbtnBusqRuc";
@@ -128,6 +133,7 @@
             // 
             // txtBusqPedido
             // 
+            this.txtBusqPedido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBusqPedido.Location = new System.Drawing.Point(452, 37);
             this.txtBusqPedido.Name = "txtBusqPedido";
             this.txtBusqPedido.Size = new System.Drawing.Size(212, 20);
@@ -135,6 +141,7 @@
             // 
             // btnElimCliente
             // 
+            this.btnElimCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnElimCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnElimCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElimCliente.Image = global::Formularios.Properties.Resources._008_document;
@@ -148,6 +155,7 @@
             // 
             // btnModCliente
             // 
+            this.btnModCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnModCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnModCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModCliente.Image = global::Formularios.Properties.Resources.file__3_;
@@ -161,6 +169,7 @@
             // 
             // btnAddCliente
             // 
+            this.btnAddCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCliente.Image = global::Formularios.Properties.Resources.plus__1_;

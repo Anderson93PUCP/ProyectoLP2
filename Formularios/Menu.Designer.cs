@@ -455,6 +455,7 @@
             this.btnTransportistas.TabIndex = 15;
             this.btnTransportistas.Text = "Transportistas";
             this.btnTransportistas.UseVisualStyleBackColor = true;
+            this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
             // 
             // btnClientes
             // 
@@ -486,6 +487,7 @@
             this.btnUsuarios.TabIndex = 13;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // panelVerticalPagos
             // 
