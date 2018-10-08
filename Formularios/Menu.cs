@@ -36,18 +36,31 @@ namespace Formularios
                 {
                     MenuVertical.Width = 70;
                     panel1.Width = 0;
+                    estadosInicialesSubMenus();
                     panelContenedor.Width += 368;
-                }else
+                }
+                else
                 {
                     MenuVertical.Width = 70;
                     panelContenedor.Width += 188;
                 }
-                
-            }else
-            {
-                    MenuVertical.Width = 250;
-                    panelContenedor.Width =1042;
+
             }
+            else
+            {
+                MenuVertical.Width = 250;
+                panelContenedor.Width = 1042;
+            }
+
+        }
+
+        private void estadosInicialesSubMenus()
+        {
+            panelVertical2.Visible = false;
+            panelVerticalAlmacen.Visible = false;
+            panelVerticalPagos.Visible = false;
+            panelVerticalPedidos.Visible = false;
+            panelVerticalReportes.Visible = false;
         }
 
         private void iconcerrar_Click(object sender, EventArgs e)
