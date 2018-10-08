@@ -20,7 +20,10 @@ namespace Formularios
         private void button1_Click(object sender, EventArgs e)
         {
              frmAddPedido ventaAddPedio = new frmAddPedido();
-            ventaAddPedio.ShowDialog();
+            if (ventaAddPedio.ShowDialog() == DialogResult.OK)
+            {
+
+            }
            // AgregarPedido ventanaAgregarpedido = new AgregarPedido();
             //this.Hide();
             //ventanaAgregarpedido.ShowDialog();
