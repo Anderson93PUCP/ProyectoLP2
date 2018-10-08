@@ -349,5 +349,20 @@ namespace Formularios
         {
             AbrirFormInPanel(new GestionTransportistas());
         }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new gestorFacturas()); 
+        }
+
+        private void btnGestionPedidos_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new GestionPedidos()); 
+        }
+
+        private void btnVendedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new frmAdministrarComisionVendedores()); 
+        }
     }
 }

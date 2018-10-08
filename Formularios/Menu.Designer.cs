@@ -356,6 +356,7 @@
             this.btnGestionPedidos.TabIndex = 18;
             this.btnGestionPedidos.Text = "Gestion de Pedidos";
             this.btnGestionPedidos.UseVisualStyleBackColor = true;
+            this.btnGestionPedidos.Click += new System.EventHandler(this.btnGestionPedidos_Click);
             // 
             // btnFactura
             // 
@@ -371,6 +372,7 @@
             this.btnFactura.TabIndex = 17;
             this.btnFactura.Text = "Factura";
             this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // panelVerticalReportes
             // 
@@ -513,6 +515,7 @@
             this.btnVendedores.TabIndex = 21;
             this.btnVendedores.Text = "Vendedores";
             this.btnVendedores.UseVisualStyleBackColor = true;
+            this.btnVendedores.Click += new System.EventHandler(this.btnVendedores_Click);
             // 
             // Menu
             // 
