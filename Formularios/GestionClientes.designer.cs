@@ -109,6 +109,7 @@
             this.btnCancelarClientes.Text = "Cancelar";
             this.btnCancelarClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarClientes.UseVisualStyleBackColor = true;
+            this.btnCancelarClientes.Visible = false;
             this.btnCancelarClientes.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
             // btnElimCliente
