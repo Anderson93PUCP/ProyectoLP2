@@ -8,33 +8,33 @@ namespace ProyectoLP2
 {
     public class Venta
     {
-        private string IDUsuario;
+        private Vendedor vendedor;
         private int idVenta;
-        private string ruc_cliente;
+        private Cliente cliente;
+        private Transportista transportista;
         private DateTime fecha_e;
-        private int ldetalles;
         private EstadoVenta estado;
 
         public Venta()
         {
 
         }
-
-        public Venta(string IDUsuario, int id, string ruc_cliente, DateTime fecha_e, int ldetalles, EstadoVenta estado)
+    
+        public Venta(Vendedor vendedor, int id, Cliente cliente, DateTime fecha_e, int ldetalles, EstadoVenta estado,Transportista transportista)
         {
-            this.IDUsuario1 = IDUsuario;
+            this.Vendedor = vendedor;
             this.IdVenta = id;
-            this.Ruc_cliente = ruc_cliente;
+            this.Cliente = cliente;
             this.Fecha_e = fecha_e;
-            this.Ldetalles = ldetalles;
             this.Estado = estado;
+            this.transportista = transportista;
         }
 
-        public string IDUsuario1 { get => IDUsuario; set => IDUsuario = value; }
-        public int IdVenta { get => idVenta; set => idVenta = value; }
-        public string Ruc_cliente { get => ruc_cliente; set => ruc_cliente = value; }
-        public DateTime Fecha_e { get => fecha_e; set => fecha_e = value; }
-        public int Ldetalles { get => ldetalles; set => ldetalles = value; }
+         public int IdVenta { get => idVenta; set => idVenta = value; }
+         public DateTime Fecha_e { get => fecha_e; set => fecha_e = value; }
         public EstadoVenta Estado { get => estado; set => estado = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
+        public Transportista Transportista { get => transportista; set => transportista = value; }
+        public Vendedor Vendedor { get => vendedor; set => vendedor = value; }
     }
 }

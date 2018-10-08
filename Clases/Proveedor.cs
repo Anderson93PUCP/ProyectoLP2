@@ -16,8 +16,8 @@ namespace ProyectoLP2
 
         }
 
-        public Proveedor(List<string> lista_productos, string nombre, List<int> lista, string ruc, string email, int telefono,int celular) :
-            base(nombre, lista, ruc, email, telefono,celular)
+        public Proveedor(List<string> lista_productos, string nombre, List<Direccion> lista, string ruc, string email, int telefono,int celular,int id,string apellidoP,string apellidoM) :
+            base(nombre, lista, ruc, email, telefono,celular,id,apellidoP,apellidoM)
         {
             this.ListaProductos = lista_productos;
         }

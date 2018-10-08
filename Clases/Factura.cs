@@ -15,15 +15,16 @@ namespace ProyectoLP2
         private double total_imp;
         private double pagoVendedor;
         private int estadoPagoVendedor;
+        private List<DetalleFactura> detallesFactura;
 
         public Factura()
         {
 
         }
 
-        public Factura(int nuGuia, int nPedido, double valor_neto, double total_imp, double pagoVendedor, int estadoPagoVendedor,
-             string IDUsuario, int id, string ruc_cliente, DateTime fecha_e, int ldetalles, EstadoVenta estado) :
-            base(IDUsuario, id, ruc_cliente, fecha_e, ldetalles, estado)
+        public Factura(int nuGuia, int nPedido, double valor_neto, double total_imp, double pagoVendedor, int estadoPagoVendedor, List<DetalleFactura> detallesFactura,
+             Vendedor vendedor, int id, Cliente cliente, DateTime fecha_e, int ldetalles, EstadoVenta estado, Transportista transportista) :
+            base(vendedor, id, cliente, fecha_e, ldetalles, estado, transportista)
         {
             this.NuGuia = nuGuia;
             this.NPedido = nPedido;
@@ -31,6 +32,7 @@ namespace ProyectoLP2
             this.Total_imp = total_imp;
             this.PagoVendedor = pagoVendedor;
             this.EstadoPagoVendedor = estadoPagoVendedor;
+            this.DetallesFactura = detallesFactura;
         }
 
         public int NuGuia { get => nuGuia; set => nuGuia = value; }
@@ -39,5 +41,6 @@ namespace ProyectoLP2
         public double Total_imp { get => total_imp; set => total_imp = value; }
         public double PagoVendedor { get => pagoVendedor; set => pagoVendedor = value; }
         public int EstadoPagoVendedor { get => estadoPagoVendedor; set => estadoPagoVendedor = value; }
+        public List<DetalleFactura> DetallesFactura { get => detallesFactura; set => detallesFactura = value; }
     }
 }
