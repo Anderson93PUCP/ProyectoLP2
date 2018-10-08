@@ -452,6 +452,10 @@
       <Project>{9c567c9c-717c-4495-9371-4065b109a211}</Project>
       <Name>Clases</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
+      <Project>{6AAFB77D-9155-433A-8CDF-62D22DDA41DF}</Project>
+      <Name>LogicaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pagos.png" />
