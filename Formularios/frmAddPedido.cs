@@ -15,9 +15,11 @@ namespace Formularios
     {
         private Cliente cliente;
         private Transportista transporte;
+        private Direccion direccion;
         public frmAddPedido()
         {
             InitializeComponent();
+            btnBuscarDireAddPedido.Enabled = false;
 
         }
 
@@ -64,10 +66,13 @@ namespace Formularios
         private void btnBuscarCliAddPedido_Click(object sender, EventArgs e)
         {
             buscarCliente v = new buscarCliente();
+            cliente = new Cliente();
             if  (v.ShowDialog() == DialogResult.OK)
             {
+                cliente = v.ClienteSeleccionado;
                 txtClienteAddPedido.Text = v.ClienteSeleccionado.Nombre;
-
+                txtVendedor.Text = cliente.Dni_vendedor.ToString();
+                btnBuscarDireAddPedido.Enabled = true;
             }
             
 
@@ -75,8 +80,13 @@ namespace Formularios
 
         private void btnBuscarDireAddPedido_Click(object sender, EventArgs e)
         {
-            buscarCliente ventana = new buscarCliente();
-            ventana.ShowDialog();
+            buscarDireccion ventana = new buscarDireccion(cliente.Id);
+            if (ventana.ShowDialog() == DialogResult.OK)
+            {
+                direccion = new Direccion();
+                direccion = ventana.DireccionSeleccionada;
+                txtDireccAddPedido.Text = direccion.DetalleDireccion;
+            }
         }
 
         private void btnBuscarTransAddPedido_Click(object sender, EventArgs e)

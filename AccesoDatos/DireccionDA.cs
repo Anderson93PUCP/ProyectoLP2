@@ -1,5 +1,6 @@
 ﻿using Clases;
 using MySql.Data.MySqlClient;
+using ProyectoLP2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,6 +107,34 @@ namespace AccesoDatos
             {
                 return null;
             }
+        }
+
+        public BindingList<Direccion> listarDireccionCliente(int idCliente)
+        {
+            BindingList<Direccion> lista = new BindingList<Direccion> ();
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            String sql = "select * from n_direccion_cli where id_cliente= "+idCliente;
+            cmd.CommandText = sql;
+            cmd.Connection = conn;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Direccion direccion = new Direccion();
+                direccion.Id = reader.GetInt32("id_direccion");
+                direccion.DetalleDireccion = reader.GetString("direccion");
+                direccion.Departamento = reader.GetString("departamento");
+                direccion.Provincia = reader.GetString("provincia");
+                direccion.Distrito = reader.GetString("distrito");
+                lista.Add(direccion);
+            }
+
+
+            conn.Close();
+            return lista;
+
         }
     }
 }

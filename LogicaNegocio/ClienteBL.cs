@@ -22,6 +22,7 @@ namespace LogicaNegocio
             return clienteDA.listarClientes();
         }
 
+
         public BindingList<Cliente> listarCliente(string ruc)
         {
             return clienteDA.listarClientes(ruc);
@@ -31,5 +32,6 @@ namespace LogicaNegocio
         {
             return clienteDA.registrarCliente(cliente);
         }
+
     }
 }
