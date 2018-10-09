@@ -65,7 +65,7 @@ namespace Formularios
 
         private void btnBuscarCliAddPedido_Click(object sender, EventArgs e)
         {
-            buscarCliente v = new buscarCliente();
+            buscarCliente v = new buscarCliente(); 
             cliente = new Cliente();
             if  (v.ShowDialog() == DialogResult.OK)
             {
