@@ -26,6 +26,7 @@ namespace Formularios
             ClienteBL c = new ClienteBL();
             lista = new BindingList<Cliente>();
             lista = c.listarCliente();
+            dgvClientes.AutoGenerateColumns = false;
             dgvClientes.DataSource = lista;
             
         }

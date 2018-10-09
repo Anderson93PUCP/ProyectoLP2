@@ -31,17 +31,16 @@
             this.rbtnDep = new System.Windows.Forms.RadioButton();
             this.rbtnProv = new System.Windows.Forms.RadioButton();
             this.rbtnDist = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbuscarDire = new System.Windows.Forms.TextBox();
             this.btnBuscarDire = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colIDBuscarDir = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDirecciones = new System.Windows.Forms.DataGridView();
             this.colDirecBuscarDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDepBuscaDire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProvBuscarDirec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDistBuscarDire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAcpetarBuscDire = new System.Windows.Forms.Button();
             this.btnCancelarBuscarDire = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDirecciones)).BeginInit();
             this.SuspendLayout();
             // 
             // rbtnDep
@@ -78,12 +77,12 @@
             this.rbtnDist.UseVisualStyleBackColor = true;
             this.rbtnDist.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // textBox1
+            // txtbuscarDire
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtbuscarDire.Location = new System.Drawing.Point(22, 37);
+            this.txtbuscarDire.Name = "txtbuscarDire";
+            this.txtbuscarDire.Size = new System.Drawing.Size(165, 20);
+            this.txtbuscarDire.TabIndex = 3;
             // 
             // btnBuscarDire
             // 
@@ -93,49 +92,47 @@
             this.btnBuscarDire.Size = new System.Drawing.Size(31, 24);
             this.btnBuscarDire.TabIndex = 4;
             this.btnBuscarDire.UseVisualStyleBackColor = true;
+            this.btnBuscarDire.Click += new System.EventHandler(this.btnBuscarDire_Click);
             // 
-            // dataGridView1
+            // dgvDirecciones
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIDBuscarDir,
+            this.dgvDirecciones.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgvDirecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDirecciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDirecBuscarDireccion,
             this.colDepBuscaDire,
             this.colProvBuscarDirec,
             this.colDistBuscarDire});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 80);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 150);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colIDBuscarDir
-            // 
-            this.colIDBuscarDir.HeaderText = "ID";
-            this.colIDBuscarDir.Name = "colIDBuscarDir";
-            this.colIDBuscarDir.ReadOnly = true;
+            this.dgvDirecciones.Location = new System.Drawing.Point(22, 80);
+            this.dgvDirecciones.Name = "dgvDirecciones";
+            this.dgvDirecciones.Size = new System.Drawing.Size(543, 150);
+            this.dgvDirecciones.TabIndex = 5;
+            this.dgvDirecciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colDirecBuscarDireccion
             // 
+            this.colDirecBuscarDireccion.DataPropertyName = "DetalleDireccion";
             this.colDirecBuscarDireccion.HeaderText = "Direccion";
             this.colDirecBuscarDireccion.Name = "colDirecBuscarDireccion";
             this.colDirecBuscarDireccion.ReadOnly = true;
             // 
             // colDepBuscaDire
             // 
+            this.colDepBuscaDire.DataPropertyName = "Departamento";
             this.colDepBuscaDire.HeaderText = "Departamento";
             this.colDepBuscaDire.Name = "colDepBuscaDire";
             this.colDepBuscaDire.ReadOnly = true;
             // 
             // colProvBuscarDirec
             // 
+            this.colProvBuscarDirec.DataPropertyName = "Provincia";
             this.colProvBuscarDirec.HeaderText = "Provincia";
             this.colProvBuscarDirec.Name = "colProvBuscarDirec";
             this.colProvBuscarDirec.ReadOnly = true;
             // 
             // colDistBuscarDire
             // 
+            this.colDistBuscarDire.DataPropertyName = "Distrito";
             this.colDistBuscarDire.HeaderText = "Distrito";
             this.colDistBuscarDire.Name = "colDistBuscarDire";
             this.colDistBuscarDire.ReadOnly = true;
@@ -173,15 +170,15 @@
             this.ClientSize = new System.Drawing.Size(584, 273);
             this.Controls.Add(this.btnCancelarBuscarDire);
             this.Controls.Add(this.btnAcpetarBuscDire);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDirecciones);
             this.Controls.Add(this.btnBuscarDire);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbuscarDire);
             this.Controls.Add(this.rbtnDist);
             this.Controls.Add(this.rbtnProv);
             this.Controls.Add(this.rbtnDep);
             this.Name = "buscarDireccion";
             this.Text = "buscarDireccion";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDirecciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,15 +189,14 @@
         private System.Windows.Forms.RadioButton rbtnDep;
         private System.Windows.Forms.RadioButton rbtnProv;
         private System.Windows.Forms.RadioButton rbtnDist;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbuscarDire;
         private System.Windows.Forms.Button btnBuscarDire;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDBuscarDir;
+        private System.Windows.Forms.DataGridView dgvDirecciones;
+        private System.Windows.Forms.Button btnAcpetarBuscDire;
+        private System.Windows.Forms.Button btnCancelarBuscarDire;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDirecBuscarDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDepBuscaDire;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProvBuscarDirec;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDistBuscarDire;
-        private System.Windows.Forms.Button btnAcpetarBuscDire;
-        private System.Windows.Forms.Button btnCancelarBuscarDire;
     }
 }
