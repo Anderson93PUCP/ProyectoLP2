@@ -38,7 +38,7 @@
             this.colEstadoPagoVendAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPagar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotalComision = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -120,18 +120,18 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;
             // 
-            // button1
+            // btnPagar
             // 
-            this.button1.Image = global::Formularios.Properties.Resources._026_cash;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(596, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 35);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "&Pagar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPagar.Image = global::Formularios.Properties.Resources._026_cash;
+            this.btnPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPagar.Location = new System.Drawing.Point(596, 32);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(64, 35);
+            this.btnPagar.TabIndex = 4;
+            this.btnPagar.Text = "&Pagar";
+            this.btnPagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -183,7 +183,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotalComision);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblVendedor);
             this.Controls.Add(this.dataGridView1);
@@ -207,7 +207,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoPagoVendAdminComision;
         private System.Windows.Forms.Label lblVendedor;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotalComision;
         private System.Windows.Forms.Label label2;
