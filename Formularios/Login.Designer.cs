@@ -80,6 +80,7 @@
             this.txtcontraseña.Size = new System.Drawing.Size(197, 22);
             this.txtcontraseña.TabIndex = 3;
             this.txtcontraseña.UseSystemPasswordChar = true;
+            this.txtcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcontraseña_KeyPress);
             // 
             // btningresar
             // 

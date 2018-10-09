@@ -42,8 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtsalario = new System.Windows.Forms.TextBox();
+            this.lblsalario = new System.Windows.Forms.Label();
             this.txtcomision = new System.Windows.Forms.TextBox();
             this.lblcomision = new System.Windows.Forms.Label();
             this.btncancelar = new System.Windows.Forms.Button();
@@ -181,28 +181,28 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
             this.dateTimePicker1.TabIndex = 34;
             // 
-            // textBox2
+            // txtsalario
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(441, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 24);
-            this.textBox2.TabIndex = 36;
+            this.txtsalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsalario.Location = new System.Drawing.Point(441, 78);
+            this.txtsalario.Name = "txtsalario";
+            this.txtsalario.Size = new System.Drawing.Size(146, 24);
+            this.txtsalario.TabIndex = 36;
             // 
-            // label4
+            // lblsalario
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(348, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 16);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Salario (S/.):";
+            this.lblsalario.AutoSize = true;
+            this.lblsalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsalario.Location = new System.Drawing.Point(348, 83);
+            this.lblsalario.Name = "lblsalario";
+            this.lblsalario.Size = new System.Drawing.Size(81, 16);
+            this.lblsalario.TabIndex = 35;
+            this.lblsalario.Text = "Salario (S/.):";
             // 
             // txtcomision
             // 
             this.txtcomision.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcomision.Location = new System.Drawing.Point(441, 118);
+            this.txtcomision.Location = new System.Drawing.Point(441, 78);
             this.txtcomision.Name = "txtcomision";
             this.txtcomision.Size = new System.Drawing.Size(146, 24);
             this.txtcomision.TabIndex = 38;
@@ -212,7 +212,7 @@
             // 
             this.lblcomision.AutoSize = true;
             this.lblcomision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcomision.Location = new System.Drawing.Point(348, 123);
+            this.lblcomision.Location = new System.Drawing.Point(348, 83);
             this.lblcomision.Name = "lblcomision";
             this.lblcomision.Size = new System.Drawing.Size(87, 16);
             this.lblcomision.TabIndex = 37;
@@ -254,8 +254,8 @@
             this.ClientSize = new System.Drawing.Size(628, 306);
             this.Controls.Add(this.txtcomision);
             this.Controls.Add(this.lblcomision);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtsalario);
+            this.Controls.Add(this.lblsalario);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -296,8 +296,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtsalario;
+        private System.Windows.Forms.Label lblsalario;
         private System.Windows.Forms.TextBox txtcomision;
         private System.Windows.Forms.Label lblcomision;
     }

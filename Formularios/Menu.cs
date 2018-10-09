@@ -321,6 +321,7 @@ namespace Formularios
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+
                 AbrirFormInPanel(new GestionClientes());
             
             
@@ -363,6 +364,41 @@ namespace Formularios
         private void btnVendedores_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmAdministrarComisionVendedores()); 
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnGestionAlmacenes_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnReporteProductos_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnReporteClientes_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
         }
     }
 }

@@ -48,9 +48,8 @@ namespace Formularios
             clienteBL = new ClienteBL();
             BindingList<Cliente> clientes = new BindingList<Cliente>();
             clientes = clienteBL.listarCliente();
-            //dgvClientes.AutoGenerateColumns = false;
+            dgvClientes.AutoGenerateColumns = false;
             dgvClientes.DataSource = clientes;
-           
         }
 
         private void btnCancelarPedido_Click(object sender, EventArgs e)
@@ -74,6 +73,39 @@ namespace Formularios
             if (eclientes.ShowDialog() == DialogResult.OK)
             {
 
+            }
+        }
+
+        private void btnBusquedaClientes_Click(object sender, EventArgs e)
+        {
+            string rucCliente = "";
+            string filtro = txtBusqClientes.Text.Trim();
+            if(rbtnBusqRucCLiente.Checked)
+            {
+                if (filtro != "")
+                {
+                    rucCliente = txtBusqClientes.Text;
+                    rucCliente = rucCliente.Trim();
+                    clienteBL = new ClienteBL();
+                    BindingList<Cliente> clientes = new BindingList<Cliente>();
+                    clientes = clienteBL.listarCliente(rucCliente);//Sobrecarga
+                    dgvClientes.AutoGenerateColumns = false;
+                    dgvClientes.DataSource = clientes;
+                }
+                else cargarClientes();
+            }
+        }
+
+        private void rbtnBusqRucCLiente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnBusqRucCLiente.Checked)
+            {
+                txtBusqClientes.Enabled = true;
+                btnBusquedaClientes.Enabled = true;
+            }else
+            {
+                txtBusqClientes.Enabled = false;
+                btnBusquedaClientes.Enabled = false;
             }
         }
     }

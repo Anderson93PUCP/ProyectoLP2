@@ -315,6 +315,7 @@
             this.btnGestionAlmacenes.TabIndex = 20;
             this.btnGestionAlmacenes.Text = "Gestion de Almacenes";
             this.btnGestionAlmacenes.UseVisualStyleBackColor = true;
+            this.btnGestionAlmacenes.Click += new System.EventHandler(this.btnGestionAlmacenes_Click);
             // 
             // btnProducto
             // 
@@ -330,6 +331,7 @@
             this.btnProducto.TabIndex = 19;
             this.btnProducto.Text = "Producto";
             this.btnProducto.UseVisualStyleBackColor = true;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // panelVerticalPedidos
             // 
@@ -399,6 +401,7 @@
             this.btnReporteProductos.TabIndex = 23;
             this.btnReporteProductos.Text = "Reporte Productos";
             this.btnReporteProductos.UseVisualStyleBackColor = true;
+            this.btnReporteProductos.Click += new System.EventHandler(this.btnReporteProductos_Click);
             // 
             // btnReporteClientes
             // 
@@ -414,6 +417,7 @@
             this.btnReporteClientes.TabIndex = 22;
             this.btnReporteClientes.Text = "Reporte de Clientes";
             this.btnReporteClientes.UseVisualStyleBackColor = true;
+            this.btnReporteClientes.Click += new System.EventHandler(this.btnReporteClientes_Click);
             // 
             // panelVertical2
             // 
@@ -442,6 +446,7 @@
             this.btnProveedores.TabIndex = 16;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnTransportistas
             // 
