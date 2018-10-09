@@ -22,13 +22,15 @@ namespace ProyectoLP2
         private string IDUsuario;
         private string password;
         private string respuestaConfimacion;
+        private int tipoUsuario;
 
         public Persona()
         {
+
         }
 
         public Persona(string nombre, string apellido, int edad, char sexo, string dni, string direccion,
-            int telefono, string email, int estado, DateTime fecha_ingreso, string IDUsuario, string password, string respuestaConfimacion)
+            int telefono, string email, int estado, DateTime fecha_ingreso, string IDUsuario, string password, string respuestaConfimacion,int tipoUsuario)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -43,6 +45,7 @@ namespace ProyectoLP2
             this.IDUsuario1 = IDUsuario;
             this.Password = password;
             this.RespuestaConfimacion = respuestaConfimacion;
+            this.TipoUsuario = tipoUsuario;
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
@@ -58,5 +61,6 @@ namespace ProyectoLP2
         public string IDUsuario1 { get => IDUsuario; set => IDUsuario = value; }
         public string Password { get => password; set => password = value; }
         public string RespuestaConfimacion { get => respuestaConfimacion; set => respuestaConfimacion = value; }
+        public int TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
     }
 }

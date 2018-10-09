@@ -27,5 +27,9 @@ namespace LogicaNegocio
             return clienteDA.listarClientes(ruc);
         }
 
+        public bool registrarCliente(Cliente cliente)
+        {
+            return clienteDA.registrarCliente(cliente);
+        }
     }
 }

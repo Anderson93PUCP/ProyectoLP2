@@ -44,7 +44,7 @@ namespace Formularios
         private void btnaceptar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("El usuario se registro satisfactoriamente");
-            this.Dispose();
+            //this.Dispose();
         }
     }
 }

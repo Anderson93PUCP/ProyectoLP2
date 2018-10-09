@@ -186,7 +186,7 @@
             this.txtsalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalario.Location = new System.Drawing.Point(441, 78);
             this.txtsalario.Name = "txtsalario";
-            this.txtsalario.Size = new System.Drawing.Size(146, 24);
+            this.txtsalario.Size = new System.Drawing.Size(81, 24);
             this.txtsalario.TabIndex = 36;
             // 
             // lblsalario
@@ -204,7 +204,7 @@
             this.txtcomision.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcomision.Location = new System.Drawing.Point(441, 78);
             this.txtcomision.Name = "txtcomision";
-            this.txtcomision.Size = new System.Drawing.Size(146, 24);
+            this.txtcomision.Size = new System.Drawing.Size(81, 24);
             this.txtcomision.TabIndex = 38;
             this.txtcomision.Visible = false;
             // 

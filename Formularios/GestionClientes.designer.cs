@@ -31,17 +31,16 @@
             this.rbtnBusqRucCLiente = new System.Windows.Forms.RadioButton();
             this.txtBusqClientes = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.columnRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBusquedaClientes = new System.Windows.Forms.Button();
             this.btnCancelarClientes = new System.Windows.Forms.Button();
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddCliente = new System.Windows.Forms.Button();
+            this.btnBusquedaClientes = new System.Windows.Forms.Button();
+            this.columnRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +75,6 @@
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnRUC,
             this.columnNombre,
-            this.columnApellido,
             this.columnCorreo,
             this.columnTelefono});
             this.dgvClientes.Location = new System.Drawing.Point(45, 129);
@@ -85,41 +83,6 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(699, 217);
             this.dgvClientes.TabIndex = 20;
-            // 
-            // columnRUC
-            // 
-            this.columnRUC.DataPropertyName = "Ruc";
-            this.columnRUC.HeaderText = "RUC";
-            this.columnRUC.Name = "columnRUC";
-            this.columnRUC.ReadOnly = true;
-            // 
-            // columnNombre
-            // 
-            this.columnNombre.DataPropertyName = "Nombre";
-            this.columnNombre.HeaderText = "NOMBRE";
-            this.columnNombre.Name = "columnNombre";
-            this.columnNombre.ReadOnly = true;
-            // 
-            // columnApellido
-            // 
-            this.columnApellido.DataPropertyName = "ApellidoPaterno";
-            this.columnApellido.HeaderText = "APELLIDO";
-            this.columnApellido.Name = "columnApellido";
-            this.columnApellido.ReadOnly = true;
-            // 
-            // columnCorreo
-            // 
-            this.columnCorreo.DataPropertyName = "Email";
-            this.columnCorreo.HeaderText = "CORREO";
-            this.columnCorreo.Name = "columnCorreo";
-            this.columnCorreo.ReadOnly = true;
-            // 
-            // columnTelefono
-            // 
-            this.columnTelefono.DataPropertyName = "Telefono";
-            this.columnTelefono.HeaderText = "TELEFONO";
-            this.columnTelefono.Name = "columnTelefono";
-            this.columnTelefono.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -133,21 +96,6 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
-            // 
-            // btnBusquedaClientes
-            // 
-            this.btnBusquedaClientes.Enabled = false;
-            this.btnBusquedaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusquedaClientes.Image = global::Formularios.Properties.Resources._015_search1;
-            this.btnBusquedaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusquedaClientes.Location = new System.Drawing.Point(233, 43);
-            this.btnBusquedaClientes.Name = "btnBusquedaClientes";
-            this.btnBusquedaClientes.Size = new System.Drawing.Size(67, 26);
-            this.btnBusquedaClientes.TabIndex = 21;
-            this.btnBusquedaClientes.Text = "Buscar";
-            this.btnBusquedaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusquedaClientes.UseVisualStyleBackColor = true;
-            this.btnBusquedaClientes.Click += new System.EventHandler(this.btnBusquedaClientes_Click);
             // 
             // btnCancelarClientes
             // 
@@ -209,6 +157,49 @@
             this.btnAddCliente.UseVisualStyleBackColor = false;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
             // 
+            // btnBusquedaClientes
+            // 
+            this.btnBusquedaClientes.Enabled = false;
+            this.btnBusquedaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusquedaClientes.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBusquedaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusquedaClientes.Location = new System.Drawing.Point(233, 43);
+            this.btnBusquedaClientes.Name = "btnBusquedaClientes";
+            this.btnBusquedaClientes.Size = new System.Drawing.Size(67, 26);
+            this.btnBusquedaClientes.TabIndex = 21;
+            this.btnBusquedaClientes.Text = "Buscar";
+            this.btnBusquedaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaClientes.UseVisualStyleBackColor = true;
+            this.btnBusquedaClientes.Click += new System.EventHandler(this.btnBusquedaClientes_Click);
+            // 
+            // columnRUC
+            // 
+            this.columnRUC.DataPropertyName = "Ruc";
+            this.columnRUC.HeaderText = "RUC";
+            this.columnRUC.Name = "columnRUC";
+            this.columnRUC.ReadOnly = true;
+            // 
+            // columnNombre
+            // 
+            this.columnNombre.DataPropertyName = "Nombre";
+            this.columnNombre.HeaderText = "NOMBRE";
+            this.columnNombre.Name = "columnNombre";
+            this.columnNombre.ReadOnly = true;
+            // 
+            // columnCorreo
+            // 
+            this.columnCorreo.DataPropertyName = "Email";
+            this.columnCorreo.HeaderText = "CORREO";
+            this.columnCorreo.Name = "columnCorreo";
+            this.columnCorreo.ReadOnly = true;
+            // 
+            // columnTelefono
+            // 
+            this.columnTelefono.DataPropertyName = "Telefono";
+            this.columnTelefono.HeaderText = "TELEFONO";
+            this.columnTelefono.Name = "columnTelefono";
+            this.columnTelefono.ReadOnly = true;
+            // 
             // GestionClientes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -242,7 +233,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRUC;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCorreo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnTelefono;
     }

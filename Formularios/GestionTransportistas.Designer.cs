@@ -34,10 +34,10 @@
             this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnBusquedaPedido = new System.Windows.Forms.Button();
             this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
             this.txtBusqPedido = new System.Windows.Forms.TextBox();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnBusquedaPedido = new System.Windows.Forms.Button();
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddCliente = new System.Windows.Forms.Button();
@@ -92,33 +92,6 @@
             this.btnCancelarPedido.Visible = false;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
-            // btnVer
-            // 
-            this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Image = global::Formularios.Properties.Resources.file;
-            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVer.Location = new System.Drawing.Point(670, 65);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(67, 31);
-            this.btnVer.TabIndex = 35;
-            this.btnVer.Text = "   Ver";
-            this.btnVer.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaPedido
-            // 
-            this.btnBusquedaPedido.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBusquedaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusquedaPedido.Image = global::Formularios.Properties.Resources._015_search1;
-            this.btnBusquedaPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusquedaPedido.Location = new System.Drawing.Point(670, 33);
-            this.btnBusquedaPedido.Name = "btnBusquedaPedido";
-            this.btnBusquedaPedido.Size = new System.Drawing.Size(67, 26);
-            this.btnBusquedaPedido.TabIndex = 34;
-            this.btnBusquedaPedido.Text = "Buscar";
-            this.btnBusquedaPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusquedaPedido.UseVisualStyleBackColor = true;
-            // 
             // rbtnBusqRuc
             // 
             this.rbtnBusqRuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -138,6 +111,34 @@
             this.txtBusqPedido.Name = "txtBusqPedido";
             this.txtBusqPedido.Size = new System.Drawing.Size(212, 20);
             this.txtBusqPedido.TabIndex = 32;
+            // 
+            // btnVer
+            // 
+            this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Image = global::Formularios.Properties.Resources.file;
+            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVer.Location = new System.Drawing.Point(670, 65);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(67, 31);
+            this.btnVer.TabIndex = 35;
+            this.btnVer.Text = "   Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Visible = false;
+            // 
+            // btnBusquedaPedido
+            // 
+            this.btnBusquedaPedido.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBusquedaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusquedaPedido.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBusquedaPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusquedaPedido.Location = new System.Drawing.Point(670, 33);
+            this.btnBusquedaPedido.Name = "btnBusquedaPedido";
+            this.btnBusquedaPedido.Size = new System.Drawing.Size(67, 26);
+            this.btnBusquedaPedido.TabIndex = 34;
+            this.btnBusquedaPedido.Text = "Buscar";
+            this.btnBusquedaPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaPedido.UseVisualStyleBackColor = true;
             // 
             // btnElimCliente
             // 
@@ -166,6 +167,7 @@
             this.btnModCliente.TabIndex = 30;
             this.btnModCliente.Text = "Modificar";
             this.btnModCliente.UseVisualStyleBackColor = false;
+            this.btnModCliente.Click += new System.EventHandler(this.btnModCliente_Click);
             // 
             // btnAddCliente
             // 
