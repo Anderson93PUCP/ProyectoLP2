@@ -36,10 +36,10 @@
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.colRucBuscarCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRazonSocialBuscarCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmailBuscarCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelefBuscarCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,10 +87,10 @@
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colRucBuscarCliente,
-            this.colRazonSocialBuscarCliente,
-            this.colEmailBuscarCliente,
-            this.colTelefBuscarCliente});
+            this.colRUC,
+            this.colRazonSocial,
+            this.colEmail,
+            this.colTelef});
             this.dgvClientes.Location = new System.Drawing.Point(13, 76);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(444, 150);
@@ -122,37 +122,33 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // colRucBuscarCliente
+            // colRUC
             // 
-            this.colRucBuscarCliente.DataPropertyName = "RUC";
-            this.colRucBuscarCliente.Frozen = true;
-            this.colRucBuscarCliente.HeaderText = "RUC";
-            this.colRucBuscarCliente.Name = "colRucBuscarCliente";
-            this.colRucBuscarCliente.ReadOnly = true;
+            this.colRUC.DataPropertyName = "Ruc";
+            this.colRUC.HeaderText = "RUC";
+            this.colRUC.Name = "colRUC";
+            this.colRUC.ReadOnly = true;
             // 
-            // colRazonSocialBuscarCliente
+            // colRazonSocial
             // 
-            this.colRazonSocialBuscarCliente.DataPropertyName = "Nombre";
-            this.colRazonSocialBuscarCliente.Frozen = true;
-            this.colRazonSocialBuscarCliente.HeaderText = "Razon Social";
-            this.colRazonSocialBuscarCliente.Name = "colRazonSocialBuscarCliente";
-            this.colRazonSocialBuscarCliente.ReadOnly = true;
+            this.colRazonSocial.DataPropertyName = "Nombre";
+            this.colRazonSocial.HeaderText = "Razon Social";
+            this.colRazonSocial.Name = "colRazonSocial";
+            this.colRazonSocial.ReadOnly = true;
             // 
-            // colEmailBuscarCliente
+            // colEmail
             // 
-            this.colEmailBuscarCliente.DataPropertyName = "Email";
-            this.colEmailBuscarCliente.Frozen = true;
-            this.colEmailBuscarCliente.HeaderText = "e-mail";
-            this.colEmailBuscarCliente.Name = "colEmailBuscarCliente";
-            this.colEmailBuscarCliente.ReadOnly = true;
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "e-mail";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
             // 
-            // colTelefBuscarCliente
+            // colTelef
             // 
-            this.colTelefBuscarCliente.DataPropertyName = "Telefono";
-            this.colTelefBuscarCliente.Frozen = true;
-            this.colTelefBuscarCliente.HeaderText = "Telefóno";
-            this.colTelefBuscarCliente.Name = "colTelefBuscarCliente";
-            this.colTelefBuscarCliente.ReadOnly = true;
+            this.colTelef.DataPropertyName = "Telefono";
+            this.colTelef.HeaderText = "Telefono";
+            this.colTelef.Name = "colTelef";
+            this.colTelef.ReadOnly = true;
             // 
             // buscarCliente
             // 
@@ -184,9 +180,9 @@
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRucBuscarCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRazonSocialBuscarCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmailBuscarCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefBuscarCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRUC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
     }
 }

@@ -21,6 +21,5 @@ namespace LogicaNegocio
         {
             return clienteDA.listarClientes();
         }
-
     }
 }
