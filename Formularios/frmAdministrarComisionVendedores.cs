@@ -12,6 +12,7 @@ namespace Formularios
 {
     public partial class frmAdministrarComisionVendedores : Form
     {
+        
         public frmAdministrarComisionVendedores()
         {
             InitializeComponent();

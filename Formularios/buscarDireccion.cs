@@ -113,5 +113,10 @@ namespace Formularios
 
             }
         }
+
+        private void txtbuscarDire_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

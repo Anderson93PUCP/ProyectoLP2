@@ -79,10 +79,16 @@
             // 
             // txtbuscarDire
             // 
+            this.txtbuscarDire.AutoCompleteCustomSource.AddRange(new string[] {
+            "SAN MIGUEL",
+            "SAN JUAN DE LURIGANCHO"});
+            this.txtbuscarDire.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtbuscarDire.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtbuscarDire.Location = new System.Drawing.Point(22, 37);
             this.txtbuscarDire.Name = "txtbuscarDire";
             this.txtbuscarDire.Size = new System.Drawing.Size(165, 20);
             this.txtbuscarDire.TabIndex = 3;
+            this.txtbuscarDire.TextChanged += new System.EventHandler(this.txtbuscarDire_TextChanged);
             // 
             // btnBuscarDire
             // 
