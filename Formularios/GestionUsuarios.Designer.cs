@@ -28,131 +28,164 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.colRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.rbtnDNI = new System.Windows.Forms.RadioButton();
+            this.txtBusqUsuarioDNI = new System.Windows.Forms.TextBox();
+            this.rbtRol = new System.Windows.Forms.RadioButton();
+            this.cmbBusqUsuarioRol = new System.Windows.Forms.ComboBox();
             this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itememail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
-            this.txtBusqPedido = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.colFechaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnBusquedaPedido = new System.Windows.Forms.Button();
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddUsuario = new System.Windows.Forms.Button();
-            this.btncancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvClientes
+            // dgvUsuarios
             // 
-            this.dgvClientes.AllowUserToOrderColumns = true;
-            this.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colRUC,
-            this.colNombre,
+            this.dgvUsuarios.AllowUserToOrderColumns = true;
+            this.dgvUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTelef,
+            this.colNombre,
+            this.colApellido,
+            this.colEdad,
+            this.colUser,
             this.colEmail,
-            this.itememail,
-            this.Column1,
-            this.ROL});
-            this.dgvClientes.Location = new System.Drawing.Point(39, 118);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(699, 217);
-            this.dgvClientes.TabIndex = 28;
+            this.colFechaI});
+            this.dgvUsuarios.Location = new System.Drawing.Point(39, 118);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(699, 217);
+            this.dgvUsuarios.TabIndex = 28;
             // 
-            // colRUC
+            // rbtnDNI
             // 
-            this.colRUC.HeaderText = "Nombre";
-            this.colRUC.Name = "colRUC";
+            this.rbtnDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbtnDNI.AutoSize = true;
+            this.rbtnDNI.Location = new System.Drawing.Point(453, 44);
+            this.rbtnDNI.Name = "rbtnDNI";
+            this.rbtnDNI.Size = new System.Drawing.Size(63, 17);
+            this.rbtnDNI.TabIndex = 27;
+            this.rbtnDNI.TabStop = true;
+            this.rbtnDNI.Text = "Por DNI";
+            this.rbtnDNI.UseVisualStyleBackColor = true;
+            this.rbtnDNI.CheckedChanged += new System.EventHandler(this.rbtnDNI_CheckedChanged);
             // 
-            // colNombre
+            // txtBusqUsuarioDNI
             // 
-            this.colNombre.HeaderText = "Apellido";
-            this.colNombre.Name = "colNombre";
+            this.txtBusqUsuarioDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBusqUsuarioDNI.Enabled = false;
+            this.txtBusqUsuarioDNI.Location = new System.Drawing.Point(532, 44);
+            this.txtBusqUsuarioDNI.Name = "txtBusqUsuarioDNI";
+            this.txtBusqUsuarioDNI.Size = new System.Drawing.Size(119, 20);
+            this.txtBusqUsuarioDNI.TabIndex = 26;
             // 
-            // colTelef
+            // rbtRol
             // 
-            this.colTelef.HeaderText = "DNI";
-            this.colTelef.Name = "colTelef";
+            this.rbtRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbtRol.AutoSize = true;
+            this.rbtRol.Location = new System.Drawing.Point(453, 84);
+            this.rbtRol.Name = "rbtRol";
+            this.rbtRol.Size = new System.Drawing.Size(66, 17);
+            this.rbtRol.TabIndex = 31;
+            this.rbtRol.TabStop = true;
+            this.rbtRol.Text = "Por ROL";
+            this.rbtRol.UseVisualStyleBackColor = true;
+            this.rbtRol.CheckedChanged += new System.EventHandler(this.rbtRol_CheckedChanged);
             // 
-            // colEmail
+            // cmbBusqUsuarioRol
             // 
-            this.colEmail.HeaderText = "Telefono";
-            this.colEmail.Name = "colEmail";
-            // 
-            // itememail
-            // 
-            this.itememail.HeaderText = "Email";
-            this.itememail.Name = "itememail";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Fecha de Ingreso";
-            this.Column1.Name = "Column1";
-            // 
-            // ROL
-            // 
-            this.ROL.HeaderText = "ROL";
-            this.ROL.Name = "ROL";
-            // 
-            // rbtnBusqRuc
-            // 
-            this.rbtnBusqRuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rbtnBusqRuc.AutoSize = true;
-            this.rbtnBusqRuc.Location = new System.Drawing.Point(453, 44);
-            this.rbtnBusqRuc.Name = "rbtnBusqRuc";
-            this.rbtnBusqRuc.Size = new System.Drawing.Size(63, 17);
-            this.rbtnBusqRuc.TabIndex = 27;
-            this.rbtnBusqRuc.TabStop = true;
-            this.rbtnBusqRuc.Text = "Por DNI";
-            this.rbtnBusqRuc.UseVisualStyleBackColor = true;
-            // 
-            // txtBusqPedido
-            // 
-            this.txtBusqPedido.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBusqPedido.Location = new System.Drawing.Point(532, 44);
-            this.txtBusqPedido.Name = "txtBusqPedido";
-            this.txtBusqPedido.Size = new System.Drawing.Size(119, 20);
-            this.txtBusqPedido.TabIndex = 26;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(453, 84);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(66, 17);
-            this.radioButton1.TabIndex = 31;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Por ROL";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "",
+            this.cmbBusqUsuarioRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbBusqUsuarioRol.Enabled = false;
+            this.cmbBusqUsuarioRol.FormattingEnabled = true;
+            this.cmbBusqUsuarioRol.Items.AddRange(new object[] {
             "Administrador",
             "Operario",
             "Vendedor"});
-            this.comboBox1.Location = new System.Drawing.Point(532, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 32;
+            this.cmbBusqUsuarioRol.Location = new System.Drawing.Point(532, 84);
+            this.cmbBusqUsuarioRol.Name = "cmbBusqUsuarioRol";
+            this.cmbBusqUsuarioRol.Size = new System.Drawing.Size(121, 21);
+            this.cmbBusqUsuarioRol.TabIndex = 32;
+            // 
+            // colTelef
+            // 
+            this.colTelef.DataPropertyName = "Dni";
+            this.colTelef.HeaderText = "DNI";
+            this.colTelef.Name = "colTelef";
+            this.colTelef.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "Nombre";
+            this.colNombre.HeaderText = "NOMBRE";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.DataPropertyName = "Apellido";
+            this.colApellido.HeaderText = "APELLIDO";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colEdad
+            // 
+            this.colEdad.DataPropertyName = "Edad";
+            this.colEdad.HeaderText = "EDAD";
+            this.colEdad.Name = "colEdad";
+            this.colEdad.ReadOnly = true;
+            // 
+            // colUser
+            // 
+            this.colUser.DataPropertyName = "IDUsuario1";
+            this.colUser.HeaderText = "USERNAME";
+            this.colUser.Name = "colUser";
+            this.colUser.ReadOnly = true;
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Telefono";
+            this.colEmail.HeaderText = "TELEFONO";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colFechaI
+            // 
+            this.colFechaI.DataPropertyName = "Fecha_ingreso";
+            this.colFechaI.HeaderText = "FECHA INGRESO";
+            this.colFechaI.Name = "colFechaI";
+            this.colFechaI.ReadOnly = true;
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(368, 351);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(85, 36);
+            this.btncancelar.TabIndex = 33;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Visible = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnVer
             // 
             this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVer.Enabled = false;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Image = global::Formularios.Properties.Resources.file;
             this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,6 +195,7 @@
             this.btnVer.TabIndex = 30;
             this.btnVer.Text = "   Ver";
             this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Visible = false;
             // 
             // btnBusquedaPedido
             // 
@@ -176,6 +210,7 @@
             this.btnBusquedaPedido.Text = "Buscar";
             this.btnBusquedaPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBusquedaPedido.UseVisualStyleBackColor = true;
+            this.btnBusquedaPedido.Click += new System.EventHandler(this.btnBusquedaPedido_Click);
             // 
             // btnElimCliente
             // 
@@ -204,6 +239,7 @@
             this.btnModCliente.TabIndex = 24;
             this.btnModCliente.Text = "Modificar";
             this.btnModCliente.UseVisualStyleBackColor = false;
+            this.btnModCliente.Click += new System.EventHandler(this.btnModCliente_Click);
             // 
             // btnAddUsuario
             // 
@@ -220,40 +256,25 @@
             this.btnAddUsuario.UseVisualStyleBackColor = false;
             this.btnAddUsuario.Click += new System.EventHandler(this.btnAddUsuario_Click);
             // 
-            // btncancelar
-            // 
-            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
-            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(368, 351);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(85, 36);
-            this.btncancelar.TabIndex = 33;
-            this.btncancelar.Text = "Cancelar";
-            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btncancelar.UseVisualStyleBackColor = true;
-            this.btncancelar.Visible = false;
-            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 399);
             this.Controls.Add(this.btncancelar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.cmbBusqUsuarioRol);
+            this.Controls.Add(this.rbtRol);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnBusquedaPedido);
-            this.Controls.Add(this.dgvClientes);
-            this.Controls.Add(this.rbtnBusqRuc);
-            this.Controls.Add(this.txtBusqPedido);
+            this.Controls.Add(this.dgvUsuarios);
+            this.Controls.Add(this.rbtnDNI);
+            this.Controls.Add(this.txtBusqUsuarioDNI);
             this.Controls.Add(this.btnElimCliente);
             this.Controls.Add(this.btnModCliente);
             this.Controls.Add(this.btnAddUsuario);
             this.Name = "GestionUsuarios";
             this.Text = "GestionUsuarios";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,21 +284,21 @@
 
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnBusquedaPedido;
-        private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.RadioButton rbtnBusqRuc;
-        private System.Windows.Forms.TextBox txtBusqPedido;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.RadioButton rbtnDNI;
+        private System.Windows.Forms.TextBox txtBusqUsuarioDNI;
         private System.Windows.Forms.Button btnElimCliente;
         private System.Windows.Forms.Button btnModCliente;
         private System.Windows.Forms.Button btnAddUsuario;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itememail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ROL;
+        private System.Windows.Forms.RadioButton rbtRol;
+        private System.Windows.Forms.ComboBox cmbBusqUsuarioRol;
         private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEdad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaI;
     }
 }

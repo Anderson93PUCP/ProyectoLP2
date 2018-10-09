@@ -46,6 +46,7 @@
     <Compile Include="DireccionBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransportistaBL.cs" />
+    <Compile Include="UsuarioBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">

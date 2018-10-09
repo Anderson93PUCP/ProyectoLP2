@@ -21,5 +21,15 @@ namespace LogicaNegocio
         {
             return clienteDA.listarClientes();
         }
+
+        public BindingList<Cliente> listarCliente(string ruc)
+        {
+            return clienteDA.listarClientes(ruc);
+        }
+
+        public bool registrarCliente(Cliente cliente)
+        {
+            return clienteDA.registrarCliente(cliente);
+        }
     }
 }

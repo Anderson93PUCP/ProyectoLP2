@@ -21,9 +21,9 @@ namespace ProyectoLP2
         }
 
         public Vendedor(double comision, int numVentas, List<Venta> listaVentas, List<Cliente> carteClientes, string nombre, string apellido, int edad, char sexo, string dni, string direccion,
-            int telefono, string email, int estado, DateTime fecha_ingreso, string IDUsuario, string password, string respuestaConfimacion) :
+            int telefono, string email, int estado, DateTime fecha_ingreso, string IDUsuario, string password, string respuestaConfimacion,int tipo) :
             base(nombre, apellido, edad, sexo, dni, direccion,
-             telefono, email, estado, fecha_ingreso, IDUsuario, password, respuestaConfimacion)
+             telefono, email, estado, fecha_ingreso, IDUsuario, password, respuestaConfimacion,tipo)
         {
             this.Comision = comision;
             this.NumVentas = numVentas;

@@ -17,9 +17,9 @@ namespace ProyectoLP2
         }
 
         public Administrador(double salario, string nombre, string apellido, int edad, char sexo, string dni, string direccion,
-            int telefono, string email, int estado, DateTime fecha_ingreso, string IDUsuario, string password, string respuestaConfimacion) :
+            int telefono, string email, int estado, DateTime fecha_ingreso, string IDUsuario, string password, string respuestaConfimacion,int tipo) :
             base(nombre, apellido, edad, sexo, dni, direccion,
-             telefono, email, estado, fecha_ingreso, IDUsuario, password, respuestaConfimacion)
+             telefono, email, estado, fecha_ingreso, IDUsuario, password, respuestaConfimacion,tipo)
         {
             this.Salario = salario;
 

@@ -33,5 +33,11 @@ namespace Formularios
             AgregarTransportista fga = new AgregarTransportista();
             fga.ShowDialog();
         }
+
+        private void btnModCliente_Click(object sender, EventArgs e)
+        {
+            ModificarTransportista fga = new ModificarTransportista();
+            fga.ShowDialog();
+        }
     }
 }

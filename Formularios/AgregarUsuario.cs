@@ -23,11 +23,16 @@ namespace Formularios
             {
                 lblcomision.Visible = true;
                 txtcomision.Visible = true;
+                lblsalario.Visible = false;
+                txtsalario.Visible = false;
             }
             else
             {
                 lblcomision.Visible = false;
                 txtcomision.Visible = false;
+                lblsalario.Visible = true;
+                txtsalario.Visible = true;
+
             }
         }
 
@@ -39,7 +44,7 @@ namespace Formularios
         private void btnaceptar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("El usuario se registro satisfactoriamente");
-            this.Dispose();
+            //this.Dispose();
         }
     }
 }
