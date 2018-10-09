@@ -1,4 +1,5 @@
-﻿using ProyectoLP2;
+﻿using LogicaNegocio;
+using ProyectoLP2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,8 @@ namespace Formularios
 
     public partial class GestionClientes : Form
     {
-        private BindingList<Cliente> clientes;
+        ClienteBL clienteBL;
+        Cliente cliente;
         public GestionClientes()
         {
             InitializeComponent();
@@ -43,30 +45,11 @@ namespace Formularios
 
         private void cargarClientes()
         {
-            clientes = new BindingList<Cliente>();
-            FileStream fs = new FileStream("clientes.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            while (true)
-            {
-                String linea = sr.ReadLine();
-                if (linea == null) { break; }
-                Cliente a = new Cliente();
-                a.Nombre = linea;
-                a.Ruc = sr.ReadLine();
-                a.Telefono = Int32.Parse(sr.ReadLine());
-                a.Email = sr.ReadLine();
-                clientes.Add(a);
-            }
-            sr.Close();
-            fs.Close();
+            clienteBL = new ClienteBL();
+            BindingList<Cliente> clientes = new BindingList<Cliente>();
+            clientes = clienteBL.listarCliente();
+            dgvClientes.AutoGenerateColumns = false;
             dgvClientes.DataSource = clientes;
-            dgvClientes.Columns[0].HeaderText = "ID";
-            dgvClientes.Columns[0].Visible = false;
-            dgvClientes.Columns[5].Visible = false;
-            dgvClientes.Columns[1].HeaderText = "NOMBRE";
-            dgvClientes.Columns[2].HeaderText = "RUC";
-            dgvClientes.Columns[3].HeaderText = "EMAIL";
-            dgvClientes.Columns[4].HeaderText = "TELEFONO";
         }
 
         private void btnCancelarPedido_Click(object sender, EventArgs e)
@@ -90,6 +73,39 @@ namespace Formularios
             if (eclientes.ShowDialog() == DialogResult.OK)
             {
 
+            }
+        }
+
+        private void btnBusquedaClientes_Click(object sender, EventArgs e)
+        {
+            string rucCliente = "";
+            string filtro = txtBusqClientes.Text.Trim();
+            if(rbtnBusqRucCLiente.Checked)
+            {
+                if (filtro != "")
+                {
+                    rucCliente = txtBusqClientes.Text;
+                    rucCliente = rucCliente.Trim();
+                    clienteBL = new ClienteBL();
+                    BindingList<Cliente> clientes = new BindingList<Cliente>();
+                    clientes = clienteBL.listarCliente(rucCliente);//Sobrecarga
+                    dgvClientes.AutoGenerateColumns = false;
+                    dgvClientes.DataSource = clientes;
+                }
+                else cargarClientes();
+            }
+        }
+
+        private void rbtnBusqRucCLiente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnBusqRucCLiente.Checked)
+            {
+                txtBusqClientes.Enabled = true;
+                btnBusquedaClientes.Enabled = true;
+            }else
+            {
+                txtBusqClientes.Enabled = false;
+                btnBusquedaClientes.Enabled = false;
             }
         }
     }

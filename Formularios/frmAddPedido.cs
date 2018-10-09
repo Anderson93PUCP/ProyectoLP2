@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoLP2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,17 @@ namespace Formularios
 {
     public partial class frmAddPedido : Form
     {
+        private Cliente cliente;
+        private Transportista transporte;
         public frmAddPedido()
         {
             InitializeComponent();
+
         }
 
         private void frmAddPedido_Load(object sender, EventArgs e)
         {
-
+                
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,7 +64,12 @@ namespace Formularios
         private void btnBuscarCliAddPedido_Click(object sender, EventArgs e)
         {
             buscarCliente v = new buscarCliente();
-            v.ShowDialog();
+            if  (v.ShowDialog() == DialogResult.OK)
+            {
+                txtClienteAddPedido.Text = v.ClienteSeleccionado.Nombre;
+
+            }
+            
 
         }
 
@@ -73,7 +82,13 @@ namespace Formularios
         private void btnBuscarTransAddPedido_Click(object sender, EventArgs e)
         {
             buscarTransportista ventana = new buscarTransportista();
-            ventana.ShowDialog();
+            if(ventana.ShowDialog() == DialogResult.OK)
+            {
+                transporte = new Transportista();
+                transporte = ventana.TransSeleccionado;
+                txtTransAddPedido.Text = transporte.Nombre;
+
+            }
         }
 
         private void btnAddDetPedido_Click(object sender, EventArgs e)

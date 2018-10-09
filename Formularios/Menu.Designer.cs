@@ -30,20 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.iconminimizar = new System.Windows.Forms.PictureBox();
-            this.iconrestaurar = new System.Windows.Forms.PictureBox();
-            this.iconcerrar = new System.Windows.Forms.PictureBox();
-            this.btnslide = new System.Windows.Forms.PictureBox();
-            this.iconmaximizar = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnprod = new System.Windows.Forms.Button();
             this.btnlogoInicio = new System.Windows.Forms.PictureBox();
+            this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.iconminimizar = new System.Windows.Forms.PictureBox();
+            this.iconrestaurar = new System.Windows.Forms.PictureBox();
+            this.iconcerrar = new System.Windows.Forms.PictureBox();
+            this.btnslide = new System.Windows.Forms.PictureBox();
+            this.iconmaximizar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelVerticalAlmacen = new System.Windows.Forms.Panel();
+            this.btnGestionAlmacenes = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
             this.panelVerticalPedidos = new System.Windows.Forms.Panel();
             this.btnGestionPedidos = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
@@ -55,25 +58,22 @@
             this.btnTransportistas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnVendedores = new System.Windows.Forms.Button();
             this.panelVerticalPagos = new System.Windows.Forms.Panel();
-            this.panelVerticalAlmacen = new System.Windows.Forms.Panel();
-            this.btnGestionAlmacenes = new System.Windows.Forms.Button();
-            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnVendedores = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).BeginInit();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelVerticalAlmacen.SuspendLayout();
             this.panelVerticalPedidos.SuspendLayout();
             this.panelVerticalReportes.SuspendLayout();
             this.panelVertical2.SuspendLayout();
             this.panelVerticalPagos.SuspendLayout();
-            this.panelVerticalAlmacen.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -88,88 +88,8 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 650);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 788);
             this.MenuVertical.TabIndex = 0;
-            // 
-            // BarraTitulo
-            // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BarraTitulo.Controls.Add(this.iconminimizar);
-            this.BarraTitulo.Controls.Add(this.iconrestaurar);
-            this.BarraTitulo.Controls.Add(this.iconcerrar);
-            this.BarraTitulo.Controls.Add(this.btnslide);
-            this.BarraTitulo.Controls.Add(this.iconmaximizar);
-            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(250, 0);
-            this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1050, 50);
-            this.BarraTitulo.TabIndex = 1;
-            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
-            // 
-            // iconminimizar
-            // 
-            this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
-            this.iconminimizar.Location = new System.Drawing.Point(975, 12);
-            this.iconminimizar.Name = "iconminimizar";
-            this.iconminimizar.Size = new System.Drawing.Size(18, 18);
-            this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconminimizar.TabIndex = 7;
-            this.iconminimizar.TabStop = false;
-            this.iconminimizar.Click += new System.EventHandler(this.iconminimizar_Click);
-            // 
-            // iconrestaurar
-            // 
-            this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
-            this.iconrestaurar.Location = new System.Drawing.Point(999, 12);
-            this.iconrestaurar.Name = "iconrestaurar";
-            this.iconrestaurar.Size = new System.Drawing.Size(18, 18);
-            this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconrestaurar.TabIndex = 6;
-            this.iconrestaurar.TabStop = false;
-            this.iconrestaurar.Visible = false;
-            this.iconrestaurar.Click += new System.EventHandler(this.iconrestaurar_Click);
-            // 
-            // iconcerrar
-            // 
-            this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(1023, 12);
-            this.iconcerrar.Name = "iconcerrar";
-            this.iconcerrar.Size = new System.Drawing.Size(18, 18);
-            this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconcerrar.TabIndex = 5;
-            this.iconcerrar.TabStop = false;
-            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
-            // 
-            // btnslide
-            // 
-            this.btnslide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnslide.Image = ((System.Drawing.Image)(resources.GetObject("btnslide.Image")));
-            this.btnslide.Location = new System.Drawing.Point(6, 9);
-            this.btnslide.Name = "btnslide";
-            this.btnslide.Size = new System.Drawing.Size(35, 35);
-            this.btnslide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnslide.TabIndex = 1;
-            this.btnslide.TabStop = false;
-            this.btnslide.Click += new System.EventHandler(this.btnslide_Click);
-            // 
-            // iconmaximizar
-            // 
-            this.iconmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("iconmaximizar.Image")));
-            this.iconmaximizar.Location = new System.Drawing.Point(999, 12);
-            this.iconmaximizar.Name = "iconmaximizar";
-            this.iconmaximizar.Size = new System.Drawing.Size(18, 18);
-            this.iconmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconmaximizar.TabIndex = 3;
-            this.iconmaximizar.TabStop = false;
-            this.iconmaximizar.Click += new System.EventHandler(this.iconmaximizar_Click);
             // 
             // button6
             // 
@@ -266,16 +186,99 @@
             this.btnlogoInicio.TabIndex = 1;
             this.btnlogoInicio.TabStop = false;
             // 
+            // BarraTitulo
+            // 
+            this.BarraTitulo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BarraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BarraTitulo.Controls.Add(this.iconminimizar);
+            this.BarraTitulo.Controls.Add(this.iconrestaurar);
+            this.BarraTitulo.Controls.Add(this.iconcerrar);
+            this.BarraTitulo.Controls.Add(this.btnslide);
+            this.BarraTitulo.Controls.Add(this.iconmaximizar);
+            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BarraTitulo.Location = new System.Drawing.Point(250, 0);
+            this.BarraTitulo.Name = "BarraTitulo";
+            this.BarraTitulo.Size = new System.Drawing.Size(1050, 50);
+            this.BarraTitulo.TabIndex = 1;
+            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
+            // 
+            // iconminimizar
+            // 
+            this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
+            this.iconminimizar.Location = new System.Drawing.Point(999, 12);
+            this.iconminimizar.Name = "iconminimizar";
+            this.iconminimizar.Size = new System.Drawing.Size(18, 18);
+            this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconminimizar.TabIndex = 7;
+            this.iconminimizar.TabStop = false;
+            this.iconminimizar.Click += new System.EventHandler(this.iconminimizar_Click);
+            // 
+            // iconrestaurar
+            // 
+            this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
+            this.iconrestaurar.Location = new System.Drawing.Point(999, 12);
+            this.iconrestaurar.Name = "iconrestaurar";
+            this.iconrestaurar.Size = new System.Drawing.Size(18, 18);
+            this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconrestaurar.TabIndex = 6;
+            this.iconrestaurar.TabStop = false;
+            this.iconrestaurar.Visible = false;
+            this.iconrestaurar.Click += new System.EventHandler(this.iconrestaurar_Click);
+            // 
+            // iconcerrar
+            // 
+            this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
+            this.iconcerrar.Location = new System.Drawing.Point(1023, 12);
+            this.iconcerrar.Name = "iconcerrar";
+            this.iconcerrar.Size = new System.Drawing.Size(18, 18);
+            this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconcerrar.TabIndex = 5;
+            this.iconcerrar.TabStop = false;
+            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
+            // 
+            // btnslide
+            // 
+            this.btnslide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnslide.Image = ((System.Drawing.Image)(resources.GetObject("btnslide.Image")));
+            this.btnslide.Location = new System.Drawing.Point(6, 9);
+            this.btnslide.Name = "btnslide";
+            this.btnslide.Size = new System.Drawing.Size(35, 35);
+            this.btnslide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnslide.TabIndex = 1;
+            this.btnslide.TabStop = false;
+            this.btnslide.Click += new System.EventHandler(this.btnslide_Click);
+            // 
+            // iconmaximizar
+            // 
+            this.iconmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("iconmaximizar.Image")));
+            this.iconmaximizar.Location = new System.Drawing.Point(999, 12);
+            this.iconmaximizar.Name = "iconmaximizar";
+            this.iconmaximizar.Size = new System.Drawing.Size(18, 18);
+            this.iconmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconmaximizar.TabIndex = 3;
+            this.iconmaximizar.TabStop = false;
+            this.iconmaximizar.Visible = false;
+            this.iconmaximizar.Click += new System.EventHandler(this.iconmaximizar_Click);
+            // 
             // panelContenedor
             // 
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelContenedor.Location = new System.Drawing.Point(438, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(862, 600);
+            this.panelContenedor.Size = new System.Drawing.Size(862, 738);
             this.panelContenedor.TabIndex = 4;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.panelVerticalAlmacen);
             this.panel1.Controls.Add(this.panelVerticalPedidos);
             this.panel1.Controls.Add(this.panelVerticalReportes);
@@ -284,8 +287,51 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(250, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 600);
+            this.panel1.Size = new System.Drawing.Size(189, 738);
             this.panel1.TabIndex = 5;
+            // 
+            // panelVerticalAlmacen
+            // 
+            this.panelVerticalAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panelVerticalAlmacen.Controls.Add(this.btnGestionAlmacenes);
+            this.panelVerticalAlmacen.Controls.Add(this.btnProducto);
+            this.panelVerticalAlmacen.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelVerticalAlmacen.Location = new System.Drawing.Point(752, 0);
+            this.panelVerticalAlmacen.Name = "panelVerticalAlmacen";
+            this.panelVerticalAlmacen.Size = new System.Drawing.Size(220, 738);
+            this.panelVerticalAlmacen.TabIndex = 28;
+            // 
+            // btnGestionAlmacenes
+            // 
+            this.btnGestionAlmacenes.FlatAppearance.BorderSize = 0;
+            this.btnGestionAlmacenes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnGestionAlmacenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionAlmacenes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionAlmacenes.ForeColor = System.Drawing.Color.White;
+            this.btnGestionAlmacenes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionAlmacenes.Location = new System.Drawing.Point(3, 77);
+            this.btnGestionAlmacenes.Name = "btnGestionAlmacenes";
+            this.btnGestionAlmacenes.Size = new System.Drawing.Size(185, 40);
+            this.btnGestionAlmacenes.TabIndex = 20;
+            this.btnGestionAlmacenes.Text = "Gestion de Almacenes";
+            this.btnGestionAlmacenes.UseVisualStyleBackColor = true;
+            this.btnGestionAlmacenes.Click += new System.EventHandler(this.btnGestionAlmacenes_Click);
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.FlatAppearance.BorderSize = 0;
+            this.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.ForeColor = System.Drawing.Color.White;
+            this.btnProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProducto.Location = new System.Drawing.Point(0, 31);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(185, 40);
+            this.btnProducto.TabIndex = 19;
+            this.btnProducto.Text = "Producto";
+            this.btnProducto.UseVisualStyleBackColor = true;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // panelVerticalPedidos
             // 
@@ -295,7 +341,7 @@
             this.panelVerticalPedidos.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalPedidos.Location = new System.Drawing.Point(564, 0);
             this.panelVerticalPedidos.Name = "panelVerticalPedidos";
-            this.panelVerticalPedidos.Size = new System.Drawing.Size(188, 600);
+            this.panelVerticalPedidos.Size = new System.Drawing.Size(188, 738);
             this.panelVerticalPedidos.TabIndex = 25;
             // 
             // btnGestionPedidos
@@ -312,6 +358,7 @@
             this.btnGestionPedidos.TabIndex = 18;
             this.btnGestionPedidos.Text = "Gestion de Pedidos";
             this.btnGestionPedidos.UseVisualStyleBackColor = true;
+            this.btnGestionPedidos.Click += new System.EventHandler(this.btnGestionPedidos_Click);
             // 
             // btnFactura
             // 
@@ -327,6 +374,7 @@
             this.btnFactura.TabIndex = 17;
             this.btnFactura.Text = "Factura";
             this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // panelVerticalReportes
             // 
@@ -336,7 +384,7 @@
             this.panelVerticalReportes.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalReportes.Location = new System.Drawing.Point(376, 0);
             this.panelVerticalReportes.Name = "panelVerticalReportes";
-            this.panelVerticalReportes.Size = new System.Drawing.Size(188, 600);
+            this.panelVerticalReportes.Size = new System.Drawing.Size(188, 738);
             this.panelVerticalReportes.TabIndex = 26;
             // 
             // btnReporteProductos
@@ -353,6 +401,7 @@
             this.btnReporteProductos.TabIndex = 23;
             this.btnReporteProductos.Text = "Reporte Productos";
             this.btnReporteProductos.UseVisualStyleBackColor = true;
+            this.btnReporteProductos.Click += new System.EventHandler(this.btnReporteProductos_Click);
             // 
             // btnReporteClientes
             // 
@@ -368,6 +417,7 @@
             this.btnReporteClientes.TabIndex = 22;
             this.btnReporteClientes.Text = "Reporte de Clientes";
             this.btnReporteClientes.UseVisualStyleBackColor = true;
+            this.btnReporteClientes.Click += new System.EventHandler(this.btnReporteClientes_Click);
             // 
             // panelVertical2
             // 
@@ -379,7 +429,7 @@
             this.panelVertical2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVertical2.Location = new System.Drawing.Point(188, 0);
             this.panelVertical2.Name = "panelVertical2";
-            this.panelVertical2.Size = new System.Drawing.Size(188, 600);
+            this.panelVertical2.Size = new System.Drawing.Size(188, 738);
             this.panelVertical2.TabIndex = 23;
             // 
             // btnProveedores
@@ -396,6 +446,7 @@
             this.btnProveedores.TabIndex = 16;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnTransportistas
             // 
@@ -411,6 +462,7 @@
             this.btnTransportistas.TabIndex = 15;
             this.btnTransportistas.Text = "Transportistas";
             this.btnTransportistas.UseVisualStyleBackColor = true;
+            this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
             // 
             // btnClientes
             // 
@@ -442,6 +494,17 @@
             this.btnUsuarios.TabIndex = 13;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // panelVerticalPagos
+            // 
+            this.panelVerticalPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panelVerticalPagos.Controls.Add(this.btnVendedores);
+            this.panelVerticalPagos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelVerticalPagos.Location = new System.Drawing.Point(0, 0);
+            this.panelVerticalPagos.Name = "panelVerticalPagos";
+            this.panelVerticalPagos.Size = new System.Drawing.Size(188, 738);
+            this.panelVerticalPagos.TabIndex = 24;
             // 
             // btnVendedores
             // 
@@ -457,63 +520,12 @@
             this.btnVendedores.TabIndex = 21;
             this.btnVendedores.Text = "Vendedores";
             this.btnVendedores.UseVisualStyleBackColor = true;
-            // 
-            // panelVerticalPagos
-            // 
-            this.panelVerticalPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panelVerticalPagos.Controls.Add(this.btnVendedores);
-            this.panelVerticalPagos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelVerticalPagos.Location = new System.Drawing.Point(0, 0);
-            this.panelVerticalPagos.Name = "panelVerticalPagos";
-            this.panelVerticalPagos.Size = new System.Drawing.Size(188, 600);
-            this.panelVerticalPagos.TabIndex = 24;
-            // 
-            // panelVerticalAlmacen
-            // 
-            this.panelVerticalAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panelVerticalAlmacen.Controls.Add(this.btnGestionAlmacenes);
-            this.panelVerticalAlmacen.Controls.Add(this.btnProducto);
-            this.panelVerticalAlmacen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelVerticalAlmacen.Location = new System.Drawing.Point(752, 0);
-            this.panelVerticalAlmacen.Name = "panelVerticalAlmacen";
-            this.panelVerticalAlmacen.Size = new System.Drawing.Size(216, 600);
-            this.panelVerticalAlmacen.TabIndex = 28;
-            // 
-            // btnGestionAlmacenes
-            // 
-            this.btnGestionAlmacenes.FlatAppearance.BorderSize = 0;
-            this.btnGestionAlmacenes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnGestionAlmacenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionAlmacenes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionAlmacenes.ForeColor = System.Drawing.Color.White;
-            this.btnGestionAlmacenes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionAlmacenes.Location = new System.Drawing.Point(3, 77);
-            this.btnGestionAlmacenes.Name = "btnGestionAlmacenes";
-            this.btnGestionAlmacenes.Size = new System.Drawing.Size(185, 40);
-            this.btnGestionAlmacenes.TabIndex = 20;
-            this.btnGestionAlmacenes.Text = "Gestion de Almacenes";
-            this.btnGestionAlmacenes.UseVisualStyleBackColor = true;
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.FlatAppearance.BorderSize = 0;
-            this.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducto.ForeColor = System.Drawing.Color.White;
-            this.btnProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducto.Location = new System.Drawing.Point(0, 31);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(185, 40);
-            this.btnProducto.TabIndex = 19;
-            this.btnProducto.Text = "Producto";
-            this.btnProducto.UseVisualStyleBackColor = true;
+            this.btnVendedores.Click += new System.EventHandler(this.btnVendedores_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1300, 788);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.BarraTitulo);
@@ -524,19 +536,19 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.MenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panelVerticalAlmacen.ResumeLayout(false);
             this.panelVerticalPedidos.ResumeLayout(false);
             this.panelVerticalReportes.ResumeLayout(false);
             this.panelVertical2.ResumeLayout(false);
             this.panelVerticalPagos.ResumeLayout(false);
-            this.panelVerticalAlmacen.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

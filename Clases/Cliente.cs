@@ -9,19 +9,19 @@ namespace ProyectoLP2
 
     public class Cliente : AgenteExterno
     {
-        private int ruc_vendedor;
+        private string  dni_vendedor;
 
         public Cliente()
         {
 
         }
 
-        public Cliente(int ruc_vendedor, string nombre, List<int> lista, string ruc, string email, int telefono,int celular) : base
-            (nombre, lista, ruc, email, telefono,celular)
+        public Cliente(string dni_vendedor, string nombre, List<Direccion> lista, string ruc, string email, int telefono,int celular,int id,string apellidoP, string apellidoM) : base
+            (nombre, lista, ruc, email, telefono,celular,id, apellidoP, apellidoM)
         {
-            this.Ruc_vendedor = ruc_vendedor;
+            this.Dni_vendedor = dni_vendedor;
         }
 
-        public int Ruc_vendedor { get => ruc_vendedor; set => ruc_vendedor = value; }
+        public string Dni_vendedor { get => dni_vendedor; set => dni_vendedor = value; }
     }
 }

@@ -47,6 +47,7 @@
             this.cmbdepartamento.Name = "cmbdepartamento";
             this.cmbdepartamento.Size = new System.Drawing.Size(275, 21);
             this.cmbdepartamento.TabIndex = 23;
+            this.cmbdepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbdepartamento_SelectedIndexChanged);
             // 
             // txtdireccion
             // 
@@ -103,6 +104,7 @@
             this.cmbprovincia.Name = "cmbprovincia";
             this.cmbprovincia.Size = new System.Drawing.Size(275, 21);
             this.cmbprovincia.TabIndex = 24;
+            this.cmbprovincia.SelectedIndexChanged += new System.EventHandler(this.cmbprovincia_SelectedIndexChanged);
             // 
             // cmbdistrito
             // 

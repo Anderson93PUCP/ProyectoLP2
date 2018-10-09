@@ -32,11 +32,35 @@ namespace Formularios
         {
             if (MenuVertical.Width == 250)
             {
-                MenuVertical.Width = 70;
-            }else
+                if (panel1.Width == 188)
+                {
+                    MenuVertical.Width = 70;
+                    panel1.Width = 0;
+                    estadosInicialesSubMenus();
+                    panelContenedor.Width += 368;
+                }
+                else
+                {
+                    MenuVertical.Width = 70;
+                    panelContenedor.Width += 188;
+                }
+
+            }
+            else
             {
                 MenuVertical.Width = 250;
+                panelContenedor.Width = 1042;
             }
+
+        }
+
+        private void estadosInicialesSubMenus()
+        {
+            panelVertical2.Visible = false;
+            panelVerticalAlmacen.Visible = false;
+            panelVerticalPagos.Visible = false;
+            panelVerticalPedidos.Visible = false;
+            panelVerticalReportes.Visible = false;
         }
 
         private void iconcerrar_Click(object sender, EventArgs e)
@@ -71,88 +95,179 @@ namespace Formularios
 
         private void btnprod_Click(object sender, EventArgs e)
         {
-
-            //if (panelVertical2.Width == 188)
-            //{
-            //    panelVertical2.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVertical2.Width = 188;
-            //}
-            if (panelVertical2.Visible)
+            if (MenuVertical.Width != 250)
             {
-                panelVertical2.Visible = false;
+                MenuVertical.Width = 250;
+                panel1.Width = 0;
+                panelContenedor.Width = 1042;
+
             }
-            else estadosMantenimiento();
+            else
+            {
+                if (panelVertical2.Visible)
+                {
+                    panelVertical2.Visible = false;
+                    panel1.Width = 0;
+                    if (MenuVertical.Width == 250)
+                    {
+                        panelContenedor.Width = 180 + 862;
+                    }
+                    localizacionInicialPanelVertical2();
+                }
+                else
+                {
+                    panelVertical2.Visible = true;
+                    panel1.Width = 188;
+                    panelContenedor.Width = 862;
+                    estadosMantenimiento();
+                    
+                }
+            }
+
+            
+        }
+
+        void localizacionInicialPanelVertical2()
+        {
+            panelVertical2.Location = new Point(0, 0);
+            panelVerticalAlmacen.Location = new Point(0, 0);
+            panelVerticalPagos.Location = new Point(0, 0);
+            panelVerticalReportes.Location = new Point(0, 0);
+            panelVerticalPedidos.Location = new Point(0, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 0;
+                panelContenedor.Width = 1042;
 
-            //if (panelVerticalPedidos.Width == 188)
-            //{
-            //    panelVerticalPedidos.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalPedidos.Width = 188;
-            //}
-            if (panelVerticalPedidos.Visible) panelVerticalPedidos.Visible = false;
+            }
             else
-                estadosPedido();
+            {
+                if (panelVerticalPedidos.Visible)
+                {
+                    panelVerticalPedidos.Visible = false;
+                    panel1.Width = 0;
+                    if (MenuVertical.Width == 250)
+                    {
+                        panelContenedor.Width = 180 + 862;
+                    }
+                    localizacionInicialPanelVertical2();
+                }
+                else
+                {
+                    panelVerticalPedidos.Visible = true;
+                    panel1.Width = 188;
+                    panelContenedor.Width = 862;
+                    estadosPedido();
+
+                }
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 0;
+                panelContenedor.Width = 1042;
 
-            //if (panelVerticalAlmacen.Width == 188)
-            //{
-            //    panelVerticalAlmacen.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalAlmacen.Width = 188;
-            //}
-            if (panelVerticalAlmacen.Visible) panelVerticalAlmacen.Visible = false;
+            }
             else
-                estadosAlmacen();
+            {
+                if (panelVerticalAlmacen.Visible)
+                {
+                    panelVerticalAlmacen.Visible = false;
+                    panel1.Width = 0;
+                    if (MenuVertical.Width == 250)
+                    {
+                        panelContenedor.Width = 180 + 862;
+                    }
+                    localizacionInicialPanelVertical2();
+                }
+                else
+                {
+                    panelVerticalAlmacen.Visible = true;
+                    panel1.Width = 188;
+                    panelContenedor.Width = 862;
+                    estadosAlmacen();
+
+                }
+            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 0;
+                panelContenedor.Width = 1042;
 
-            //if (panelVerticalPagos.Width == 188)
-            //{
-            //    panelVerticalPagos.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalPagos.Width = 188;
-            //}
-            if (panelVerticalPagos.Visible) panelVerticalPagos.Visible = false;
+            }
             else
-                estadosPagos();
+            {
+                if (panelVerticalPagos.Visible)
+                {
+                    panelVerticalPagos.Visible = false;
+                    panel1.Width = 0;
+                    if (MenuVertical.Width == 250)
+                    {
+                        panelContenedor.Width = 180 + 862;
+                    }
+                    localizacionInicialPanelVertical2();
+                }
+                else
+                {
+                    panelVerticalPagos.Visible = true;
+                    panel1.Width = 188;
+                    panelContenedor.Width = 862;
+                    estadosPagos();
+
+                }
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if (MenuVertical.Width != 250)
+            {
+                MenuVertical.Width = 250;
+                panel1.Width = 0;
+                panelContenedor.Width = 1042;
 
-            //if (panelVerticalReportes.Width == 188)
-            //{
-            //    panelVerticalReportes.Width = 0;
-            //}
-            //else
-            //{
-            //    panelVerticalReportes.Width = 188;
-            //}
-            if (panelVerticalReportes.Visible) panelVerticalReportes.Visible = false;
+            }
             else
-                estadosReporte();
+            {
+                if (panelVerticalReportes.Visible)
+                {
+                    panelVerticalReportes.Visible = false;
+                    panel1.Width = 0;
+                    if (MenuVertical.Width == 250)
+                    {
+                        panelContenedor.Width = 180 + 862;
+                    }
+                    localizacionInicialPanelVertical2();
+                }
+                else
+                {
+                    panelVerticalReportes.Visible = true;
+                    panel1.Width = 188;
+                    panelContenedor.Width = 862;
+                    estadosReporte();
+
+                }
+            }
         }
 
         private void estadosMantenimiento()
         {
+            
             panelVertical2.Visible = true;
             panelVerticalAlmacen.Visible = false;
             panelVerticalPagos.Visible = false;
@@ -206,6 +321,7 @@ namespace Formularios
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+
                 AbrirFormInPanel(new GestionClientes());
             
             
@@ -220,9 +336,69 @@ namespace Formularios
             fh.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(fh);
             this.panelContenedor.Tag = fh;
-            fh.WindowState = FormWindowState.Maximized;
+            //fh.WindowState = FormWindowState.Maximized;
             fh.Show();
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new GestionUsuarios());
+        }
+
+        private void btnTransportistas_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new GestionTransportistas());
+        }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new gestorFacturas()); 
+        }
+
+        private void btnGestionPedidos_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new GestionPedidos()); 
+        }
+
+        private void btnVendedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new frmAdministrarComisionVendedores()); 
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnGestionAlmacenes_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnReporteProductos_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnReporteClientes_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            MessageBox.Show("Este modulo fue implementado en java");
         }
     }
 }

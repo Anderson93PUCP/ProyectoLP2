@@ -36,9 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDireccAddPedido = new System.Windows.Forms.TextBox();
             this.txtTransAddPedido = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblVendeAddPedido = new System.Windows.Forms.Label();
-            this.dgwAddPedido = new System.Windows.Forms.DataGridView();
+            this.dgvAddPedido = new System.Windows.Forms.DataGridView();
             this.colItemDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductoDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +57,9 @@
             this.btnAddDetPedido = new System.Windows.Forms.Button();
             this.btnModDetPedido = new System.Windows.Forms.Button();
             this.btnElimDetPedido = new System.Windows.Forms.Button();
-            this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.lblPedidoAddpedido = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwAddPedido)).BeginInit();
+            this.txtVendedor = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,6 +75,7 @@
             // 
             // txtClienteAddPedido
             // 
+            this.txtClienteAddPedido.Enabled = false;
             this.txtClienteAddPedido.Location = new System.Drawing.Point(117, 29);
             this.txtClienteAddPedido.Name = "txtClienteAddPedido";
             this.txtClienteAddPedido.Size = new System.Drawing.Size(227, 20);
@@ -114,6 +113,7 @@
             // 
             // txtDireccAddPedido
             // 
+            this.txtDireccAddPedido.Enabled = false;
             this.txtDireccAddPedido.Location = new System.Drawing.Point(117, 55);
             this.txtDireccAddPedido.Name = "txtDireccAddPedido";
             this.txtDireccAddPedido.Size = new System.Drawing.Size(227, 20);
@@ -121,33 +121,17 @@
             // 
             // txtTransAddPedido
             // 
+            this.txtTransAddPedido.Enabled = false;
             this.txtTransAddPedido.Location = new System.Drawing.Point(117, 80);
             this.txtTransAddPedido.Name = "txtTransAddPedido";
             this.txtTransAddPedido.Size = new System.Drawing.Size(227, 20);
             this.txtTransAddPedido.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dgvAddPedido
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(117, 136);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(227, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // lblVendeAddPedido
-            // 
-            this.lblVendeAddPedido.AutoSize = true;
-            this.lblVendeAddPedido.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblVendeAddPedido.Location = new System.Drawing.Point(29, 136);
-            this.lblVendeAddPedido.Name = "lblVendeAddPedido";
-            this.lblVendeAddPedido.Size = new System.Drawing.Size(82, 13);
-            this.lblVendeAddPedido.TabIndex = 9;
-            this.lblVendeAddPedido.Text = "Fecha Registro:";
-            // 
-            // dgwAddPedido
-            // 
-            this.dgwAddPedido.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dgwAddPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwAddPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAddPedido.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgvAddPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colItemDetPedido,
             this.colProductoDetPedido,
             this.colDescDetPedido,
@@ -156,11 +140,11 @@
             this.colDescuentoDetPedido,
             this.colSubTDetPedido,
             this.colStockDetPedido});
-            this.dgwAddPedido.GridColor = System.Drawing.SystemColors.Control;
-            this.dgwAddPedido.Location = new System.Drawing.Point(32, 203);
-            this.dgwAddPedido.Name = "dgwAddPedido";
-            this.dgwAddPedido.Size = new System.Drawing.Size(758, 176);
-            this.dgwAddPedido.TabIndex = 10;
+            this.dgvAddPedido.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvAddPedido.Location = new System.Drawing.Point(32, 203);
+            this.dgvAddPedido.Name = "dgvAddPedido";
+            this.dgvAddPedido.Size = new System.Drawing.Size(758, 176);
+            this.dgvAddPedido.TabIndex = 10;
             // 
             // colItemDetPedido
             // 
@@ -344,15 +328,6 @@
             this.btnElimDetPedido.UseVisualStyleBackColor = true;
             this.btnElimDetPedido.Click += new System.EventHandler(this.btnElimDetPedido_Click);
             // 
-            // cmbVendedor
-            // 
-            this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(117, 106);
-            this.cmbVendedor.Name = "cmbVendedor";
-            this.cmbVendedor.Size = new System.Drawing.Size(227, 21);
-            this.cmbVendedor.TabIndex = 25;
-            this.cmbVendedor.SelectedIndexChanged += new System.EventHandler(this.cmbVendedor_SelectedIndexChanged);
-            // 
             // lblPedidoAddpedido
             // 
             this.lblPedidoAddpedido.AutoSize = true;
@@ -363,13 +338,21 @@
             this.lblPedidoAddpedido.TabIndex = 49;
             this.lblPedidoAddpedido.Text = "Pedido:";
             // 
+            // txtVendedor
+            // 
+            this.txtVendedor.Enabled = false;
+            this.txtVendedor.Location = new System.Drawing.Point(117, 106);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.Size = new System.Drawing.Size(227, 20);
+            this.txtVendedor.TabIndex = 50;
+            // 
             // frmAddPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 460);
+            this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.lblPedidoAddpedido);
-            this.Controls.Add(this.cmbVendedor);
             this.Controls.Add(this.txtTotalAddPedido);
             this.Controls.Add(this.lblTotalAddPedido);
             this.Controls.Add(this.btnBuscarDireAddPedido);
@@ -381,9 +364,7 @@
             this.Controls.Add(this.btnAddDetPedido);
             this.Controls.Add(this.btnModDetPedido);
             this.Controls.Add(this.btnElimDetPedido);
-            this.Controls.Add(this.dgwAddPedido);
-            this.Controls.Add(this.lblVendeAddPedido);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dgvAddPedido);
             this.Controls.Add(this.txtTransAddPedido);
             this.Controls.Add(this.txtDireccAddPedido);
             this.Controls.Add(this.label3);
@@ -395,7 +376,7 @@
             this.Name = "frmAddPedido";
             this.Text = "Añadir Pedido";
             this.Load += new System.EventHandler(this.frmAddPedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgwAddPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,9 +391,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDireccAddPedido;
         private System.Windows.Forms.TextBox txtTransAddPedido;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label lblVendeAddPedido;
-        private System.Windows.Forms.DataGridView dgwAddPedido;
+        private System.Windows.Forms.DataGridView dgvAddPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colItemDetPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductoDetPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescDetPedido;
@@ -433,7 +412,7 @@
         private System.Windows.Forms.Button btnBuscarDireAddPedido;
         private System.Windows.Forms.Label lblTotalAddPedido;
         private System.Windows.Forms.TextBox txtTotalAddPedido;
-        private System.Windows.Forms.ComboBox cmbVendedor;
         private System.Windows.Forms.Label lblPedidoAddpedido;
+        private System.Windows.Forms.TextBox txtVendedor;
     }
 }

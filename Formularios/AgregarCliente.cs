@@ -1,4 +1,5 @@
-﻿using ProyectoLP2;
+﻿using LogicaNegocio;
+using ProyectoLP2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,12 @@ namespace Formularios
 {
     public partial class AgregarCliente : Form
     {
+        UsuarioBL usuarioBL;
+        ClienteBL clienteBL;
         public AgregarCliente()
         {
             InitializeComponent();
+            CargarVendedores();
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
@@ -26,6 +30,7 @@ namespace Formularios
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
+            clienteBL = new ClienteBL();
             if (txtrazonCliente.Text == "")
             {
                 MessageBox.Show("Por favor ingrese un nombre.",
@@ -63,19 +68,16 @@ namespace Formularios
             a.Ruc = txtrucCliente.Text;
             a.Email = txtemailCliente.Text;
             a.Telefono = Int32.Parse(txttelfCliente.Text);
+            a.Dni_vendedor = cmbvendedorCliente.SelectedValue.ToString();
+            if (clienteBL.registrarCliente(a))
 
-            FileStream fs = new FileStream("clientes.txt", FileMode.Append, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(a.Nombre);
-            sw.WriteLine(a.Ruc);
-            sw.WriteLine(a.Telefono);
-            sw.WriteLine(a.Email);
-            
-
-            sw.Close();
-            fs.Close();
             MessageBox.Show("El cliente se registro satisfactoriamente",
                 "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else {
+                MessageBox.Show("El cliente no se registro",
+               "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
             limpiarCamposCliente();
             //this.Dispose();
         }
@@ -109,6 +111,18 @@ namespace Formularios
         {
             AgregarDirecciones fgd = new AgregarDirecciones();
             fgd.ShowDialog();
+        }
+
+        private void CargarVendedores()
+        {
+            usuarioBL = new UsuarioBL();
+            BindingList<Persona> vendedores = new BindingList<Persona>();
+            vendedores = usuarioBL.listarVendedores();
+            cmbvendedorCliente.ValueMember = "Dni";
+            cmbvendedorCliente.DisplayMember = "Nombre";
+            cmbvendedorCliente.DataSource = vendedores;
+            cmbvendedorCliente.SelectedIndex = -1;
+
         }
     }
 }

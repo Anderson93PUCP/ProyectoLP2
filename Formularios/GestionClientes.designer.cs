@@ -37,6 +37,10 @@
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddCliente = new System.Windows.Forms.Button();
             this.btnBusquedaClientes = new System.Windows.Forms.Button();
+            this.columnRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +55,11 @@
             this.rbtnBusqRucCLiente.TabStop = true;
             this.rbtnBusqRucCLiente.Text = "Por RUC";
             this.rbtnBusqRucCLiente.UseVisualStyleBackColor = true;
+            this.rbtnBusqRucCLiente.CheckedChanged += new System.EventHandler(this.rbtnBusqRucCLiente_CheckedChanged);
             // 
             // txtBusqClientes
             // 
+            this.txtBusqClientes.Enabled = false;
             this.txtBusqClientes.Location = new System.Drawing.Point(15, 47);
             this.txtBusqClientes.Name = "txtBusqClientes";
             this.txtBusqClientes.Size = new System.Drawing.Size(212, 20);
@@ -62,9 +68,15 @@
             // dgvClientes
             // 
             this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnRUC,
+            this.columnNombre,
+            this.columnCorreo,
+            this.columnTelefono});
             this.dgvClientes.Location = new System.Drawing.Point(45, 129);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
@@ -74,6 +86,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.btnBusquedaClientes);
             this.groupBox1.Controls.Add(this.txtBusqClientes);
             this.groupBox1.Controls.Add(this.rbtnBusqRucCLiente);
@@ -96,10 +109,12 @@
             this.btnCancelarClientes.Text = "Cancelar";
             this.btnCancelarClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarClientes.UseVisualStyleBackColor = true;
+            this.btnCancelarClientes.Visible = false;
             this.btnCancelarClientes.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
             // btnElimCliente
             // 
+            this.btnElimCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnElimCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnElimCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElimCliente.Image = global::Formularios.Properties.Resources._008_document;
@@ -114,6 +129,7 @@
             // 
             // btnModCliente
             // 
+            this.btnModCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnModCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnModCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModCliente.Image = global::Formularios.Properties.Resources.file__3_;
@@ -128,6 +144,7 @@
             // 
             // btnAddCliente
             // 
+            this.btnAddCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCliente.Image = global::Formularios.Properties.Resources.plus__1_;
@@ -142,6 +159,7 @@
             // 
             // btnBusquedaClientes
             // 
+            this.btnBusquedaClientes.Enabled = false;
             this.btnBusquedaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBusquedaClientes.Image = global::Formularios.Properties.Resources._015_search1;
             this.btnBusquedaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,11 +170,40 @@
             this.btnBusquedaClientes.Text = "Buscar";
             this.btnBusquedaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBusquedaClientes.UseVisualStyleBackColor = true;
+            this.btnBusquedaClientes.Click += new System.EventHandler(this.btnBusquedaClientes_Click);
+            // 
+            // columnRUC
+            // 
+            this.columnRUC.DataPropertyName = "Ruc";
+            this.columnRUC.HeaderText = "RUC";
+            this.columnRUC.Name = "columnRUC";
+            this.columnRUC.ReadOnly = true;
+            // 
+            // columnNombre
+            // 
+            this.columnNombre.DataPropertyName = "Nombre";
+            this.columnNombre.HeaderText = "NOMBRE";
+            this.columnNombre.Name = "columnNombre";
+            this.columnNombre.ReadOnly = true;
+            // 
+            // columnCorreo
+            // 
+            this.columnCorreo.DataPropertyName = "Email";
+            this.columnCorreo.HeaderText = "CORREO";
+            this.columnCorreo.Name = "columnCorreo";
+            this.columnCorreo.ReadOnly = true;
+            // 
+            // columnTelefono
+            // 
+            this.columnTelefono.DataPropertyName = "Telefono";
+            this.columnTelefono.HeaderText = "TELEFONO";
+            this.columnTelefono.Name = "columnTelefono";
+            this.columnTelefono.ReadOnly = true;
             // 
             // GestionClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 406);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCancelarClientes);
@@ -184,5 +231,9 @@
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnBusquedaClientes;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRUC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCorreo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnTelefono;
     }
 }
