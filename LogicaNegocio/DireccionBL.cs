@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using Clases;
+using ProyectoLP2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,11 @@ namespace LogicaNegocio
         public BindingList<Distrito> listarDistritos(string idDepartamento,string idProvincia)
         {
             return direccionDA.listarDistritos(idDepartamento, idProvincia);
+        }
+
+        public BindingList<Direccion> listarDireccionesCliente(int id)
+        {
+            return direccionDA.listarDireccionCliente(id);
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Formularios
             TransportistaBL t = new TransportistaBL();
             lista = new BindingList<Transportista>();
             lista = t.listarTrans();
+            dgvTransportistas.AutoGenerateColumns = false;
             dgvTransportistas.DataSource = lista;
 
         }
