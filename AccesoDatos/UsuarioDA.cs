@@ -25,7 +25,7 @@ namespace AccesoDatos
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand();
-                String sql = "SELECT * FROM n_usuarios";
+                String sql = "SELECT * FROM n_usuarios where estado=1";
                 cmd.CommandText = sql;
                 cmd.Connection = conn;
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -80,13 +80,13 @@ namespace AccesoDatos
                 int idrol = -1;
                 if (dni!="")
                 {
-                    sql= "SELECT * FROM n_usuarios where dni_empleado=" + dni.ToString();
+                    sql= "SELECT * FROM n_usuarios where estado=1 and  dni_empleado=" + dni.ToString();
                 }else
                 {
                     if (rol == "Administrador") idrol = 0;
                     else if (rol == "Vendedor") idrol = 1;
                     else if (rol == "Operario") idrol = 2;
-                    sql = "SELECT * FROM n_usuarios where tipoUsuario=" + idrol.ToString();
+                    sql = "SELECT * FROM n_usuarios where estado=1 and tipoUsuario=" + idrol.ToString();
                 }
                  
                 cmd.CommandText = sql;
@@ -140,7 +140,7 @@ namespace AccesoDatos
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand();
-                String sql = "SELECT * FROM n_usuarios where tipoUsuario=1";
+                String sql = "SELECT * FROM n_usuarios where tipoUsuario=1 and estado=1";
                 cmd.CommandText = sql;
                 cmd.Connection = conn;
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -158,6 +158,75 @@ namespace AccesoDatos
             catch (Exception e)
             {
                 return null;
+            }
+        }
+
+
+        public bool registrarUsuario(Persona usuario,double salario,double comision)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+                string fecha = usuario.Fecha_ingreso.Year + "-" + usuario.Fecha_ingreso.Month + "-" + usuario.Fecha_ingreso.Day;
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "INSERT INTO n_usuarios" +
+                                "(dni_empleado,nombre,apellido_paterno,apellido_materno,estado,fecha_inicio," +
+                                "fecha_fin,edad,direccion,telefono1,telefono2,IDusuario,contrasenia,respuestaConfirmacion," +
+                                "tipoUsuario,salario,comision) " +
+                                "VALUES('" +
+                                usuario.Dni + "','" +
+                               usuario.Nombre + "','" +
+                                 usuario.Apellido + "','" +
+                                " '," +
+                                "1,'" +
+                                fecha + "','" +
+                                "'," +
+                                usuario.Edad.ToString() + ",'" +
+                                "'," +
+                                usuario.Telefono.ToString() + ",'" +
+                                "','" +
+                                usuario.IDUsuario1 + "','" +
+                                usuario.Password + "','" +
+                                "'," +
+                                usuario.TipoUsuario.ToString() + "," +
+                                salario.ToString() + "," +
+                                comision.ToString() + ")";
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool eliminarUsuario(string dni)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "UPDATE n_usuarios " +
+                                "SET " +
+                                "estado = 0 " +
+                                 "WHERE dni_empleado = " + dni;
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

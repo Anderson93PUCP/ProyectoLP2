@@ -24,10 +24,20 @@ namespace Formularios
 
         private void btnAddUsuario_Click(object sender, EventArgs e)
         {
-            AgregarUsuario fga = new AgregarUsuario();
-            fga.ShowDialog();
+            AgregarUsuario ausuario = new AgregarUsuario();
+
+            ausuario.FormClosed += new System.Windows.Forms.FormClosedEventHandler(AgregarUsuario_FormClosed);
+            if (ausuario.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
+
+        private void AgregarUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargarUsuarios();
+        }
         private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -85,5 +95,32 @@ namespace Formularios
             ModificarUsuario fga = new ModificarUsuario();
             fga.ShowDialog();
         }
+
+        private void btnElimCliente_Click(object sender, EventArgs e)
+        {
+            string dni = "";
+            //}
+            if (MessageBox.Show("Esta seguro que desea eliminar el Usuario", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dni = dgvUsuarios.Rows[dgvUsuarios.CurrentRow.Index].Cells[0].Value.ToString();
+                if (usuarioBL.eliminarUsuario(dni))
+                {
+                    MessageBox.Show("Se elimino el Usuario satisfactoriamente");
+                    cargarUsuarios();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el Usuario");
+                }
+                // user clicked yes
+            }
+            else
+            {
+                // user clicked no
+            }
+        }
+
+
+        
     }
 }

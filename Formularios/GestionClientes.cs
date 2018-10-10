@@ -43,6 +43,7 @@ namespace Formularios
 
         }
 
+
         private void cargarClientes()
         {
             clienteBL = new ClienteBL();
@@ -69,10 +70,27 @@ namespace Formularios
 
         private void btnElimCliente_Click(object sender, EventArgs e)
         {
-            confirmarElimCliente eclientes = new confirmarElimCliente();
-            if (eclientes.ShowDialog() == DialogResult.OK)
+            //confirmarElimCliente eclientes = new confirmarElimCliente();
+            //if (eclientes.ShowDialog() == DialogResult.OK)
+            //{
+            int id = 0;
+            //}
+            if (MessageBox.Show("Esta seguro que desea eliminar el Cliente", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
+                 id= Convert.ToInt32(dgvClientes.Rows[dgvClientes.CurrentRow.Index].Cells[0].Value);
+                if (clienteBL.eliminarCliente(id))
+                {
+                    MessageBox.Show("Se elimino el Cliente satisfactoriamente");
+                    cargarClientes();
+                }else
+                {
+                    MessageBox.Show("No se pudo eliminar el cliente");
+                }
+                // user clicked yes
+            }
+            else
+            {
+                // user clicked no
             }
         }
 
