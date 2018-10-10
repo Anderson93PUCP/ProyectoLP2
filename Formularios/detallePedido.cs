@@ -1,4 +1,5 @@
-﻿using ProyectoLP2;
+﻿using LogicaNegocio;
+using ProyectoLP2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

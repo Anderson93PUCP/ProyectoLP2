@@ -41,5 +41,32 @@ namespace ProyectoLP2
         public char Tipo { get => tipo; set => tipo = value; }
         public int MinimoStock { get => minimoStock; set => minimoStock = value; }
         public List<Proveedor> ListaProveedores { get => listaProveedores; set => listaProveedores = value; }
+        public string UnidadMedida()
+        {
+            string medida = "test";
+            switch (um)
+            {
+                case (Medida.bolsa):
+                    medida = "BOLSA";
+                    break;
+                case (Medida.ciento):
+                    medida = "CIENTO";
+                    break;
+                case (Medida.docena):
+                    medida = "DOCENA";
+                    break;
+                case (Medida.kilogramo):
+                    medida = "KILOGRAMO";
+                    break;
+                case (Medida.metro):
+                    medida = "METRO";
+                    break;
+                case (Medida.unidad):
+                    medida = "UNIDAD";
+                    break;
+            }
+
+            return medida;
+        }
     }
 }
