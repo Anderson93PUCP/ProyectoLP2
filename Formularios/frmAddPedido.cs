@@ -152,8 +152,13 @@ namespace Formularios
 
         private void btnModDetPedido_Click(object sender, EventArgs e)
         {
-                detallePedido v = new detallePedido();
-            v.ShowDialog();
+            DetallePedido d = new DetallePedido();
+            d = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
+                detallePedido v = new detallePedido(d);
+            if (v.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
         private void cmbVendedor_SelectedIndexChanged(object sender, EventArgs e)

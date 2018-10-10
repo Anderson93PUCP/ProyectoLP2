@@ -32,6 +32,31 @@ namespace Formularios
             dgvProductos.DataSource = listaPro;
         }
 
+
+        public detallePedido(DetallePedido detModificar)
+        {
+            InitializeComponent();
+            dgvProductos.AutoGenerateColumns = false;
+            ProductoBL pro = new ProductoBL();
+            listaPro = new BindingList<Producto>();
+            listaPro = pro.listarProducto();
+            dgvProductos.DataSource = listaPro;
+            rbtnID.Checked = true;
+            txtBuscarProducto.Text = detModificar.proCod;
+            numCant.Value = detModificar.Cantidad;
+            numDesc.Value = (int)detModificar.Desc;
+            //dgvProductos.SelectedRows.Clear();
+            foreach (DataGridViewRow row in dgvProductos.Rows   )
+            {
+                Producto aux = new  Producto ();
+                aux = (Producto)row.DataBoundItem;
+                if (aux.Codigo == detModificar.proCod)
+                {
+                    row.Selected = true;
+                }
+            }
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
