@@ -36,14 +36,16 @@
             this.lblCantidad = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.colIDDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescpDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStockDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAceptarAddDetPedido = new System.Windows.Forms.Button();
             this.btnCancelarAddDetPedido = new System.Windows.Forms.Button();
             this.numCant = new System.Windows.Forms.NumericUpDown();
             this.numDesc = new System.Windows.Forms.NumericUpDown();
             this.lblDesct = new System.Windows.Forms.Label();
+            this.colIDDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescpDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnidMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesc)).BeginInit();
@@ -90,7 +92,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(45, 233);
+            this.lblCantidad.Location = new System.Drawing.Point(137, 232);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(52, 13);
             this.lblCantidad.TabIndex = 5;
@@ -99,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 259);
+            this.label1.Location = new System.Drawing.Point(137, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 6;
@@ -111,37 +113,21 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDDetallePedido,
+            this.colNombre,
             this.colDescpDetallePedido,
-            this.colStockDetallePedido});
+            this.colUnidMedida,
+            this.colPrecio});
             this.dgvProductos.Location = new System.Drawing.Point(12, 64);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(344, 150);
+            this.dgvProductos.Size = new System.Drawing.Size(562, 150);
             this.dgvProductos.TabIndex = 8;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colIDDetallePedido
-            // 
-            this.colIDDetallePedido.HeaderText = "ID";
-            this.colIDDetallePedido.Name = "colIDDetallePedido";
-            this.colIDDetallePedido.ReadOnly = true;
-            // 
-            // colDescpDetallePedido
-            // 
-            this.colDescpDetallePedido.HeaderText = "Descripcion";
-            this.colDescpDetallePedido.Name = "colDescpDetallePedido";
-            this.colDescpDetallePedido.ReadOnly = true;
-            // 
-            // colStockDetallePedido
-            // 
-            this.colStockDetallePedido.HeaderText = "Stock";
-            this.colStockDetallePedido.Name = "colStockDetallePedido";
-            this.colStockDetallePedido.ReadOnly = true;
             // 
             // btnAceptarAddDetPedido
             // 
             this.btnAceptarAddDetPedido.Image = global::Formularios.Properties.Resources.check;
             this.btnAceptarAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarAddDetPedido.Location = new System.Drawing.Point(278, 240);
+            this.btnAceptarAddDetPedido.Location = new System.Drawing.Point(370, 239);
             this.btnAceptarAddDetPedido.Name = "btnAceptarAddDetPedido";
             this.btnAceptarAddDetPedido.Size = new System.Drawing.Size(78, 32);
             this.btnAceptarAddDetPedido.TabIndex = 18;
@@ -154,7 +140,7 @@
             // 
             this.btnCancelarAddDetPedido.Image = global::Formularios.Properties.Resources.cross;
             this.btnCancelarAddDetPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarAddDetPedido.Location = new System.Drawing.Point(177, 240);
+            this.btnCancelarAddDetPedido.Location = new System.Drawing.Point(269, 239);
             this.btnCancelarAddDetPedido.Name = "btnCancelarAddDetPedido";
             this.btnCancelarAddDetPedido.Size = new System.Drawing.Size(80, 32);
             this.btnCancelarAddDetPedido.TabIndex = 17;
@@ -165,7 +151,7 @@
             // 
             // numCant
             // 
-            this.numCant.Location = new System.Drawing.Point(107, 231);
+            this.numCant.Location = new System.Drawing.Point(199, 230);
             this.numCant.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -177,7 +163,7 @@
             // 
             // numDesc
             // 
-            this.numDesc.Location = new System.Drawing.Point(107, 257);
+            this.numDesc.Location = new System.Drawing.Point(199, 256);
             this.numDesc.Maximum = new decimal(new int[] {
             15,
             0,
@@ -191,17 +177,52 @@
             // 
             this.lblDesct.AutoSize = true;
             this.lblDesct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesct.Location = new System.Drawing.Point(151, 259);
+            this.lblDesct.Location = new System.Drawing.Point(243, 258);
             this.lblDesct.Name = "lblDesct";
             this.lblDesct.Size = new System.Drawing.Size(19, 15);
             this.lblDesct.TabIndex = 21;
             this.lblDesct.Text = "%";
             // 
+            // colIDDetallePedido
+            // 
+            this.colIDDetallePedido.DataPropertyName = "Codigo";
+            this.colIDDetallePedido.HeaderText = "Codigo";
+            this.colIDDetallePedido.Name = "colIDDetallePedido";
+            this.colIDDetallePedido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "Nombre";
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colDescpDetallePedido
+            // 
+            this.colDescpDetallePedido.DataPropertyName = "Descripcion";
+            this.colDescpDetallePedido.HeaderText = "Descripcion";
+            this.colDescpDetallePedido.Name = "colDescpDetallePedido";
+            this.colDescpDetallePedido.ReadOnly = true;
+            // 
+            // colUnidMedida
+            // 
+            this.colUnidMedida.DataPropertyName = "Um";
+            this.colUnidMedida.HeaderText = "U.M.";
+            this.colUnidMedida.Name = "colUnidMedida";
+            this.colUnidMedida.ReadOnly = true;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.DataPropertyName = "Precio";
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
             // detallePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 292);
+            this.ClientSize = new System.Drawing.Size(612, 292);
             this.Controls.Add(this.lblDesct);
             this.Controls.Add(this.numDesc);
             this.Controls.Add(this.numCant);
@@ -235,13 +256,15 @@
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDDetallePedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescpDetallePedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStockDetallePedido;
         private System.Windows.Forms.Button btnAceptarAddDetPedido;
         private System.Windows.Forms.Button btnCancelarAddDetPedido;
         private System.Windows.Forms.NumericUpDown numCant;
         private System.Windows.Forms.NumericUpDown numDesc;
         private System.Windows.Forms.Label lblDesct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDDetallePedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescpDetallePedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnidMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
     }
 }
