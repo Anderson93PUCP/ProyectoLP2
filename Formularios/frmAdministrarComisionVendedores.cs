@@ -15,6 +15,7 @@ namespace Formularios
     public partial class frmAdministrarComisionVendedores : Form
     {
         private UsuarioBL usuarioBL;
+        private PagoBL pagoBL;
         
         public frmAdministrarComisionVendedores()
         {
@@ -54,6 +55,18 @@ namespace Formularios
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void cbxvendedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pagoBL = new PagoBL();
+            string dni = "";
+            if (cbxvendedores.SelectedIndex != -1)
+            {
+                dni = cbxvendedores.SelectedValue.ToString();
+                dgvpagos.AutoGenerateColumns = false;
+                dgvpagos.DataSource = pagoBL.listarPagos(dni);
+            }
         }
     }
 }

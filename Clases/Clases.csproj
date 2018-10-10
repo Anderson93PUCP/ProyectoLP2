@@ -57,6 +57,7 @@
     <Compile Include="Factura.cs" />
     <Compile Include="Medida.cs" />
     <Compile Include="Operario.cs" />
+    <Compile Include="Pago.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />
