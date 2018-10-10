@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdministrarComisionVendedores));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colIDAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRUCAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRazonSAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVendAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colComAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoPagoVendAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,6 +37,10 @@
             this.txtTotalComision = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
+            this.colIDAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRUCAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRazonSAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,50 +52,12 @@
             this.colIDAdminComision,
             this.colRUCAdminComision,
             this.colRazonSAdminComision,
-            this.colVendAdminComision,
-            this.colComAdminComision,
-            this.colEstadoPagoVendAdminComision});
+            this.colComAdminComision});
             this.dataGridView1.Location = new System.Drawing.Point(12, 98);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(648, 150);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colIDAdminComision
-            // 
-            this.colIDAdminComision.HeaderText = "ID";
-            this.colIDAdminComision.Name = "colIDAdminComision";
-            this.colIDAdminComision.ReadOnly = true;
-            // 
-            // colRUCAdminComision
-            // 
-            this.colRUCAdminComision.HeaderText = "RUC";
-            this.colRUCAdminComision.Name = "colRUCAdminComision";
-            this.colRUCAdminComision.ReadOnly = true;
-            // 
-            // colRazonSAdminComision
-            // 
-            this.colRazonSAdminComision.HeaderText = "Razón Social";
-            this.colRazonSAdminComision.Name = "colRazonSAdminComision";
-            this.colRazonSAdminComision.ReadOnly = true;
-            // 
-            // colVendAdminComision
-            // 
-            this.colVendAdminComision.HeaderText = "Vendedor";
-            this.colVendAdminComision.Name = "colVendAdminComision";
-            this.colVendAdminComision.ReadOnly = true;
-            // 
-            // colComAdminComision
-            // 
-            this.colComAdminComision.HeaderText = "Comision";
-            this.colComAdminComision.Name = "colComAdminComision";
-            this.colComAdminComision.ReadOnly = true;
-            // 
-            // colEstadoPagoVendAdminComision
-            // 
-            this.colEstadoPagoVendAdminComision.HeaderText = "Estado";
-            this.colEstadoPagoVendAdminComision.Name = "colEstadoPagoVendAdminComision";
-            this.colEstadoPagoVendAdminComision.ReadOnly = true;
             // 
             // lblVendedor
             // 
@@ -174,6 +134,30 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
+            // colIDAdminComision
+            // 
+            this.colIDAdminComision.HeaderText = "ID";
+            this.colIDAdminComision.Name = "colIDAdminComision";
+            this.colIDAdminComision.ReadOnly = true;
+            // 
+            // colRUCAdminComision
+            // 
+            this.colRUCAdminComision.HeaderText = "RUC";
+            this.colRUCAdminComision.Name = "colRUCAdminComision";
+            this.colRUCAdminComision.ReadOnly = true;
+            // 
+            // colRazonSAdminComision
+            // 
+            this.colRazonSAdminComision.HeaderText = "Razón Social";
+            this.colRazonSAdminComision.Name = "colRazonSAdminComision";
+            this.colRazonSAdminComision.ReadOnly = true;
+            // 
+            // colComAdminComision
+            // 
+            this.colComAdminComision.HeaderText = "Comision";
+            this.colComAdminComision.Name = "colComAdminComision";
+            this.colComAdminComision.ReadOnly = true;
+            // 
             // frmAdministrarComisionVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,12 +183,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDAdminComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRUCAdminComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRazonSAdminComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVendAdminComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colComAdminComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoPagoVendAdminComision;
         private System.Windows.Forms.Label lblVendedor;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
@@ -212,5 +190,9 @@
         private System.Windows.Forms.TextBox txtTotalComision;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDAdminComision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRUCAdminComision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRazonSAdminComision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colComAdminComision;
     }
 }
