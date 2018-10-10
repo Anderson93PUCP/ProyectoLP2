@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +47,185 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarCliente.designer.cs">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarDirecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarDirecciones.Designer.cs">
+      <DependentUpon>AgregarDirecciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agregarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agregarFactura.Designer.cs">
+      <DependentUpon>agregarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarTransportista.Designer.cs">
+      <DependentUpon>AgregarTransportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="buscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buscarCliente.Designer.cs">
+      <DependentUpon>buscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="buscarDireccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buscarDireccion.Designer.cs">
+      <DependentUpon>buscarDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="buscarTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buscarTransportista.Designer.cs">
+      <DependentUpon>buscarTransportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confCancelarAddPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confCancelarAddPedido.Designer.cs">
+      <DependentUpon>confCancelarAddPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmaAceptarAddFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmaAceptarAddFactura.Designer.cs">
+      <DependentUpon>confirmaAceptarAddFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmacionAceptarAddPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmacionAceptarAddPedido.Designer.cs">
+      <DependentUpon>confirmacionAceptarAddPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarCancelarAddFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarCancelarAddFact.Designer.cs">
+      <DependentUpon>confirmarCancelarAddFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarElimCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarElimCliente.Designer.cs">
+      <DependentUpon>confirmarElimCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarElimFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarElimFactura.Designer.cs">
+      <DependentUpon>confirmarElimFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmarEliminarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmarEliminarPedido.Designer.cs">
+      <DependentUpon>confirmarEliminarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="detallePedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="detallePedido.Designer.cs">
+      <DependentUpon>detallePedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarComisionVendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarComisionVendedores.Designer.cs">
+      <DependentUpon>frmAdministrarComisionVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClientes.designer.cs">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTransportistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionTransportistas.Designer.cs">
+      <DependentUpon>GestionTransportistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionUsuarios.Designer.cs">
+      <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestorFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestorFacturas.Designer.cs">
+      <DependentUpon>gestorFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarCliente.Designer.cs">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modificarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificarPedido.Designer.cs">
+      <DependentUpon>modificarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarTransportista.Designer.cs">
+      <DependentUpon>ModificarTransportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="registradoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registradoPedido.Designer.cs">
+      <DependentUpon>registradoPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPedido.Designer.cs">
+      <DependentUpon>frmAddPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionPedidos.Designer.cs">
+      <DependentUpon>GestionPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -66,6 +241,117 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporteclientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteclientes.Designer.cs">
+      <DependentUpon>reporteclientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteprod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteprod.Designer.cs">
+      <DependentUpon>reporteprod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="verFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="verFactura.Designer.cs">
+      <DependentUpon>verFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="verPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="verPedido.Designer.cs">
+      <DependentUpon>verPedido.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarDirecciones.resx">
+      <DependentUpon>AgregarDirecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agregarFactura.resx">
+      <DependentUpon>agregarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarTransportista.resx">
+      <DependentUpon>AgregarTransportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buscarCliente.resx">
+      <DependentUpon>buscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buscarDireccion.resx">
+      <DependentUpon>buscarDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buscarTransportista.resx">
+      <DependentUpon>buscarTransportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confCancelarAddPedido.resx">
+      <DependentUpon>confCancelarAddPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmaAceptarAddFactura.resx">
+      <DependentUpon>confirmaAceptarAddFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmacionAceptarAddPedido.resx">
+      <DependentUpon>confirmacionAceptarAddPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmarCancelarAddFact.resx">
+      <DependentUpon>confirmarCancelarAddFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmarElimCliente.resx">
+      <DependentUpon>confirmarElimCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmarElimFactura.resx">
+      <DependentUpon>confirmarElimFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmarEliminarPedido.resx">
+      <DependentUpon>confirmarEliminarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detallePedido.resx">
+      <DependentUpon>detallePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarComisionVendedores.resx">
+      <DependentUpon>frmAdministrarComisionVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionClientes.resx">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionTransportistas.resx">
+      <DependentUpon>GestionTransportistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionUsuarios.resx">
+      <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestorFacturas.resx">
+      <DependentUpon>gestorFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificarPedido.resx">
+      <DependentUpon>modificarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarTransportista.resx">
+      <DependentUpon>ModificarTransportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registradoPedido.resx">
+      <DependentUpon>registradoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPedido.resx">
+      <DependentUpon>frmAddPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionPedidos.resx">
+      <DependentUpon>GestionPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,6 +368,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reporteclientes.resx">
+      <DependentUpon>reporteclientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteprod.resx">
+      <DependentUpon>reporteprod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="verFactura.resx">
+      <DependentUpon>verFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="verPedido.resx">
+      <DependentUpon>verPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,6 +404,82 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\password_ico_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\017-magnifier-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012-printer-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-x-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-x-button %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015-search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\026-cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clases\Clases.csproj">
+      <Project>{9c567c9c-717c-4495-9371-4065b109a211}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
+      <Project>{6AAFB77D-9155-433A-8CDF-62D22DDA41DF}</Project>
+      <Name>LogicaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

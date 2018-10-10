@@ -12,16 +12,91 @@ namespace Formularios
 {
     public partial class Panel : Form
     {
+        private static GestionClientes fgc;
         public Panel()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
 
-        private void Panel_Load(object sender, EventArgs e)
+        private void gestionDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GestionPedidos nuevaVentana = new GestionPedidos();
+            nuevaVentana.ShowDialog();
+
+
 
         }
 
-        
+        private void itemFacturas_Click(object sender, EventArgs e)
+        {
+            gestorFacturas ventana = new gestorFacturas();
+            ventana.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Login lg = new Login();
+            lg.ShowDialog();
+        }
+
+        private void reporteDeProductoDeAltoMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reporteprod rp = new reporteprod();
+            rp.ShowDialog();
+        }
+
+        private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reporteclientes rc = new reporteclientes();
+            rc.ShowDialog();
+        }
+
+        private void itemClientes_Click(object sender, EventArgs e)
+        {
+            GestionClientes fgc = new GestionClientes();
+            fgc.ShowDialog();
+            //if(fgc!=null)
+            //{
+            //    fgc.Close();
+            //    fgc = null;
+            //}
+            //else
+            //{
+            //    fgc = new GestionClientes();
+            //    fgc.MdiParent = this;
+            //    fgc.WindowState = FormWindowState.Maximized;
+            //    fgc.Visible = true;
+            //    fgc.FormClosing += volverNulo;
+            //}
+
+
+        }
+
+        public void volverNulo(object sender,
+            FormClosingEventArgs e)
+        {
+            fgc = null;
+        }
+
+        private void itemTransportes_Click(object sender, EventArgs e)
+        {
+            GestionTransportistas fgt = new GestionTransportistas();
+            fgt.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionUsuarios fgu = new GestionUsuarios();
+            fgu.ShowDialog();
+        }
+
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdministrarComisionVendedores ventana = new frmAdministrarComisionVendedores();
+            ventana.ShowDialog();
+        }
     }
 }
+  

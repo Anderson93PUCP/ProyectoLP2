@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
+VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formularios", "Formularios\Formularios.csproj", "{FAED6789-B2CF-4C26-A93F-1380CC7A9FA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases", "Clases\Clases.csproj", "{9C567C9C-717C-4495-9371-4065B109A211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{5F7FF595-2BB2-4350-94FA-4AA39B007741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LogicaNegocio\LogicaNegocio.csproj", "{6AAFB77D-9155-433A-8CDF-62D22DDA41DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{9C567C9C-717C-4495-9371-4065B109A211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C567C9C-717C-4495-9371-4065B109A211}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C567C9C-717C-4495-9371-4065B109A211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7FF595-2BB2-4350-94FA-4AA39B007741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7FF595-2BB2-4350-94FA-4AA39B007741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7FF595-2BB2-4350-94FA-4AA39B007741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7FF595-2BB2-4350-94FA-4AA39B007741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AAFB77D-9155-433A-8CDF-62D22DDA41DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AAFB77D-9155-433A-8CDF-62D22DDA41DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AAFB77D-9155-433A-8CDF-62D22DDA41DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AAFB77D-9155-433A-8CDF-62D22DDA41DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
