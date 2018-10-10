@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.rbtnDNI = new System.Windows.Forms.RadioButton();
-            this.txtBusqUsuarioDNI = new System.Windows.Forms.TextBox();
-            this.rbtRol = new System.Windows.Forms.RadioButton();
-            this.cmbBusqUsuarioRol = new System.Windows.Forms.ComboBox();
             this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +36,10 @@
             this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbtnDNI = new System.Windows.Forms.RadioButton();
+            this.txtBusqUsuarioDNI = new System.Windows.Forms.TextBox();
+            this.rbtRol = new System.Windows.Forms.RadioButton();
+            this.cmbBusqUsuarioRol = new System.Windows.Forms.ComboBox();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnBusquedaPedido = new System.Windows.Forms.Button();
@@ -66,57 +66,9 @@
             this.colFechaI});
             this.dgvUsuarios.Location = new System.Drawing.Point(39, 118);
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(699, 217);
             this.dgvUsuarios.TabIndex = 28;
-            // 
-            // rbtnDNI
-            // 
-            this.rbtnDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rbtnDNI.AutoSize = true;
-            this.rbtnDNI.Location = new System.Drawing.Point(453, 44);
-            this.rbtnDNI.Name = "rbtnDNI";
-            this.rbtnDNI.Size = new System.Drawing.Size(63, 17);
-            this.rbtnDNI.TabIndex = 27;
-            this.rbtnDNI.TabStop = true;
-            this.rbtnDNI.Text = "Por DNI";
-            this.rbtnDNI.UseVisualStyleBackColor = true;
-            this.rbtnDNI.CheckedChanged += new System.EventHandler(this.rbtnDNI_CheckedChanged);
-            // 
-            // txtBusqUsuarioDNI
-            // 
-            this.txtBusqUsuarioDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBusqUsuarioDNI.Enabled = false;
-            this.txtBusqUsuarioDNI.Location = new System.Drawing.Point(532, 44);
-            this.txtBusqUsuarioDNI.Name = "txtBusqUsuarioDNI";
-            this.txtBusqUsuarioDNI.Size = new System.Drawing.Size(119, 20);
-            this.txtBusqUsuarioDNI.TabIndex = 26;
-            // 
-            // rbtRol
-            // 
-            this.rbtRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rbtRol.AutoSize = true;
-            this.rbtRol.Location = new System.Drawing.Point(453, 84);
-            this.rbtRol.Name = "rbtRol";
-            this.rbtRol.Size = new System.Drawing.Size(66, 17);
-            this.rbtRol.TabIndex = 31;
-            this.rbtRol.TabStop = true;
-            this.rbtRol.Text = "Por ROL";
-            this.rbtRol.UseVisualStyleBackColor = true;
-            this.rbtRol.CheckedChanged += new System.EventHandler(this.rbtRol_CheckedChanged);
-            // 
-            // cmbBusqUsuarioRol
-            // 
-            this.cmbBusqUsuarioRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmbBusqUsuarioRol.Enabled = false;
-            this.cmbBusqUsuarioRol.FormattingEnabled = true;
-            this.cmbBusqUsuarioRol.Items.AddRange(new object[] {
-            "Administrador",
-            "Operario",
-            "Vendedor"});
-            this.cmbBusqUsuarioRol.Location = new System.Drawing.Point(532, 84);
-            this.cmbBusqUsuarioRol.Name = "cmbBusqUsuarioRol";
-            this.cmbBusqUsuarioRol.Size = new System.Drawing.Size(121, 21);
-            this.cmbBusqUsuarioRol.TabIndex = 32;
             // 
             // colTelef
             // 
@@ -166,6 +118,55 @@
             this.colFechaI.HeaderText = "FECHA INGRESO";
             this.colFechaI.Name = "colFechaI";
             this.colFechaI.ReadOnly = true;
+            // 
+            // rbtnDNI
+            // 
+            this.rbtnDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbtnDNI.AutoSize = true;
+            this.rbtnDNI.Location = new System.Drawing.Point(453, 44);
+            this.rbtnDNI.Name = "rbtnDNI";
+            this.rbtnDNI.Size = new System.Drawing.Size(63, 17);
+            this.rbtnDNI.TabIndex = 27;
+            this.rbtnDNI.TabStop = true;
+            this.rbtnDNI.Text = "Por DNI";
+            this.rbtnDNI.UseVisualStyleBackColor = true;
+            this.rbtnDNI.CheckedChanged += new System.EventHandler(this.rbtnDNI_CheckedChanged);
+            // 
+            // txtBusqUsuarioDNI
+            // 
+            this.txtBusqUsuarioDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBusqUsuarioDNI.Enabled = false;
+            this.txtBusqUsuarioDNI.Location = new System.Drawing.Point(532, 44);
+            this.txtBusqUsuarioDNI.Name = "txtBusqUsuarioDNI";
+            this.txtBusqUsuarioDNI.Size = new System.Drawing.Size(119, 20);
+            this.txtBusqUsuarioDNI.TabIndex = 26;
+            // 
+            // rbtRol
+            // 
+            this.rbtRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbtRol.AutoSize = true;
+            this.rbtRol.Location = new System.Drawing.Point(453, 84);
+            this.rbtRol.Name = "rbtRol";
+            this.rbtRol.Size = new System.Drawing.Size(66, 17);
+            this.rbtRol.TabIndex = 31;
+            this.rbtRol.TabStop = true;
+            this.rbtRol.Text = "Por ROL";
+            this.rbtRol.UseVisualStyleBackColor = true;
+            this.rbtRol.CheckedChanged += new System.EventHandler(this.rbtRol_CheckedChanged);
+            // 
+            // cmbBusqUsuarioRol
+            // 
+            this.cmbBusqUsuarioRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbBusqUsuarioRol.Enabled = false;
+            this.cmbBusqUsuarioRol.FormattingEnabled = true;
+            this.cmbBusqUsuarioRol.Items.AddRange(new object[] {
+            "Administrador",
+            "Operario",
+            "Vendedor"});
+            this.cmbBusqUsuarioRol.Location = new System.Drawing.Point(532, 84);
+            this.cmbBusqUsuarioRol.Name = "cmbBusqUsuarioRol";
+            this.cmbBusqUsuarioRol.Size = new System.Drawing.Size(121, 21);
+            this.cmbBusqUsuarioRol.TabIndex = 32;
             // 
             // btncancelar
             // 
@@ -225,6 +226,7 @@
             this.btnElimCliente.TabIndex = 25;
             this.btnElimCliente.Text = "Eliminar";
             this.btnElimCliente.UseVisualStyleBackColor = false;
+            this.btnElimCliente.Click += new System.EventHandler(this.btnElimCliente_Click);
             // 
             // btnModCliente
             // 

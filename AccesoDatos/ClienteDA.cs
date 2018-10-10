@@ -116,6 +116,32 @@ namespace AccesoDatos
             {
                 return false;
             }
-        }                          
+        }
+
+        public bool eliminarCliente(int id)
+        {
+            try
+            {
+                BindingList<Cliente> clientes = new BindingList<Cliente>();
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "UPDATE n_cliente " +
+                            "SET " +
+                             "estado = 'ELIMINADO' " +
+                             "WHERE id_cliente =" + id.ToString();
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

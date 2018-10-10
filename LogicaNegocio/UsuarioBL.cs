@@ -31,5 +31,15 @@ namespace LogicaNegocio
         {
             return usuarioDA.listarVendedores();
         }
+
+        public bool registrarUsuario(Persona usuario,double salario,double comision)
+        {
+            return usuarioDA.registrarUsuario(usuario,salario,comision);
+        }
+
+        public bool eliminarUsuario(string dni)
+        {
+            return usuarioDA.eliminarUsuario(dni);
+        }
     }
 }

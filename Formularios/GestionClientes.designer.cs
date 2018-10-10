@@ -32,11 +32,12 @@
             this.txtBusqClientes = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBusquedaClientes = new System.Windows.Forms.Button();
             this.btnCancelarClientes = new System.Windows.Forms.Button();
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddCliente = new System.Windows.Forms.Button();
-            this.btnBusquedaClientes = new System.Windows.Forms.Button();
+            this.columnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +74,7 @@
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnID,
             this.columnRUC,
             this.columnNombre,
             this.columnCorreo,
@@ -96,6 +98,21 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
+            // 
+            // btnBusquedaClientes
+            // 
+            this.btnBusquedaClientes.Enabled = false;
+            this.btnBusquedaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusquedaClientes.Image = global::Formularios.Properties.Resources._015_search1;
+            this.btnBusquedaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusquedaClientes.Location = new System.Drawing.Point(233, 43);
+            this.btnBusquedaClientes.Name = "btnBusquedaClientes";
+            this.btnBusquedaClientes.Size = new System.Drawing.Size(67, 26);
+            this.btnBusquedaClientes.TabIndex = 21;
+            this.btnBusquedaClientes.Text = "Buscar";
+            this.btnBusquedaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaClientes.UseVisualStyleBackColor = true;
+            this.btnBusquedaClientes.Click += new System.EventHandler(this.btnBusquedaClientes_Click);
             // 
             // btnCancelarClientes
             // 
@@ -157,20 +174,13 @@
             this.btnAddCliente.UseVisualStyleBackColor = false;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
             // 
-            // btnBusquedaClientes
+            // columnID
             // 
-            this.btnBusquedaClientes.Enabled = false;
-            this.btnBusquedaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusquedaClientes.Image = global::Formularios.Properties.Resources._015_search1;
-            this.btnBusquedaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusquedaClientes.Location = new System.Drawing.Point(233, 43);
-            this.btnBusquedaClientes.Name = "btnBusquedaClientes";
-            this.btnBusquedaClientes.Size = new System.Drawing.Size(67, 26);
-            this.btnBusquedaClientes.TabIndex = 21;
-            this.btnBusquedaClientes.Text = "Buscar";
-            this.btnBusquedaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusquedaClientes.UseVisualStyleBackColor = true;
-            this.btnBusquedaClientes.Click += new System.EventHandler(this.btnBusquedaClientes_Click);
+            this.columnID.DataPropertyName = "Id";
+            this.columnID.HeaderText = "ID";
+            this.columnID.Name = "columnID";
+            this.columnID.ReadOnly = true;
+            this.columnID.Visible = false;
             // 
             // columnRUC
             // 
@@ -231,6 +241,7 @@
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnBusquedaClientes;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRUC;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCorreo;

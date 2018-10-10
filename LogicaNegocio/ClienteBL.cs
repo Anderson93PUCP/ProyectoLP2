@@ -31,5 +31,10 @@ namespace LogicaNegocio
         {
             return clienteDA.registrarCliente(cliente);
         }
+
+        public bool eliminarCliente(int id)
+        {
+            return clienteDA.eliminarCliente(id);
+        }
     }
 }
