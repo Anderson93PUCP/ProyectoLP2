@@ -10,59 +10,42 @@ using ProyectoLP2;
 
 namespace AccesoDatos
 {
-    class PagoDA
+   public class PagoDA
     {
-        //    public BindingList<Factura> listarfacturas()
-        //    {
-        //        try
-        //        {
-        //            BindingList<Factura> listfatcuras = new BindingList<Factura>();
-        //            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
-        //            conn.Open();
+        public BindingList<Pago> listarPagos(string dni)
+        {
+            try
+            {
+                BindingList<Pago> listapagos = new BindingList<Pago>();
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
 
-        //            MySqlCommand cmd = new MySqlCommand();
-        //            String sql = "SELECT * FROM n_factura_venta where estadoPagoVendedor='1'";
-        //            cmd.CommandText = sql;
-        //            cmd.Connection = conn;
-        //            MySqlDataReader reader = cmd.ExecuteReader();
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "select id_facturas, a.ruc, a.nombre, montoPagoVendedor from n_pedido p, n_factura_venta f, n_cliente a where p.id_pedido = f.id_pedido and f.estadoPagoVendedor = 1 and p.id_cliente = a.id_cliente and p.dni_vendedor =" + dni.ToString();
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-        //            while (reader.Read())
-        //            {
-        //                Factura fac = new Factura();
+                while (reader.Read())
+                {
+                    Pago p = new Pago();
 
-        //                fac.IdVenta = reader.GetInt32("id_facturas");
-        //                fac.NPedido = reader.GetInt32("id_pedido");
-        //                //fac.PagoVendedor = ;
-        //                fac.Total_imp =reader.GetDouble("total_imp");
-        //                fac.Valor_neto =reader.GetDouble("totalv_neto") ;
-        //                //fac.Vendedor =;
-        //                //fac.Transportista =;
-        //                //fac.Fecha_e =;
-        //                //fac.EstadoPagoVendedor =;
-        //                //fac.Estado =;
-        //                fac. =;
-        //                //fac.DetallesFactura =;
+                    p.ID_factura1 = reader.GetInt32("id_facturas");
+                    p.RUC1 = reader.GetString("ruc");
+                    p.Nombre1 = reader.GetString("nombre");
+                    p.Monto1 = reader.GetFloat("montoPagoVendedor");
 
-
-
-
-        //                cliente.Id = reader.GetInt32("id_cliente");
-        //                cliente.Ruc = reader.GetString("ruc");
-        //                cliente.Nombre = reader.GetString("nombre");
-        //                cliente.ApellidoPaterno = reader.GetString("apellido");
-        //                cliente.Email = reader.GetString("correo_electronico");
-        //                cliente.Telefono = reader.GetInt32("telefono");
-        //                cliente.Dni_vendedor = reader.GetString("dni_vendedor");
-        //                clientes.Add(cliente);
-        //            }
-        //            conn.Close();
-        //            return clientes;
-        //        }
-        //        catch
-        //        {
-        //            return null;
-        //        }
-        //    }
-        //}
+                    listapagos.Add(p);
+                                       
+                }
+                conn.Close();
+                return listapagos;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
+
