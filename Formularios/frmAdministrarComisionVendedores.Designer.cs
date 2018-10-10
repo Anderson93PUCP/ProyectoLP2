@@ -37,7 +37,7 @@
             this.colComAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoPagoVendAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblVendedor = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxvendedores = new System.Windows.Forms.ComboBox();
             this.btnPagar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotalComision = new System.Windows.Forms.TextBox();
@@ -108,17 +108,17 @@
             this.lblVendedor.TabIndex = 2;
             this.lblVendedor.Text = "Vendedor:";
             // 
-            // comboBox1
+            // cbxvendedores
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxvendedores.FormattingEnabled = true;
+            this.cbxvendedores.Items.AddRange(new object[] {
             "\t",
             "Vendedor1",
             "Vendedor2"});
-            this.comboBox1.Location = new System.Drawing.Point(469, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cbxvendedores.Location = new System.Drawing.Point(469, 40);
+            this.cbxvendedores.Name = "cbxvendedores";
+            this.cbxvendedores.Size = new System.Drawing.Size(121, 21);
+            this.cbxvendedores.TabIndex = 3;
             // 
             // btnPagar
             // 
@@ -184,7 +184,7 @@
             this.Controls.Add(this.txtTotalComision);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPagar);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxvendedores);
             this.Controls.Add(this.lblVendedor);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -206,7 +206,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colComAdminComision;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoPagoVendAdminComision;
         private System.Windows.Forms.Label lblVendedor;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxvendedores;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotalComision;
