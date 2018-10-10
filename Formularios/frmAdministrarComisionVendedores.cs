@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LogicaNegocio;
+using ProyectoLP2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,25 @@ namespace Formularios
 {
     public partial class frmAdministrarComisionVendedores : Form
     {
+        private UsuarioBL usuarioBL;
+        private PagoBL pagoBL;
         
         public frmAdministrarComisionVendedores()
         {
             InitializeComponent();
+            CargarVendedores();
+        }
+
+        private void CargarVendedores()
+        {
+            usuarioBL = new UsuarioBL();
+            BindingList<Persona> vendedores = new BindingList<Persona>();
+            vendedores = usuarioBL.listarVendedores();
+            cbxvendedores.ValueMember = "Dni";
+            cbxvendedores.DisplayMember = "Nombre";
+            cbxvendedores.DataSource = vendedores;
+            cbxvendedores.SelectedIndex = -1;
+
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -38,6 +55,18 @@ namespace Formularios
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void cbxvendedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pagoBL = new PagoBL();
+            string dni = "";
+            if (cbxvendedores.SelectedIndex != -1)
+            {
+                dni = cbxvendedores.SelectedValue.ToString();
+                dgvpagos.AutoGenerateColumns = false;
+                dgvpagos.DataSource = pagoBL.listarPagos(dni);
+            }
         }
     }
 }
