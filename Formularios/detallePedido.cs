@@ -48,12 +48,18 @@ namespace Formularios
             //dgvProductos.SelectedRows.Clear();
             foreach (DataGridViewRow row in dgvProductos.Rows   )
             {
-                Producto aux = new  Producto ();
-                aux = (Producto)row.DataBoundItem;
-                if (aux.Codigo == detModificar.proCod)
+                var cell = row.Cells[1].Value;
+
+                if(cell != null)
                 {
-                    row.Selected = true;
+                    Producto aux = new Producto();
+                    aux = (Producto)row.DataBoundItem;
+                    if (aux.Codigo == detModificar.proCod)
+                    {
+                        row.Selected = true;
+                    }
                 }
+                
             }
         }
 
