@@ -34,5 +34,11 @@ namespace ProyectoLP2
         public double Subtotal { get => subtotal; set => subtotal = value; }
         public double Desc { get => desc; set => desc = value; }
         public Producto Producto { get => producto; set => producto = value; }
+        public string proCod { get => producto.Codigo; }
+        public string proNomb { get => producto.Nombre; }
+        public string proDesc { get => producto.Descripcion; }
+        public double proPre { get => producto.Precio; }
+        
+         
     }
 }

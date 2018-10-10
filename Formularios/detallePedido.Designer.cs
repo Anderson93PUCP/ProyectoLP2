@@ -36,16 +36,16 @@
             this.lblCantidad = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnAceptarAddDetPedido = new System.Windows.Forms.Button();
-            this.btnCancelarAddDetPedido = new System.Windows.Forms.Button();
-            this.numCant = new System.Windows.Forms.NumericUpDown();
-            this.numDesc = new System.Windows.Forms.NumericUpDown();
-            this.lblDesct = new System.Windows.Forms.Label();
             this.colIDDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescpDetallePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnidMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAceptarAddDetPedido = new System.Windows.Forms.Button();
+            this.btnCancelarAddDetPedido = new System.Windows.Forms.Button();
+            this.numCant = new System.Windows.Forms.NumericUpDown();
+            this.numDesc = new System.Windows.Forms.NumericUpDown();
+            this.lblDesct = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesc)).BeginInit();
@@ -88,6 +88,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(31, 24);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblCantidad
             // 
@@ -122,6 +123,41 @@
             this.dgvProductos.Size = new System.Drawing.Size(562, 150);
             this.dgvProductos.TabIndex = 8;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // colIDDetallePedido
+            // 
+            this.colIDDetallePedido.DataPropertyName = "Codigo";
+            this.colIDDetallePedido.HeaderText = "Codigo";
+            this.colIDDetallePedido.Name = "colIDDetallePedido";
+            this.colIDDetallePedido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "Nombre";
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colDescpDetallePedido
+            // 
+            this.colDescpDetallePedido.DataPropertyName = "Descripcion";
+            this.colDescpDetallePedido.HeaderText = "Descripcion";
+            this.colDescpDetallePedido.Name = "colDescpDetallePedido";
+            this.colDescpDetallePedido.ReadOnly = true;
+            // 
+            // colUnidMedida
+            // 
+            this.colUnidMedida.DataPropertyName = "Um";
+            this.colUnidMedida.HeaderText = "U.M.";
+            this.colUnidMedida.Name = "colUnidMedida";
+            this.colUnidMedida.ReadOnly = true;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.DataPropertyName = "Precio";
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
             // 
             // btnAceptarAddDetPedido
             // 
@@ -182,41 +218,6 @@
             this.lblDesct.Size = new System.Drawing.Size(19, 15);
             this.lblDesct.TabIndex = 21;
             this.lblDesct.Text = "%";
-            // 
-            // colIDDetallePedido
-            // 
-            this.colIDDetallePedido.DataPropertyName = "Codigo";
-            this.colIDDetallePedido.HeaderText = "Codigo";
-            this.colIDDetallePedido.Name = "colIDDetallePedido";
-            this.colIDDetallePedido.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.DataPropertyName = "Nombre";
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colDescpDetallePedido
-            // 
-            this.colDescpDetallePedido.DataPropertyName = "Descripcion";
-            this.colDescpDetallePedido.HeaderText = "Descripcion";
-            this.colDescpDetallePedido.Name = "colDescpDetallePedido";
-            this.colDescpDetallePedido.ReadOnly = true;
-            // 
-            // colUnidMedida
-            // 
-            this.colUnidMedida.DataPropertyName = "Um";
-            this.colUnidMedida.HeaderText = "U.M.";
-            this.colUnidMedida.Name = "colUnidMedida";
-            this.colUnidMedida.ReadOnly = true;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.DataPropertyName = "Precio";
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
             // 
             // detallePedido
             // 

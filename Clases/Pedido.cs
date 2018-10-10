@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,28 +13,26 @@ namespace ProyectoLP2
         private EtapaPedido etapa;
         private String patida;
          private String llegada;
-        private List<DetallePedido> detallesPedido;
+        private BindingList<DetallePedido> detallesPedido;
 
         public Pedido()
         {
-
+            detallesPedido = new BindingList<DetallePedido>();
         }
 
-        public Pedido(DateTime hora, EtapaPedido etapa, string patida, string llegada, List<DetallePedido> detallesPedido,
-            Vendedor vendedor, int id, Cliente cliente, DateTime fecha_e, int ldetalles, EstadoVenta estado, Transportista transportista) :
-            base( vendedor,  id,  cliente,  fecha_e,  ldetalles,  estado,  transportista)
+        public Pedido(DateTime horaFechaImp, EtapaPedido etapa, string patida, string llegada, BindingList<DetallePedido> detallesPedido)
         {
-            this.HoraFechaImp = hora;
-            this.Etapa = etapa;
-            this.Patida = patida;
-            this.Llegada = llegada;
-            this.DetallesPedido = detallesPedido;
+            this.horaFechaImp = horaFechaImp;
+            this.etapa = etapa;
+            this.patida = patida;
+            this.llegada = llegada;
+            this.detallesPedido = detallesPedido;
         }
 
         public DateTime HoraFechaImp { get => horaFechaImp; set => horaFechaImp = value; }
         public EtapaPedido Etapa { get => etapa; set => etapa = value; }
         public string Patida { get => patida; set => patida = value; }
         public string Llegada { get => llegada; set => llegada = value; }
-        public List<DetallePedido> DetallesPedido { get => detallesPedido; set => detallesPedido = value; }
+        public BindingList<DetallePedido> DetallesPedido { get => detallesPedido; set => detallesPedido = value; }
     }
 }

@@ -16,11 +16,15 @@ namespace Formularios
         private Cliente cliente;
         private Transportista transporte;
         private Direccion direccion;
+        private BindingList<DetallePedido> listaDetPedido;
+        private double montoTotal;
         public frmAddPedido()
         {
             InitializeComponent();
             btnBuscarDireAddPedido.Enabled = false;
-
+            dgvAddPedido.AutoGenerateColumns = false;
+            listaDetPedido = new BindingList<DetallePedido>();
+            montoTotal = 0;
         }
 
         private void frmAddPedido_Load(object sender, EventArgs e)
@@ -104,7 +108,30 @@ namespace Formularios
         private void btnAddDetPedido_Click(object sender, EventArgs e)
         {
             detallePedido v = new detallePedido();
-            v.ShowDialog();
+            if(v.ShowDialog()  == DialogResult.OK)
+            {
+                int repetido = 0;
+                foreach(DetallePedido d in listaDetPedido)
+                {
+                    if(d.proCod == v.DetPed.proCod)
+                    {
+                        d.Cantidad = d.Cantidad + v.DetPed.Cantidad;
+                        d.Subtotal = d.Subtotal + v.DetPed.Subtotal;
+                        repetido = 1;
+                    }
+                }
+                // ver cuando ingresar producto dos veces pero con descuentos diferentes
+                if(repetido == 0)
+                {
+                    listaDetPedido.Add(v.DetPed);
+                }
+                
+                
+                dgvAddPedido.DataSource = null;
+                dgvAddPedido.DataSource = listaDetPedido;
+                montoTotal = montoTotal + v.DetPed.Subtotal;
+                txtTotalAddPedido.Text = montoTotal.ToString();
+            }
 
         }
 
@@ -113,7 +140,11 @@ namespace Formularios
             var v = MessageBox.Show("¿Seguro desee eliminar el producto", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if(v == DialogResult.OK)
             {
-                // se actualiza la tabla ps S
+                DetallePedido detPedidoEliminar = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
+                listaDetPedido.Remove(detPedidoEliminar);
+                dgvAddPedido.DataSource = listaDetPedido;
+                montoTotal = montoTotal - detPedidoEliminar.Subtotal;
+                txtTotalAddPedido.Text = montoTotal.ToString();
             }
             //confirmarEliminarPedido v = new confirmarEliminarPedido();
             //v.ShowDialog();
