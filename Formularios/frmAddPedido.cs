@@ -19,7 +19,11 @@ namespace Formularios
         private Direccion direccion;
         private Transportista transporteSeleccionado;
         private BindingList<DetallePedido> listaDetPedido;
+        private Pedido pedidoRegistrar;
         private double montoTotal;
+
+        public Pedido PedidoRegistrar { get => pedidoRegistrar; set => pedidoRegistrar = value; }
+
         public frmAddPedido()
         {
             InitializeComponent();
@@ -49,7 +53,7 @@ namespace Formularios
             var v = MessageBox.Show("¿Esta seguro de salir, no se guardara ningun cambio no guardado", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
-                Close();
+                this.DialogResult = DialogResult.Cancel;
             }
 
             //confCancelarAddPedido v = new confCancelarAddPedido();
@@ -64,7 +68,7 @@ namespace Formularios
             var v = MessageBox.Show("¿Desea agregar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
-                Pedido pedidoRegistrar = new Pedido();
+                 pedidoRegistrar = new Pedido();
                 pedidoRegistrar.Cliente = cliente;
                 pedidoRegistrar.Transportista = transporteSeleccionado;
                 pedidoRegistrar.DetallesPedido = listaDetPedido;

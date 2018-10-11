@@ -2,6 +2,7 @@
 using ProyectoLP2;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace LogicaNegocio
             {
                 pedido.AgregarDetalle(idPedido, det);
             }
+        }
+        public BindingList<Pedido> listarPedidos()
+        {
+            PedidoDA p = new PedidoDA();
+            return p.listarPedidos();
         }
     }
 }

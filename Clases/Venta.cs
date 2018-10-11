@@ -36,6 +36,8 @@ namespace ProyectoLP2
          public DateTime Fecha_e { get => fecha_e; set => fecha_e = value; }
         public EstadoVenta Estado { get => estado; set => estado = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
+        public string ClienteRUC { get => cliente.Ruc; }
+        public string ClienteNombre { get => Cliente.Nombre; }
         public Transportista Transportista { get => transportista; set => transportista = value; }
         public Vendedor Vendedor { get => vendedor; set => vendedor = value; }
         public Direccion Direccion { get => direccion; set => direccion = value; }

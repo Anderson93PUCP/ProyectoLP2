@@ -9,10 +9,11 @@ namespace ProyectoLP2
 
     public enum EtapaPedido
     {
+        alerta_stock,
         pendiente,
         en_proceso,
         verificado,
-        facturado,
-        alerta_stock
+        facturado
+        
     }
 }

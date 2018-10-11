@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LogicaNegocio;
+using ProyectoLP2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +14,28 @@ namespace Formularios
 {
     public partial class GestionPedidos : Form
     {
+        private BindingList<Pedido> listaPedidosRegistrados;
         public GestionPedidos()
         {
             InitializeComponent();
+            listaPedidosRegistrados = new BindingList<Pedido>();
+            dgvPedidos.AutoGenerateColumns = false;
+            PedidoBL p = new PedidoBL();
+            listaPedidosRegistrados = p.listarPedidos();
+            dgvPedidos.DataSource = listaPedidosRegistrados;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
              frmAddPedido ventaAddPedio = new frmAddPedido();
-            if (ventaAddPedio.ShowDialog() == DialogResult.OK)
+            if (ventaAddPedio.ShowDialog() == DialogResult.Cancel)
             {
-
+                //Pedido pedidoAgregado = ventaAddPedio.PedidoRegistrar;
+                //listaPedidosRegistrados.Add(pedidoAgregado);
+                dgvPedidos.DataSource = null;
+                PedidoBL p = new PedidoBL();
+                listaPedidosRegistrados = p.listarPedidos();
+                dgvPedidos.DataSource = listaPedidosRegistrados;
             }
            // AgregarPedido ventanaAgregarpedido = new AgregarPedido();
             //this.Hide();
