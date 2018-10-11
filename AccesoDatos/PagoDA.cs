@@ -21,7 +21,7 @@ namespace AccesoDatos
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand();
-                String sql = "select id_facturas, a.ruc, a.nombre, montoPagoVendedor from n_pedido p, n_factura_venta f, n_cliente a where p.id_pedido = f.id_pedido and f.estadoPagoVendedor = 1 and p.id_cliente = a.id_cliente and p.dni_vendedor =" + dni.ToString();
+                String sql = "select id_facturas, a.ruc, a.nombre, montoPagoVendedor, estadoPagoVendedor from n_pedido p, n_factura_venta f, n_cliente a where p.id_pedido = f.id_pedido and f.estadoPagoVendedor = 1 and p.id_cliente = a.id_cliente and p.dni_vendedor =" + dni.ToString();
                 cmd.CommandText = sql;
                 cmd.Connection = conn;
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -29,23 +29,68 @@ namespace AccesoDatos
                 while (reader.Read())
                 {
                     Pago p = new Pago();
-
                     p.ID_factura1 = reader.GetInt32("id_facturas");
                     p.RUC1 = reader.GetString("ruc");
                     p.Nombre1 = reader.GetString("nombre");
                     p.Monto1 = reader.GetFloat("montoPagoVendedor");
+                    p.EstadoPago1 = reader.GetInt32("estadoPagoVendedor");
 
                     listapagos.Add(p);
-                                       
+                                      
                 }
                 conn.Close();
                 return listapagos;
             }
-            catch
-            {
-                return null;
-            }
+            catch      {    return null;  }
+
+
         }
+
+        public void insertarPago(BindingList<Pago> listafacturas)
+        {
+           try
+            {
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+
+                foreach (Pago p in listafacturas){
+
+                    cmd.CommandText = "Insert into n_pago_vendedor" + "(id_factura,monto)" + "values" + "('" +
+                     p.ID_factura1 + "','" + "','" + "'," +  p.Monto1 + "," + "1,'" + "')";
+
+
+                    cmd.ExecuteNonQuery();
+                }
+                                              
+                
+                conn.Close();
+                
+            }
+            catch { }
+
+        }
+
+        public void cambiarEstado(string dni)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+
+                cmd.CommandText = "UPDATE n_pago_vendedor SET estadoPagoVendedor = '0' "+ "WHERE "+ "dni_vendedor =" + dni.ToString();
+                
+                cmd.ExecuteNonQuery();
+                
+                conn.Close();
+
+            }
+            catch { }
+        }
+                
     }
 }
 

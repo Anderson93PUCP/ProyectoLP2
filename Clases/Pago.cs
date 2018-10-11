@@ -12,6 +12,9 @@ namespace Clases
         private string Nombre;
         private float Monto;
         private int ID_factura;
+        private int EstadoPago;
+        
+        
 
         public Pago() { }
 
@@ -19,5 +22,6 @@ namespace Clases
         public string Nombre1 { get => Nombre; set => Nombre = value; }
         public float Monto1 { get => Monto; set => Monto = value; }
         public int ID_factura1 { get => ID_factura; set => ID_factura = value; }
+        public int EstadoPago1 { get => EstadoPago; set => EstadoPago = value; }
     }
 }

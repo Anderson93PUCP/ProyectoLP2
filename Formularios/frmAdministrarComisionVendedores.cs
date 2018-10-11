@@ -21,6 +21,7 @@ namespace Formularios
         {
             InitializeComponent();
             CargarVendedores();
+            btnPagar.Enabled = false;
         }
 
         private void CargarVendedores()
@@ -40,14 +41,24 @@ namespace Formularios
             Close();
         }
 
+        
+
         private void button1_Click(object sender, EventArgs e)
         {
             var v = MessageBox.Show("¿Desea confirmar el pago al vendedor por el monto de 742.23 S/.", "confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if(v == DialogResult.OK)
+            if (v == DialogResult.OK)
             {
-                //Close();
-                //Se hace los cambios de estados d elas facturas 
-                // se cambia el estado de las facturas
+                if (cbxvendedores.SelectedIndex != -1)
+                {
+                    btnPagar.Enabled = true;
+                    //se insertan en una tabla las info del pago que esta hecho
+                    string dni = cbxvendedores.SelectedValue.ToString();
+                    pagoBL.insertarPago(pagoBL.listarPagos(dni));
+
+                    //se cambia el estado de la factura
+                    pagoBL.cambiarEstado(dni);
+                }
+                                                
             }
 
         }
@@ -63,6 +74,7 @@ namespace Formularios
             string dni = "";
             if (cbxvendedores.SelectedIndex != -1)
             {
+                btnPagar.Enabled = true;
                 dni = cbxvendedores.SelectedValue.ToString();
                 dgvpagos.AutoGenerateColumns = false;
                 dgvpagos.DataSource = pagoBL.listarPagos(dni);
