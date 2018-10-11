@@ -25,6 +25,11 @@ namespace Formularios
             
         }
 
+        private void ModificarCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargarClientes();
+        }
+
         private void btnAddCliente_Click(object sender, EventArgs e)
         {
             AgregarCliente aclientes = new AgregarCliente();
@@ -61,7 +66,10 @@ namespace Formularios
 
         private void btnModCliente_Click(object sender, EventArgs e)
         {
-            ModificarCliente aclientes = new ModificarCliente();
+
+            cliente = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+            ModificarCliente aclientes = new ModificarCliente(cliente);
+            aclientes.FormClosed += new System.Windows.Forms.FormClosedEventHandler(AgregarCliente_FormClosed);
             if (aclientes.ShowDialog() == DialogResult.OK)
             {
 
