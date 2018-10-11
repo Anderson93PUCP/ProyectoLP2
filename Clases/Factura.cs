@@ -22,17 +22,15 @@ namespace ProyectoLP2
 
         }
 
-        public Factura(int nuGuia, int nPedido, double valor_neto, double total_imp, double pagoVendedor, int estadoPagoVendedor, List<DetalleFactura> detallesFactura,
-             Vendedor vendedor, int id, Cliente cliente, DateTime fecha_e, int ldetalles, EstadoVenta estado, Transportista transportista) :
-            base(vendedor, id, cliente, fecha_e, ldetalles, estado, transportista)
+        public Factura(int nuGuia, int nPedido, double valor_neto, double total_imp, double pagoVendedor, int estadoPagoVendedor, List<DetalleFactura> detallesFactura)
         {
-            this.NuGuia = nuGuia;
-            this.NPedido = nPedido;
-            this.Valor_neto = valor_neto;
-            this.Total_imp = total_imp;
-            this.PagoVendedor = pagoVendedor;
-            this.EstadoPagoVendedor = estadoPagoVendedor;
-            this.DetallesFactura = detallesFactura;
+            this.nuGuia = nuGuia;
+            this.nPedido = nPedido;
+            this.valor_neto = valor_neto;
+            this.total_imp = total_imp;
+            this.pagoVendedor = pagoVendedor;
+            this.estadoPagoVendedor = estadoPagoVendedor;
+            this.detallesFactura = detallesFactura;
         }
 
         public int NuGuia { get => nuGuia; set => nuGuia = value; }
