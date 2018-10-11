@@ -21,7 +21,7 @@ namespace LogicaNegocio
             int idPedido = pedido.agregar(pedidoAgregar); // agregarCabecera
             foreach (DetallePedido det in pedidoAgregar.DetallesPedido)
             {
-                //pedido.AgregarDetalle(idPedido, det);
+                pedido.AgregarDetalle(idPedido, det);
             }
         }
     }

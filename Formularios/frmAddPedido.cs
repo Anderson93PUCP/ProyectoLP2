@@ -66,11 +66,13 @@ namespace Formularios
             {
                 Pedido pedidoRegistrar = new Pedido();
                 pedidoRegistrar.Cliente = cliente;
-                pedidoRegistrar.Transportista = transporte;
+                pedidoRegistrar.Transportista = transporteSeleccionado;
                 pedidoRegistrar.DetallesPedido = listaDetPedido;
+                pedidoRegistrar.Direccion = direccion;
                 PedidoBL pedidoBL = new PedidoBL();
                 pedidoBL.agregarPedido(pedidoRegistrar);
                 // se agrega a la base de datos
+                MessageBox.Show("Se agrego correctamente","HECHO",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             //Close();
         }
@@ -109,7 +111,7 @@ namespace Formularios
                 transporteSeleccionado = new Transportista();
                 
                 transporteSeleccionado = ventana.TransSeleccionado;
-                txtTransAddPedido.Text = transporte.Nombre;
+                txtTransAddPedido.Text = transporteSeleccionado.Nombre;
 
             }
         }
