@@ -17,7 +17,7 @@ namespace ProyectoLP2
 
         public Venta()
         {
-
+            estado = EstadoVenta.activa;
         }
     
         public Venta(Vendedor vendedor, int id, Cliente cliente, DateTime fecha_e, int ldetalles, EstadoVenta estado,Transportista transportista)

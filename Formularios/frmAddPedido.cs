@@ -1,4 +1,5 @@
-﻿using ProyectoLP2;
+﻿using LogicaNegocio;
+using ProyectoLP2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Formularios
         private Cliente cliente;
         private Transportista transporte;
         private Direccion direccion;
+        private Transportista transporteSeleccionado;
         private BindingList<DetallePedido> listaDetPedido;
         private double montoTotal;
         public frmAddPedido()
@@ -62,6 +64,12 @@ namespace Formularios
             var v = MessageBox.Show("¿Desea agregar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
+                Pedido pedidoRegistrar = new Pedido();
+                pedidoRegistrar.Cliente = cliente;
+                pedidoRegistrar.Transportista = transporte;
+                pedidoRegistrar.DetallesPedido = listaDetPedido;
+                PedidoBL pedidoBL = new PedidoBL();
+                pedidoBL.agregarPedido(pedidoRegistrar);
                 // se agrega a la base de datos
             }
             //Close();
@@ -98,8 +106,9 @@ namespace Formularios
             buscarTransportista ventana = new buscarTransportista();
             if(ventana.ShowDialog() == DialogResult.OK)
             {
-                transporte = new Transportista();
-                transporte = ventana.TransSeleccionado;
+                transporteSeleccionado = new Transportista();
+                
+                transporteSeleccionado = ventana.TransSeleccionado;
                 txtTransAddPedido.Text = transporte.Nombre;
 
             }
@@ -153,11 +162,33 @@ namespace Formularios
         private void btnModDetPedido_Click(object sender, EventArgs e)
         {
             DetallePedido d = new DetallePedido();
+            int pos = dgvAddPedido.CurrentRow.Index;
+            // dgvAddPedido.CurrentRow.ReadOnly = false;
             d = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
-                detallePedido v = new detallePedido(d);
+            detallePedido v = new detallePedido(d);
+            montoTotal = montoTotal - d.Subtotal;
             if (v.ShowDialog() == DialogResult.OK)
             {
+                //montoTotal = montoTotal - d.Subtotal;
+                if (!(d.proCod.Equals(v.DetPed.proCod)))
+                {
+                    d.Producto = v.DetPed.Producto;
+                }
+                d.Desc = v.DetPed.Desc;
+                d.Cantidad = v.DetPed.Cantidad;
+                // se modifico el mismo producto cantidad y/o descuentos
+                d.Subtotal = v.DetPed.Subtotal;
 
+                listaDetPedido[pos] = d;
+                dgvAddPedido.DataSource = null;
+                dgvAddPedido.DataSource = listaDetPedido;
+                montoTotal = montoTotal + v.DetPed.Subtotal;
+                
+                txtTotalAddPedido.Text = montoTotal.ToString();
+            }
+            else
+            {
+                montoTotal = montoTotal + d.Subtotal;
             }
         }
 
