@@ -58,6 +58,7 @@
             this.colPUDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescuentoDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubTDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSolesSubTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +159,7 @@
             // 
             this.lblTotalAddPedido.AutoSize = true;
             this.lblTotalAddPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAddPedido.Location = new System.Drawing.Point(508, 382);
+            this.lblTotalAddPedido.Location = new System.Drawing.Point(545, 382);
             this.lblTotalAddPedido.Name = "lblTotalAddPedido";
             this.lblTotalAddPedido.Size = new System.Drawing.Size(83, 24);
             this.lblTotalAddPedido.TabIndex = 23;
@@ -167,7 +168,7 @@
             // txtTotalAddPedido
             // 
             this.txtTotalAddPedido.Enabled = false;
-            this.txtTotalAddPedido.Location = new System.Drawing.Point(597, 385);
+            this.txtTotalAddPedido.Location = new System.Drawing.Point(665, 385);
             this.txtTotalAddPedido.Name = "txtTotalAddPedido";
             this.txtTotalAddPedido.Size = new System.Drawing.Size(86, 20);
             this.txtTotalAddPedido.TabIndex = 24;
@@ -343,11 +344,22 @@
             this.colSubTDetPedido.Name = "colSubTDetPedido";
             this.colSubTDetPedido.ReadOnly = true;
             // 
+            // lblSolesSubTotal
+            // 
+            this.lblSolesSubTotal.AutoSize = true;
+            this.lblSolesSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolesSubTotal.Location = new System.Drawing.Point(634, 389);
+            this.lblSolesSubTotal.Name = "lblSolesSubTotal";
+            this.lblSolesSubTotal.Size = new System.Drawing.Size(25, 13);
+            this.lblSolesSubTotal.TabIndex = 51;
+            this.lblSolesSubTotal.Text = "S/.";
+            // 
             // frmAddPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 460);
+            this.Controls.Add(this.lblSolesSubTotal);
             this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.lblPedidoAddpedido);
             this.Controls.Add(this.txtTotalAddPedido);
@@ -410,5 +422,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPUDetPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescuentoDetPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTDetPedido;
+        private System.Windows.Forms.Label lblSolesSubTotal;
     }
 }
