@@ -143,5 +143,37 @@ namespace AccesoDatos
                 return false;
             }
         }
+
+        public bool modificarCliente(Cliente cliente)
+        {
+            try
+            {
+                BindingList<Cliente> clientes = new BindingList<Cliente>();
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "UPDATE n_cliente " +
+                            "SET " +
+                             "ruc ='" + cliente.Ruc + "',"+
+                            "nombre = '" + cliente.Nombre + "'," +
+                            "apellido = '"  + "'," +
+                            "correo_electronico = '" + cliente.Email + "'," +
+                            "telefono =" + cliente.Telefono.ToString() + "," +
+                            "tipo=1 ," +
+                            "dni_vendedor =" + cliente.Dni_vendedor +
+                              " WHERE id_cliente =" + cliente.Id.ToString();
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -92,8 +92,16 @@ namespace Formularios
 
         private void btnModCliente_Click(object sender, EventArgs e)
         {
-            ModificarUsuario fga = new ModificarUsuario();
+            Persona usuario = null;
+            usuario=(Persona)dgvUsuarios.CurrentRow.DataBoundItem;
+            ModificarUsuario fga = new ModificarUsuario(usuario);
+            fga.FormClosed += new System.Windows.Forms.FormClosedEventHandler(ModificarUsuario_FormClosed);
             fga.ShowDialog();
+        }
+
+        private void ModificarUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargarUsuarios();
         }
 
         private void btnElimCliente_Click(object sender, EventArgs e)

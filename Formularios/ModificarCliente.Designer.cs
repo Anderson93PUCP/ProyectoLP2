@@ -199,6 +199,7 @@
             // 
             // btnaceptarCliente
             // 
+            this.btnaceptarCliente.Enabled = false;
             this.btnaceptarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptarCliente.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,7 +207,7 @@
             this.btnaceptarCliente.Name = "btnaceptarCliente";
             this.btnaceptarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnaceptarCliente.TabIndex = 29;
-            this.btnaceptarCliente.Text = "Registrar";
+            this.btnaceptarCliente.Text = "Modificar";
             this.btnaceptarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnaceptarCliente.UseVisualStyleBackColor = true;
             this.btnaceptarCliente.Click += new System.EventHandler(this.btnaceptarCliente_Click);
