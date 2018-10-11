@@ -21,6 +21,7 @@ namespace Formularios
         {
             InitializeComponent();
             CargarVendedores();
+            btnPagar.Enabled = false;
         }
 
         private void CargarVendedores()
@@ -73,6 +74,7 @@ namespace Formularios
             string dni = "";
             if (cbxvendedores.SelectedIndex != -1)
             {
+                btnPagar.Enabled = true;
                 dni = cbxvendedores.SelectedValue.ToString();
                 dgvpagos.AutoGenerateColumns = false;
                 dgvpagos.DataSource = pagoBL.listarPagos(dni);
