@@ -36,6 +36,8 @@ namespace Formularios
         public detallePedido(DetallePedido detModificar)
         {
             InitializeComponent();
+            detPed = new DetallePedido();
+            detPed = detModificar;
             dgvProductos.AutoGenerateColumns = false;
             ProductoBL pro = new ProductoBL();
             listaPro = new BindingList<Producto>();
@@ -46,21 +48,15 @@ namespace Formularios
             numCant.Value = detModificar.Cantidad;
             numDesc.Value = (int)detModificar.Desc;
             //dgvProductos.SelectedRows.Clear();
-            foreach (DataGridViewRow row in dgvProductos.Rows   )
+            int indice = 0;
+            foreach (Producto p in listaPro)
             {
-                var cell = row.Cells[1].Value;
-
-                if(cell != null)
-                {
-                    Producto aux = new Producto();
-                    aux = (Producto)row.DataBoundItem;
-                    if (aux.Codigo == detModificar.proCod)
-                    {
-                        row.Selected = true;
-                    }
-                }
-                
+                if (!(p.Codigo).Equals(detModificar.proCod)) indice++;
             }
+            /*dataGridView1.CurrentCell = dataGridView1.Rows[2].Cells[0];
+            dataGridView1.Rows[2].Selected = true;*/
+            dgvProductos.CurrentCell = dgvProductos.Rows[indice-1].Cells[0];
+            dgvProductos.Rows[indice-1].Selected = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -83,7 +79,11 @@ namespace Formularios
             {
                 productoSeleccionado = new Producto();
                 productoSeleccionado = (Producto)dgvProductos.CurrentRow.DataBoundItem;
-                detPed = new DetallePedido();
+                if(detPed == null)
+                {
+                    detPed = new DetallePedido();
+                }
+                
 
                 detPed.Producto = productoSeleccionado;
                 detPed.Cantidad = Int32.Parse(numCant.Value.ToString());
