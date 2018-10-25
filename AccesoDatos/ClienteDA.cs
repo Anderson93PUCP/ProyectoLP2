@@ -25,7 +25,7 @@ namespace AccesoDatos
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand();
-                String sql = "SELECT * FROM n_cliente where estado='ACTIVO'";
+                String sql = "select * from n_cliente c,n_usuarios u where  c.dni_vendedor=u.dni_empleado and c.estado='ACTIVO'";
                 cmd.CommandText = sql;
                 cmd.Connection = conn;
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -33,6 +33,11 @@ namespace AccesoDatos
                 while (reader.Read())
                 {
                     Cliente cliente = new Cliente();
+                    Vendedor vendedor = new Vendedor();
+                    //10
+                    vendedor.Nombre = reader.GetString(10);
+                    vendedor.Apellido = reader.GetString(11);
+                    cliente.Vendedor = vendedor;
                     cliente.Id = reader.GetInt32("id_cliente");
                     cliente.Ruc= reader.GetString("ruc");
                     cliente.Nombre = reader.GetString("nombre");

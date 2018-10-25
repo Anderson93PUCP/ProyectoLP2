@@ -89,7 +89,7 @@ namespace Formularios
             {
                 cliente = v.ClienteSeleccionado;
                 txtClienteAddPedido.Text = v.ClienteSeleccionado.Nombre;
-                txtVendedor.Text = cliente.Dni_vendedor.ToString();
+                txtVendedor.Text = cliente.Vendedor.Nombre + " "+cliente.Vendedor.Apellido;
                 btnBuscarDireAddPedido.Enabled = true;
             }
             
