@@ -10,10 +10,10 @@ namespace ProyectoLP2
     public class Cliente : AgenteExterno
     {
         private string  dni_vendedor;
-
+        private Vendedor vendedor;
         public Cliente()
         {
-
+            vendedor = new Vendedor();
         }
 
         public Cliente(string dni_vendedor, string nombre, List<Direccion> lista, string ruc, string email, int telefono,int celular,int id,string apellidoP, string apellidoM) : base
@@ -23,5 +23,6 @@ namespace ProyectoLP2
         }
 
         public string Dni_vendedor { get => dni_vendedor; set => dni_vendedor = value; }
+        public Vendedor Vendedor { get => vendedor; set => vendedor = value; }
     }
 }

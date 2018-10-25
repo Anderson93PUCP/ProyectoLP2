@@ -49,33 +49,43 @@ namespace Formularios
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            String criterio;
-            if(rbtnBusqRuc.Checked == true)
+            if (txtBuscarCliente.Text == "") dgvClientes.DataSource = lista;
+            else
             {
-                criterio = txtBuscarCliente.Text;
-                foreach (Cliente c in lista)
-                {
-                    if(c.Ruc == criterio)
-                    {
-                        dgvClientes.DataSource = c;
-                    }
-                }
-            }
 
-            if(rbtnNombre.Checked == true)
-            {
-                criterio = txtBuscarCliente.Text;
-                foreach (Cliente c in lista)
+                BindingList<Cliente> listaBusq = new BindingList<Cliente>();
+                String criterio;
+                if (rbtnBusqRuc.Checked == true)
                 {
-                    if (c.Nombre == criterio)
+                    criterio = txtBuscarCliente.Text;
+                    foreach (Cliente c in lista)
                     {
-                        dgvClientes.DataSource = c;
+                        if (c.Ruc.Contains(criterio))
+                        {
+                            Cliente aux = new Cliente();
+                            aux = c;
+                            listaBusq.Add(aux);
+                        }
                     }
+                    dgvClientes.DataSource = listaBusq;
                 }
-            }
-            if(txtBuscarCliente.Text == "")
-            {
-                dgvClientes.DataSource = lista;
+
+                if (rbtnNombre.Checked == true)
+                {
+                    criterio = txtBuscarCliente.Text;
+                    foreach (Cliente c in lista)
+                    {
+                        if (c.Nombre.Contains(criterio))
+                        {
+                            Cliente aux = new Cliente();
+                            aux = c;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgvClientes.DataSource = listaBusq;
+
+                }
+                
             }
         }
     }
