@@ -83,5 +83,17 @@ namespace AccesoDatos
             conn.Close();
             return lista;
         }
+        public void eliminar(int id)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "ELIMINAR_PEDIDO";
+            cmd.Parameters.Add("_IDPEDIDO", MySqlDbType.Int32).Value = id;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

@@ -71,7 +71,11 @@ namespace Formularios
             var v = MessageBox.Show("¿Desea eliminar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
-                // elimina la la fila seleccionada
+                Pedido pedidoAEliminar = (Pedido)dgvPedidos.CurrentRow.DataBoundItem;
+                PedidoBL p = new PedidoBL();
+                p.eliminarPedido(pedidoAEliminar.IdVenta); // se elimino en la base de datos
+                listaPedidosRegistrados.Remove(pedidoAEliminar);
+                dgvPedidos.Refresh();
             }
             // se actualiza la tabla 
         }

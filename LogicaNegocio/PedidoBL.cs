@@ -30,5 +30,13 @@ namespace LogicaNegocio
             PedidoDA p = new PedidoDA();
             return p.listarPedidos();
         }
+
+        public void eliminarPedido(int idPedido)
+        {
+            PedidoDA p = new PedidoDA();
+            // se libera los productos
+            p.eliminar(idPedido);
+        }
+
     }
 }
