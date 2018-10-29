@@ -58,7 +58,7 @@ namespace AccesoDatos
 
 
             MySqlCommand cmd = new MySqlCommand();
-            String sql = " SELECT * FROM n_pedido p,n_cliente cli where p.id_cliente = cli.id_cliente and p.estado=1;";
+            String sql = "SELECT p.*,cli.ruc,cli.nombre nombrecli ,cli.apellido apelCli ,dircli.direccion direccion, user.nombre nombreVendedor,user.apellido_paterno apelVendedor,agen.nombre nombreAgencia   FROM n_pedido p,n_cliente cli,n_usuarios user,n_direccion_cli dircli, n_agencia agen where p.id_cliente = cli.id_cliente and p.estado=1 and p.dni_vendedor = user.dni_empleado and p.id_direccion = dircli.id_direccion and p.id_agencia = agen.id_agencia;";
             cmd.CommandText = sql;
             cmd.Connection = conn;
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -66,9 +66,21 @@ namespace AccesoDatos
             {
                 Cliente cliente = new Cliente();
                 cliente.Ruc = reader.GetString("ruc");
-                cliente.Nombre = reader.GetString("nombre");
+                cliente.Nombre = reader.GetString("nombrecli");
+                cliente.ApellidoPaterno = reader.GetString("apelCli");
+                Vendedor vendedor = new Vendedor();
+                vendedor.Dni = reader.GetString("dni_vendedor");
+                vendedor.Nombre = reader.GetString("nombreVendedor");
+                vendedor.Apellido = reader.GetString("apelVendedor");
+                Transportista trans = new Transportista();
+                trans.Nombre = reader.GetString("nombreAgencia");
+                trans.Id = reader.GetInt32("id_agencia");
                 Pedido pedido = new Pedido();
+                pedido.IdVenta = reader.GetInt32("id_pedido");
                 pedido.Cliente = cliente;
+                pedido.Vendedor = vendedor;
+                pedido.Transportista = trans;
+
                 pedido.Fecha_e = reader.GetDateTime("fecha_recepcion");
                 pedido.IdVenta = reader.GetInt32("id_pedido");
                 //pedido.Etapa =

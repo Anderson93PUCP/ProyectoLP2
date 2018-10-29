@@ -21,16 +21,26 @@ namespace Formularios
         private BindingList<DetallePedido> listaDetPedido;
         private Pedido pedidoRegistrar;
         private double montoTotal;
+        private int esModificar;
+
 
         public Pedido PedidoRegistrar { get => pedidoRegistrar; set => pedidoRegistrar = value; }
+
+        public frmAddPedido(Pedido pedidoAModificar)
+        {
+            InitializeComponent();
+            
+        }
 
         public frmAddPedido()
         {
             InitializeComponent();
+            cbEstadoPedido.Visible = false;
             btnBuscarDireAddPedido.Enabled = false;
             dgvAddPedido.AutoGenerateColumns = false;
             listaDetPedido = new BindingList<DetallePedido>();
             montoTotal = 0;
+            esModificar = 0;
         }
 
         private void frmAddPedido_Load(object sender, EventArgs e)

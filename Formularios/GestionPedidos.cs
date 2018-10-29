@@ -72,10 +72,15 @@ namespace Formularios
             if (v == DialogResult.OK)
             {
                 Pedido pedidoAEliminar = (Pedido)dgvPedidos.CurrentRow.DataBoundItem;
-                PedidoBL p = new PedidoBL();
-                p.eliminarPedido(pedidoAEliminar.IdVenta); // se elimino en la base de datos
-                listaPedidosRegistrados.Remove(pedidoAEliminar);
-                dgvPedidos.Refresh();
+                if(pedidoAEliminar.Etapa == EtapaPedido.pendiente)
+                {
+                    PedidoBL p = new PedidoBL();
+                    p.eliminarPedido(pedidoAEliminar.IdVenta); // se elimino en la base de datos
+                    listaPedidosRegistrados.Remove(pedidoAEliminar);
+                    dgvPedidos.Refresh();
+                }
+                
+                
             }
             // se actualiza la tabla 
         }
@@ -95,6 +100,65 @@ namespace Formularios
         {
             verPedido ventana = new verPedido();
             ventana.ShowDialog();
+        }
+
+        private void rbtnBusqRuc_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBusquedaPedido_Click(object sender, EventArgs e)
+        {
+            if(txtBusqPedido.Text == "")
+            {
+                dgvPedidos.DataSource = listaPedidosRegistrados;
+            }
+            else
+            {
+                BindingList<Pedido> listaBusqueda = new BindingList<Pedido>();
+                String criterio;
+                criterio = txtBusqPedido.Text;
+                if (rbtnBusqRuc.Checked == true)
+                {
+                    
+                    foreach(Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.ClienteRUC.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+                if(rbtnRazonSocial.Checked == true)
+                {
+                    foreach(Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.Cliente.Nombre.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+                if(rbtnVendedor.Checked == true)
+                {
+                    foreach(Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.Vendedor.Nombre.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+            }
         }
     }
 }
