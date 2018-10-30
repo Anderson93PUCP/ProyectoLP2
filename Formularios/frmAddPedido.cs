@@ -23,6 +23,7 @@ namespace Formularios
         private Pedido pedidoMod;
         private double montoTotal;
         private int esModificar;
+        
 
 
         public Pedido PedidoRegistrar { get => pedidoRegistrar; set => pedidoRegistrar = value; }
@@ -46,12 +47,13 @@ namespace Formularios
             txtTransAddPedido.Text = pedidoAModificar.Transportista.Nombre;
             txtVendedor.Text = pedidoAModificar.NombreVendedor;
             //cbEstadoPedido.DataSource = Enum.GetValues(typeof(EtapaPedido));
-            cbEstadoPedido.SelectedValue = EtapaPedido.pendiente;
+            //cbEstadoPedido.SelectedValue = EtapaPedido.pendiente;
             // se tiene q cargar el detalle pedido
             dgvAddPedido.AutoGenerateColumns = false;
             listaDetPedido = new BindingList<DetallePedido>();
             montoTotal = 0;
             esModificar = 1;
+            cbEstadoPedido.Text = pedidoAModificar.Etapa.ToString();
             PedidoBL p = new PedidoBL();
             listaDetPedido = p.listarDetalle(pedidoAModificar.IdVenta);
             pedidoRegistrar.DetallesPedido = listaDetPedido;
@@ -70,6 +72,7 @@ namespace Formularios
         {
             InitializeComponent();
             cbEstadoPedido.Visible = false;
+            lblEstado.Visible = false;
             btnBuscarDireAddPedido.Enabled = false;
             dgvAddPedido.AutoGenerateColumns = false;
             listaDetPedido = new BindingList<DetallePedido>();
@@ -128,7 +131,21 @@ namespace Formularios
                         if (transporteSeleccionado != null) pedidoRegistrar.Transportista = transporteSeleccionado;
                         if (direccion != null) pedidoRegistrar.Direccion = direccion;
                         pedidoRegistrar.DetallesPedido = listaDetPedido;
-
+                        switch (cbEstadoPedido.Text)
+                        {
+                            case "pendiente":
+                                pedidoRegistrar.Etapa = EtapaPedido.pendiente;
+                                break;
+                            case "en_proceso":
+                                pedidoRegistrar.Etapa = EtapaPedido.en_proceso;
+                                break;
+                            case "verificado":
+                                pedidoRegistrar.Etapa = EtapaPedido.verificado;
+                                break;
+                            case "facturado":
+                                pedidoRegistrar.Etapa = EtapaPedido.facturado;
+                                break;
+                        }
                         PedidoBL pedidoBL = new PedidoBL();
                         pedidoBL.agregarPedido(pedidoRegistrar);
                         // se agrega a la base de datos
@@ -139,7 +156,8 @@ namespace Formularios
 
 
                         pedidoRegistrar = new Pedido();
-
+                        pedidoRegistrar.Etapa = EtapaPedido.pendiente;
+                        
                         pedidoRegistrar.Cliente = cliente;
                         pedidoRegistrar.Transportista = transporteSeleccionado;
                         pedidoRegistrar.DetallesPedido = listaDetPedido;
@@ -279,6 +297,11 @@ namespace Formularios
         }
 
         private void cmbVendedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEstadoPedido_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

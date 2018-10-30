@@ -61,7 +61,7 @@
             // rbtnVendedor
             // 
             this.rbtnVendedor.AutoSize = true;
-            this.rbtnVendedor.Location = new System.Drawing.Point(442, 23);
+            this.rbtnVendedor.Location = new System.Drawing.Point(597, 23);
             this.rbtnVendedor.Name = "rbtnVendedor";
             this.rbtnVendedor.Size = new System.Drawing.Size(90, 17);
             this.rbtnVendedor.TabIndex = 4;
@@ -72,7 +72,7 @@
             // rbtnRazonSocial
             // 
             this.rbtnRazonSocial.AutoSize = true;
-            this.rbtnRazonSocial.Location = new System.Drawing.Point(538, 23);
+            this.rbtnRazonSocial.Location = new System.Drawing.Point(515, 23);
             this.rbtnRazonSocial.Name = "rbtnRazonSocial";
             this.rbtnRazonSocial.Size = new System.Drawing.Size(76, 17);
             this.rbtnRazonSocial.TabIndex = 5;
@@ -84,7 +84,7 @@
             // rbtnBusqRuc
             // 
             this.rbtnBusqRuc.AutoSize = true;
-            this.rbtnBusqRuc.Location = new System.Drawing.Point(620, 23);
+            this.rbtnBusqRuc.Location = new System.Drawing.Point(442, 23);
             this.rbtnBusqRuc.Name = "rbtnBusqRuc";
             this.rbtnBusqRuc.Size = new System.Drawing.Size(67, 17);
             this.rbtnBusqRuc.TabIndex = 6;
@@ -96,6 +96,7 @@
             // dgvPedidos
             // 
             this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
             this.dgvPedidos.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -122,6 +123,7 @@
             this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPedidos.Location = new System.Drawing.Point(28, 120);
             this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.Size = new System.Drawing.Size(711, 251);
             this.dgvPedidos.TabIndex = 8;
             this.dgvPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

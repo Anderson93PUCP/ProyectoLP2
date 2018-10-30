@@ -23,6 +23,7 @@ namespace Formularios
             PedidoBL p = new PedidoBL();
             listaPedidosRegistrados = p.listarPedidos();
             dgvPedidos.DataSource = listaPedidosRegistrados;
+            rbtnBusqRuc.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,6 +79,10 @@ namespace Formularios
                     p.eliminarPedido(pedidoAEliminar.IdVenta); // se elimino en la base de datos
                     listaPedidosRegistrados.Remove(pedidoAEliminar);
                     dgvPedidos.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("ETAPA DEL PEDIDO DEBE ESTAR EN PENDIENTE", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 }
                 
                 

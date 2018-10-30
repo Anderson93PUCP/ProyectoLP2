@@ -31,6 +31,7 @@ namespace AccesoDatos
             cmd.Parameters.Add("_idCliente", MySqlDbType.Int32).Value = pedido.Cliente.Id;
             cmd.Parameters.Add("_idAgencia", MySqlDbType.Int32).Value = pedido.Transportista.Id;
             cmd.Parameters.Add("_idDireccion", MySqlDbType.Int32).Value = pedido.Direccion.Id;
+            cmd.Parameters.Add("_etapaPedido", MySqlDbType.Int32).Value = (int)pedido.Etapa;
             cmd.Parameters.Add("_idPedido", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
             cmd.ExecuteNonQuery();
             int idPedidoIngresado = Int32.Parse(cmd.Parameters["_idPedido"].Value.ToString());
@@ -87,7 +88,7 @@ namespace AccesoDatos
                 pedido.Vendedor = vendedor;
                 pedido.Transportista = trans;
                 pedido.Direccion = direccion;
-                
+                pedido.Etapa = (EtapaPedido)reader.GetInt32("etapaProceso");
 
                 pedido.Fecha_e = reader.GetDateTime("fecha_recepcion");
                 

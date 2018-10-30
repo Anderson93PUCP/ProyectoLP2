@@ -360,10 +360,15 @@
             // cbEstadoPedido
             // 
             this.cbEstadoPedido.FormattingEnabled = true;
+            this.cbEstadoPedido.Items.AddRange(new object[] {
+            "pendiente",
+            "en_proceso",
+            "verificado"});
             this.cbEstadoPedido.Location = new System.Drawing.Point(606, 124);
             this.cbEstadoPedido.Name = "cbEstadoPedido";
             this.cbEstadoPedido.Size = new System.Drawing.Size(121, 21);
             this.cbEstadoPedido.TabIndex = 52;
+            this.cbEstadoPedido.SelectedIndexChanged += new System.EventHandler(this.cbEstadoPedido_SelectedIndexChanged);
             // 
             // lblEstado
             // 
