@@ -15,6 +15,7 @@ namespace ProyectoLP2
          private String llegada;
         private BindingList<DetallePedido> detallesPedido;
 
+
         public Pedido()
         {
             etapa = EtapaPedido.pendiente;

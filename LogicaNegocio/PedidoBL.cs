@@ -38,5 +38,11 @@ namespace LogicaNegocio
             p.eliminar(idPedido);
         }
 
+        public BindingList<DetallePedido> listarDetalle(int id)
+        {
+            PedidoDA p = new PedidoDA();
+            return p.listarDetallePedido(id);
+        }
+
     }
 }

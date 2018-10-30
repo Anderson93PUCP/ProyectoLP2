@@ -15,6 +15,7 @@ namespace ProyectoLP2
         private Medida um;
         private char tipo;
         private int minimoStock;
+        private int stock;
         private List<Proveedor> listaProveedores;
 
         public Producto()
@@ -41,6 +42,8 @@ namespace ProyectoLP2
         public char Tipo { get => tipo; set => tipo = value; }
         public int MinimoStock { get => minimoStock; set => minimoStock = value; }
         public List<Proveedor> ListaProveedores { get => listaProveedores; set => listaProveedores = value; }
+        public int Stock { get => stock; set => stock = value; }
+
         public string UnidadMedida()
         {
             string medida = "test";

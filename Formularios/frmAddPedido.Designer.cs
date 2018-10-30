@@ -359,11 +359,6 @@
             // cbEstadoPedido
             // 
             this.cbEstadoPedido.FormattingEnabled = true;
-            this.cbEstadoPedido.Items.AddRange(new object[] {
-            "Pendiente",
-            "En proceso",
-            "Verificado",
-            "Facturado"});
             this.cbEstadoPedido.Location = new System.Drawing.Point(606, 124);
             this.cbEstadoPedido.Name = "cbEstadoPedido";
             this.cbEstadoPedido.Size = new System.Drawing.Size(121, 21);

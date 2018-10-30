@@ -20,6 +20,7 @@ namespace Formularios
         private Transportista transporteSeleccionado;
         private BindingList<DetallePedido> listaDetPedido;
         private Pedido pedidoRegistrar;
+        private Pedido pedidoMod;
         private double montoTotal;
         private int esModificar;
 
@@ -28,7 +29,40 @@ namespace Formularios
 
         public frmAddPedido(Pedido pedidoAModificar)
         {
+            
+            cliente = null;
+            direccion = null;
+            transporteSeleccionado = null;
+
             InitializeComponent();
+            pedidoRegistrar = new Pedido();
+            pedidoMod = new Pedido();//
+            pedidoMod = pedidoAModificar;
+            pedidoRegistrar = pedidoAModificar;
+            btnAceptarAddPedido.Text = "Modificar";
+            cbEstadoPedido.Visible = true;
+            txtClienteAddPedido.Text = pedidoAModificar.Cliente.Nombre;
+            txtDireccAddPedido.Text = pedidoAModificar.Direccion.DetalleDireccion;
+            txtTransAddPedido.Text = pedidoAModificar.Transportista.Nombre;
+            txtVendedor.Text = pedidoAModificar.NombreVendedor;
+            //cbEstadoPedido.DataSource = Enum.GetValues(typeof(EtapaPedido));
+            cbEstadoPedido.SelectedValue = EtapaPedido.pendiente;
+            // se tiene q cargar el detalle pedido
+            dgvAddPedido.AutoGenerateColumns = false;
+            listaDetPedido = new BindingList<DetallePedido>();
+            montoTotal = 0;
+            esModificar = 1;
+            PedidoBL p = new PedidoBL();
+            listaDetPedido = p.listarDetalle(pedidoAModificar.IdVenta);
+            pedidoRegistrar.DetallesPedido = listaDetPedido;
+            dgvAddPedido.DataSource = listaDetPedido;
+            
+            foreach(DetallePedido det in listaDetPedido)
+            {
+                montoTotal = montoTotal + ((1 - det.Desc / 100) * (det.Cantidad * det.proPre));
+            }
+            txtTotalAddPedido.Text = montoTotal.ToString();
+            // se va a proceder eliminar de la base de datos
             
         }
 
@@ -63,6 +97,7 @@ namespace Formularios
             var v = MessageBox.Show("¿Esta seguro de salir, no se guardara ningun cambio no guardado", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
+                
                 this.DialogResult = DialogResult.Cancel;
             }
 
@@ -73,21 +108,43 @@ namespace Formularios
 
         private void btnAceptarAddPedido_Click(object sender, EventArgs e)
         {
+            
             // confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
             //v.ShowDialog();
             var v = MessageBox.Show("¿Desea agregar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
-                 pedidoRegistrar = new Pedido();
-                pedidoRegistrar.Cliente = cliente;
-                pedidoRegistrar.Transportista = transporteSeleccionado;
-                pedidoRegistrar.DetallesPedido = listaDetPedido;
-                pedidoRegistrar.Direccion = direccion;
-                PedidoBL pedidoBL = new PedidoBL();
-                pedidoBL.agregarPedido(pedidoRegistrar);
-                // se agrega a la base de datos
-                MessageBox.Show("Se agrego correctamente","HECHO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if (esModificar == 1)
+                {
+                    PedidoBL pAux = new PedidoBL();
+                    pAux.eliminarPedido(pedidoMod.IdVenta);
+                    if(cliente != null) pedidoRegistrar.Cliente = cliente;
+                    if(transporteSeleccionado != null) pedidoRegistrar.Transportista = transporteSeleccionado;
+                    if (direccion != null) pedidoRegistrar.Direccion = direccion;
+                    pedidoRegistrar.DetallesPedido = listaDetPedido;
+                    
+                    PedidoBL pedidoBL = new PedidoBL();
+                    pedidoBL.agregarPedido(pedidoRegistrar);
+                    // se agrega a la base de datos
+                    MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    pedidoRegistrar = new Pedido();
+
+                    pedidoRegistrar.Cliente = cliente;
+                    pedidoRegistrar.Transportista = transporteSeleccionado;
+                    pedidoRegistrar.DetallesPedido = listaDetPedido;
+                    pedidoRegistrar.Direccion = direccion;
+                    PedidoBL pedidoBL = new PedidoBL();
+                    pedidoBL.agregarPedido(pedidoRegistrar);
+                    // se agrega a la base de datos
+                    MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                DialogResult = DialogResult.OK;
+
             }
+            
             //Close();
         }
 
@@ -132,6 +189,7 @@ namespace Formularios
 
         private void btnAddDetPedido_Click(object sender, EventArgs e)
         {
+            
             detallePedido v = new detallePedido();
             if(v.ShowDialog()  == DialogResult.OK)
             {

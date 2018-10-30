@@ -68,6 +68,8 @@ namespace AccesoDatos
                 cliente.Ruc = reader.GetString("ruc");
                 cliente.Nombre = reader.GetString("nombrecli");
                 cliente.ApellidoPaterno = reader.GetString("apelCli");
+                cliente.Dni_vendedor= reader.GetString("dni_vendedor");
+                cliente.Id = reader.GetInt32("id_cliente");
                 Vendedor vendedor = new Vendedor();
                 vendedor.Dni = reader.GetString("dni_vendedor");
                 vendedor.Nombre = reader.GetString("nombreVendedor");
@@ -75,14 +77,20 @@ namespace AccesoDatos
                 Transportista trans = new Transportista();
                 trans.Nombre = reader.GetString("nombreAgencia");
                 trans.Id = reader.GetInt32("id_agencia");
+                Direccion direccion = new Direccion();
+                direccion.Id = reader.GetInt32("id_agencia");
+                direccion.DetalleDireccion = reader.GetString("direccion");
                 Pedido pedido = new Pedido();
+
                 pedido.IdVenta = reader.GetInt32("id_pedido");
                 pedido.Cliente = cliente;
                 pedido.Vendedor = vendedor;
                 pedido.Transportista = trans;
+                pedido.Direccion = direccion;
+                
 
                 pedido.Fecha_e = reader.GetDateTime("fecha_recepcion");
-                pedido.IdVenta = reader.GetInt32("id_pedido");
+                
                 //pedido.Etapa =
                 pedido.Etapa = (EtapaPedido)reader.GetInt32("etapaProceso");
                 
@@ -106,6 +114,59 @@ namespace AccesoDatos
             cmd.Parameters.Add("_IDPEDIDO", MySqlDbType.Int32).Value = id;
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public BindingList<DetallePedido> listarDetallePedido(int id)
+        {
+            BindingList<DetallePedido> lista = new BindingList<DetallePedido>();
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "listarDetallesPedido";
+            cmd.Parameters.Add("_idPedido", MySqlDbType.Int32).Value = id;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Producto producto = new Producto();
+                producto.Codigo = reader.GetString("id_producto");
+                producto.Nombre = reader.GetString("nombre");
+                switch (reader.GetString("UnidMedida"))
+                {
+                    case "UNIDAD":
+                        producto.Um = Medida.unidad;
+                        break;
+                    case "CIENTO":
+                        producto.Um = Medida.ciento;
+                        break;
+                    case "METRO":
+                        producto.Um = Medida.metro;
+                        break;
+                    case "BOLSA":
+                        producto.Um = Medida.bolsa;
+                        break;
+                    case "DOCENA":
+                        producto.Um = Medida.docena;
+                        break;
+                    case "KILOGRAMO":
+                        producto.Um = Medida.kilogramo;
+                        break;
+                }
+                producto.Precio = reader.GetDouble("precio");
+                producto.Descripcion = reader.GetString("descripcion");
+                producto.Stock = reader.GetInt32("stock");
+                //producto.MinimoStock = reader.GetInt32("stockMinimo");
+                DetallePedido detallePedido = new DetallePedido();
+                detallePedido.Producto = producto;
+                detallePedido.Cantidad = reader.GetInt32("cantidad");
+                detallePedido.Subtotal = reader.GetDouble("subtotal");
+                detallePedido.Desc = reader.GetInt32("descuento1");
+                lista.Add(detallePedido);
+            }
+            conn.Close();
+            return lista;
+
         }
     }
 }

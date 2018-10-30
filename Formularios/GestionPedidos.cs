@@ -28,7 +28,7 @@ namespace Formularios
         private void button1_Click(object sender, EventArgs e)
         {
              frmAddPedido ventaAddPedio = new frmAddPedido();
-            if (ventaAddPedio.ShowDialog() == DialogResult.Cancel)
+            if (ventaAddPedio.ShowDialog() == DialogResult.OK)
             {
                 //Pedido pedidoAgregado = ventaAddPedio.PedidoRegistrar;
                 //listaPedidosRegistrados.Add(pedidoAgregado);
@@ -87,8 +87,22 @@ namespace Formularios
 
         private void btnModPedido_Click(object sender, EventArgs e)
         {
-            modificarPedido ventana = new modificarPedido();
-            ventana.ShowDialog();
+            Pedido pedidoAModificar = new Pedido();
+            pedidoAModificar = (Pedido)dgvPedidos.CurrentRow.DataBoundItem;
+            frmAddPedido ventana = new frmAddPedido(pedidoAModificar);
+            if(ventana.ShowDialog() == DialogResult.OK)
+            {
+                /*
+                listaPedidosRegistrados.Remove(pedidoAModificar);
+                listaPedidosRegistrados.Add(ventana.PedidoRegistrar);
+                dgvPedidos.Update();
+                dgvPedidos.Refresh();*/
+                PedidoBL p = new PedidoBL();
+                listaPedidosRegistrados = p.listarPedidos();
+                dgvPedidos.DataSource = listaPedidosRegistrados;
+            }
+            
+            
         }
 
         private void GestionPedidos_Load(object sender, EventArgs e)
