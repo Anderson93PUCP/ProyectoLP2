@@ -36,17 +36,17 @@
             this.rbtnRazonSocial = new System.Windows.Forms.RadioButton();
             this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.colRUCPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClientePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombreVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colfechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
             this.btnBusquedaPedido = new System.Windows.Forms.Button();
             this.btnElimPedido = new System.Windows.Forms.Button();
             this.btnModPedido = new System.Windows.Forms.Button();
             this.btnAddPedido = new System.Windows.Forms.Button();
-            this.colRUCPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClientePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombreVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colfechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,7 @@
             // 
             // dgvPedidos
             // 
+            this.dgvPedidos.AllowUserToAddRows = false;
             this.dgvPedidos.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -124,6 +125,52 @@
             this.dgvPedidos.Size = new System.Drawing.Size(711, 251);
             this.dgvPedidos.TabIndex = 8;
             this.dgvPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // colRUCPedido
+            // 
+            this.colRUCPedido.DataPropertyName = "ClienteRUC";
+            this.colRUCPedido.Frozen = true;
+            this.colRUCPedido.HeaderText = "RUC";
+            this.colRUCPedido.Name = "colRUCPedido";
+            this.colRUCPedido.ReadOnly = true;
+            this.colRUCPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRUCPedido.Width = 80;
+            // 
+            // colClientePedido
+            // 
+            this.colClientePedido.DataPropertyName = "ClienteNombre";
+            this.colClientePedido.Frozen = true;
+            this.colClientePedido.HeaderText = "Cliente";
+            this.colClientePedido.Name = "colClientePedido";
+            this.colClientePedido.ReadOnly = true;
+            this.colClientePedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colClientePedido.Width = 200;
+            // 
+            // colNombreVendedor
+            // 
+            this.colNombreVendedor.DataPropertyName = "NombreVendedor";
+            this.colNombreVendedor.Frozen = true;
+            this.colNombreVendedor.HeaderText = "Vendedor";
+            this.colNombreVendedor.Name = "colNombreVendedor";
+            this.colNombreVendedor.ReadOnly = true;
+            // 
+            // colfechaPedido
+            // 
+            this.colfechaPedido.DataPropertyName = "Fecha_e";
+            this.colfechaPedido.Frozen = true;
+            this.colfechaPedido.HeaderText = "Fecha";
+            this.colfechaPedido.Name = "colfechaPedido";
+            this.colfechaPedido.ReadOnly = true;
+            this.colfechaPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colEstadoPedido
+            // 
+            this.colEstadoPedido.DataPropertyName = "Etapa";
+            this.colEstadoPedido.Frozen = true;
+            this.colEstadoPedido.HeaderText = "Etapa";
+            this.colEstadoPedido.Name = "colEstadoPedido";
+            this.colEstadoPedido.ReadOnly = true;
+            this.colEstadoPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // btnVer
             // 
@@ -207,52 +254,6 @@
             this.btnAddPedido.UseMnemonic = false;
             this.btnAddPedido.UseVisualStyleBackColor = false;
             this.btnAddPedido.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // colRUCPedido
-            // 
-            this.colRUCPedido.DataPropertyName = "ClienteRUC";
-            this.colRUCPedido.Frozen = true;
-            this.colRUCPedido.HeaderText = "RUC";
-            this.colRUCPedido.Name = "colRUCPedido";
-            this.colRUCPedido.ReadOnly = true;
-            this.colRUCPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRUCPedido.Width = 80;
-            // 
-            // colClientePedido
-            // 
-            this.colClientePedido.DataPropertyName = "ClienteNombre";
-            this.colClientePedido.Frozen = true;
-            this.colClientePedido.HeaderText = "Cliente";
-            this.colClientePedido.Name = "colClientePedido";
-            this.colClientePedido.ReadOnly = true;
-            this.colClientePedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colClientePedido.Width = 200;
-            // 
-            // colNombreVendedor
-            // 
-            this.colNombreVendedor.DataPropertyName = "NombreVendedor";
-            this.colNombreVendedor.Frozen = true;
-            this.colNombreVendedor.HeaderText = "Vendedor";
-            this.colNombreVendedor.Name = "colNombreVendedor";
-            this.colNombreVendedor.ReadOnly = true;
-            // 
-            // colfechaPedido
-            // 
-            this.colfechaPedido.DataPropertyName = "Fecha_e";
-            this.colfechaPedido.Frozen = true;
-            this.colfechaPedido.HeaderText = "Fecha";
-            this.colfechaPedido.Name = "colfechaPedido";
-            this.colfechaPedido.ReadOnly = true;
-            this.colfechaPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colEstadoPedido
-            // 
-            this.colEstadoPedido.DataPropertyName = "Etapa";
-            this.colEstadoPedido.Frozen = true;
-            this.colEstadoPedido.HeaderText = "Etapa";
-            this.colEstadoPedido.Name = "colEstadoPedido";
-            this.colEstadoPedido.ReadOnly = true;
-            this.colEstadoPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // GestionPedidos
             // 

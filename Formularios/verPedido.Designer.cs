@@ -153,6 +153,7 @@
             this.btnAceptarVerPedido.Text = "Aceptar";
             this.btnAceptarVerPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptarVerPedido.UseVisualStyleBackColor = true;
+            this.btnAceptarVerPedido.Click += new System.EventHandler(this.btnAceptarVerPedido_Click);
             // 
             // lblSolesSubTotal
             // 

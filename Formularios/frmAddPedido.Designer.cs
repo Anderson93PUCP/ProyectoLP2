@@ -131,6 +131,7 @@
             // 
             // dgvAddPedido
             // 
+            this.dgvAddPedido.AllowUserToAddRows = false;
             this.dgvAddPedido.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvAddPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

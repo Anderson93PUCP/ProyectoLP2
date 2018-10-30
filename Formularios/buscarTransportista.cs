@@ -29,7 +29,7 @@ namespace Formularios
             lista = t.listarTrans();
             dgvTransportistas.AutoGenerateColumns = false;
             dgvTransportistas.DataSource = lista;
-
+            dgvTransportistas.AllowUserToAddRows = false;
         }
 
         private void buscarTransportista_Load(object sender, EventArgs e)

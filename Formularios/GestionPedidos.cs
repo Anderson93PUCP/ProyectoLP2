@@ -112,7 +112,8 @@ namespace Formularios
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            verPedido ventana = new verPedido();
+            verPedido ventana = new verPedido((Pedido)dgvPedidos.CurrentRow.DataBoundItem);
+
             ventana.ShowDialog();
         }
 

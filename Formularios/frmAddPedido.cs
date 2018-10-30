@@ -111,39 +111,51 @@ namespace Formularios
             
             // confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
             //v.ShowDialog();
-            var v = MessageBox.Show("¿Desea agregar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (v == DialogResult.OK)
+            if (listaDetPedido.Count == 0)
             {
-                if (esModificar == 1)
-                {
-                    PedidoBL pAux = new PedidoBL();
-                    pAux.eliminarPedido(pedidoMod.IdVenta);
-                    if(cliente != null) pedidoRegistrar.Cliente = cliente;
-                    if(transporteSeleccionado != null) pedidoRegistrar.Transportista = transporteSeleccionado;
-                    if (direccion != null) pedidoRegistrar.Direccion = direccion;
-                    pedidoRegistrar.DetallesPedido = listaDetPedido;
-                    
-                    PedidoBL pedidoBL = new PedidoBL();
-                    pedidoBL.agregarPedido(pedidoRegistrar);
-                    // se agrega a la base de datos
-                    MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    pedidoRegistrar = new Pedido();
-
-                    pedidoRegistrar.Cliente = cliente;
-                    pedidoRegistrar.Transportista = transporteSeleccionado;
-                    pedidoRegistrar.DetallesPedido = listaDetPedido;
-                    pedidoRegistrar.Direccion = direccion;
-                    PedidoBL pedidoBL = new PedidoBL();
-                    pedidoBL.agregarPedido(pedidoRegistrar);
-                    // se agrega a la base de datos
-                    MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                DialogResult = DialogResult.OK;
-
+                MessageBox.Show("Falta detalle de pedido", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
+            else
+            {
+                var v = MessageBox.Show("¿Desea agregar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (v == DialogResult.OK)
+                {
+                    if (esModificar == 1)
+                    {
+                        PedidoBL pAux = new PedidoBL();
+                        pAux.eliminarPedido(pedidoMod.IdVenta);
+                        if (cliente != null) pedidoRegistrar.Cliente = cliente;
+                        if (transporteSeleccionado != null) pedidoRegistrar.Transportista = transporteSeleccionado;
+                        if (direccion != null) pedidoRegistrar.Direccion = direccion;
+                        pedidoRegistrar.DetallesPedido = listaDetPedido;
+
+                        PedidoBL pedidoBL = new PedidoBL();
+                        pedidoBL.agregarPedido(pedidoRegistrar);
+                        // se agrega a la base de datos
+                        MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+
+
+                        pedidoRegistrar = new Pedido();
+
+                        pedidoRegistrar.Cliente = cliente;
+                        pedidoRegistrar.Transportista = transporteSeleccionado;
+                        pedidoRegistrar.DetallesPedido = listaDetPedido;
+                        pedidoRegistrar.Direccion = direccion;
+                        PedidoBL pedidoBL = new PedidoBL();
+                        pedidoBL.agregarPedido(pedidoRegistrar);
+                        // se agrega a la base de datos
+                        MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    }
+                    DialogResult = DialogResult.OK;
+
+                }
+            }
+           
             
             //Close();
         }

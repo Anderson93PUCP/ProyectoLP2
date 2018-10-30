@@ -28,6 +28,7 @@ namespace Formularios
             lista = c.listarCliente();
             dgvClientes.AutoGenerateColumns = false;
             dgvClientes.DataSource = lista;
+            dgvClientes.AllowUserToAddRows = false;
             
         }
 
