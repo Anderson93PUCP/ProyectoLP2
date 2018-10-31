@@ -59,7 +59,7 @@ namespace AccesoDatos
 
 
             MySqlCommand cmd = new MySqlCommand();
-            String sql = "SELECT p.*,cli.ruc,cli.nombre nombrecli ,cli.apellido apelCli ,dircli.direccion direccion, user.nombre nombreVendedor,user.apellido_paterno apelVendedor,agen.nombre nombreAgencia   FROM n_pedido p,n_cliente cli,n_usuarios user,n_direccion_cli dircli, n_agencia agen where p.id_cliente = cli.id_cliente and p.estado=1 and p.dni_vendedor = user.dni_empleado and p.id_direccion = dircli.id_direccion and p.id_agencia = agen.id_agencia;";
+            String sql = "SELECT p.*,cli.ruc,cli.nombre nombrecli ,cli.apellido apelCli ,dircli.direccion direccion, user.nombre nombreVendedor,user.apellido_paterno apelVendedor,agen.nombre nombreAgencia   FROM n_pedido p,n_cliente cli,n_usuarios user,n_direccion_cli dircli, n_agencia agen where p.id_cliente = cli.id_cliente and p.estado=1 and p.dni_vendedor = user.dni_empleado and p.id_direccion = dircli.id_direccion and p.id_agencia = agen.id_agencia and etapaProceso != 4;";
             cmd.CommandText = sql;
             cmd.Connection = conn;
             MySqlDataReader reader = cmd.ExecuteReader();

@@ -50,11 +50,6 @@ namespace Formularios
 
         }
 
-        private void txtBusqPedido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -179,6 +174,11 @@ namespace Formularios
                     dgvPedidos.DataSource = listaBusqueda;
                 }
             }
+        }
+
+        private void txtBusqPedido_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
