@@ -120,7 +120,14 @@ namespace Formularios
             }
             else
             {
-                var v = MessageBox.Show("¿Desea agregar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                String question = "¿Desea agregar el pedido?";
+                String result = "agrego";
+                if (esModificar == 1)
+                {
+                    question = "¿Desea modificar el pedido?";
+                    result = "modificó";
+                }
+                var v = MessageBox.Show(question, "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (v == DialogResult.OK)
                 {
                     if (esModificar == 1)
@@ -149,7 +156,7 @@ namespace Formularios
                         PedidoBL pedidoBL = new PedidoBL();
                         pedidoBL.agregarPedido(pedidoRegistrar);
                         // se agrega a la base de datos
-                        MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se "+result+" correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
