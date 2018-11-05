@@ -59,7 +59,7 @@ namespace AccesoDatos
 
 
             MySqlCommand cmd = new MySqlCommand();
-            String sql = "SELECT p.*,cli.ruc,cli.nombre nombrecli ,cli.apellido apelCli ,dircli.direccion direccion, user.nombre nombreVendedor,user.apellido_paterno apelVendedor,agen.nombre nombreAgencia   FROM n_pedido p,n_cliente cli,n_usuarios user,n_direccion_cli dircli, n_agencia agen where p.id_cliente = cli.id_cliente and p.estado=1 and p.dni_vendedor = user.dni_empleado and p.id_direccion = dircli.id_direccion and p.id_agencia = agen.id_agencia and etapaProceso != 4;";
+            String sql = "SELECT p.*,cli.ruc,cli.nombre nombrecli ,cli.apellido apelCli ,dircli.direccion direccion, user.nombre nombreVendedor,user.apellido_paterno apelVendedor,user.comision comision,agen.nombre nombreAgencia   FROM n_pedido p,n_cliente cli,n_usuarios user,n_direccion_cli dircli, n_agencia agen where p.id_cliente = cli.id_cliente and p.estado=1 and p.dni_vendedor = user.dni_empleado and p.id_direccion = dircli.id_direccion and p.id_agencia = agen.id_agencia and etapaProceso != 4;";
             cmd.CommandText = sql;
             cmd.Connection = conn;
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -99,6 +99,60 @@ namespace AccesoDatos
                         
                 lista.Add(pedido);
                 
+            }
+
+            conn.Close();
+            return lista;
+        }
+        public BindingList<Pedido> listarPedidos(int tipo)
+        {
+            BindingList<Pedido> lista = new BindingList<Pedido>();
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+
+            MySqlCommand cmd = new MySqlCommand();
+            String sql = "SELECT p.*,cli.ruc,cli.nombre nombrecli ,cli.apellido apelCli ,dircli.direccion direccion, user.nombre nombreVendedor,user.apellido_paterno apelVendedor,user.comision comision,agen.nombre nombreAgencia   FROM n_pedido p,n_cliente cli,n_usuarios user,n_direccion_cli dircli, n_agencia agen where p.id_cliente = cli.id_cliente and p.estado=1 and p.dni_vendedor = user.dni_empleado and p.id_direccion = dircli.id_direccion and p.id_agencia = agen.id_agencia and etapaProceso ="+tipo.ToString()+";";
+            cmd.CommandText = sql;
+            cmd.Connection = conn;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Cliente cliente = new Cliente();
+                cliente.Ruc = reader.GetString("ruc");
+                cliente.Nombre = reader.GetString("nombrecli");
+                cliente.ApellidoPaterno = reader.GetString("apelCli");
+                cliente.Dni_vendedor = reader.GetString("dni_vendedor");
+                cliente.Id = reader.GetInt32("id_cliente");
+                Vendedor vendedor = new Vendedor();
+                vendedor.Dni = reader.GetString("dni_vendedor");
+                vendedor.Nombre = reader.GetString("nombreVendedor");
+                vendedor.Apellido = reader.GetString("apelVendedor");
+                vendedor.Comision = reader.GetDouble("comision");
+                Transportista trans = new Transportista();
+                trans.Nombre = reader.GetString("nombreAgencia");
+                trans.Id = reader.GetInt32("id_agencia");
+                Direccion direccion = new Direccion();
+                direccion.Id = reader.GetInt32("id_agencia");
+                direccion.DetalleDireccion = reader.GetString("direccion");
+                Pedido pedido = new Pedido();
+
+                pedido.IdVenta = reader.GetInt32("id_pedido");
+                pedido.Cliente = cliente;
+                pedido.Vendedor = vendedor;
+                pedido.Transportista = trans;
+                pedido.Direccion = direccion;
+                pedido.Etapa = (EtapaPedido)reader.GetInt32("etapaProceso");
+
+                pedido.Fecha_e = reader.GetDateTime("fecha_recepcion");
+
+                //pedido.Etapa =
+                pedido.Etapa = (EtapaPedido)reader.GetInt32("etapaProceso");
+
+
+
+                lista.Add(pedido);
+
             }
 
             conn.Close();
@@ -169,5 +223,40 @@ namespace AccesoDatos
             return lista;
 
         }
+        public void agregarFactura(int idPedido,double totalDescuento, double totalImpuesto, double totalValorNeto, double netoApagar,int estadoVenta, int estadoPagoVendedor, double montoPagoVendedor)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "AGREGAR_FACTURA";
+
+            cmd.Parameters.Add("_TOTALDESCUENTO", MySqlDbType.Double).Value = totalDescuento;
+            cmd.Parameters.Add("_TOTALIMPUESTO", MySqlDbType.Double).Value = totalImpuesto;
+            cmd.Parameters.Add("_TOTALVALORNETO", MySqlDbType.Double).Value = totalValorNeto;
+            cmd.Parameters.Add("_NETOAPAGAR", MySqlDbType.Double).Value = netoApagar;
+            cmd.Parameters.Add("_ESTADOVENTA", MySqlDbType.Int32).Value = estadoVenta;
+            cmd.Parameters.Add("_ESTADOPAGOVENDEDOR", MySqlDbType.Int32).Value = estadoPagoVendedor;
+            cmd.Parameters.Add("_MONTOPAGOVENDEDOR", MySqlDbType.Double).Value = montoPagoVendedor;
+            cmd.Parameters.Add("_IDPEDIDO", MySqlDbType.Int32).Value = idPedido;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void facturarPedido(int idPedido)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "FACTURAR_PEDIDO";
+            cmd.Parameters.Add("_IDPEDIDO", MySqlDbType.Int32).Value = idPedido;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
+
+
 }

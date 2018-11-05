@@ -30,6 +30,12 @@ namespace LogicaNegocio
             PedidoDA p = new PedidoDA();
             return p.listarPedidos();
         }
+        public BindingList<Pedido> listarPedidos(int tipo)
+        {
+            PedidoDA p = new PedidoDA();
+            return p.listarPedidos(tipo);
+        }
+
 
         public void eliminarPedido(int idPedido)
         {
@@ -42,6 +48,26 @@ namespace LogicaNegocio
         {
             PedidoDA p = new PedidoDA();
             return p.listarDetallePedido(id);
+        }
+        public void generarFactura(Pedido pedido)
+        {
+            BindingList<DetallePedido> detallesPedidoAFacturar = new BindingList<DetallePedido>();
+            detallesPedidoAFacturar = listarDetalle(pedido.IdVenta);
+            double totalDescuento = 0;
+            double totalImpuesto = 0;
+            double totalValorNeto= 0;
+            double netoApagar = 0;
+            foreach(DetallePedido det in detallesPedidoAFacturar)
+            {
+                totalDescuento = totalDescuento + (det.Desc / 100) * (det.Cantidad * det.Producto.Precio);
+                totalValorNeto += det.Subtotal;
+            }
+            totalImpuesto = 0.18 * (totalValorNeto);
+            netoApagar = totalImpuesto + totalValorNeto;
+            double montoPagoVendedor = totalValorNeto * (pedido.Vendedor.Comision / 100); 
+            PedidoDA p = new PedidoDA();
+            p.agregarFactura(pedido.IdVenta, totalDescuento, totalImpuesto, totalValorNeto, netoApagar,1,0,montoPagoVendedor);
+            p.facturarPedido(pedido.IdVenta);
         }
 
     }

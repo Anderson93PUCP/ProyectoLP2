@@ -11,6 +11,7 @@ namespace ProyectoLP2
 
         private int nuGuia;
         private int nPedido;
+        private Pedido pedido;
         private double valor_neto;
         private double total_imp;
         private double pagoVendedor;
@@ -40,5 +41,6 @@ namespace ProyectoLP2
         public double PagoVendedor { get => pagoVendedor; set => pagoVendedor = value; }
         public int EstadoPagoVendedor { get => estadoPagoVendedor; set => estadoPagoVendedor = value; }
         public List<DetalleFactura> DetallesFactura { get => detallesFactura; set => detallesFactura = value; }
+        public Pedido Pedido { get => pedido; set => pedido = value; }
     }
 }

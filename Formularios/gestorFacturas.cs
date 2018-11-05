@@ -15,6 +15,8 @@ namespace Formularios
         public gestorFacturas()
         {
             InitializeComponent();
+            dgwFacturas.AutoGenerateColumns = false;
+
         }
 
         private void btnCancelarFactura_Click(object sender, EventArgs e)
