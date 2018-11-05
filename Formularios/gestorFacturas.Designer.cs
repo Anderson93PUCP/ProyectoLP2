@@ -130,6 +130,8 @@
             // 
             // dgwFacturas
             // 
+            this.dgwFacturas.AllowUserToAddRows = false;
+            this.dgwFacturas.AllowUserToDeleteRows = false;
             this.dgwFacturas.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgwFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -141,6 +143,7 @@
             this.colEstadoGestorFactura});
             this.dgwFacturas.Location = new System.Drawing.Point(12, 99);
             this.dgwFacturas.Name = "dgwFacturas";
+            this.dgwFacturas.ReadOnly = true;
             this.dgwFacturas.Size = new System.Drawing.Size(652, 150);
             this.dgwFacturas.TabIndex = 8;
             // 

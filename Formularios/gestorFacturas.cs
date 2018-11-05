@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LogicaNegocio;
+using ProyectoLP2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,16 @@ namespace Formularios
 {
     public partial class gestorFacturas : Form
     {
+        private Factura facturaSeleccionada;
+        private BindingList<Factura> listaFacturas; 
         public gestorFacturas()
         {
             InitializeComponent();
             dgwFacturas.AutoGenerateColumns = false;
-
+            listaFacturas = new BindingList<Factura>();
+            FacturaBL fact = new FacturaBL();
+            listaFacturas = fact.listarFacturas();
+            dgwFacturas.DataSource = listaFacturas;
         }
 
         private void btnCancelarFactura_Click(object sender, EventArgs e)
