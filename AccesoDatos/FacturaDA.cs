@@ -40,6 +40,7 @@ namespace AccesoDatos
                 factura.IdVenta = reader.GetInt32("id_facturas");
                 factura.EstadoPagoVendedor = reader.GetInt32("estadoPagoVendedor");
                 factura.Estado = (EstadoVenta)1;
+                factura.EstadoPagoCliente = (EstadoPagoCliente)reader.GetInt32("estadoVenta");
                 foreach(Pedido p in listaPedidoFacturados)
                 {
                     if(p.IdVenta == reader.GetInt32("id_pedido"))
@@ -54,6 +55,21 @@ namespace AccesoDatos
             }
             conn.Close();
             return listaFacturas;
+
+        }
+        public void elimFact(int idFactura,int idPedido)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "ELIMINAR_FACTURA";
+            cmd.Parameters.Add("_IDFACTURA", MySqlDbType.Int32).Value = idFactura;
+            cmd.Parameters.Add("_IDPEDIDO", MySqlDbType.Int32).Value = idPedido;
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
         }
     }

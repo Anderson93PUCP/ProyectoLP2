@@ -20,5 +20,11 @@ namespace LogicaNegocio
         {
             return facturaDA.listar();
         }
+        public void eliminarFactura(Factura factura)
+        {
+            // se verifica q no se haya hecho nada mas q solo generar la factura 
+            facturaDA.elimFact(factura.IdVenta,factura.Pedido.IdVenta);
+
+        }
     }
 }

@@ -15,7 +15,8 @@ namespace ProyectoLP2
         private double valor_neto;
         private double total_imp;
         private double neto_pagar;
-        private double total_descuento; 
+        private double total_descuento;
+        private EstadoPagoCliente estadoPagoCliente;
         private double pagoVendedor;
         private int estadoPagoVendedor;
         private List<DetalleFactura> detallesFactura;
@@ -52,5 +53,6 @@ namespace ProyectoLP2
         public string VendedorFactura { get => pedido.NombreVendedor; }
         public DateTime FechaEmisionF { get => pedido.Fecha_e; }
         public EstadoVenta EstadoFactura { get => pedido.Estado; }
+        public EstadoPagoCliente EstadoPagoCliente { get => estadoPagoCliente; set => estadoPagoCliente = value; }
     }
 }

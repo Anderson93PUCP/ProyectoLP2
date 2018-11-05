@@ -37,15 +37,14 @@
             this.rbtnRUC = new System.Windows.Forms.RadioButton();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgwFacturas = new System.Windows.Forms.DataGridView();
-            this.colIDGestorFacturas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnCancelarFactura = new System.Windows.Forms.Button();
+            this.btnCancelado = new System.Windows.Forms.Button();
             this.colRUCGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClienteGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendedorGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaEGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnCancelarFactura = new System.Windows.Forms.Button();
-            this.btnCancelado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,7 +134,6 @@
             this.dgwFacturas.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgwFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIDGestorFacturas,
             this.colRUCGestorFactura,
             this.colClienteGestorFactura,
             this.colVendedorGestorFactura,
@@ -146,42 +144,6 @@
             this.dgwFacturas.ReadOnly = true;
             this.dgwFacturas.Size = new System.Drawing.Size(652, 150);
             this.dgwFacturas.TabIndex = 8;
-            // 
-            // colIDGestorFacturas
-            // 
-            this.colIDGestorFacturas.HeaderText = "ID";
-            this.colIDGestorFacturas.Name = "colIDGestorFacturas";
-            this.colIDGestorFacturas.ReadOnly = true;
-            // 
-            // colRUCGestorFactura
-            // 
-            this.colRUCGestorFactura.HeaderText = "RUC";
-            this.colRUCGestorFactura.Name = "colRUCGestorFactura";
-            this.colRUCGestorFactura.ReadOnly = true;
-            // 
-            // colClienteGestorFactura
-            // 
-            this.colClienteGestorFactura.HeaderText = "Cliente";
-            this.colClienteGestorFactura.Name = "colClienteGestorFactura";
-            this.colClienteGestorFactura.ReadOnly = true;
-            // 
-            // colVendedorGestorFactura
-            // 
-            this.colVendedorGestorFactura.HeaderText = "Vendedor";
-            this.colVendedorGestorFactura.Name = "colVendedorGestorFactura";
-            this.colVendedorGestorFactura.ReadOnly = true;
-            // 
-            // colFechaEGestorFactura
-            // 
-            this.colFechaEGestorFactura.HeaderText = "Fecha Emision";
-            this.colFechaEGestorFactura.Name = "colFechaEGestorFactura";
-            this.colFechaEGestorFactura.ReadOnly = true;
-            // 
-            // colEstadoGestorFactura
-            // 
-            this.colEstadoGestorFactura.HeaderText = "Estado";
-            this.colEstadoGestorFactura.Name = "colEstadoGestorFactura";
-            this.colEstadoGestorFactura.ReadOnly = true;
             // 
             // btnVer
             // 
@@ -219,6 +181,41 @@
             this.btnCancelado.Text = "Cancelar";
             this.btnCancelado.UseVisualStyleBackColor = true;
             // 
+            // colRUCGestorFactura
+            // 
+            this.colRUCGestorFactura.DataPropertyName = "RUC";
+            this.colRUCGestorFactura.HeaderText = "RUC";
+            this.colRUCGestorFactura.Name = "colRUCGestorFactura";
+            this.colRUCGestorFactura.ReadOnly = true;
+            // 
+            // colClienteGestorFactura
+            // 
+            this.colClienteGestorFactura.DataPropertyName = "ClienteFactura";
+            this.colClienteGestorFactura.HeaderText = "Cliente";
+            this.colClienteGestorFactura.Name = "colClienteGestorFactura";
+            this.colClienteGestorFactura.ReadOnly = true;
+            // 
+            // colVendedorGestorFactura
+            // 
+            this.colVendedorGestorFactura.DataPropertyName = "VendedorFactura";
+            this.colVendedorGestorFactura.HeaderText = "Vendedor";
+            this.colVendedorGestorFactura.Name = "colVendedorGestorFactura";
+            this.colVendedorGestorFactura.ReadOnly = true;
+            // 
+            // colFechaEGestorFactura
+            // 
+            this.colFechaEGestorFactura.DataPropertyName = "FechaEmisionF";
+            this.colFechaEGestorFactura.HeaderText = "Fecha Emision";
+            this.colFechaEGestorFactura.Name = "colFechaEGestorFactura";
+            this.colFechaEGestorFactura.ReadOnly = true;
+            // 
+            // colEstadoGestorFactura
+            // 
+            this.colEstadoGestorFactura.DataPropertyName = "EstadoPagoCliente";
+            this.colEstadoGestorFactura.HeaderText = "Estado";
+            this.colEstadoGestorFactura.Name = "colEstadoGestorFactura";
+            this.colEstadoGestorFactura.ReadOnly = true;
+            // 
             // gestorFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,14 +251,13 @@
         private System.Windows.Forms.RadioButton rbtnRUC;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgwFacturas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDGestorFacturas;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnCancelarFactura;
+        private System.Windows.Forms.Button btnCancelado;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRUCGestorFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClienteGestorFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendedorGestorFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaEGestorFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoGestorFactura;
-        private System.Windows.Forms.Button btnVer;
-        private System.Windows.Forms.Button btnCancelarFactura;
-        private System.Windows.Forms.Button btnCancelado;
     }
 }

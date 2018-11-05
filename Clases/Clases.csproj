@@ -51,6 +51,7 @@
     <Compile Include="DetallePedido.cs" />
     <Compile Include="Direccion.cs" />
     <Compile Include="Distrito.cs" />
+    <Compile Include="EstadoPagoCliente.cs" />
     <Compile Include="EstadoPagoVendedor.cs" />
     <Compile Include="EstadoVenta.cs" />
     <Compile Include="EtapaPedido.cs" />

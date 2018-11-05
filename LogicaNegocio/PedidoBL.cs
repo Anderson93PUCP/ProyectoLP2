@@ -66,7 +66,7 @@ namespace LogicaNegocio
             netoApagar = totalImpuesto + totalValorNeto;
             double montoPagoVendedor = totalValorNeto * (pedido.Vendedor.Comision / 100); 
             PedidoDA p = new PedidoDA();
-            p.agregarFactura(pedido.IdVenta, totalDescuento, totalImpuesto, totalValorNeto, netoApagar,1,0,montoPagoVendedor);
+            p.agregarFactura(pedido.IdVenta, totalDescuento, totalImpuesto, totalValorNeto, netoApagar,0,0,montoPagoVendedor);
             p.facturarPedido(pedido.IdVenta);
         }
 
