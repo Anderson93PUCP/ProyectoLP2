@@ -65,5 +65,15 @@ namespace Formularios
             verFactura ventana = new verFactura();
             ventana.ShowDialog();
         }
+
+        private void btnPagoCliente_Click(object sender, EventArgs e)
+        {
+            Factura facturaSeleccionada = new Factura();
+            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+            FacturaBL f = new FacturaBL();
+            f.pagoCliente(facturaSeleccionada.IdVenta);
+            listaFacturas = f.listarFacturas();
+            dgwFacturas.DataSource = listaFacturas;
+        }
     }
 }

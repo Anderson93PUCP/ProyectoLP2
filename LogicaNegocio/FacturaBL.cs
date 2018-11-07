@@ -26,5 +26,9 @@ namespace LogicaNegocio
             facturaDA.elimFact(factura.IdVenta,factura.Pedido.IdVenta);
 
         }
+        public void pagoCliente(int idfactura)
+        {
+            facturaDA.pagoCliente(idfactura);
+        }
     }
 }

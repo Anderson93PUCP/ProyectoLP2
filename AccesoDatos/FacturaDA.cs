@@ -72,5 +72,18 @@ namespace AccesoDatos
             conn.Close();
 
         }
+        public void pagoCliente(int idFactura)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "PAGO_CLIENTE";
+            cmd.Parameters.Add("_IDFACTURA", MySqlDbType.Int32).Value = idFactura;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
