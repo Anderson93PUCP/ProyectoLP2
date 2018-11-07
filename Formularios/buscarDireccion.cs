@@ -34,6 +34,7 @@ namespace Formularios
             listaDirec = c.listarDireccionesCliente(idCliente);
             dgvDirecciones.AutoGenerateColumns = false;
             dgvDirecciones.DataSource = listaDirec;
+            dgvDirecciones.AllowUserToAddRows = false;
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)

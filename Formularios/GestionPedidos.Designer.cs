@@ -36,16 +36,17 @@
             this.rbtnRazonSocial = new System.Windows.Forms.RadioButton();
             this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.colRUCPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClientePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombreVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colfechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
             this.btnBusquedaPedido = new System.Windows.Forms.Button();
             this.btnElimPedido = new System.Windows.Forms.Button();
             this.btnModPedido = new System.Windows.Forms.Button();
             this.btnAddPedido = new System.Windows.Forms.Button();
-            this.colRUCPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClientePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colfechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,12 +56,12 @@
             this.txtBusqPedido.Name = "txtBusqPedido";
             this.txtBusqPedido.Size = new System.Drawing.Size(212, 20);
             this.txtBusqPedido.TabIndex = 3;
-            this.txtBusqPedido.TextChanged += new System.EventHandler(this.txtBusqPedido_TextChanged);
+            this.txtBusqPedido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusqPedido_KeyUp);
             // 
             // rbtnVendedor
             // 
             this.rbtnVendedor.AutoSize = true;
-            this.rbtnVendedor.Location = new System.Drawing.Point(442, 23);
+            this.rbtnVendedor.Location = new System.Drawing.Point(597, 23);
             this.rbtnVendedor.Name = "rbtnVendedor";
             this.rbtnVendedor.Size = new System.Drawing.Size(90, 17);
             this.rbtnVendedor.TabIndex = 4;
@@ -71,28 +72,31 @@
             // rbtnRazonSocial
             // 
             this.rbtnRazonSocial.AutoSize = true;
-            this.rbtnRazonSocial.Location = new System.Drawing.Point(538, 23);
+            this.rbtnRazonSocial.Location = new System.Drawing.Point(515, 23);
             this.rbtnRazonSocial.Name = "rbtnRazonSocial";
-            this.rbtnRazonSocial.Size = new System.Drawing.Size(107, 17);
+            this.rbtnRazonSocial.Size = new System.Drawing.Size(76, 17);
             this.rbtnRazonSocial.TabIndex = 5;
             this.rbtnRazonSocial.TabStop = true;
-            this.rbtnRazonSocial.Text = "Por Razon Social";
+            this.rbtnRazonSocial.Text = "Por Cliente";
             this.rbtnRazonSocial.UseVisualStyleBackColor = true;
             this.rbtnRazonSocial.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // rbtnBusqRuc
             // 
             this.rbtnBusqRuc.AutoSize = true;
-            this.rbtnBusqRuc.Location = new System.Drawing.Point(660, 23);
+            this.rbtnBusqRuc.Location = new System.Drawing.Point(442, 23);
             this.rbtnBusqRuc.Name = "rbtnBusqRuc";
             this.rbtnBusqRuc.Size = new System.Drawing.Size(67, 17);
             this.rbtnBusqRuc.TabIndex = 6;
             this.rbtnBusqRuc.TabStop = true;
             this.rbtnBusqRuc.Text = "Por RUC";
             this.rbtnBusqRuc.UseVisualStyleBackColor = true;
+            this.rbtnBusqRuc.CheckedChanged += new System.EventHandler(this.rbtnBusqRuc_CheckedChanged);
             // 
             // dgvPedidos
             // 
+            this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
             this.dgvPedidos.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -106,6 +110,7 @@
             this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRUCPedido,
             this.colClientePedido,
+            this.colNombreVendedor,
             this.colfechaPedido,
             this.colEstadoPedido});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -118,9 +123,56 @@
             this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPedidos.Location = new System.Drawing.Point(28, 120);
             this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.Size = new System.Drawing.Size(711, 251);
             this.dgvPedidos.TabIndex = 8;
             this.dgvPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // colRUCPedido
+            // 
+            this.colRUCPedido.DataPropertyName = "ClienteRUC";
+            this.colRUCPedido.Frozen = true;
+            this.colRUCPedido.HeaderText = "RUC";
+            this.colRUCPedido.Name = "colRUCPedido";
+            this.colRUCPedido.ReadOnly = true;
+            this.colRUCPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRUCPedido.Width = 80;
+            // 
+            // colClientePedido
+            // 
+            this.colClientePedido.DataPropertyName = "ClienteNombre";
+            this.colClientePedido.Frozen = true;
+            this.colClientePedido.HeaderText = "Cliente";
+            this.colClientePedido.Name = "colClientePedido";
+            this.colClientePedido.ReadOnly = true;
+            this.colClientePedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colClientePedido.Width = 200;
+            // 
+            // colNombreVendedor
+            // 
+            this.colNombreVendedor.DataPropertyName = "NombreVendedor";
+            this.colNombreVendedor.Frozen = true;
+            this.colNombreVendedor.HeaderText = "Vendedor";
+            this.colNombreVendedor.Name = "colNombreVendedor";
+            this.colNombreVendedor.ReadOnly = true;
+            // 
+            // colfechaPedido
+            // 
+            this.colfechaPedido.DataPropertyName = "Fecha_e";
+            this.colfechaPedido.Frozen = true;
+            this.colfechaPedido.HeaderText = "Fecha";
+            this.colfechaPedido.Name = "colfechaPedido";
+            this.colfechaPedido.ReadOnly = true;
+            this.colfechaPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colEstadoPedido
+            // 
+            this.colEstadoPedido.DataPropertyName = "Etapa";
+            this.colEstadoPedido.Frozen = true;
+            this.colEstadoPedido.HeaderText = "Etapa";
+            this.colEstadoPedido.Name = "colEstadoPedido";
+            this.colEstadoPedido.ReadOnly = true;
+            this.colEstadoPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // btnVer
             // 
@@ -161,6 +213,7 @@
             this.btnBusquedaPedido.Text = "Buscar";
             this.btnBusquedaPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBusquedaPedido.UseVisualStyleBackColor = true;
+            this.btnBusquedaPedido.Click += new System.EventHandler(this.btnBusquedaPedido_Click);
             // 
             // btnElimPedido
             // 
@@ -204,44 +257,6 @@
             this.btnAddPedido.UseVisualStyleBackColor = false;
             this.btnAddPedido.Click += new System.EventHandler(this.button1_Click);
             // 
-            // colRUCPedido
-            // 
-            this.colRUCPedido.DataPropertyName = "ClienteRUC";
-            this.colRUCPedido.Frozen = true;
-            this.colRUCPedido.HeaderText = "RUC";
-            this.colRUCPedido.Name = "colRUCPedido";
-            this.colRUCPedido.ReadOnly = true;
-            this.colRUCPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRUCPedido.Width = 80;
-            // 
-            // colClientePedido
-            // 
-            this.colClientePedido.DataPropertyName = "ClienteNombre";
-            this.colClientePedido.Frozen = true;
-            this.colClientePedido.HeaderText = "Cliente";
-            this.colClientePedido.Name = "colClientePedido";
-            this.colClientePedido.ReadOnly = true;
-            this.colClientePedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colClientePedido.Width = 200;
-            // 
-            // colfechaPedido
-            // 
-            this.colfechaPedido.DataPropertyName = "Fecha_e";
-            this.colfechaPedido.Frozen = true;
-            this.colfechaPedido.HeaderText = "Fecha";
-            this.colfechaPedido.Name = "colfechaPedido";
-            this.colfechaPedido.ReadOnly = true;
-            this.colfechaPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colEstadoPedido
-            // 
-            this.colEstadoPedido.DataPropertyName = "Etapa";
-            this.colEstadoPedido.Frozen = true;
-            this.colEstadoPedido.HeaderText = "Etapa";
-            this.colEstadoPedido.Name = "colEstadoPedido";
-            this.colEstadoPedido.ReadOnly = true;
-            this.colEstadoPedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +299,7 @@
         private System.Windows.Forms.Button btnElimPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRUCPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClientePedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombreVendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colfechaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoPedido;
     }

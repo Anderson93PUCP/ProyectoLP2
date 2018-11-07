@@ -63,6 +63,7 @@
     <Compile Include="ClienteDA.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="DireccionDA.cs" />
+    <Compile Include="FacturaDA.cs" />
     <Compile Include="PagoDA.cs" />
     <Compile Include="PedidoDA.cs" />
     <Compile Include="ProductoDA.cs" />

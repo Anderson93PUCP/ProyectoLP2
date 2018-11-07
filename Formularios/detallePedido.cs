@@ -51,12 +51,14 @@ namespace Formularios
             int indice = 0;
             foreach (Producto p in listaPro)
             {
-                if (!(p.Codigo).Equals(detModificar.proCod)) indice++;
+                if (p.Codigo.Equals(detModificar.Producto.Codigo)) {
+                    break;
+                } else indice++;
             }
             /*dataGridView1.CurrentCell = dataGridView1.Rows[2].Cells[0];
             dataGridView1.Rows[2].Selected = true;*/
-            dgvProductos.CurrentCell = dgvProductos.Rows[indice-1].Cells[0];
-            dgvProductos.Rows[indice-1].Selected = true;
+            dgvProductos.CurrentCell = dgvProductos.Rows[indice].Cells[0];
+            dgvProductos.Rows[indice].Selected = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

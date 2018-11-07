@@ -19,6 +19,10 @@ namespace ProyectoLP2
         public Venta()
         {
             estado = EstadoVenta.activa;
+            vendedor = new Vendedor();
+            cliente = new Cliente();
+            transportista = new Transportista();
+            direccion = new Direccion();
         }
 
         public Venta(Vendedor vendedor, int idVenta, Cliente cliente, Transportista transportista, DateTime fecha_e, EstadoVenta estado, Direccion direccion)

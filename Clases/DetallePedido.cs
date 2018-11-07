@@ -17,7 +17,7 @@ namespace ProyectoLP2
 
         public DetallePedido()
         {
-
+            producto = new Producto();
         }
 
         public DetallePedido(int idPedido, Producto producto, int cantidad, double subtotal, double desc)
