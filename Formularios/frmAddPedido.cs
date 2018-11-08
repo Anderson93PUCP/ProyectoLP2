@@ -257,49 +257,62 @@ namespace Formularios
 
         private void btnElimDetPedido_Click(object sender, EventArgs e)
         {
-            var v = MessageBox.Show("¿Seguro desee eliminar el producto", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if(v == DialogResult.OK)
+            if (listaDetPedido.Count == 0)
             {
-                DetallePedido detPedidoEliminar = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
-                listaDetPedido.Remove(detPedidoEliminar);
-                dgvAddPedido.DataSource = listaDetPedido;
-                montoTotal = montoTotal - detPedidoEliminar.Subtotal;
-                txtTotalAddPedido.Text = montoTotal.ToString();
+                MessageBox.Show("No hay productos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            //confirmarEliminarPedido v = new confirmarEliminarPedido();
-            //v.ShowDialog();
+            else
+            {
+                var v = MessageBox.Show("¿Seguro desee eliminar el producto", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (v == DialogResult.OK)
+                {
+                    DetallePedido detPedidoEliminar = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
+                    listaDetPedido.Remove(detPedidoEliminar);
+                    dgvAddPedido.DataSource = listaDetPedido;
+                    montoTotal = montoTotal - detPedidoEliminar.Subtotal;
+                    txtTotalAddPedido.Text = montoTotal.ToString();
+                }
+            }
         }
 
         private void btnModDetPedido_Click(object sender, EventArgs e)
         {
-            DetallePedido d = new DetallePedido();
-            int pos = dgvAddPedido.CurrentRow.Index;
-            // dgvAddPedido.CurrentRow.ReadOnly = false;
-            d = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
-            detallePedido v = new detallePedido(d);
-            montoTotal = montoTotal - d.Subtotal;
-            if (v.ShowDialog() == DialogResult.OK)
+            if (listaDetPedido.Count == 0)
             {
-                //montoTotal = montoTotal - d.Subtotal;
-                if (!(d.proCod.Equals(v.DetPed.proCod)))
-                {
-                    d.Producto = v.DetPed.Producto;
-                }
-                d.Desc = v.DetPed.Desc;
-                d.Cantidad = v.DetPed.Cantidad;
-                // se modifico el mismo producto cantidad y/o descuentos
-                d.Subtotal = v.DetPed.Subtotal;
-
-                listaDetPedido[pos] = d;
-                dgvAddPedido.DataSource = null;
-                dgvAddPedido.DataSource = listaDetPedido;
-                montoTotal = montoTotal + v.DetPed.Subtotal;
-                
-                txtTotalAddPedido.Text = montoTotal.ToString();
+                MessageBox.Show("No hay productos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                montoTotal = montoTotal + d.Subtotal;
+                DetallePedido d = new DetallePedido();
+
+                int pos = dgvAddPedido.CurrentRow.Index;
+                // dgvAddPedido.CurrentRow.ReadOnly = false;
+                d = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
+                detallePedido v = new detallePedido(d);
+                montoTotal = montoTotal - d.Subtotal;
+                if (v.ShowDialog() == DialogResult.OK)
+                {
+                    //montoTotal = montoTotal - d.Subtotal;
+                    if (!(d.proCod.Equals(v.DetPed.proCod)))
+                    {
+                        d.Producto = v.DetPed.Producto;
+                    }
+                    d.Desc = v.DetPed.Desc;
+                    d.Cantidad = v.DetPed.Cantidad;
+                    // se modifico el mismo producto cantidad y/o descuentos
+                    d.Subtotal = v.DetPed.Subtotal;
+
+                    listaDetPedido[pos] = d;
+                    dgvAddPedido.DataSource = null;
+                    dgvAddPedido.DataSource = listaDetPedido;
+                    montoTotal = montoTotal + v.DetPed.Subtotal;
+
+                    txtTotalAddPedido.Text = montoTotal.ToString();
+                }
+                else
+                {
+                    montoTotal = montoTotal + d.Subtotal;
+                }
             }
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LogicaNegocio;
+using ProyectoLP2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,22 @@ namespace Formularios
         public verFactura()
         {
             InitializeComponent();
+        }
+        public verFactura(Factura facturaVer)
+        {
+            InitializeComponent();
+            txtCliente.Text = facturaVer.Pedido.ClienteNombre;
+            txtDireccion.Text = facturaVer.Pedido.Direccion.DetalleDireccion;
+            txtImpuesto.Text = facturaVer.Total_imp.ToString();
+            txtTotal.Text = facturaVer.Neto_pagar.ToString();
+            txtValorVenta.Text = facturaVer.Valor_neto.ToString();
+            txtVendedor.Text = facturaVer.VendedorFactura;
+            txtTransporte.Text = facturaVer.Pedido.Transportista.Nombre;
+            BindingList<DetallePedido> listaDetalle = new BindingList<DetallePedido>();
+            PedidoBL pbl = new PedidoBL();
+            listaDetalle = pbl.listarDetalle(facturaVer.Pedido.IdVenta);
+            dgwDetalleFactura.AutoGenerateColumns = false;
+            dgwDetalleFactura.DataSource = listaDetalle;
         }
 
         private void label6_Click(object sender, EventArgs e)

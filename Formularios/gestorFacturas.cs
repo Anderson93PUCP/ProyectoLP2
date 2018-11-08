@@ -62,7 +62,9 @@ namespace Formularios
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            verFactura ventana = new verFactura();
+            Factura facturaSeleccionada = new Factura();
+            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+            verFactura ventana = new verFactura(facturaSeleccionada);
             ventana.ShowDialog();
         }
 
