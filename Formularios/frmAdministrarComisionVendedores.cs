@@ -1,4 +1,5 @@
-﻿using LogicaNegocio;
+﻿using Clases;
+using LogicaNegocio;
 using ProyectoLP2;
 using System;
 using System.Collections.Generic;
@@ -45,19 +46,34 @@ namespace Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var v = MessageBox.Show("¿Desea confirmar el pago al vendedor por el monto de 742.23 S/.", "confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            //string montototal = string.Empty;
+            //int index = 0;
+            //foreach (DataGridViewRow row in dgvpagos.Rows)
+            //    montototal = row.Cells[index].Value.ToString();
+
+            var v = MessageBox.Show("¿Desea confirmar el pago al vendedor por el monto de 45.0?", "confirmacion",MessageBoxButtons.OKCancel);
+
+           
             if (v == DialogResult.OK)
             {
-                if (cbxvendedores.SelectedIndex != -1)
-                {
+               if (cbxvendedores.SelectedIndex != -1)
+               {
                     btnPagar.Enabled = true;
                     //se insertan en una tabla las info del pago que esta hecho
                     string dni = cbxvendedores.SelectedValue.ToString();
+
+                    //Pago ptest = new Pago("aa","bb",2.0,4,5);
+                    //BindingList<Pago> testlist = new BindingList<Pago>();
+                    //testlist.Add(ptest);
+
+
+                    //pagoBL.insertarPago(testlist);
+
                     pagoBL.insertarPago(pagoBL.listarPagos(dni));
 
                     //se cambia el estado de la factura
                     pagoBL.cambiarEstado(dni);
-                }
+               }
                                                 
             }
 

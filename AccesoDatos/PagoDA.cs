@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Clases;
 using MySql.Data.MySqlClient;
 using ProyectoLP2;
@@ -32,7 +33,7 @@ namespace AccesoDatos
                     p.ID_factura1 = reader.GetInt32("id_facturas");
                     p.RUC1 = reader.GetString("ruc");
                     p.Nombre1 = reader.GetString("nombre");
-                    p.Monto1 = reader.GetFloat("montoPagoVendedor");
+                    p.Monto1 = reader.GetDouble("montoPagoVendedor");
                     p.EstadoPago1 = reader.GetInt32("estadoPagoVendedor");
 
                     listapagos.Add(p);
@@ -41,36 +42,83 @@ namespace AccesoDatos
                 conn.Close();
                 return listapagos;
             }
-            catch      {    return null;  }
+            catch
+            {
+                MessageBox.Show("Erreur");
+                return null;
+            }
 
 
         }
 
-        public void insertarPago(BindingList<Pago> listafacturas)
+        public void insertarPago(BindingList<Pago> listapagos)
         {
-           try
+           
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+
+            
+
+            foreach (Pago p in listapagos){
+
+                cmd.Connection = conn;
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "AGREGAR_PAGO";
+
+                //cmd.Parameters.Add("_DNI_EMPLEADO", MySqlDbType.String).Value = p.RUC1;
+                cmd.Parameters.Add("_MONTO", MySqlDbType.Double).Value = p.Monto1;
+                cmd.Parameters.Add("_ID_FACTURA", MySqlDbType.Int32).Value = p.ID_factura1;
+
+                //cmd.CommandText = "INSERT INTO n_pago_vendedor(id_factura) values(1)";
+                //string sql = "INSERT INTO n_pago_vendedor" + "(id_factura,monto)" + "values" + "('" +
+                //p.ID_factura1 + "','" + p.Monto1 + "')";
+
+
+                //cmd.CommandText = sql;
+
+
+                cmd.ExecuteNonQuery();
+            }
+                                              
+                
+                conn.Close();
+                
+           
+        }
+
+        public void insertarPagop(Pago p)
+        {
+            try
             {
                 MySqlConnection conn = new MySqlConnection(DBManager.cadena);
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand();
+                                            
+                
+                    //cmd.CommandText = "INSERT INTO n_pago_vendedor(id_factura) values(1)";
+                    string sql = "INSERT INTO n_pago_vendedor" + "(id_factura,monto)" + "values" + "('" +
+                    p.ID_factura1 + "','" + p.Monto1 + "')";
 
-                foreach (Pago p in listafacturas){
-
-                    cmd.CommandText = "Insert into n_pago_vendedor" + "(id_factura,monto)" + "values" + "('" +
-                     p.ID_factura1 + "','" + "','" + "'," +  p.Monto1 + "," + "1,'" + "')";
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql;
 
 
                     cmd.ExecuteNonQuery();
-                }
-                                              
-                
+            
+
+
                 conn.Close();
-                
+
             }
             catch { }
 
         }
+
+
+
 
         public void cambiarEstado(string dni)
         {

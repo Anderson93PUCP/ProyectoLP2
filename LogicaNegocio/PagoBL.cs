@@ -26,6 +26,11 @@ namespace LogicaNegocio
             pagoDA.insertarPago(pagos);
         }
 
+        public void insertarPagop(Pago p)
+        {
+            pagoDA.insertarPagop(p);
+        }
+
         public void cambiarEstado(string dni)
         {
             pagoDA.cambiarEstado(dni);
