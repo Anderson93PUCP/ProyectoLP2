@@ -89,5 +89,47 @@ namespace Formularios
                 
             }
         }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscarCliente.Text == "") dgvClientes.DataSource = lista;
+            else
+            {
+
+                BindingList<Cliente> listaBusq = new BindingList<Cliente>();
+                String criterio;
+                if (rbtnBusqRuc.Checked == true)
+                {
+                    criterio = txtBuscarCliente.Text;
+                    foreach (Cliente c in lista)
+                    {
+                        if (c.Ruc.Contains(criterio))
+                        {
+                            Cliente aux = new Cliente();
+                            aux = c;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgvClientes.DataSource = listaBusq;
+                }
+
+                if (rbtnNombre.Checked == true)
+                {
+                    criterio = txtBuscarCliente.Text;
+                    foreach (Cliente c in lista)
+                    {
+                        if (c.Nombre.Contains(criterio))
+                        {
+                            Cliente aux = new Cliente();
+                            aux = c;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgvClientes.DataSource = listaBusq;
+
+                }
+
+            }
+        }
     }
 }

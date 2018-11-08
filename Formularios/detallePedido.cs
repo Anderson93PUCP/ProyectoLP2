@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Formularios
 {
@@ -30,6 +31,7 @@ namespace Formularios
             listaPro = new BindingList<Producto>();
             listaPro = pro.listarProducto();
             dgvProductos.DataSource = listaPro;
+            rbtnID.Checked = true;
         }
 
 
@@ -157,6 +159,72 @@ namespace Formularios
                     dgvProductos.DataSource = listaBusqueda;
                 }
             }
+        }
+
+        private void txtBuscarProducto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscarProducto.Text == "")
+            {
+                dgvProductos.DataSource = listaPro;
+            }
+            else
+            {
+                string criterio = txtBuscarProducto.Text;
+                BindingList<Producto> listaBusqueda = new BindingList<Producto>();
+                if (rbtnDescp.Checked == true)
+                {
+                    foreach (Producto p in listaPro)
+                    {
+                        if (p.Descripcion.Contains(criterio))
+                        {
+                            Producto proB = new Producto();
+                            proB = p;
+                            listaBusqueda.Add(proB);
+                        }
+                    }
+                    dgvProductos.DataSource = listaBusqueda;
+                }
+                if (rbtnID.Checked == true)
+                {
+                    foreach (Producto p in listaPro)
+                    {
+                        if (p.Codigo.Contains(criterio))
+                        {
+                            Producto proB = new Producto();
+                            proB = p;
+                            listaBusqueda.Add(proB);
+                        }
+                    }
+                    dgvProductos.DataSource = listaBusqueda;
+                }
+            }
+        }
+
+        private void numDesc_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numCant_ValueChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"\d+(\.\d{1,2})?");
+            if (!rgx.IsMatch(txtCantidad.Text)) txtCantidad.ForeColor = Color.Red;
+            else txtCantidad.ForeColor = Color.Black;
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[1-9]\d*$");
+            if (!rgx.IsMatch(txtCantidad.Text)) txtCantidad.ForeColor = Color.Red;
+            else txtCantidad.ForeColor = Color.Black;
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[1-9]\d*$");
+            if (!rgx.IsMatch(txtDescuento.Text)) txtCantidad.ForeColor = Color.Red;
+            else txtCantidad.ForeColor = Color.Black;
+            //https://stackoverflow.com/questions/1649435/regular-expression-to-limit-number-of-characters-to-10
         }
     }
 }
