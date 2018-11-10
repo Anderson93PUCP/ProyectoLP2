@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvTransportistas = new System.Windows.Forms.DataGridView();
-            this.colRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
             this.rbtnBusqRuc = new System.Windows.Forms.RadioButton();
             this.txtBusqPedido = new System.Windows.Forms.TextBox();
@@ -41,6 +37,11 @@
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddCliente = new System.Windows.Forms.Button();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransportistas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.dgvTransportistas.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvTransportistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransportistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
             this.colRUC,
             this.colNombre,
             this.colTelef,
@@ -60,26 +62,6 @@
             this.dgvTransportistas.Name = "dgvTransportistas";
             this.dgvTransportistas.Size = new System.Drawing.Size(699, 217);
             this.dgvTransportistas.TabIndex = 27;
-            // 
-            // colRUC
-            // 
-            this.colRUC.HeaderText = "R.U.C";
-            this.colRUC.Name = "colRUC";
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Razon Social";
-            this.colNombre.Name = "colNombre";
-            // 
-            // colTelef
-            // 
-            this.colTelef.HeaderText = "Telefono";
-            this.colTelef.Name = "colTelef";
-            // 
-            // colEmail
-            // 
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
             // 
             // btnCancelarPedido
             // 
@@ -184,6 +166,37 @@
             this.btnAddCliente.UseVisualStyleBackColor = false;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
             // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = false;
+            // 
+            // colRUC
+            // 
+            this.colRUC.DataPropertyName = "Ruc";
+            this.colRUC.HeaderText = "R.U.C";
+            this.colRUC.Name = "colRUC";
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "Nombre";
+            this.colNombre.HeaderText = "Razon Social";
+            this.colNombre.Name = "colNombre";
+            // 
+            // colTelef
+            // 
+            this.colTelef.DataPropertyName = "Telefono";
+            this.colTelef.HeaderText = "Telefono";
+            this.colTelef.Name = "colTelef";
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            // 
             // GestionTransportistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,10 +222,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTransportistas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.Button btnCancelarPedido;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnBusquedaPedido;
@@ -221,5 +230,10 @@
         private System.Windows.Forms.Button btnElimCliente;
         private System.Windows.Forms.Button btnModCliente;
         private System.Windows.Forms.Button btnAddCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRUC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
     }
 }

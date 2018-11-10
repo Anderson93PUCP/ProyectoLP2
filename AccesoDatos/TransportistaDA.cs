@@ -29,12 +29,39 @@ namespace AccesoDatos
                 t.Id = reader.GetInt32("id_agencia");
                 t.Nombre = reader.GetString("nombre");
                 t.Ruc = reader.GetString("RUC");
+                t.Email = reader.GetString("Email");
+                t.Telefono = reader.GetInt32("Telefono");
                 listaT.Add(t);
             }
             reader.Close();
 
             conn.Close();
             return listaT;
+        }
+
+        public void eliminarTransportista(int id)
+        {
+            //MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            //conn.Open();
+            //MySqlCommand cmd = new MySqlCommand();
+            //cmd.Connection = conn;
+            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //cmd.CommandText = "ELIMINAR_TRANSPORTISTA";
+            //cmd.Parameters.Add("_IDTRANSPORTISTA", MySqlDbType.Int32).Value = id;
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
+        }
+        public void modificarTransportista(Transportista t)
+        {
+            //MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            //conn.Open();
+            //MySqlCommand cmd = new MySqlCommand();
+            //cmd.Connection = conn;
+            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //cmd.CommandText = "ELIMINAR_PEDIDO";
+            //cmd.Parameters.Add("_IDPEDIDO", MySqlDbType.Int32).Value = id;
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
         }
 
     }
