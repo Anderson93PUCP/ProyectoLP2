@@ -9,21 +9,22 @@ namespace ProyectoLP2
     public class Transportista : AgenteExterno
     {
         private Alcance alcance;
-        private List<string> destinos;
+
+        private string direccion;
 
         public Transportista()
         {
 
         }
 
-        public Transportista(Alcance alcance, List<string> destinos, string nombre, List<Direccion> lista, string ruc, string email, int telefono,int celular,int id, string apellidoP, string apellidoM) : base
+        public Transportista(Alcance alcance, string direccion, string nombre, List<Direccion> lista, string ruc, string email, int telefono,int celular,int id, string apellidoP, string apellidoM) : base
             (nombre, lista, ruc, email, telefono,celular,id, apellidoP, apellidoM)
         {
             this.Alcance = alcance;
-            this.Destinos = destinos;
+            this.Direccion = direccion;
         }
 
         public Alcance Alcance { get => alcance; set => alcance = value; }
-        public List<string> Destinos { get => destinos; set => destinos = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
     }
 }

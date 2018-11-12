@@ -78,8 +78,8 @@ namespace Formularios
                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }
-            limpiarCamposCliente();
-            //this.Dispose();
+            //limpiarCamposCliente();
+            this.Dispose();
         }
         
         public void limpiarCamposCliente()

@@ -33,7 +33,6 @@
             this.rbtDepartamentos = new System.Windows.Forms.RadioButton();
             this.rbtNacional = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.btndirecciones = new System.Windows.Forms.Button();
             this.txttelf = new System.Windows.Forms.TextBox();
             this.txtrazon = new System.Windows.Forms.TextBox();
             this.txtruc = new System.Windows.Forms.TextBox();
@@ -42,6 +41,9 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblruc = new System.Windows.Forms.Label();
             this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.txtdireccion = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btncancelar
@@ -49,24 +51,25 @@
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(218, 278);
+            this.btncancelar.Location = new System.Drawing.Point(218, 316);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(85, 36);
             this.btncancelar.TabIndex = 48;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnaceptar
             // 
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptar.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptar.Location = new System.Drawing.Point(34, 279);
+            this.btnaceptar.Location = new System.Drawing.Point(34, 317);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(86, 36);
             this.btnaceptar.TabIndex = 47;
-            this.btnaceptar.Text = "Registrar";
+            this.btnaceptar.Text = "Modificar";
             this.btnaceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnaceptar.UseVisualStyleBackColor = true;
             this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
@@ -75,7 +78,7 @@
             // 
             this.rbtDepartamentos.AutoSize = true;
             this.rbtDepartamentos.Enabled = false;
-            this.rbtDepartamentos.Location = new System.Drawing.Point(168, 219);
+            this.rbtDepartamentos.Location = new System.Drawing.Point(168, 257);
             this.rbtDepartamentos.Name = "rbtDepartamentos";
             this.rbtDepartamentos.Size = new System.Drawing.Size(116, 17);
             this.rbtDepartamentos.TabIndex = 46;
@@ -87,7 +90,7 @@
             // 
             this.rbtNacional.AutoSize = true;
             this.rbtNacional.Enabled = false;
-            this.rbtNacional.Location = new System.Drawing.Point(168, 196);
+            this.rbtNacional.Location = new System.Drawing.Point(168, 234);
             this.rbtNacional.Name = "rbtNacional";
             this.rbtNacional.Size = new System.Drawing.Size(67, 17);
             this.rbtNacional.TabIndex = 45;
@@ -99,21 +102,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 206);
+            this.label1.Location = new System.Drawing.Point(31, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 16);
             this.label1.TabIndex = 44;
             this.label1.Text = "Alcance:";
-            // 
-            // btndirecciones
-            // 
-            this.btndirecciones.Enabled = false;
-            this.btndirecciones.Location = new System.Drawing.Point(168, 155);
-            this.btndirecciones.Name = "btndirecciones";
-            this.btndirecciones.Size = new System.Drawing.Size(146, 23);
-            this.btndirecciones.TabIndex = 43;
-            this.btndirecciones.Text = "...";
-            this.btndirecciones.UseVisualStyleBackColor = true;
             // 
             // txttelf
             // 
@@ -187,7 +180,7 @@
             this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.Image = global::Formularios.Properties.Resources.file__3_;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(126, 278);
+            this.btnEditarCliente.Location = new System.Drawing.Point(126, 316);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnEditarCliente.TabIndex = 49;
@@ -196,18 +189,48 @@
             this.btnEditarCliente.UseVisualStyleBackColor = true;
             this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
+            // txtdireccion
+            // 
+            this.txtdireccion.Enabled = false;
+            this.txtdireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdireccion.Location = new System.Drawing.Point(168, 150);
+            this.txtdireccion.Name = "txtdireccion";
+            this.txtdireccion.Size = new System.Drawing.Size(146, 24);
+            this.txtdireccion.TabIndex = 50;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(168, 192);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(146, 24);
+            this.txtEmail.TabIndex = 52;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 197);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 16);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Email:";
+            // 
             // ModificarTransportista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 332);
+            this.ClientSize = new System.Drawing.Size(344, 378);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtdireccion);
             this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.rbtDepartamentos);
             this.Controls.Add(this.rbtNacional);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btndirecciones);
             this.Controls.Add(this.txttelf);
             this.Controls.Add(this.txtrazon);
             this.Controls.Add(this.txtruc);
@@ -229,7 +252,6 @@
         private System.Windows.Forms.RadioButton rbtDepartamentos;
         private System.Windows.Forms.RadioButton rbtNacional;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btndirecciones;
         private System.Windows.Forms.TextBox txttelf;
         private System.Windows.Forms.TextBox txtrazon;
         private System.Windows.Forms.TextBox txtruc;
@@ -238,5 +260,8 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.Button btnEditarCliente;
+        private System.Windows.Forms.TextBox txtdireccion;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label2;
     }
 }
