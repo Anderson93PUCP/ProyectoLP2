@@ -1,5 +1,6 @@
 ﻿using Clases;
 using LogicaNegocio;
+using ProyectoLP2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,20 +15,66 @@ namespace Formularios
     public partial class AgregarDirecciones : Form
     {
         DireccionBL direccionBL;
+        BindingList<Direccion> listaDirecciones;
         public AgregarDirecciones()
         {
             InitializeComponent();
+            listaDirecciones = new BindingList<Direccion>();
             CargarRegiones();
         }
 
         private void btnagregarDireccion_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se agrego la direccion satisfactoriamente ");
+            try
+            {
+                Direccion direccion = new Direccion();
+                if (cmbdepartamento.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor seleccione un departamento",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                if (cmbdistrito.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor seleccione un distrito",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                if (cmbprovincia.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor seleccione una provincia",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                if (txtdireccion.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese una direccion",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                direccion.Provincia = cmbprovincia.Text;
+                direccion.Departamento = cmbdepartamento.Text;
+                direccion.Distrito = cmbdistrito.Text;
+                direccion.DetalleDireccion = txtdireccion.Text;
+                listaDirecciones.Add(direccion);
+                MessageBox.Show("Se agrego la direccion satisfactoriamente ");
+            }
+            catch
+            {
+                MessageBox.Show("No se agrego la direccion correctamente");
+            }
         }
 
         private void btncancelarDireccion_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Dispose();
+        }
+
+        public BindingList<Direccion> listadirecciones()
+        {
+
+            return listaDirecciones;
         }
 
         private void CargarRegiones()
