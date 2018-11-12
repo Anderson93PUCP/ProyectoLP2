@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdministrarComisionVendedores));
             this.dgvpagos = new System.Windows.Forms.DataGridView();
+            this.colIDAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRUCAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRazonSAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.cbxvendedores = new System.Windows.Forms.ComboBox();
             this.btnPagar = new System.Windows.Forms.Button();
@@ -37,10 +41,6 @@
             this.txtTotalComision = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.colIDAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRUCAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRazonSAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colComAdminComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpagos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +59,34 @@
             this.dgvpagos.Size = new System.Drawing.Size(648, 150);
             this.dgvpagos.TabIndex = 0;
             this.dgvpagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // colIDAdminComision
+            // 
+            this.colIDAdminComision.DataPropertyName = "ID_factura1";
+            this.colIDAdminComision.HeaderText = "ID";
+            this.colIDAdminComision.Name = "colIDAdminComision";
+            this.colIDAdminComision.ReadOnly = true;
+            // 
+            // colRUCAdminComision
+            // 
+            this.colRUCAdminComision.DataPropertyName = "RUC1";
+            this.colRUCAdminComision.HeaderText = "RUC";
+            this.colRUCAdminComision.Name = "colRUCAdminComision";
+            this.colRUCAdminComision.ReadOnly = true;
+            // 
+            // colRazonSAdminComision
+            // 
+            this.colRazonSAdminComision.DataPropertyName = "Nombre1";
+            this.colRazonSAdminComision.HeaderText = "Razón Social";
+            this.colRazonSAdminComision.Name = "colRazonSAdminComision";
+            this.colRazonSAdminComision.ReadOnly = true;
+            // 
+            // colComAdminComision
+            // 
+            this.colComAdminComision.DataPropertyName = "Monto1";
+            this.colComAdminComision.HeaderText = "Comision";
+            this.colComAdminComision.Name = "colComAdminComision";
+            this.colComAdminComision.ReadOnly = true;
             // 
             // lblVendedor
             // 
@@ -111,7 +139,6 @@
             this.txtTotalComision.Name = "txtTotalComision";
             this.txtTotalComision.Size = new System.Drawing.Size(71, 20);
             this.txtTotalComision.TabIndex = 6;
-            this.txtTotalComision.Text = "742.23";
             this.txtTotalComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -135,34 +162,6 @@
             this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // colIDAdminComision
-            // 
-            this.colIDAdminComision.DataPropertyName = "ID_factura1";
-            this.colIDAdminComision.HeaderText = "ID";
-            this.colIDAdminComision.Name = "colIDAdminComision";
-            this.colIDAdminComision.ReadOnly = true;
-            // 
-            // colRUCAdminComision
-            // 
-            this.colRUCAdminComision.DataPropertyName = "RUC1";
-            this.colRUCAdminComision.HeaderText = "RUC";
-            this.colRUCAdminComision.Name = "colRUCAdminComision";
-            this.colRUCAdminComision.ReadOnly = true;
-            // 
-            // colRazonSAdminComision
-            // 
-            this.colRazonSAdminComision.DataPropertyName = "Nombre1";
-            this.colRazonSAdminComision.HeaderText = "Razón Social";
-            this.colRazonSAdminComision.Name = "colRazonSAdminComision";
-            this.colRazonSAdminComision.ReadOnly = true;
-            // 
-            // colComAdminComision
-            // 
-            this.colComAdminComision.DataPropertyName = "Monto1";
-            this.colComAdminComision.HeaderText = "Comision";
-            this.colComAdminComision.Name = "colComAdminComision";
-            this.colComAdminComision.ReadOnly = true;
             // 
             // frmAdministrarComisionVendedores
             // 

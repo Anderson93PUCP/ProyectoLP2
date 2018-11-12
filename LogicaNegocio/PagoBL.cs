@@ -21,19 +21,28 @@ namespace LogicaNegocio
             return pagoDA.listarPagos(dni);
         }
 
-        public void insertarPago(BindingList<Pago> pagos)
+        public BindingList<Pago> listar_todos_Pagos()
         {
-            pagoDA.insertarPago(pagos);
+            return pagoDA.listar_todos_Pagos();
         }
 
-        public void insertarPagop(Pago p)
+
+        public void insertarPago(BindingList<Pago> pagos, int dni)
         {
-            pagoDA.insertarPagop(p);
+            pagoDA.insertarPago(pagos, dni);
         }
+
+        
 
         public void cambiarEstado(string dni)
         {
             pagoDA.cambiarEstado(dni);
         }
+
+        public double calcular_monto(BindingList<Pago> listapagos)
+        {
+            return pagoDA.calcular_monto(listapagos);
+        }
+
     }
 }
