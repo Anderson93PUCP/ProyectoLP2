@@ -1,4 +1,5 @@
-﻿using LogicaNegocio;
+﻿using Clases;
+using LogicaNegocio;
 using ProyectoLP2;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace Formularios
             InitializeComponent();
             CargarVendedores();
             btnPagar.Enabled = false;
+            dgvpagos.DataSource = pagoBL.listar_todos_Pagos();
+            txtTotalComision.Text = "0.0";
         }
 
         private void CargarVendedores()
@@ -45,19 +48,29 @@ namespace Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var v = MessageBox.Show("¿Desea confirmar el pago al vendedor por el monto de 742.23 S/.", "confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+
+            string dni = cbxvendedores.SelectedValue.ToString();
+            double montototal = pagoBL.calcular_monto(pagoBL.listarPagos(dni));
+
+            txtTotalComision.Text = montototal.ToString();
+
+            var v = MessageBox.Show("¿Desea confirmar el pago al vendedor por el monto de "+montototal+"?", "confirmacion",MessageBoxButtons.OKCancel);
+
+           
             if (v == DialogResult.OK)
             {
-                if (cbxvendedores.SelectedIndex != -1)
-                {
+               if (cbxvendedores.SelectedIndex != -1)
+               {
                     btnPagar.Enabled = true;
                     //se insertan en una tabla las info del pago que esta hecho
-                    string dni = cbxvendedores.SelectedValue.ToString();
-                    pagoBL.insertarPago(pagoBL.listarPagos(dni));
+                    
+
+                    pagoBL.insertarPago(pagoBL.listarPagos(dni),Int32.Parse(dni));
 
                     //se cambia el estado de la factura
                     pagoBL.cambiarEstado(dni);
-                }
+               }
                                                 
             }
 
@@ -78,6 +91,10 @@ namespace Formularios
                 dni = cbxvendedores.SelectedValue.ToString();
                 dgvpagos.AutoGenerateColumns = false;
                 dgvpagos.DataSource = pagoBL.listarPagos(dni);
+
+                double montototal = pagoBL.calcular_monto(pagoBL.listarPagos(dni));
+
+                txtTotalComision.Text = montototal.ToString();
             }
         }
     }

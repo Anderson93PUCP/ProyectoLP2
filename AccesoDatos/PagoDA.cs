@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Clases;
 using MySql.Data.MySqlClient;
 using ProyectoLP2;
@@ -12,6 +13,45 @@ namespace AccesoDatos
 {
    public class PagoDA
     {
+        public BindingList<Pago> listar_todos_Pagos()
+        {
+            try
+            {
+                BindingList<Pago> listapagos = new BindingList<Pago>();
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "select id_facturas, a.ruc, a.nombre, montoPagoVendedor, estadoPagoVendedor from n_pedido p, n_factura_venta f, n_cliente a where p.id_pedido = f.id_pedido and f.estadoPagoVendedor = 1 and p.id_cliente = a.id_cliente ";
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Pago p = new Pago();
+                    p.ID_factura1 = reader.GetInt32("id_facturas");
+                    p.RUC1 = reader.GetString("ruc");
+                    p.Nombre1 = reader.GetString("nombre");
+                    p.Monto1 = reader.GetDouble("montoPagoVendedor");
+                    p.EstadoPago1 = reader.GetInt32("estadoPagoVendedor");
+
+                    listapagos.Add(p);
+
+                }
+                conn.Close();
+                return listapagos;
+            }
+            catch
+            {
+                MessageBox.Show("Erreur");
+                return null;
+            }
+
+        }
+
+
+
         public BindingList<Pago> listarPagos(string dni)
         {
             try
@@ -32,7 +72,7 @@ namespace AccesoDatos
                     p.ID_factura1 = reader.GetInt32("id_facturas");
                     p.RUC1 = reader.GetString("ruc");
                     p.Nombre1 = reader.GetString("nombre");
-                    p.Monto1 = reader.GetFloat("montoPagoVendedor");
+                    p.Monto1 = reader.GetDouble("montoPagoVendedor");
                     p.EstadoPago1 = reader.GetInt32("estadoPagoVendedor");
 
                     listapagos.Add(p);
@@ -41,36 +81,39 @@ namespace AccesoDatos
                 conn.Close();
                 return listapagos;
             }
-            catch      {    return null;  }
-
-
-        }
-
-        public void insertarPago(BindingList<Pago> listafacturas)
-        {
-           try
+            catch
             {
-                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
-                conn.Open();
-
-                MySqlCommand cmd = new MySqlCommand();
-
-                foreach (Pago p in listafacturas){
-
-                    cmd.CommandText = "Insert into n_pago_vendedor" + "(id_factura,monto)" + "values" + "('" +
-                     p.ID_factura1 + "','" + "','" + "'," +  p.Monto1 + "," + "1,'" + "')";
-
-
-                    cmd.ExecuteNonQuery();
-                }
-                                              
-                
-                conn.Close();
-                
+                MessageBox.Show("Erreur");
+                return null;
             }
-            catch { }
 
         }
+
+        public void insertarPago(BindingList<Pago> listapagos, int dni)
+        {
+           
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            
+            foreach (Pago p in listapagos){
+
+                cmd.Connection = conn;
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "AGREGAR_PAGO";
+
+                cmd.Parameters.Add("_DNI_EMPLEADO", MySqlDbType.String).Value = dni;
+                cmd.Parameters.Add("_MONTO", MySqlDbType.Double).Value = p.Monto1;
+                cmd.Parameters.Add("_ID_FACTURA", MySqlDbType.Int32).Value = p.ID_factura1;
+                
+                cmd.ExecuteNonQuery();
+            }
+               conn.Close();
+          
+        }
+
+
 
         public void cambiarEstado(string dni)
         {
@@ -89,6 +132,16 @@ namespace AccesoDatos
 
             }
             catch { }
+        }
+
+        public double calcular_monto(BindingList<Pago> listapagos)
+        {
+            double monto_total = 0;
+            foreach(Pago p in listapagos)
+            {
+                monto_total = monto_total + p.Monto1;
+            }
+            return monto_total;
         }
                 
     }
