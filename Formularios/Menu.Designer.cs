@@ -60,6 +60,7 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.panelVerticalPagos = new System.Windows.Forms.Panel();
             this.btnVendedores = new System.Windows.Forms.Button();
+            this.lblusuario = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -190,6 +191,7 @@
             // 
             this.BarraTitulo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BarraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BarraTitulo.Controls.Add(this.lblusuario);
             this.BarraTitulo.Controls.Add(this.iconminimizar);
             this.BarraTitulo.Controls.Add(this.iconrestaurar);
             this.BarraTitulo.Controls.Add(this.iconcerrar);
@@ -200,6 +202,7 @@
             this.BarraTitulo.Name = "BarraTitulo";
             this.BarraTitulo.Size = new System.Drawing.Size(1050, 50);
             this.BarraTitulo.TabIndex = 1;
+            this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
             // iconminimizar
@@ -522,6 +525,15 @@
             this.btnVendedores.UseVisualStyleBackColor = true;
             this.btnVendedores.Click += new System.EventHandler(this.btnVendedores_Click);
             // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.Font = new System.Drawing.Font("Engravers MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.Location = new System.Drawing.Point(47, 22);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(0, 17);
+            this.lblusuario.TabIndex = 8;
+            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -538,6 +550,7 @@
             this.MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
+            this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
@@ -586,5 +599,6 @@
         private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.Panel panelVerticalPagos;
         private System.Windows.Forms.Button btnVendedores;
+        private System.Windows.Forms.Label lblusuario;
     }
 }

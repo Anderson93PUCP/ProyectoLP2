@@ -155,6 +155,12 @@
     <Compile Include="frmAdministrarComisionVendedores.Designer.cs">
       <DependentUpon>frmAdministrarComisionVendedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionarContraseña.Designer.cs">
+      <DependentUpon>GestionarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdministrarComisionVendedores.resx">
       <DependentUpon>frmAdministrarComisionVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionarContraseña.resx">
+      <DependentUpon>GestionarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>

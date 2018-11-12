@@ -80,6 +80,7 @@
             this.txtcontraseña.Size = new System.Drawing.Size(197, 22);
             this.txtcontraseña.TabIndex = 3;
             this.txtcontraseña.UseSystemPasswordChar = true;
+            this.txtcontraseña.TextChanged += new System.EventHandler(this.txtcontraseña_TextChanged);
             this.txtcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcontraseña_KeyPress);
             // 
             // btningresar
@@ -101,6 +102,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 

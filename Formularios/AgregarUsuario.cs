@@ -103,5 +103,10 @@ namespace Formularios
             cmbrol.SelectedIndex = -1;
 
         }
+
+        private void txtusuario_TextChanged(object sender, EventArgs e)
+        {
+            txtcontraseña.Text = txtusuario.Text;
+        }
     }
 }

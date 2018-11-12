@@ -23,6 +23,7 @@ namespace ProyectoLP2
         private string password;
         private string respuestaConfimacion;
         private int tipoUsuario;
+        private int ingreso;
 
         public Persona()
         {
@@ -62,5 +63,6 @@ namespace ProyectoLP2
         public string Password { get => password; set => password = value; }
         public string RespuestaConfimacion { get => respuestaConfimacion; set => respuestaConfimacion = value; }
         public int TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
+        public int Ingreso { get => ingreso; set => ingreso = value; }
     }
 }
