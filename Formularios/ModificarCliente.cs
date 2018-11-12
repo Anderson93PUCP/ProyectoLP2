@@ -17,6 +17,8 @@ namespace Formularios
         UsuarioBL usuarioBL;
         ClienteBL clienteBL;
         Cliente cliente;
+
+        BindingList<Direccion> listaDirecciones;
         public ModificarCliente()
         {
             InitializeComponent();
@@ -35,57 +37,76 @@ namespace Formularios
 
         private void btnaceptarCliente_Click(object sender, EventArgs e)
         {
-            clienteBL = new ClienteBL();
-            if (txtrazonCliente.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
             try
             {
-                Int32.Parse(txttelfCliente.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Por favor ingrese el telefono correctamente.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                clienteBL = new ClienteBL();
+                if (txtrazonCliente.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese un nombre.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            if (txtemailCliente.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                try
+                {
+                    Int32.Parse(txttelfCliente.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor ingrese el telefono correctamente.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (txtemailCliente.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese un nombre.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (txtrucCliente.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese un nombre.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                Cliente a = new Cliente();
+                a.Id = cliente.Id;
+                a.Nombre = txtrazonCliente.Text.ToUpper();
+                a.Ruc = txtrucCliente.Text;
+                a.Email = txtemailCliente.Text;
+                a.Telefono = Int32.Parse(txttelfCliente.Text);
+                a.Dni_vendedor = cmbvendedorCliente.SelectedValue.ToString();
+                //int idCliente = clienteBL.registrarCliente(a);
+                if (clienteBL.modificarCliente(a))
+                {
+                    clienteBL.eliminarDirecciones(cliente.Id);
+                    int cont = 0;
+                    foreach (Direccion d in listaDirecciones)
+                    {
+                        if (cont == 0)
+                        {
+                            clienteBL.registrarDireccionesCliente(cliente.Id, d, 1);
+                            cont = 1;
+                        }
+                        else clienteBL.registrarDireccionesCliente(cliente.Id, d, 0);
+
+                    }
+                    MessageBox.Show("El cliente se registro satisfactoriamente",
+                        "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("El cliente no se registro",
+                   "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                //limpiarCamposCliente();
+                this.Dispose();
             }
-
-            if (txtrucCliente.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            Cliente a = new Cliente();
-            a.Id = cliente.Id;
-            a.Nombre = txtrazonCliente.Text;
-            a.Ruc = txtrucCliente.Text;
-            a.Email = txtemailCliente.Text;
-            a.Telefono = Int32.Parse(txttelfCliente.Text);
-            a.Dni_vendedor = cmbvendedorCliente.SelectedValue.ToString();
-            if (clienteBL.modificarCliente(a))
-
-                MessageBox.Show("El cliente se modifico satisfactoriamente",
-                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-            {
-                MessageBox.Show("El cliente no se modifico",
-               "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            this.Dispose();
+            catch { }
         }
 
         private void btncancelarCliente_Click(object sender, EventArgs e)
@@ -96,7 +117,11 @@ namespace Formularios
         private void btndireccionesCliente_Click(object sender, EventArgs e)
         {
             AgregarDirecciones fgd = new AgregarDirecciones();
-            fgd.ShowDialog();
+            if (fgd.ShowDialog() == DialogResult.OK)
+            {
+                listaDirecciones = fgd.listadirecciones();
+            }
+
         }
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
