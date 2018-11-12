@@ -45,10 +45,19 @@ namespace Formularios
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             transSeleccionado = new Transportista();
-            transSeleccionado = (Transportista)dgvTransportistas.CurrentRow.DataBoundItem;
+            try
+            {
+                transSeleccionado = (Transportista)dgvTransportistas.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No seleccionó un transportista");
+            }
+            
 
 
-            this.DialogResult = DialogResult.OK;
+            
         }
 
         private void btnBuscarTran_Click(object sender, EventArgs e)
@@ -95,17 +104,19 @@ namespace Formularios
 
         private void txtBuscarT_TextChanged(object sender, EventArgs e)
         {
-            BindingList<Transportista> listaAux = new BindingList<Transportista>();
-            listaAux = null;
+            
             if (txtBuscarT.Text == "")
             {
                 dgvTransportistas.DataSource = lista;
             }
             else
             {
+                BindingList<Transportista> listaAux = new BindingList<Transportista>();
+                
+                String criterio;
                 if (rbtnNombre.Checked == true)
                 {
-                    String criterio = txtBuscarT.Text;
+                    criterio = txtBuscarT.Text;
                     foreach (Transportista t in lista)
                     {
                         if (t.Nombre.Contains(criterio))
@@ -114,13 +125,13 @@ namespace Formularios
                             agencia = t;
                             listaAux.Add(agencia);
                         }
-                        dgvTransportistas.DataSource = listaAux;
+                        
                     }
-
+                    dgvTransportistas.DataSource = listaAux;
                 }
                 if (rbtnRUC.Checked == true)
                 {
-                    String criterio = txtBuscarT.Text;
+                    criterio = txtBuscarT.Text;
                     foreach (Transportista t in lista)
                     {
                         if (t.Ruc.Contains(criterio))
@@ -129,8 +140,9 @@ namespace Formularios
                             agencia = t;
                             listaAux.Add(t);
                         }
-                        dgvTransportistas.DataSource = listaAux;
+                       
                     }
+                    dgvTransportistas.DataSource = listaAux;
                 }
             }
         }

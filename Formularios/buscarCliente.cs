@@ -44,8 +44,17 @@ namespace Formularios
             //Close();
             
             clienteSeleccionado = new Cliente();
-            clienteSeleccionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-            this.DialogResult = DialogResult.OK;
+            try
+            {
+                clienteSeleccionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Seleccionar cliente");
+            }
+            
+           
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)

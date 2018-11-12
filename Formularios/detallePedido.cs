@@ -81,9 +81,17 @@ namespace Formularios
             if (txtCantidad.Text == "") numCant.Value = 0;
             if (txtDescuento.Text == "") numDesc.Value = 0;
             numCant.Value = cantidad;
-            numDesc.Value = descuento;
+            try
+            {
+                numDesc.Value = descuento;
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Descuento no valido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             
-            if (numCant.Value == 0)
+            
+            
+            if (numCant.Value == 0 )
             {
                 MessageBox.Show("Ingrese cantidad valida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
