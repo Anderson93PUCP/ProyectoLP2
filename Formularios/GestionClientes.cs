@@ -88,7 +88,7 @@ namespace Formularios
                  id= Convert.ToInt32(dgvClientes.Rows[dgvClientes.CurrentRow.Index].Cells[0].Value);
                 if (clienteBL.eliminarCliente(id))
                 {
-                    clienteBL.eliminarDirecciones(id);
+                     clienteBL.eliminarDirecciones(id);
                     MessageBox.Show("Se elimino el Cliente satisfactoriamente");
                     cargarClientes();
                 }else
