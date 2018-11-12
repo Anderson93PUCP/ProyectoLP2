@@ -200,7 +200,7 @@
             0,
             0});
             this.numCant.Name = "numCant";
-            this.numCant.Size = new System.Drawing.Size(41, 20);
+            this.numCant.Size = new System.Drawing.Size(35, 20);
             this.numCant.TabIndex = 19;
             this.numCant.ValueChanged += new System.EventHandler(this.numCant_ValueChanged);
             // 
@@ -213,7 +213,7 @@
             0,
             0});
             this.numDesc.Name = "numDesc";
-            this.numDesc.Size = new System.Drawing.Size(41, 20);
+            this.numDesc.Size = new System.Drawing.Size(35, 20);
             this.numDesc.TabIndex = 20;
             this.numDesc.ValueChanged += new System.EventHandler(this.numDesc_ValueChanged);
             // 
@@ -230,18 +230,22 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(199, 230);
+            this.txtCantidad.MaxLength = 6;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(51, 20);
             this.txtCantidad.TabIndex = 22;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // txtDescuento
             // 
             this.txtDescuento.Location = new System.Drawing.Point(199, 256);
+            this.txtDescuento.MaxLength = 2;
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(51, 20);
             this.txtDescuento.TabIndex = 23;
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
             // detallePedido
             // 
@@ -264,7 +268,7 @@
             this.Controls.Add(this.rbtnID);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "detallePedido";
-            this.Text = "Agregar Detalle Pedido";
+            this.Text = "x";
             this.Load += new System.EventHandler(this.detallePedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCant)).EndInit();

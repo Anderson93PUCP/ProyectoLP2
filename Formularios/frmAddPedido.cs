@@ -31,9 +31,9 @@ namespace Formularios
         public frmAddPedido(Pedido pedidoAModificar)
         {
             
-            cliente = null;
-            direccion = null;
-            transporteSeleccionado = null;
+            cliente = pedidoAModificar.Cliente;
+            direccion = pedidoAModificar.Direccion;
+            transporteSeleccionado = pedidoAModificar.Transportista;
 
             InitializeComponent();
             pedidoRegistrar = new Pedido();
@@ -114,9 +114,12 @@ namespace Formularios
             
             // confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
             //v.ShowDialog();
-            if (listaDetPedido.Count == 0)
+            if (listaDetPedido.Count == 0 || cliente == null || transporteSeleccionado == null || direccion == null)
             {
-                MessageBox.Show("Falta detalle de pedido", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if(listaDetPedido.Count == 0) MessageBox.Show("Falta detalle de pedido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if(cliente == null) MessageBox.Show("Falta seleccionar cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if (direccion == null) MessageBox.Show("Falta seleccionar direccion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else  MessageBox.Show("Falta seleccionar transporte", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -160,19 +163,24 @@ namespace Formularios
                     }
                     else
                     {
-
-
-                        pedidoRegistrar = new Pedido();
-                        pedidoRegistrar.Etapa = EtapaPedido.pendiente;
                         
-                        pedidoRegistrar.Cliente = cliente;
-                        pedidoRegistrar.Transportista = transporteSeleccionado;
-                        pedidoRegistrar.DetallesPedido = listaDetPedido;
-                        pedidoRegistrar.Direccion = direccion;
-                        PedidoBL pedidoBL = new PedidoBL();
-                        pedidoBL.agregarPedido(pedidoRegistrar);
-                        // se agrega a la base de datos
-                        MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
+                        
+                       
+                            pedidoRegistrar = new Pedido();
+                            pedidoRegistrar.Etapa = EtapaPedido.pendiente;
+
+                            pedidoRegistrar.Cliente = cliente;
+                            pedidoRegistrar.Transportista = transporteSeleccionado;
+                            pedidoRegistrar.DetallesPedido = listaDetPedido;
+                            pedidoRegistrar.Direccion = direccion;
+                            PedidoBL pedidoBL = new PedidoBL();
+                            pedidoBL.agregarPedido(pedidoRegistrar);
+                            // se agrega a la base de datos
+                            MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        
+                        
 
 
                     }
@@ -193,6 +201,8 @@ namespace Formularios
             {
                 cliente = v.ClienteSeleccionado;
                 txtClienteAddPedido.Text = v.ClienteSeleccionado.Nombre;
+                direccion = new Direccion();
+                txtDireccAddPedido.Clear();
                 txtVendedor.Text = cliente.Vendedor.Nombre + " "+cliente.Vendedor.Apellido;
                 btnBuscarDireAddPedido.Enabled = true;
             }

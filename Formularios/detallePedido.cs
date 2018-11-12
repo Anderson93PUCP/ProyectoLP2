@@ -75,6 +75,14 @@ namespace Formularios
 
         private void btnAceptarAddDetPedido_Click(object sender, EventArgs e)
         {
+            int cantidad, descuento;
+            Int32.TryParse(txtCantidad.Text,out cantidad);
+            Int32.TryParse(txtDescuento.Text, out descuento);
+            if (txtCantidad.Text == "") numCant.Value = 0;
+            if (txtDescuento.Text == "") numDesc.Value = 0;
+            numCant.Value = cantidad;
+            numDesc.Value = descuento;
+            
             if (numCant.Value == 0)
             {
                 MessageBox.Show("Ingrese cantidad valida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -207,24 +215,46 @@ namespace Formularios
 
         private void numCant_ValueChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"\d+(\.\d{1,2})?");
-            if (!rgx.IsMatch(txtCantidad.Text)) txtCantidad.ForeColor = Color.Red;
-            else txtCantidad.ForeColor = Color.Black;
+            
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[1-9]\d*$");
-            if (!rgx.IsMatch(txtCantidad.Text)) txtCantidad.ForeColor = Color.Red;
-            else txtCantidad.ForeColor = Color.Black;
+            
         }
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[1-9]\d*$");
-            if (!rgx.IsMatch(txtDescuento.Text)) txtCantidad.ForeColor = Color.Red;
-            else txtCantidad.ForeColor = Color.Black;
-            //https://stackoverflow.com/questions/1649435/regular-expression-to-limit-number-of-characters-to-10
+
+            int numero;
+                if (Int32.TryParse(txtDescuento.Text,out numero))
+                {
+                if (numero > 15)
+                    txtDescuento.ForeColor = Color.Red;
+                else
+                    txtDescuento.ForeColor = Color.Black;
+                }
+            
+            
+
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if(!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
