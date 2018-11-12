@@ -261,6 +261,7 @@
             this.txtcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcontraseña.Location = new System.Drawing.Point(460, 75);
             this.txtcontraseña.Name = "txtcontraseña";
+            this.txtcontraseña.ReadOnly = true;
             this.txtcontraseña.Size = new System.Drawing.Size(146, 24);
             this.txtcontraseña.TabIndex = 42;
             this.txtcontraseña.UseSystemPasswordChar = true;
@@ -272,6 +273,7 @@
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(146, 24);
             this.txtusuario.TabIndex = 41;
+            this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             // 
             // lblcontraseña
             // 

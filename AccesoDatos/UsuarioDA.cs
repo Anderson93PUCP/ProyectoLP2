@@ -161,6 +161,58 @@ namespace AccesoDatos
             }
         }
 
+        public Persona getUsuario(string username)
+        {
+            try
+            {
+                //BindingList<Persona> usuarios = new BindingList<Persona>();
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "SELECT * FROM n_usuarios where estado=1 and IDusuario='"+username.ToString()+"'";
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                int tipo = 0;
+                Persona usuario=null;
+                if (reader.Read())
+                {
+                    tipo = reader.GetInt32("tipoUsuario");
+                    switch (tipo)
+                    {
+                        case 0:
+                            usuario = new Administrador();
+                            break;
+                        case 1:
+                            usuario = new Vendedor();
+                            break;
+                        case 2:
+                            usuario = new Operario();
+                            break;
+                    }
+                    usuario.IDUsuario1 = reader.GetString("IDusuario");
+                    usuario.Dni = reader.GetString("dni_empleado");
+                    usuario.Nombre = reader.GetString("nombre");
+                    usuario.Apellido = reader.GetString("apellido_paterno");
+                    usuario.Estado = reader.GetInt32("estado");
+                    usuario.Fecha_ingreso = reader.GetDateTime("fecha_inicio");
+                    usuario.Edad = reader.GetInt32("edad");
+                    usuario.Direccion = reader.GetString("direccion");
+                    usuario.Telefono = reader.GetInt32("telefono1");
+                    usuario.Password = reader.GetString("contrasenia");
+                    usuario.TipoUsuario = reader.GetInt32("tipoUsuario");
+                    usuario.Ingreso = reader.GetInt32("ingreso");
+                }
+                conn.Close();
+                return usuario;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
 
         public bool registrarUsuario(Persona usuario,double salario,double comision)
         {
@@ -228,6 +280,29 @@ namespace AccesoDatos
             {
                 return false;
             }
+        }
+
+        public bool modificarContraseña(Persona usr, string nuevapsw)
+        {
+            try {
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "UPDATE n_usuarios " +
+                                "SET " +
+                                "contrasenia ='" + nuevapsw.ToString() + "', " +
+                                "ingreso=1" +
+                                 " WHERE dni_empleado = " + usr.Dni;
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch { return false; }
+            
         }
     }
 }
