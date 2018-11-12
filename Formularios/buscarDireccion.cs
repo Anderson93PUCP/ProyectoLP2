@@ -117,7 +117,58 @@ namespace Formularios
 
         private void txtbuscarDire_TextChanged(object sender, EventArgs e)
         {
+            if (txtbuscarDire.Text == "")
+            {
+                dgvDirecciones.DataSource = listaDirec;
+            }
+            else
+            {
+                BindingList<Direccion> listaBusq = new BindingList<Direccion>();
+                String criterio;
+                if (rbtnDep.Checked == true)
+                {
+                    criterio = txtbuscarDire.Text;
+                    foreach (Direccion d in listaDirec)
+                    {
+                        if (d.Departamento.Contains(criterio))
+                        {
+                            Direccion aux = new Direccion();
+                            aux = d;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgvDirecciones.DataSource = listaBusq;
+                }
+                if (rbtnDist.Checked == true)
+                {
+                    criterio = txtbuscarDire.Text;
+                    foreach (Direccion d in listaDirec)
+                    {
+                        if (d.Distrito.Contains(criterio))
+                        {
+                            Direccion aux = new Direccion();
+                            aux = d;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgvDirecciones.DataSource = listaBusq;
+                }
+                if (rbtnProv.Checked == true)
+                {
+                    criterio = txtbuscarDire.Text;
+                    foreach (Direccion d in listaDirec)
+                    {
+                        if (d.Provincia.Contains(criterio))
+                        {
+                            Direccion aux = new Direccion();
+                            aux = d;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgvDirecciones.DataSource = listaBusq;
+                }
 
+            }
         }
     }
 }

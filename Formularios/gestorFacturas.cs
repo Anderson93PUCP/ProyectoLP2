@@ -36,17 +36,27 @@ namespace Formularios
         {
             //confirmarElimFactura ventana = new confirmarElimFactura();
             //ventana.ShowDialog();
-            var v = MessageBox.Show("¿Desea eliminar la factura seleccionada?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (v == DialogResult.OK)
+            Factura facturaAEliminar = new Factura();
+            facturaAEliminar = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+            if (facturaAEliminar.EstadoPagoCliente == EstadoPagoCliente.pendiente_de_pago)
             {
-                Factura facturaSeleccionada = new Factura();
-                facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
-                FacturaBL f = new FacturaBL();
-                f.eliminarFactura(facturaSeleccionada);
-                
-                listaFacturas = f.listarFacturas();
-                dgwFacturas.DataSource = listaFacturas;
+                var v = MessageBox.Show("¿Desea eliminar la factura seleccionada?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (v == DialogResult.OK)
+                {
+                    Factura facturaSeleccionada = new Factura();
+                    facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+                    FacturaBL f = new FacturaBL();
+                    f.eliminarFactura(facturaSeleccionada);
+
+                    listaFacturas = f.listarFacturas();
+                    dgwFacturas.DataSource = listaFacturas;
+                }
             }
+            else
+            {
+                MessageBox.Show("La factura ya fue pagada por el cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
 
             // se tiene q actualizar la tabla y tmb el estado del pedido 
         }
@@ -62,8 +72,20 @@ namespace Formularios
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            verFactura ventana = new verFactura();
+            Factura facturaSeleccionada = new Factura();
+            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+            verFactura ventana = new verFactura(facturaSeleccionada);
             ventana.ShowDialog();
+        }
+
+        private void btnPagoCliente_Click(object sender, EventArgs e)
+        {
+            Factura facturaSeleccionada = new Factura();
+            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+            FacturaBL f = new FacturaBL();
+            f.pagoCliente(facturaSeleccionada.IdVenta);
+            listaFacturas = f.listarFacturas();
+            dgwFacturas.DataSource = listaFacturas;
         }
     }
 }

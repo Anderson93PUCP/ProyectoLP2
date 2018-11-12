@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddPedido));
             this.label1 = new System.Windows.Forms.Label();
             this.txtClienteAddPedido = new System.Windows.Forms.TextBox();
@@ -61,7 +62,9 @@
             this.lblSolesSubTotal = new System.Windows.Forms.Label();
             this.cbEstadoPedido = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -379,6 +382,10 @@
             this.lblEstado.TabIndex = 53;
             this.lblEstado.Text = "Etapa del Pedido:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAddPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,6 +420,7 @@
             this.Text = "Añadir Pedido";
             this.Load += new System.EventHandler(this.frmAddPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,5 +460,6 @@
         private System.Windows.Forms.Label lblSolesSubTotal;
         private System.Windows.Forms.ComboBox cbEstadoPedido;
         private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

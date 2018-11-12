@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Formularios
 {
@@ -30,6 +31,7 @@ namespace Formularios
             listaPro = new BindingList<Producto>();
             listaPro = pro.listarProducto();
             dgvProductos.DataSource = listaPro;
+            rbtnID.Checked = true;
         }
 
 
@@ -73,6 +75,14 @@ namespace Formularios
 
         private void btnAceptarAddDetPedido_Click(object sender, EventArgs e)
         {
+            int cantidad, descuento;
+            Int32.TryParse(txtCantidad.Text,out cantidad);
+            Int32.TryParse(txtDescuento.Text, out descuento);
+            if (txtCantidad.Text == "") numCant.Value = 0;
+            if (txtDescuento.Text == "") numDesc.Value = 0;
+            numCant.Value = cantidad;
+            numDesc.Value = descuento;
+            
             if (numCant.Value == 0)
             {
                 MessageBox.Show("Ingrese cantidad valida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -156,6 +166,94 @@ namespace Formularios
                     }
                     dgvProductos.DataSource = listaBusqueda;
                 }
+            }
+        }
+
+        private void txtBuscarProducto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscarProducto.Text == "")
+            {
+                dgvProductos.DataSource = listaPro;
+            }
+            else
+            {
+                string criterio = txtBuscarProducto.Text;
+                BindingList<Producto> listaBusqueda = new BindingList<Producto>();
+                if (rbtnDescp.Checked == true)
+                {
+                    foreach (Producto p in listaPro)
+                    {
+                        if (p.Descripcion.Contains(criterio))
+                        {
+                            Producto proB = new Producto();
+                            proB = p;
+                            listaBusqueda.Add(proB);
+                        }
+                    }
+                    dgvProductos.DataSource = listaBusqueda;
+                }
+                if (rbtnID.Checked == true)
+                {
+                    foreach (Producto p in listaPro)
+                    {
+                        if (p.Codigo.Contains(criterio))
+                        {
+                            Producto proB = new Producto();
+                            proB = p;
+                            listaBusqueda.Add(proB);
+                        }
+                    }
+                    dgvProductos.DataSource = listaBusqueda;
+                }
+            }
+        }
+
+        private void numDesc_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numCant_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+
+            int numero;
+                if (Int32.TryParse(txtDescuento.Text,out numero))
+                {
+                if (numero > 15)
+                    txtDescuento.ForeColor = Color.Red;
+                else
+                    txtDescuento.ForeColor = Color.Black;
+                }
+            
+            
+
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if(!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
             }
         }
     }

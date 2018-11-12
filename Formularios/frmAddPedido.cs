@@ -31,9 +31,9 @@ namespace Formularios
         public frmAddPedido(Pedido pedidoAModificar)
         {
             
-            cliente = null;
-            direccion = null;
-            transporteSeleccionado = null;
+            cliente = pedidoAModificar.Cliente;
+            direccion = pedidoAModificar.Direccion;
+            transporteSeleccionado = pedidoAModificar.Transportista;
 
             InitializeComponent();
             pedidoRegistrar = new Pedido();
@@ -114,9 +114,12 @@ namespace Formularios
             
             // confirmacionAceptarAddPedido v = new confirmacionAceptarAddPedido();
             //v.ShowDialog();
-            if (listaDetPedido.Count == 0)
+            if (listaDetPedido.Count == 0 || cliente == null || transporteSeleccionado == null || direccion == null)
             {
-                MessageBox.Show("Falta detalle de pedido", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if(listaDetPedido.Count == 0) MessageBox.Show("Falta detalle de pedido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if(cliente == null) MessageBox.Show("Falta seleccionar cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if (direccion == null) MessageBox.Show("Falta seleccionar direccion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else  MessageBox.Show("Falta seleccionar transporte", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -160,19 +163,24 @@ namespace Formularios
                     }
                     else
                     {
-
-
-                        pedidoRegistrar = new Pedido();
-                        pedidoRegistrar.Etapa = EtapaPedido.pendiente;
                         
-                        pedidoRegistrar.Cliente = cliente;
-                        pedidoRegistrar.Transportista = transporteSeleccionado;
-                        pedidoRegistrar.DetallesPedido = listaDetPedido;
-                        pedidoRegistrar.Direccion = direccion;
-                        PedidoBL pedidoBL = new PedidoBL();
-                        pedidoBL.agregarPedido(pedidoRegistrar);
-                        // se agrega a la base de datos
-                        MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
+                        
+                       
+                            pedidoRegistrar = new Pedido();
+                            pedidoRegistrar.Etapa = EtapaPedido.pendiente;
+
+                            pedidoRegistrar.Cliente = cliente;
+                            pedidoRegistrar.Transportista = transporteSeleccionado;
+                            pedidoRegistrar.DetallesPedido = listaDetPedido;
+                            pedidoRegistrar.Direccion = direccion;
+                            PedidoBL pedidoBL = new PedidoBL();
+                            pedidoBL.agregarPedido(pedidoRegistrar);
+                            // se agrega a la base de datos
+                            MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        
+                        
 
 
                     }
@@ -193,6 +201,8 @@ namespace Formularios
             {
                 cliente = v.ClienteSeleccionado;
                 txtClienteAddPedido.Text = v.ClienteSeleccionado.Nombre;
+                direccion = new Direccion();
+                txtDireccAddPedido.Clear();
                 txtVendedor.Text = cliente.Vendedor.Nombre + " "+cliente.Vendedor.Apellido;
                 btnBuscarDireAddPedido.Enabled = true;
             }
@@ -257,49 +267,62 @@ namespace Formularios
 
         private void btnElimDetPedido_Click(object sender, EventArgs e)
         {
-            var v = MessageBox.Show("¿Seguro desee eliminar el producto", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if(v == DialogResult.OK)
+            if (listaDetPedido.Count == 0)
             {
-                DetallePedido detPedidoEliminar = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
-                listaDetPedido.Remove(detPedidoEliminar);
-                dgvAddPedido.DataSource = listaDetPedido;
-                montoTotal = montoTotal - detPedidoEliminar.Subtotal;
-                txtTotalAddPedido.Text = montoTotal.ToString();
+                MessageBox.Show("No hay productos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            //confirmarEliminarPedido v = new confirmarEliminarPedido();
-            //v.ShowDialog();
+            else
+            {
+                var v = MessageBox.Show("¿Seguro desee eliminar el producto", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (v == DialogResult.OK)
+                {
+                    DetallePedido detPedidoEliminar = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
+                    listaDetPedido.Remove(detPedidoEliminar);
+                    dgvAddPedido.DataSource = listaDetPedido;
+                    montoTotal = montoTotal - detPedidoEliminar.Subtotal;
+                    txtTotalAddPedido.Text = montoTotal.ToString();
+                }
+            }
         }
 
         private void btnModDetPedido_Click(object sender, EventArgs e)
         {
-            DetallePedido d = new DetallePedido();
-            int pos = dgvAddPedido.CurrentRow.Index;
-            // dgvAddPedido.CurrentRow.ReadOnly = false;
-            d = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
-            detallePedido v = new detallePedido(d);
-            montoTotal = montoTotal - d.Subtotal;
-            if (v.ShowDialog() == DialogResult.OK)
+            if (listaDetPedido.Count == 0)
             {
-                //montoTotal = montoTotal - d.Subtotal;
-                if (!(d.proCod.Equals(v.DetPed.proCod)))
-                {
-                    d.Producto = v.DetPed.Producto;
-                }
-                d.Desc = v.DetPed.Desc;
-                d.Cantidad = v.DetPed.Cantidad;
-                // se modifico el mismo producto cantidad y/o descuentos
-                d.Subtotal = v.DetPed.Subtotal;
-
-                listaDetPedido[pos] = d;
-                dgvAddPedido.DataSource = null;
-                dgvAddPedido.DataSource = listaDetPedido;
-                montoTotal = montoTotal + v.DetPed.Subtotal;
-                
-                txtTotalAddPedido.Text = montoTotal.ToString();
+                MessageBox.Show("No hay productos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                montoTotal = montoTotal + d.Subtotal;
+                DetallePedido d = new DetallePedido();
+
+                int pos = dgvAddPedido.CurrentRow.Index;
+                // dgvAddPedido.CurrentRow.ReadOnly = false;
+                d = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
+                detallePedido v = new detallePedido(d);
+                montoTotal = montoTotal - d.Subtotal;
+                if (v.ShowDialog() == DialogResult.OK)
+                {
+                    //montoTotal = montoTotal - d.Subtotal;
+                    if (!(d.proCod.Equals(v.DetPed.proCod)))
+                    {
+                        d.Producto = v.DetPed.Producto;
+                    }
+                    d.Desc = v.DetPed.Desc;
+                    d.Cantidad = v.DetPed.Cantidad;
+                    // se modifico el mismo producto cantidad y/o descuentos
+                    d.Subtotal = v.DetPed.Subtotal;
+
+                    listaDetPedido[pos] = d;
+                    dgvAddPedido.DataSource = null;
+                    dgvAddPedido.DataSource = listaDetPedido;
+                    montoTotal = montoTotal + v.DetPed.Subtotal;
+
+                    txtTotalAddPedido.Text = montoTotal.ToString();
+                }
+                else
+                {
+                    montoTotal = montoTotal + d.Subtotal;
+                }
             }
         }
 

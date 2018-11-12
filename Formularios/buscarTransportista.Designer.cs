@@ -34,10 +34,10 @@
             this.txtBuscarT = new System.Windows.Forms.TextBox();
             this.btnBuscarTran = new System.Windows.Forms.Button();
             this.dgvTransportistas = new System.Windows.Forms.DataGridView();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.colRUCBuscarTran = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRazonSocialBuscarTran = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransportistas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             this.txtBuscarT.Name = "txtBuscarT";
             this.txtBuscarT.Size = new System.Drawing.Size(116, 20);
             this.txtBuscarT.TabIndex = 2;
+            this.txtBuscarT.TextChanged += new System.EventHandler(this.txtBuscarT_TextChanged);
             // 
             // btnBuscarTran
             // 
@@ -90,6 +91,23 @@
             this.dgvTransportistas.Name = "dgvTransportistas";
             this.dgvTransportistas.Size = new System.Drawing.Size(343, 134);
             this.dgvTransportistas.TabIndex = 4;
+            // 
+            // colRUCBuscarTran
+            // 
+            this.colRUCBuscarTran.DataPropertyName = "Ruc";
+            this.colRUCBuscarTran.Frozen = true;
+            this.colRUCBuscarTran.HeaderText = "RUC";
+            this.colRUCBuscarTran.Name = "colRUCBuscarTran";
+            this.colRUCBuscarTran.ReadOnly = true;
+            // 
+            // colRazonSocialBuscarTran
+            // 
+            this.colRazonSocialBuscarTran.DataPropertyName = "Nombre";
+            this.colRazonSocialBuscarTran.Frozen = true;
+            this.colRazonSocialBuscarTran.HeaderText = "Razon Social";
+            this.colRazonSocialBuscarTran.Name = "colRazonSocialBuscarTran";
+            this.colRazonSocialBuscarTran.ReadOnly = true;
+            this.colRazonSocialBuscarTran.Width = 200;
             // 
             // btnAceptar
             // 
@@ -116,23 +134,6 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // colRUCBuscarTran
-            // 
-            this.colRUCBuscarTran.DataPropertyName = "Ruc";
-            this.colRUCBuscarTran.Frozen = true;
-            this.colRUCBuscarTran.HeaderText = "RUC";
-            this.colRUCBuscarTran.Name = "colRUCBuscarTran";
-            this.colRUCBuscarTran.ReadOnly = true;
-            // 
-            // colRazonSocialBuscarTran
-            // 
-            this.colRazonSocialBuscarTran.DataPropertyName = "Nombre";
-            this.colRazonSocialBuscarTran.Frozen = true;
-            this.colRazonSocialBuscarTran.HeaderText = "Razon Social";
-            this.colRazonSocialBuscarTran.Name = "colRazonSocialBuscarTran";
-            this.colRazonSocialBuscarTran.ReadOnly = true;
-            this.colRazonSocialBuscarTran.Width = 200;
             // 
             // buscarTransportista
             // 

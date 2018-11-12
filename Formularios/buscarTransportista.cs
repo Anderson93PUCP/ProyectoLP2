@@ -92,5 +92,47 @@ namespace Formularios
             }
             
         }
+
+        private void txtBuscarT_TextChanged(object sender, EventArgs e)
+        {
+            BindingList<Transportista> listaAux = new BindingList<Transportista>();
+            listaAux = null;
+            if (txtBuscarT.Text == "")
+            {
+                dgvTransportistas.DataSource = lista;
+            }
+            else
+            {
+                if (rbtnNombre.Checked == true)
+                {
+                    String criterio = txtBuscarT.Text;
+                    foreach (Transportista t in lista)
+                    {
+                        if (t.Nombre.Contains(criterio))
+                        {
+                            Transportista agencia = new Transportista();
+                            agencia = t;
+                            listaAux.Add(agencia);
+                        }
+                        dgvTransportistas.DataSource = listaAux;
+                    }
+
+                }
+                if (rbtnRUC.Checked == true)
+                {
+                    String criterio = txtBuscarT.Text;
+                    foreach (Transportista t in lista)
+                    {
+                        if (t.Ruc.Contains(criterio))
+                        {
+                            Transportista agencia = new Transportista();
+                            agencia = t;
+                            listaAux.Add(t);
+                        }
+                        dgvTransportistas.DataSource = listaAux;
+                    }
+                }
+            }
+        }
     }
 }

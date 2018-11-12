@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtVendedor = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.dgwDetalleFactura = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +43,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblPedidoAddpedido = new System.Windows.Forms.Label();
+            this.txtValorVenta = new System.Windows.Forms.TextBox();
+            this.lblSolesSubTotal = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtImpuesto = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbltranspor = new System.Windows.Forms.Label();
+            this.txtTransporte = new System.Windows.Forms.TextBox();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,12 +57,7 @@
             this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtValorVenta = new System.Windows.Forms.TextBox();
-            this.lblSolesSubTotal = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtImpuesto = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwDetalleFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,15 +68,6 @@
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Cliente:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Fecha Registro:";
             // 
             // label3
             // 
@@ -90,50 +81,44 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 91);
+            this.label4.Location = new System.Drawing.Point(29, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Vendedor:";
             // 
-            // textBox1
+            // txtVendedor
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(118, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 15;
+            this.txtVendedor.Enabled = false;
+            this.txtVendedor.Location = new System.Drawing.Point(118, 109);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.Size = new System.Drawing.Size(227, 20);
+            this.txtVendedor.TabIndex = 16;
             // 
-            // textBox2
+            // txtDireccion
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(118, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 20);
-            this.textBox2.TabIndex = 16;
+            this.txtDireccion.Enabled = false;
+            this.txtDireccion.Location = new System.Drawing.Point(118, 60);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(227, 20);
+            this.txtDireccion.TabIndex = 17;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox3
+            // txtCliente
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(118, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(227, 20);
-            this.textBox3.TabIndex = 17;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Location = new System.Drawing.Point(118, 34);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(227, 20);
+            this.txtCliente.TabIndex = 18;
             // 
-            // textBox4
+            // dgwDetalleFactura
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(118, 34);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(227, 20);
-            this.textBox4.TabIndex = 18;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgwDetalleFactura.AllowUserToAddRows = false;
+            this.dgwDetalleFactura.AllowUserToDeleteRows = false;
+            this.dgwDetalleFactura.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgwDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwDetalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
             this.colNombre,
             this.colDescripcion,
@@ -141,10 +126,11 @@
             this.colPrecioUnitario,
             this.colDescuento,
             this.colSubTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 190);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(775, 116);
-            this.dataGridView1.TabIndex = 19;
+            this.dgwDetalleFactura.Location = new System.Drawing.Point(29, 190);
+            this.dgwDetalleFactura.Name = "dgwDetalleFactura";
+            this.dgwDetalleFactura.ReadOnly = true;
+            this.dgwDetalleFactura.Size = new System.Drawing.Size(775, 116);
+            this.dgwDetalleFactura.TabIndex = 19;
             // 
             // label5
             // 
@@ -230,50 +216,9 @@
             this.lblPedidoAddpedido.TabIndex = 51;
             this.lblPedidoAddpedido.Text = "Pedido:";
             // 
-            // colCodigo
-            // 
-            this.colCodigo.HeaderText = "Codigo";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.HeaderText = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
-            // colPrecioUnitario
-            // 
-            this.colPrecioUnitario.HeaderText = "P.U.";
-            this.colPrecioUnitario.Name = "colPrecioUnitario";
-            this.colPrecioUnitario.ReadOnly = true;
-            // 
-            // colDescuento
-            // 
-            this.colDescuento.HeaderText = "Desc.(%)";
-            this.colDescuento.Name = "colDescuento";
-            this.colDescuento.ReadOnly = true;
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.HeaderText = "Sub. Total";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.ReadOnly = true;
-            // 
             // txtValorVenta
             // 
+            this.txtValorVenta.Enabled = false;
             this.txtValorVenta.Location = new System.Drawing.Point(689, 326);
             this.txtValorVenta.Name = "txtValorVenta";
             this.txtValorVenta.Size = new System.Drawing.Size(85, 20);
@@ -301,6 +246,7 @@
             // 
             // txtImpuesto
             // 
+            this.txtImpuesto.Enabled = false;
             this.txtImpuesto.Location = new System.Drawing.Point(689, 359);
             this.txtImpuesto.Name = "txtImpuesto";
             this.txtImpuesto.Size = new System.Drawing.Size(85, 20);
@@ -316,11 +262,79 @@
             this.label10.TabIndex = 61;
             this.label10.Text = "S/.";
             // 
+            // lbltranspor
+            // 
+            this.lbltranspor.AutoSize = true;
+            this.lbltranspor.Location = new System.Drawing.Point(29, 88);
+            this.lbltranspor.Name = "lbltranspor";
+            this.lbltranspor.Size = new System.Drawing.Size(68, 13);
+            this.lbltranspor.TabIndex = 62;
+            this.lbltranspor.Text = "Transportista";
+            // 
+            // txtTransporte
+            // 
+            this.txtTransporte.Enabled = false;
+            this.txtTransporte.Location = new System.Drawing.Point(118, 85);
+            this.txtTransporte.Name = "txtTransporte";
+            this.txtTransporte.Size = new System.Drawing.Size(227, 20);
+            this.txtTransporte.TabIndex = 63;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.DataPropertyName = "proCod";
+            this.colCodigo.HeaderText = "Codigo";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "proNombre";
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.DataPropertyName = "proDesc";
+            this.colDescripcion.HeaderText = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "Cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colPrecioUnitario
+            // 
+            this.colPrecioUnitario.DataPropertyName = "proPre";
+            this.colPrecioUnitario.HeaderText = "P.U.";
+            this.colPrecioUnitario.Name = "colPrecioUnitario";
+            this.colPrecioUnitario.ReadOnly = true;
+            // 
+            // colDescuento
+            // 
+            this.colDescuento.DataPropertyName = "proDesc";
+            this.colDescuento.HeaderText = "Desc.(%)";
+            this.colDescuento.Name = "colDescuento";
+            this.colDescuento.ReadOnly = true;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.DataPropertyName = "Subtotal";
+            this.colSubTotal.HeaderText = "Sub. Total";
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.ReadOnly = true;
+            // 
             // verFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 460);
+            this.Controls.Add(this.txtTransporte);
+            this.Controls.Add(this.lbltranspor);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtImpuesto);
             this.Controls.Add(this.label9);
@@ -334,18 +348,16 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgwDetalleFactura);
+            this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "verFactura";
             this.Text = "verFactura";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwDetalleFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,14 +366,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtVendedor;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.DataGridView dgwDetalleFactura;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label label6;
@@ -370,6 +380,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblPedidoAddpedido;
+        private System.Windows.Forms.TextBox txtValorVenta;
+        private System.Windows.Forms.Label lblSolesSubTotal;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtImpuesto;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbltranspor;
+        private System.Windows.Forms.TextBox txtTransporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
@@ -377,10 +394,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        private System.Windows.Forms.TextBox txtValorVenta;
-        private System.Windows.Forms.Label lblSolesSubTotal;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtImpuesto;
-        private System.Windows.Forms.Label label10;
     }
 }

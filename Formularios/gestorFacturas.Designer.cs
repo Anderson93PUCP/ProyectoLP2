@@ -37,14 +37,14 @@
             this.rbtnRUC = new System.Windows.Forms.RadioButton();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgwFacturas = new System.Windows.Forms.DataGridView();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnCancelarFactura = new System.Windows.Forms.Button();
-            this.btnCancelado = new System.Windows.Forms.Button();
             this.colRUCGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClienteGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendedorGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaEGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnCancelarFactura = new System.Windows.Forms.Button();
+            this.btnPagoCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,42 +145,6 @@
             this.dgwFacturas.Size = new System.Drawing.Size(652, 150);
             this.dgwFacturas.TabIndex = 8;
             // 
-            // btnVer
-            // 
-            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Image = global::Formularios.Properties.Resources.file;
-            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVer.Location = new System.Drawing.Point(460, 63);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(75, 28);
-            this.btnVer.TabIndex = 9;
-            this.btnVer.Text = "Ver";
-            this.btnVer.UseVisualStyleBackColor = true;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
-            // btnCancelarFactura
-            // 
-            this.btnCancelarFactura.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancelarFactura.Image = global::Formularios.Properties.Resources.back__1_;
-            this.btnCancelarFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarFactura.Location = new System.Drawing.Point(311, 273);
-            this.btnCancelarFactura.Name = "btnCancelarFactura";
-            this.btnCancelarFactura.Size = new System.Drawing.Size(96, 42);
-            this.btnCancelarFactura.TabIndex = 2;
-            this.btnCancelarFactura.Text = "    &Regresar";
-            this.btnCancelarFactura.UseVisualStyleBackColor = true;
-            this.btnCancelarFactura.Click += new System.EventHandler(this.btnCancelarFactura_Click);
-            // 
-            // btnCancelado
-            // 
-            this.btnCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelado.Location = new System.Drawing.Point(552, 63);
-            this.btnCancelado.Name = "btnCancelado";
-            this.btnCancelado.Size = new System.Drawing.Size(75, 28);
-            this.btnCancelado.TabIndex = 10;
-            this.btnCancelado.Text = "Cancelar";
-            this.btnCancelado.UseVisualStyleBackColor = true;
-            // 
             // colRUCGestorFactura
             // 
             this.colRUCGestorFactura.DataPropertyName = "RUC";
@@ -216,12 +180,49 @@
             this.colEstadoGestorFactura.Name = "colEstadoGestorFactura";
             this.colEstadoGestorFactura.ReadOnly = true;
             // 
+            // btnVer
+            // 
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Image = global::Formularios.Properties.Resources.file;
+            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVer.Location = new System.Drawing.Point(443, 65);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(75, 28);
+            this.btnVer.TabIndex = 9;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnCancelarFactura
+            // 
+            this.btnCancelarFactura.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancelarFactura.Image = global::Formularios.Properties.Resources.back__1_;
+            this.btnCancelarFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarFactura.Location = new System.Drawing.Point(311, 273);
+            this.btnCancelarFactura.Name = "btnCancelarFactura";
+            this.btnCancelarFactura.Size = new System.Drawing.Size(96, 42);
+            this.btnCancelarFactura.TabIndex = 2;
+            this.btnCancelarFactura.Text = "    &Regresar";
+            this.btnCancelarFactura.UseVisualStyleBackColor = true;
+            this.btnCancelarFactura.Click += new System.EventHandler(this.btnCancelarFactura_Click);
+            // 
+            // btnPagoCliente
+            // 
+            this.btnPagoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagoCliente.Location = new System.Drawing.Point(524, 65);
+            this.btnPagoCliente.Name = "btnPagoCliente";
+            this.btnPagoCliente.Size = new System.Drawing.Size(103, 28);
+            this.btnPagoCliente.TabIndex = 10;
+            this.btnPagoCliente.Text = "Pago Cliente";
+            this.btnPagoCliente.UseVisualStyleBackColor = true;
+            this.btnPagoCliente.Click += new System.EventHandler(this.btnPagoCliente_Click);
+            // 
             // gestorFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 337);
-            this.Controls.Add(this.btnCancelado);
+            this.ClientSize = new System.Drawing.Size(679, 342);
+            this.Controls.Add(this.btnPagoCliente);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.dgwFacturas);
             this.Controls.Add(this.btnBuscar);
@@ -253,7 +254,7 @@
         private System.Windows.Forms.DataGridView dgwFacturas;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnCancelarFactura;
-        private System.Windows.Forms.Button btnCancelado;
+        private System.Windows.Forms.Button btnPagoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRUCGestorFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClienteGestorFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendedorGestorFactura;
