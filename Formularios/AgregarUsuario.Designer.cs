@@ -66,7 +66,7 @@
             this.cmbrol.Location = new System.Drawing.Point(460, 119);
             this.cmbrol.Name = "cmbrol";
             this.cmbrol.Size = new System.Drawing.Size(146, 21);
-            this.cmbrol.TabIndex = 29;
+            this.cmbrol.TabIndex = 30;
             this.cmbrol.SelectedIndexChanged += new System.EventHandler(this.cmbvendedor_SelectedIndexChanged);
             // 
             // label3
@@ -86,7 +86,7 @@
             this.txtemail.Location = new System.Drawing.Point(177, 240);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(146, 24);
-            this.txtemail.TabIndex = 25;
+            this.txtemail.TabIndex = 27;
             // 
             // txttelf
             // 
@@ -159,7 +159,7 @@
             this.txtdni.MaxLength = 8;
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(146, 24);
-            this.txtdni.TabIndex = 32;
+            this.txtdni.TabIndex = 25;
             // 
             // label1
             // 
@@ -188,7 +188,7 @@
             this.datetimeFechaI.Location = new System.Drawing.Point(177, 287);
             this.datetimeFechaI.Name = "datetimeFechaI";
             this.datetimeFechaI.Size = new System.Drawing.Size(146, 20);
-            this.datetimeFechaI.TabIndex = 34;
+            this.datetimeFechaI.TabIndex = 28;
             // 
             // txtsalario
             // 
@@ -214,7 +214,7 @@
             this.txtcomision.Location = new System.Drawing.Point(460, 156);
             this.txtcomision.Name = "txtcomision";
             this.txtcomision.Size = new System.Drawing.Size(81, 24);
-            this.txtcomision.TabIndex = 38;
+            this.txtcomision.TabIndex = 33;
             this.txtcomision.Visible = false;
             // 
             // lblcomision
@@ -236,7 +236,7 @@
             this.btncancelar.Location = new System.Drawing.Point(507, 271);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(100, 36);
-            this.btncancelar.TabIndex = 28;
+            this.btncancelar.TabIndex = 38;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelar.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@
             this.btnaceptar.Location = new System.Drawing.Point(370, 271);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(100, 36);
-            this.btnaceptar.TabIndex = 27;
+            this.btnaceptar.TabIndex = 34;
             this.btnaceptar.Text = "Registrar";
             this.btnaceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnaceptar.UseVisualStyleBackColor = true;
@@ -272,7 +272,7 @@
             this.txtusuario.Location = new System.Drawing.Point(460, 36);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(146, 24);
-            this.txtusuario.TabIndex = 41;
+            this.txtusuario.TabIndex = 29;
             this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             // 
             // lblcontraseña
@@ -302,7 +302,7 @@
             this.txtedad.MaxLength = 8;
             this.txtedad.Name = "txtedad";
             this.txtedad.Size = new System.Drawing.Size(146, 24);
-            this.txtedad.TabIndex = 44;
+            this.txtedad.TabIndex = 26;
             // 
             // label4
             // 

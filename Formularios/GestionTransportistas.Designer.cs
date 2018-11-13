@@ -48,6 +48,7 @@
             // 
             // dgvTransportistas
             // 
+            this.dgvTransportistas.AllowUserToAddRows = false;
             this.dgvTransportistas.AllowUserToOrderColumns = true;
             this.dgvTransportistas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvTransportistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -61,6 +62,7 @@
             this.colEmail});
             this.dgvTransportistas.Location = new System.Drawing.Point(38, 104);
             this.dgvTransportistas.Name = "dgvTransportistas";
+            this.dgvTransportistas.ReadOnly = true;
             this.dgvTransportistas.Size = new System.Drawing.Size(699, 217);
             this.dgvTransportistas.TabIndex = 27;
             // 
@@ -69,6 +71,7 @@
             this.colId.DataPropertyName = "Id";
             this.colId.HeaderText = "Id";
             this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
             this.colId.Visible = false;
             // 
             // colRUC
@@ -76,24 +79,28 @@
             this.colRUC.DataPropertyName = "Ruc";
             this.colRUC.HeaderText = "R.U.C";
             this.colRUC.Name = "colRUC";
+            this.colRUC.ReadOnly = true;
             // 
             // colNombre
             // 
             this.colNombre.DataPropertyName = "Nombre";
             this.colNombre.HeaderText = "Razon Social";
             this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
             // 
             // colTelef
             // 
             this.colTelef.DataPropertyName = "Telefono";
             this.colTelef.HeaderText = "Telefono";
             this.colTelef.Name = "colTelef";
+            this.colTelef.ReadOnly = true;
             // 
             // colEmail
             // 
             this.colEmail.DataPropertyName = "Email";
             this.colEmail.HeaderText = "Email";
             this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
             // 
             // btnCancelarPedido
             // 

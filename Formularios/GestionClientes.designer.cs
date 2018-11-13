@@ -31,17 +31,17 @@
             this.rbtnBusqRucCLiente = new System.Windows.Forms.RadioButton();
             this.txtBusqClientes = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.columnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBusquedaClientes = new System.Windows.Forms.Button();
             this.btnCancelarClientes = new System.Windows.Forms.Button();
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddCliente = new System.Windows.Forms.Button();
-            this.columnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,7 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToOrderColumns = true;
             this.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -85,6 +86,42 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(699, 217);
             this.dgvClientes.TabIndex = 20;
+            // 
+            // columnID
+            // 
+            this.columnID.DataPropertyName = "Id";
+            this.columnID.HeaderText = "ID";
+            this.columnID.Name = "columnID";
+            this.columnID.ReadOnly = true;
+            this.columnID.Visible = false;
+            // 
+            // columnRUC
+            // 
+            this.columnRUC.DataPropertyName = "Ruc";
+            this.columnRUC.HeaderText = "RUC";
+            this.columnRUC.Name = "columnRUC";
+            this.columnRUC.ReadOnly = true;
+            // 
+            // columnNombre
+            // 
+            this.columnNombre.DataPropertyName = "Nombre";
+            this.columnNombre.HeaderText = "NOMBRE";
+            this.columnNombre.Name = "columnNombre";
+            this.columnNombre.ReadOnly = true;
+            // 
+            // columnCorreo
+            // 
+            this.columnCorreo.DataPropertyName = "Email";
+            this.columnCorreo.HeaderText = "CORREO";
+            this.columnCorreo.Name = "columnCorreo";
+            this.columnCorreo.ReadOnly = true;
+            // 
+            // columnTelefono
+            // 
+            this.columnTelefono.DataPropertyName = "Telefono";
+            this.columnTelefono.HeaderText = "TELEFONO";
+            this.columnTelefono.Name = "columnTelefono";
+            this.columnTelefono.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -173,42 +210,6 @@
             this.btnAddCliente.Text = "Agregar";
             this.btnAddCliente.UseVisualStyleBackColor = false;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
-            // 
-            // columnID
-            // 
-            this.columnID.DataPropertyName = "Id";
-            this.columnID.HeaderText = "ID";
-            this.columnID.Name = "columnID";
-            this.columnID.ReadOnly = true;
-            this.columnID.Visible = false;
-            // 
-            // columnRUC
-            // 
-            this.columnRUC.DataPropertyName = "Ruc";
-            this.columnRUC.HeaderText = "RUC";
-            this.columnRUC.Name = "columnRUC";
-            this.columnRUC.ReadOnly = true;
-            // 
-            // columnNombre
-            // 
-            this.columnNombre.DataPropertyName = "Nombre";
-            this.columnNombre.HeaderText = "NOMBRE";
-            this.columnNombre.Name = "columnNombre";
-            this.columnNombre.ReadOnly = true;
-            // 
-            // columnCorreo
-            // 
-            this.columnCorreo.DataPropertyName = "Email";
-            this.columnCorreo.HeaderText = "CORREO";
-            this.columnCorreo.Name = "columnCorreo";
-            this.columnCorreo.ReadOnly = true;
-            // 
-            // columnTelefono
-            // 
-            this.columnTelefono.DataPropertyName = "Telefono";
-            this.columnTelefono.HeaderText = "TELEFONO";
-            this.columnTelefono.Name = "columnTelefono";
-            this.columnTelefono.ReadOnly = true;
             // 
             // GestionClientes
             // 
