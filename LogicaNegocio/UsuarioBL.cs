@@ -50,5 +50,10 @@ namespace LogicaNegocio
         {
             return usuarioDA.modificarContraseña(usr, nuevapsw);
         }
+
+        public bool modificarUsuario(Persona usuario, double salario, double comision)
+        {
+            return usuarioDA.modificarUsuario(usuario, salario, comision);
+        }
     }
 }

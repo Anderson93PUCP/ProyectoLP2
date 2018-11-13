@@ -42,8 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txttelf = new System.Windows.Forms.TextBox();
-            this.txtrazon = new System.Windows.Forms.TextBox();
-            this.txtruc = new System.Windows.Forms.TextBox();
+            this.txtapellido = new System.Windows.Forms.TextBox();
+            this.txtnombre = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lbltelefono = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             // datetimeFecha
             // 
             this.datetimeFecha.Enabled = false;
-            this.datetimeFecha.Location = new System.Drawing.Point(178, 252);
+            this.datetimeFecha.Location = new System.Drawing.Point(178, 210);
             this.datetimeFecha.Name = "datetimeFecha";
             this.datetimeFecha.Size = new System.Drawing.Size(146, 20);
             this.datetimeFecha.TabIndex = 54;
@@ -103,7 +103,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 252);
+            this.label2.Location = new System.Drawing.Point(41, 210);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 16);
             this.label2.TabIndex = 53;
@@ -146,7 +146,7 @@
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(557, 236);
+            this.btncancelar.Location = new System.Drawing.Point(557, 210);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(99, 36);
             this.btncancelar.TabIndex = 49;
@@ -161,7 +161,7 @@
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptar.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptar.Location = new System.Drawing.Point(345, 236);
+            this.btnaceptar.Location = new System.Drawing.Point(345, 210);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(100, 36);
             this.btnaceptar.TabIndex = 48;
@@ -185,10 +185,11 @@
             // 
             this.txtemail.Enabled = false;
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(178, 205);
+            this.txtemail.Location = new System.Drawing.Point(178, 266);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(146, 24);
             this.txtemail.TabIndex = 46;
+            this.txtemail.Visible = false;
             // 
             // txttelf
             // 
@@ -199,33 +200,34 @@
             this.txttelf.Size = new System.Drawing.Size(146, 24);
             this.txttelf.TabIndex = 45;
             // 
-            // txtrazon
+            // txtapellido
             // 
-            this.txtrazon.Enabled = false;
-            this.txtrazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtrazon.Location = new System.Drawing.Point(178, 73);
-            this.txtrazon.Name = "txtrazon";
-            this.txtrazon.Size = new System.Drawing.Size(146, 24);
-            this.txtrazon.TabIndex = 44;
+            this.txtapellido.Enabled = false;
+            this.txtapellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtapellido.Location = new System.Drawing.Point(178, 73);
+            this.txtapellido.Name = "txtapellido";
+            this.txtapellido.Size = new System.Drawing.Size(146, 24);
+            this.txtapellido.TabIndex = 44;
             // 
-            // txtruc
+            // txtnombre
             // 
-            this.txtruc.Enabled = false;
-            this.txtruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtruc.Location = new System.Drawing.Point(178, 34);
-            this.txtruc.Name = "txtruc";
-            this.txtruc.Size = new System.Drawing.Size(146, 24);
-            this.txtruc.TabIndex = 43;
+            this.txtnombre.Enabled = false;
+            this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnombre.Location = new System.Drawing.Point(178, 34);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(146, 24);
+            this.txtnombre.TabIndex = 43;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(41, 210);
+            this.lblEmail.Location = new System.Drawing.Point(41, 271);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 42;
             this.lblEmail.Text = "Email:";
+            this.lblEmail.Visible = false;
             // 
             // lbltelefono
             // 
@@ -262,7 +264,7 @@
             this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.Image = global::Formularios.Properties.Resources.file__3_;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(451, 236);
+            this.btnEditarCliente.Location = new System.Drawing.Point(451, 210);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(100, 36);
             this.btnEditarCliente.TabIndex = 59;
@@ -275,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 306);
+            this.ClientSize = new System.Drawing.Size(680, 256);
             this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.txtcomision);
             this.Controls.Add(this.lblcomision);
@@ -291,8 +293,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txttelf);
-            this.Controls.Add(this.txtrazon);
-            this.Controls.Add(this.txtruc);
+            this.Controls.Add(this.txtapellido);
+            this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lbltelefono);
             this.Controls.Add(this.lblNombre);
@@ -320,8 +322,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txttelf;
-        private System.Windows.Forms.TextBox txtrazon;
-        private System.Windows.Forms.TextBox txtruc;
+        private System.Windows.Forms.TextBox txtapellido;
+        private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lbltelefono;
         private System.Windows.Forms.Label lblNombre;

@@ -58,11 +58,20 @@ namespace Formularios
                 direccion.DetalleDireccion = txtdireccion.Text;
                 listaDirecciones.Add(direccion);
                 MessageBox.Show("Se agrego la direccion satisfactoriamente ");
+                limpiarCampos();
             }
             catch
             {
                 MessageBox.Show("No se agrego la direccion correctamente");
             }
+        }
+
+        public void limpiarCampos()
+        {
+            txtdireccion.Text = "";
+            cmbdepartamento.SelectedIndex = -1;
+            cmbdistrito.SelectedIndex = -1;
+            cmbprovincia.SelectedIndex = -1;
         }
 
         private void btncancelarDireccion_Click(object sender, EventArgs e)

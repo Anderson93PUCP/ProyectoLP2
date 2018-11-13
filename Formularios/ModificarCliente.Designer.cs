@@ -55,6 +55,8 @@
             this.txtCelCliente.Name = "txtCelCliente";
             this.txtCelCliente.Size = new System.Drawing.Size(146, 24);
             this.txtCelCliente.TabIndex = 34;
+            this.txtCelCliente.Text = "32434";
+            this.txtCelCliente.Visible = false;
             // 
             // label1
             // 
@@ -65,11 +67,12 @@
             this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 33;
             this.label1.Text = "Celular:";
+            this.label1.Visible = false;
             // 
             // btndireccionesCliente
             // 
             this.btndireccionesCliente.Enabled = false;
-            this.btndireccionesCliente.Location = new System.Drawing.Point(283, 231);
+            this.btndireccionesCliente.Location = new System.Drawing.Point(283, 189);
             this.btndireccionesCliente.Name = "btndireccionesCliente";
             this.btndireccionesCliente.Size = new System.Drawing.Size(27, 23);
             this.btndireccionesCliente.TabIndex = 32;
@@ -81,7 +84,7 @@
             // 
             this.cmbvendedorCliente.Enabled = false;
             this.cmbvendedorCliente.FormattingEnabled = true;
-            this.cmbvendedorCliente.Location = new System.Drawing.Point(164, 270);
+            this.cmbvendedorCliente.Location = new System.Drawing.Point(164, 228);
             this.cmbvendedorCliente.Name = "cmbvendedorCliente";
             this.cmbvendedorCliente.Size = new System.Drawing.Size(146, 21);
             this.cmbvendedorCliente.TabIndex = 31;
@@ -91,7 +94,7 @@
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 271);
+            this.label3.Location = new System.Drawing.Point(27, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 28;
@@ -101,7 +104,7 @@
             // 
             this.txtemailCliente.Enabled = false;
             this.txtemailCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemailCliente.Location = new System.Drawing.Point(164, 190);
+            this.txtemailCliente.Location = new System.Drawing.Point(164, 148);
             this.txtemailCliente.Name = "txtemailCliente";
             this.txtemailCliente.Size = new System.Drawing.Size(146, 24);
             this.txtemailCliente.TabIndex = 27;
@@ -137,7 +140,7 @@
             // 
             this.lbldirecciones.AutoSize = true;
             this.lbldirecciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldirecciones.Location = new System.Drawing.Point(27, 234);
+            this.lbldirecciones.Location = new System.Drawing.Point(27, 192);
             this.lbldirecciones.Name = "lbldirecciones";
             this.lbldirecciones.Size = new System.Drawing.Size(83, 16);
             this.lbldirecciones.TabIndex = 23;
@@ -147,7 +150,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(27, 195);
+            this.lblEmail.Location = new System.Drawing.Point(27, 153);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 22;
@@ -188,7 +191,7 @@
             this.btncancelarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelarCliente.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelarCliente.Location = new System.Drawing.Point(225, 327);
+            this.btncancelarCliente.Location = new System.Drawing.Point(225, 285);
             this.btncancelarCliente.Name = "btncancelarCliente";
             this.btncancelarCliente.Size = new System.Drawing.Size(85, 36);
             this.btncancelarCliente.TabIndex = 31;
@@ -203,7 +206,7 @@
             this.btnaceptarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptarCliente.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptarCliente.Location = new System.Drawing.Point(39, 326);
+            this.btnaceptarCliente.Location = new System.Drawing.Point(39, 284);
             this.btnaceptarCliente.Name = "btnaceptarCliente";
             this.btnaceptarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnaceptarCliente.TabIndex = 29;
@@ -217,7 +220,7 @@
             this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.Image = global::Formularios.Properties.Resources.file__3_;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(131, 326);
+            this.btnEditarCliente.Location = new System.Drawing.Point(131, 284);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnEditarCliente.TabIndex = 30;
@@ -230,10 +233,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 377);
+            this.ClientSize = new System.Drawing.Size(338, 330);
             this.Controls.Add(this.btnEditarCliente);
-            this.Controls.Add(this.txtCelCliente);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btndireccionesCliente);
             this.Controls.Add(this.cmbvendedorCliente);
             this.Controls.Add(this.btncancelarCliente);
@@ -248,6 +249,8 @@
             this.Controls.Add(this.lbltelefono);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblruc);
+            this.Controls.Add(this.txtCelCliente);
+            this.Controls.Add(this.label1);
             this.Name = "ModificarCliente";
             this.Text = "ModificarCliente";
             this.ResumeLayout(false);

@@ -34,6 +34,14 @@ namespace Formularios
             try
             {
                 clienteBL = new ClienteBL();
+
+                if (txtrucCliente.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese un ruc.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
                 if (txtrazonCliente.Text == "")
                 {
                     MessageBox.Show("Por favor ingrese un nombre.",
@@ -52,16 +60,27 @@ namespace Formularios
                     return;
                 }
 
-                if (txtemailCliente.Text == "")
+                try
                 {
-                    MessageBox.Show("Por favor ingrese un nombre.",
+                    Int32.Parse(txtCelCliente.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor ingrese el celular correctamente.",
                     "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
-                if (txtrucCliente.Text == "")
+                if (txtemailCliente.Text == "")
                 {
-                    MessageBox.Show("Por favor ingrese un nombre.",
+                    MessageBox.Show("Por favor ingrese un correo.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (cmbvendedorCliente.SelectedIndex== -1)
+                {
+                    MessageBox.Show("Por favor ingrese un vendedor.",
                     "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
@@ -97,7 +116,10 @@ namespace Formularios
                 }
                 //limpiarCamposCliente();
                 this.Dispose();
-            }catch { }
+            }catch {
+                MessageBox.Show("No agrego ninguna direccion nueva para el cliente",
+                   "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         
         public void limpiarCamposCliente()
