@@ -66,11 +66,12 @@ namespace Formularios
                     //se insertan en una tabla las info del pago que esta hecho
                     
 
-                    pagoBL.insertarPago(pagoBL.listarPagos(dni),Int32.Parse(dni));
+                    pagoBL.insertarPago(pagoBL.listarPagos(dni),dni);
 
                     //se cambia el estado de la factura
-                    pagoBL.cambiarEstado(dni);
-               }
+                    pagoBL.cambiarEstado(pagoBL.listarPagos(dni));
+                    dgvpagos.DataSource = pagoBL.listarPagos(dni);
+                }
                                                 
             }
 
