@@ -101,8 +101,6 @@ namespace Formularios
 
         private void txtBuscarT_TextChanged(object sender, EventArgs e)
         {
-            BindingList<Transportista> listaAux = new BindingList<Transportista>();
-
             
             if (txtBuscarT.Text == "")
             {
