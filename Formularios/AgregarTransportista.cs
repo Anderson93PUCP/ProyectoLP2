@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,7 @@ namespace Formularios
         public AgregarTransportista()
         {
             InitializeComponent();
+            validarCampos();
         }
 
         private void btndirecciones_Click(object sender, EventArgs e)
@@ -39,40 +41,48 @@ namespace Formularios
         private void btnaceptar_Click(object sender, EventArgs e)
         {
             transportistaBL = new TransportistaBL();
-            if (txtruc.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un ruc.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            int r, n, te, d, em;
+            r = Regexp(@"^[0-9]+$", txtruc, pbruc);
+            n = Regexp(@"^[a-zA-Z\s]+$", txtrazon, pbnombre);
+            te = Regexp(@"^[0-9]+$", txttelf, pbtelefono);
+            d = Regexp(@"^[a-zA-Z0-9_\s]+$", txtdireccion, pbdirec);
+            em = Regexp(@"^([\w]+)@([\w]+)\.([\w]+)$", txtemail, pbemail);
+            int valor = r * n * te * d * em;
+            if (valor == 0) return;
+            //if (txtruc.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese un ruc.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
-            if (txtrazon.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            //if (txtrazon.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese un nombre.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
-            if (txttelf.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un telefono.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            //if (txttelf.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese un telefono.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
-            if (txtdireccion.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese una direccion.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            //if (txtdireccion.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese una direccion.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
-            if (txtemail.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un email.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            //if (txtemail.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese un email.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
             if (!rbtnacional.Checked & !rbtdepartamento.Checked )
             {
@@ -113,5 +123,33 @@ namespace Formularios
             //limpiarCamposCliente();
             this.Dispose();
         }
+
+        public int Regexp(string re, TextBox tb, PictureBox pc)
+        {
+            Regex regex = new Regex(re);
+
+            if (regex.IsMatch(tb.Text))
+            {
+                pc.Image = Properties.Resources.check;
+                return 1;
+            }
+            else
+            {
+                pc.Image = Properties.Resources.cross;
+                return 0;
+            }
+        }
+
+
+        public void validarCampos()
+        {
+            ToolTip r = new ToolTip();
+            r.SetToolTip(pbruc, "Ingrese un ruc de 11 digitos");
+            r.SetToolTip(pbnombre, "Ingrese un nombre");
+            r.SetToolTip(pbtelefono, "Ingrese un numero telefonico valido");
+            r.SetToolTip(pbdirec, "Ingrese una direccion valida");
+            r.SetToolTip(pbemail, "Ingrese un correo valido");
+        }
+        
     }
 }

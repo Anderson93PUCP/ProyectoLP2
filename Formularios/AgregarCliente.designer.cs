@@ -44,6 +44,16 @@
             this.btncancelarCliente = new System.Windows.Forms.Button();
             this.btnaceptarCliente = new System.Windows.Forms.Button();
             this.txtCelCliente = new System.Windows.Forms.TextBox();
+            this.pbemail = new System.Windows.Forms.PictureBox();
+            this.pbtelefono = new System.Windows.Forms.PictureBox();
+            this.pbnombre = new System.Windows.Forms.PictureBox();
+            this.pbruc = new System.Windows.Forms.PictureBox();
+            this.pbtelefono2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbemail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbruc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblruc
@@ -117,6 +127,7 @@
             // 
             this.txttelfCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelfCliente.Location = new System.Drawing.Point(165, 115);
+            this.txttelfCliente.MaxLength = 9;
             this.txttelfCliente.Name = "txttelfCliente";
             this.txttelfCliente.Size = new System.Drawing.Size(146, 24);
             this.txttelfCliente.TabIndex = 7;
@@ -202,16 +213,62 @@
             // 
             this.txtCelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelCliente.Location = new System.Drawing.Point(165, 155);
+            this.txtCelCliente.MaxLength = 9;
             this.txtCelCliente.Name = "txtCelCliente";
             this.txtCelCliente.Size = new System.Drawing.Size(146, 22);
             this.txtCelCliente.TabIndex = 8;
+            // 
+            // pbemail
+            // 
+            this.pbemail.Location = new System.Drawing.Point(317, 191);
+            this.pbemail.Name = "pbemail";
+            this.pbemail.Size = new System.Drawing.Size(29, 28);
+            this.pbemail.TabIndex = 48;
+            this.pbemail.TabStop = false;
+            // 
+            // pbtelefono
+            // 
+            this.pbtelefono.Location = new System.Drawing.Point(317, 111);
+            this.pbtelefono.Name = "pbtelefono";
+            this.pbtelefono.Size = new System.Drawing.Size(29, 28);
+            this.pbtelefono.TabIndex = 46;
+            this.pbtelefono.TabStop = false;
+            // 
+            // pbnombre
+            // 
+            this.pbnombre.Location = new System.Drawing.Point(317, 71);
+            this.pbnombre.Name = "pbnombre";
+            this.pbnombre.Size = new System.Drawing.Size(29, 28);
+            this.pbnombre.TabIndex = 45;
+            this.pbnombre.TabStop = false;
+            // 
+            // pbruc
+            // 
+            this.pbruc.Location = new System.Drawing.Point(317, 32);
+            this.pbruc.Name = "pbruc";
+            this.pbruc.Size = new System.Drawing.Size(29, 28);
+            this.pbruc.TabIndex = 44;
+            this.pbruc.TabStop = false;
+            // 
+            // pbtelefono2
+            // 
+            this.pbtelefono2.Location = new System.Drawing.Point(317, 149);
+            this.pbtelefono2.Name = "pbtelefono2";
+            this.pbtelefono2.Size = new System.Drawing.Size(29, 28);
+            this.pbtelefono2.TabIndex = 49;
+            this.pbtelefono2.TabStop = false;
             // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(347, 375);
+            this.ClientSize = new System.Drawing.Size(373, 375);
+            this.Controls.Add(this.pbtelefono2);
+            this.Controls.Add(this.pbemail);
+            this.Controls.Add(this.pbtelefono);
+            this.Controls.Add(this.pbnombre);
+            this.Controls.Add(this.pbruc);
             this.Controls.Add(this.txtCelCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btndireccionesCliente);
@@ -231,6 +288,11 @@
             this.Name = "AgregarCliente";
             this.Text = "AgregarCliente";
             this.Load += new System.EventHandler(this.AgregarCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbemail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbruc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +316,10 @@
         private System.Windows.Forms.Button btndireccionesCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCelCliente;
+        private System.Windows.Forms.PictureBox pbemail;
+        private System.Windows.Forms.PictureBox pbtelefono;
+        private System.Windows.Forms.PictureBox pbnombre;
+        private System.Windows.Forms.PictureBox pbruc;
+        private System.Windows.Forms.PictureBox pbtelefono2;
     }
 }

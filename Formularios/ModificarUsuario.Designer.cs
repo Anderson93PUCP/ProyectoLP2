@@ -49,13 +49,24 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblruc = new System.Windows.Forms.Label();
             this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.pbcomision = new System.Windows.Forms.PictureBox();
+            this.pbdni = new System.Windows.Forms.PictureBox();
+            this.pbtelefono = new System.Windows.Forms.PictureBox();
+            this.pbapellido = new System.Windows.Forms.PictureBox();
+            this.pbnombre = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcomision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdni)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbapellido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).BeginInit();
             this.SuspendLayout();
             // 
             // txtcomision
             // 
             this.txtcomision.Enabled = false;
             this.txtcomision.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcomision.Location = new System.Drawing.Point(510, 75);
+            this.txtcomision.Location = new System.Drawing.Point(540, 75);
+            this.txtcomision.MaxLength = 5;
             this.txtcomision.Name = "txtcomision";
             this.txtcomision.Size = new System.Drawing.Size(83, 24);
             this.txtcomision.TabIndex = 58;
@@ -65,7 +76,7 @@
             // 
             this.lblcomision.AutoSize = true;
             this.lblcomision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcomision.Location = new System.Drawing.Point(342, 80);
+            this.lblcomision.Location = new System.Drawing.Point(372, 80);
             this.lblcomision.Name = "lblcomision";
             this.lblcomision.Size = new System.Drawing.Size(87, 16);
             this.lblcomision.TabIndex = 57;
@@ -76,7 +87,8 @@
             // 
             this.txtsalario.Enabled = false;
             this.txtsalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsalario.Location = new System.Drawing.Point(510, 75);
+            this.txtsalario.Location = new System.Drawing.Point(540, 75);
+            this.txtsalario.MaxLength = 9;
             this.txtsalario.Name = "txtsalario";
             this.txtsalario.Size = new System.Drawing.Size(83, 24);
             this.txtsalario.TabIndex = 56;
@@ -85,7 +97,7 @@
             // 
             this.lblsalario.AutoSize = true;
             this.lblsalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsalario.Location = new System.Drawing.Point(342, 80);
+            this.lblsalario.Location = new System.Drawing.Point(372, 80);
             this.lblsalario.Name = "lblsalario";
             this.lblsalario.Size = new System.Drawing.Size(81, 16);
             this.lblsalario.TabIndex = 55;
@@ -114,6 +126,7 @@
             this.txtdni.Enabled = false;
             this.txtdni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdni.Location = new System.Drawing.Point(178, 157);
+            this.txtdni.MaxLength = 9;
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(146, 24);
             this.txtdni.TabIndex = 52;
@@ -134,19 +147,20 @@
             this.cmbrol.FormattingEnabled = true;
             this.cmbrol.Items.AddRange(new object[] {
             "Administrador",
-            "Operario",
-            "Vendedor"});
-            this.cmbrol.Location = new System.Drawing.Point(510, 38);
+            "Vendedor",
+            "Operario"});
+            this.cmbrol.Location = new System.Drawing.Point(540, 38);
             this.cmbrol.Name = "cmbrol";
             this.cmbrol.Size = new System.Drawing.Size(146, 21);
             this.cmbrol.TabIndex = 50;
+            this.cmbrol.SelectedIndexChanged += new System.EventHandler(this.cmbrol_SelectedIndexChanged);
             // 
             // btncancelar
             // 
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(557, 210);
+            this.btncancelar.Location = new System.Drawing.Point(587, 210);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(99, 36);
             this.btncancelar.TabIndex = 49;
@@ -161,7 +175,7 @@
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptar.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptar.Location = new System.Drawing.Point(345, 210);
+            this.btnaceptar.Location = new System.Drawing.Point(375, 210);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(100, 36);
             this.btnaceptar.TabIndex = 48;
@@ -175,7 +189,7 @@
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(342, 39);
+            this.label3.Location = new System.Drawing.Point(372, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 47;
@@ -196,6 +210,7 @@
             this.txttelf.Enabled = false;
             this.txttelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelf.Location = new System.Drawing.Point(178, 113);
+            this.txttelf.MaxLength = 9;
             this.txttelf.Name = "txttelf";
             this.txttelf.Size = new System.Drawing.Size(146, 24);
             this.txttelf.TabIndex = 45;
@@ -264,7 +279,7 @@
             this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.Image = global::Formularios.Properties.Resources.file__3_;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(451, 210);
+            this.btnEditarCliente.Location = new System.Drawing.Point(481, 210);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(100, 36);
             this.btnEditarCliente.TabIndex = 59;
@@ -273,11 +288,56 @@
             this.btnEditarCliente.UseVisualStyleBackColor = true;
             this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
+            // pbcomision
+            // 
+            this.pbcomision.Location = new System.Drawing.Point(638, 71);
+            this.pbcomision.Name = "pbcomision";
+            this.pbcomision.Size = new System.Drawing.Size(29, 28);
+            this.pbcomision.TabIndex = 74;
+            this.pbcomision.TabStop = false;
+            // 
+            // pbdni
+            // 
+            this.pbdni.Location = new System.Drawing.Point(330, 152);
+            this.pbdni.Name = "pbdni";
+            this.pbdni.Size = new System.Drawing.Size(29, 28);
+            this.pbdni.TabIndex = 70;
+            this.pbdni.TabStop = false;
+            // 
+            // pbtelefono
+            // 
+            this.pbtelefono.Location = new System.Drawing.Point(330, 110);
+            this.pbtelefono.Name = "pbtelefono";
+            this.pbtelefono.Size = new System.Drawing.Size(29, 28);
+            this.pbtelefono.TabIndex = 69;
+            this.pbtelefono.TabStop = false;
+            // 
+            // pbapellido
+            // 
+            this.pbapellido.Location = new System.Drawing.Point(330, 70);
+            this.pbapellido.Name = "pbapellido";
+            this.pbapellido.Size = new System.Drawing.Size(29, 28);
+            this.pbapellido.TabIndex = 68;
+            this.pbapellido.TabStop = false;
+            // 
+            // pbnombre
+            // 
+            this.pbnombre.Location = new System.Drawing.Point(330, 31);
+            this.pbnombre.Name = "pbnombre";
+            this.pbnombre.Size = new System.Drawing.Size(29, 28);
+            this.pbnombre.TabIndex = 67;
+            this.pbnombre.TabStop = false;
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 256);
+            this.ClientSize = new System.Drawing.Size(734, 256);
+            this.Controls.Add(this.pbcomision);
+            this.Controls.Add(this.pbdni);
+            this.Controls.Add(this.pbtelefono);
+            this.Controls.Add(this.pbapellido);
+            this.Controls.Add(this.pbnombre);
             this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.txtcomision);
             this.Controls.Add(this.lblcomision);
@@ -301,6 +361,11 @@
             this.Controls.Add(this.lblruc);
             this.Name = "ModificarUsuario";
             this.Text = "ModificarUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.pbcomision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdni)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbapellido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,5 +394,10 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.Button btnEditarCliente;
+        private System.Windows.Forms.PictureBox pbcomision;
+        private System.Windows.Forms.PictureBox pbdni;
+        private System.Windows.Forms.PictureBox pbtelefono;
+        private System.Windows.Forms.PictureBox pbapellido;
+        private System.Windows.Forms.PictureBox pbnombre;
     }
 }
