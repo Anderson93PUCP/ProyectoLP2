@@ -150,7 +150,7 @@
             // 
             this.btnAcpetarBuscDire.Image = global::Formularios.Properties.Resources.check;
             this.btnAcpetarBuscDire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcpetarBuscDire.Location = new System.Drawing.Point(485, 238);
+            this.btnAcpetarBuscDire.Location = new System.Drawing.Point(398, 238);
             this.btnAcpetarBuscDire.Name = "btnAcpetarBuscDire";
             this.btnAcpetarBuscDire.Size = new System.Drawing.Size(80, 32);
             this.btnAcpetarBuscDire.TabIndex = 6;
@@ -163,7 +163,7 @@
             // 
             this.btnCancelarBuscarDire.Image = global::Formularios.Properties.Resources.cross;
             this.btnCancelarBuscarDire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarBuscarDire.Location = new System.Drawing.Point(399, 238);
+            this.btnCancelarBuscarDire.Location = new System.Drawing.Point(485, 238);
             this.btnCancelarBuscarDire.Name = "btnCancelarBuscarDire";
             this.btnCancelarBuscarDire.Size = new System.Drawing.Size(80, 32);
             this.btnCancelarBuscarDire.TabIndex = 7;

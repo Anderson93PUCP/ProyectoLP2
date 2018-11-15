@@ -73,19 +73,88 @@ namespace Formularios
         private void btnVer_Click(object sender, EventArgs e)
         {
             Factura facturaSeleccionada = new Factura();
-            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
-            verFactura ventana = new verFactura(facturaSeleccionada);
-            ventana.ShowDialog();
+            try
+            {
+                facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+                verFactura ventana = new verFactura(facturaSeleccionada);
+                ventana.ShowDialog();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione una factura");
+            }
+           
         }
 
         private void btnPagoCliente_Click(object sender, EventArgs e)
         {
             Factura facturaSeleccionada = new Factura();
-            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
-            FacturaBL f = new FacturaBL();
-            f.pagoCliente(facturaSeleccionada.IdVenta);
-            listaFacturas = f.listarFacturas();
-            dgwFacturas.DataSource = listaFacturas;
+            try
+            {
+                facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+                FacturaBL f = new FacturaBL();
+                f.pagoCliente(facturaSeleccionada.IdVenta);
+                listaFacturas = f.listarFacturas();
+                dgwFacturas.DataSource = listaFacturas;
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione una factura");
+            }
+            
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if(txtBuscar.Text == "")
+            {
+                dgwFacturas.DataSource = listaFacturas;
+            }
+            else
+            {
+                BindingList<Factura> listaBusq = new BindingList<Factura>();
+                String criterio;
+                if(rbtnRUC.Checked == true)
+                {
+                    criterio = txtBuscar.Text;
+                    foreach(Factura factura in listaFacturas)
+                    {
+                        if (factura.RUC.Contains(criterio))
+                        {
+                            Factura aux = new Factura();
+                            aux = factura;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgwFacturas.DataSource = listaBusq;
+                }
+                if (rbtnNombreCliente.Checked == true)
+                {
+                    criterio = txtBuscar.Text;
+                    foreach (Factura factura in listaFacturas)
+                    {
+                        if (factura.Pedido.ClienteNombre.Contains(criterio))
+                        {
+                            Factura aux = new Factura();
+                            aux = factura;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgwFacturas.DataSource = listaBusq;
+                }
+                if (rbtnVendedor.Checked == true)
+                {
+                    criterio = txtBuscar.Text;
+                    foreach (Factura factura in listaFacturas)
+                    {
+                        if (factura.Pedido.NombreVendedor.Contains(criterio))
+                        {
+                            Factura aux = new Factura();
+                            aux = factura;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgwFacturas.DataSource = listaBusq;
+                }
+            }
         }
     }
 }

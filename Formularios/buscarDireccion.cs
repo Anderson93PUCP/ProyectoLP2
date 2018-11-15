@@ -61,7 +61,8 @@ namespace Formularios
                 this.DialogResult = DialogResult.OK;
             } catch(Exception ex)
             {
-                MessageBox.Show("Seleccionar direccion");
+                MessageBox.Show("Seleccione una direccion");
+
             }
             
             

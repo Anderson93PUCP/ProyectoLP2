@@ -42,7 +42,7 @@ namespace Formularios
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             //Close();
-            
+
             clienteSeleccionado = new Cliente();
             try
             {
@@ -51,7 +51,8 @@ namespace Formularios
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Seleccionar cliente");
+
+                MessageBox.Show("Seleccione un cliente");
             }
             
            

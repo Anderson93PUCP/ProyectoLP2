@@ -50,14 +50,11 @@ namespace Formularios
                 transSeleccionado = (Transportista)dgvTransportistas.CurrentRow.DataBoundItem;
                 this.DialogResult = DialogResult.OK;
             }
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
-                MessageBox.Show("No seleccionó un transportista");
+                MessageBox.Show("Seleccione un transportista");
             }
-            
-
-
-            
         }
 
         private void btnBuscarTran_Click(object sender, EventArgs e)
@@ -104,6 +101,8 @@ namespace Formularios
 
         private void txtBuscarT_TextChanged(object sender, EventArgs e)
         {
+            BindingList<Transportista> listaAux = new BindingList<Transportista>();
+
             
             if (txtBuscarT.Text == "")
             {

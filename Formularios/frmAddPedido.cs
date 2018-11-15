@@ -23,7 +23,7 @@ namespace Formularios
         private Pedido pedidoMod;
         private double montoTotal;
         private int esModificar;
-        
+        private int agregarPedido;
 
 
         public Pedido PedidoRegistrar { get => pedidoRegistrar; set => pedidoRegistrar = value; }
@@ -65,7 +65,7 @@ namespace Formularios
             }
             txtTotalAddPedido.Text = montoTotal.ToString();
             // se va a proceder eliminar de la base de datos
-            
+            agregarPedido = 0;
         }
 
         public frmAddPedido()
@@ -78,6 +78,7 @@ namespace Formularios
             listaDetPedido = new BindingList<DetallePedido>();
             montoTotal = 0;
             esModificar = 0;
+            agregarPedido = 1;
         }
 
         private void frmAddPedido_Load(object sender, EventArgs e)
@@ -163,10 +164,6 @@ namespace Formularios
                     }
                     else
                     {
-                        
-                       
-                        
-                       
                             pedidoRegistrar = new Pedido();
                             pedidoRegistrar.Etapa = EtapaPedido.pendiente;
 
@@ -178,10 +175,6 @@ namespace Formularios
                             pedidoBL.agregarPedido(pedidoRegistrar);
                             // se agrega a la base de datos
                             MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        
-                        
-
 
                     }
                     DialogResult = DialogResult.OK;
@@ -303,6 +296,13 @@ namespace Formularios
                 if (v.ShowDialog() == DialogResult.OK)
                 {
                     //montoTotal = montoTotal - d.Subtotal;
+                    /*
+                        if(v.DetPed.Producto.Stock - v.DetPed.Cantidad < 0)
+                        {
+                            MessageBox.Show("Stock insuficiente.Saldo disponible: " + v.DetPed.Producto.Stock);
+                            return;
+                        }
+                    */
                     if (!(d.proCod.Equals(v.DetPed.proCod)))
                     {
                         d.Producto = v.DetPed.Producto;

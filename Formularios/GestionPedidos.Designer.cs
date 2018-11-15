@@ -56,6 +56,7 @@
             this.txtBusqPedido.Name = "txtBusqPedido";
             this.txtBusqPedido.Size = new System.Drawing.Size(212, 20);
             this.txtBusqPedido.TabIndex = 3;
+            this.txtBusqPedido.TextChanged += new System.EventHandler(this.txtBusqPedido_TextChanged);
             this.txtBusqPedido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusqPedido_KeyUp);
             // 
             // rbtnVendedor

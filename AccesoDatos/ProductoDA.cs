@@ -24,7 +24,7 @@ namespace AccesoDatos
             conn.Open();
 
             MySqlCommand cmd = new MySqlCommand();
-            String sql = "SELECT * FROM n_producto";
+            String sql = "SELECT * FROM n_producto where estado = 1";
             cmd.CommandText = sql;
             cmd.Connection = conn;
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -56,7 +56,8 @@ namespace AccesoDatos
                 }
                 producto.Precio = reader.GetDouble("precio");
                 producto.Descripcion = reader.GetString("descripcion");
-
+                producto.Stock = reader.GetInt32("stock");
+                producto.MinimoStock = reader.GetInt32("stokcMinimo");
                 lista.Add(producto);
 
             }

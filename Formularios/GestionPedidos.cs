@@ -67,18 +67,25 @@ namespace Formularios
             var v = MessageBox.Show("¿Desea eliminar el pedido?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
-                Pedido pedidoAEliminar = (Pedido)dgvPedidos.CurrentRow.DataBoundItem;
-                if(pedidoAEliminar.Etapa == EtapaPedido.pendiente)
+                try
                 {
-                    PedidoBL p = new PedidoBL();
-                    p.eliminarPedido(pedidoAEliminar.IdVenta); // se elimino en la base de datos
-                    listaPedidosRegistrados.Remove(pedidoAEliminar);
-                    dgvPedidos.Refresh();
-                }
-                else
+                    Pedido pedidoAEliminar = (Pedido)dgvPedidos.CurrentRow.DataBoundItem;
+                    if (pedidoAEliminar.Etapa == EtapaPedido.pendiente)
+                    {
+                        PedidoBL p = new PedidoBL();
+                        p.eliminarPedido(pedidoAEliminar.IdVenta); // se elimino en la base de datos
+                        listaPedidosRegistrados.Remove(pedidoAEliminar);
+                        dgvPedidos.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ETAPA DEL PEDIDO DEBE ESTAR EN PENDIENTE", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    }
+                } catch(Exception ex)
                 {
-                    MessageBox.Show("ETAPA DEL PEDIDO DEBE ESTAR EN PENDIENTE", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    MessageBox.Show("Seleccione un pedido");
                 }
+                
                 
                 
             }
@@ -88,19 +95,26 @@ namespace Formularios
         private void btnModPedido_Click(object sender, EventArgs e)
         {
             Pedido pedidoAModificar = new Pedido();
-            pedidoAModificar = (Pedido)dgvPedidos.CurrentRow.DataBoundItem;
-            frmAddPedido ventana = new frmAddPedido(pedidoAModificar);
-            if(ventana.ShowDialog() == DialogResult.OK)
+            try
             {
-                /*
-                listaPedidosRegistrados.Remove(pedidoAModificar);
-                listaPedidosRegistrados.Add(ventana.PedidoRegistrar);
-                dgvPedidos.Update();
-                dgvPedidos.Refresh();*/
-                PedidoBL p = new PedidoBL();
-                listaPedidosRegistrados = p.listarPedidos();
-                dgvPedidos.DataSource = listaPedidosRegistrados;
+                pedidoAModificar = (Pedido)dgvPedidos.CurrentRow.DataBoundItem;
+                frmAddPedido ventana = new frmAddPedido(pedidoAModificar);
+                if (ventana.ShowDialog() == DialogResult.OK)
+                {
+                    /*
+                    listaPedidosRegistrados.Remove(pedidoAModificar);
+                    listaPedidosRegistrados.Add(ventana.PedidoRegistrar);
+                    dgvPedidos.Update();
+                    dgvPedidos.Refresh();*/
+                    PedidoBL p = new PedidoBL();
+                    listaPedidosRegistrados = p.listarPedidos();
+                    dgvPedidos.DataSource = listaPedidosRegistrados;
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione un pedido");
             }
+            
             
             
         }
@@ -179,6 +193,60 @@ namespace Formularios
         private void txtBusqPedido_KeyUp(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void txtBusqPedido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusqPedido.Text == "")
+            {
+                dgvPedidos.DataSource = listaPedidosRegistrados;
+            }
+            else
+            {
+                BindingList<Pedido> listaBusqueda = new BindingList<Pedido>();
+                String criterio;
+                criterio = txtBusqPedido.Text;
+                if (rbtnBusqRuc.Checked == true)
+                {
+
+                    foreach (Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.ClienteRUC.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+                if (rbtnRazonSocial.Checked == true)
+                {
+                    foreach (Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.Cliente.Nombre.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+                if (rbtnVendedor.Checked == true)
+                {
+                    foreach (Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.Vendedor.Nombre.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+            }
         }
     }
 }

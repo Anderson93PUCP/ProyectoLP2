@@ -129,7 +129,7 @@
             // 
             this.btnAceptar.Image = global::Formularios.Properties.Resources.check;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(379, 245);
+            this.btnAceptar.Location = new System.Drawing.Point(285, 242);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(78, 32);
             this.btnAceptar.TabIndex = 5;
@@ -142,7 +142,7 @@
             // 
             this.btnCancelar.Image = global::Formularios.Properties.Resources.cross;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(293, 245);
+            this.btnCancelar.Location = new System.Drawing.Point(377, 242);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 32);
             this.btnCancelar.TabIndex = 6;
