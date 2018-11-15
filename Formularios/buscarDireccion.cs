@@ -62,6 +62,7 @@ namespace Formularios
             } catch(Exception ex)
             {
                 MessageBox.Show("Seleccione una direccion");
+
             }
             
             

@@ -17,6 +17,10 @@ namespace LogicaNegocio
             usuarioDA = new UsuarioDA();
         }
 
+        public Persona getUsuario(string username)
+        {
+            return usuarioDA.getUsuario(username);
+        }
         public BindingList<Persona> listarUsuarios()
         {
             return usuarioDA.listarUsarios();
@@ -40,6 +44,16 @@ namespace LogicaNegocio
         public bool eliminarUsuario(string dni)
         {
             return usuarioDA.eliminarUsuario(dni);
+        }
+
+        public bool modificarContraseña(Persona usr,string nuevapsw)
+        {
+            return usuarioDA.modificarContraseña(usr, nuevapsw);
+        }
+
+        public bool modificarUsuario(Persona usuario, double salario, double comision)
+        {
+            return usuarioDA.modificarUsuario(usuario, salario, comision);
         }
     }
 }

@@ -27,9 +27,14 @@ namespace LogicaNegocio
             return clienteDA.listarClientes(ruc);
         }
 
-        public bool registrarCliente(Cliente cliente)
+        public int registrarCliente(Cliente cliente)
         {
             return clienteDA.registrarCliente(cliente);
+        }
+
+        public void registrarDireccionesCliente(int idCLiente,Direccion direccion,int principal)
+        {
+             clienteDA.AgregarDirecciones(idCLiente,direccion,principal);
         }
 
         public bool eliminarCliente(int id)
@@ -41,5 +46,11 @@ namespace LogicaNegocio
         {
             return clienteDA.modificarCliente(cliente);
         }
+
+        public void eliminarDirecciones(int id)
+        {
+             clienteDA.eliminarDirecciones(id);
+        }
+        
     }
 }

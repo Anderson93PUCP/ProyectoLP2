@@ -23,6 +23,17 @@ namespace Formularios
             panelVerticalPedidos.Visible = false;
         }
 
+        public Menu(string username)
+        {
+            InitializeComponent();
+            lblusuario.Text = "Bienvenido "+ username.ToString();
+            panelVertical2.Visible = false;
+            panelVerticalReportes.Visible = false;
+            panelVerticalAlmacen.Visible = false;
+            panelVerticalPagos.Visible = false;
+            panelVerticalPedidos.Visible = false;
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -399,6 +410,11 @@ namespace Formularios
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
             MessageBox.Show("Este modulo fue implementado en java");
+        }
+
+        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

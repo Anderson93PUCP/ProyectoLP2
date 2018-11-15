@@ -51,10 +51,11 @@ namespace Formularios
             }
             catch(Exception ex)
             {
+
                 MessageBox.Show("Seleccione un cliente");
             }
             
-            
+           
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)

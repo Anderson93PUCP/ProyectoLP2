@@ -17,6 +17,7 @@ namespace Formularios
     {
         UsuarioBL usuarioBL;
         ClienteBL clienteBL;
+        BindingList<Direccion> listaDirecciones;
         public AgregarCliente()
         {
             InitializeComponent();
@@ -30,56 +31,95 @@ namespace Formularios
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            clienteBL = new ClienteBL();
-            if (txtrazonCliente.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
             try
             {
-                Int32.Parse(txttelfCliente.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Por favor ingrese el telefono correctamente.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                clienteBL = new ClienteBL();
 
-           if (txtemailCliente.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                if (txtrucCliente.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese un ruc.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            if (txtrucCliente.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                if (txtrazonCliente.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese un nombre.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            Cliente a = new Cliente();
-            a.Nombre = txtrazonCliente.Text;
-            a.Ruc = txtrucCliente.Text;
-            a.Email = txtemailCliente.Text;
-            a.Telefono = Int32.Parse(txttelfCliente.Text);
-            a.Dni_vendedor = cmbvendedorCliente.SelectedValue.ToString();
-            if (clienteBL.registrarCliente(a))
+                try
+                {
+                    Int32.Parse(txttelfCliente.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor ingrese el telefono correctamente.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            MessageBox.Show("El cliente se registro satisfactoriamente",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else {
-                MessageBox.Show("El cliente no se registro",
-               "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                try
+                {
+                    Int32.Parse(txtCelCliente.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor ingrese el celular correctamente.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (txtemailCliente.Text == "")
+                {
+                    MessageBox.Show("Por favor ingrese un correo.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (cmbvendedorCliente.SelectedIndex== -1)
+                {
+                    MessageBox.Show("Por favor ingrese un vendedor.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                Cliente a = new Cliente();
+                a.Nombre = txtrazonCliente.Text.ToUpper();
+                a.Ruc = txtrucCliente.Text;
+                a.Email = txtemailCliente.Text;
+                a.Telefono = Int32.Parse(txttelfCliente.Text);
+                a.Dni_vendedor = cmbvendedorCliente.SelectedValue.ToString();
+                int idCliente = clienteBL.registrarCliente(a);
+                if (idCliente != 0)
+                {
+                    int cont = 0;
+                    foreach (Direccion d in listaDirecciones)
+                    {
+                        if (cont == 0)
+                        {
+                            clienteBL.registrarDireccionesCliente(idCliente, d, 1);
+                            cont = 1;
+                        }
+                        else clienteBL.registrarDireccionesCliente(idCliente, d, 0);
+
+                    }
+                    MessageBox.Show("El cliente se registro satisfactoriamente",
+                        "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("El cliente no se registro",
+                   "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                //limpiarCamposCliente();
+                this.Dispose();
+            }catch {
+                MessageBox.Show("No agrego ninguna direccion nueva para el cliente",
+                   "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            limpiarCamposCliente();
-            //this.Dispose();
         }
         
         public void limpiarCamposCliente()
@@ -110,8 +150,14 @@ namespace Formularios
         private void btndirecciones_Click(object sender, EventArgs e)
         {
             AgregarDirecciones fgd = new AgregarDirecciones();
-            fgd.ShowDialog();
+            if (fgd.ShowDialog() == DialogResult.OK)
+            {
+                listaDirecciones = fgd.listadirecciones();
+            } 
+
         }
+
+
 
         private void CargarVendedores()
         {

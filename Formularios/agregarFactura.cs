@@ -57,6 +57,7 @@ namespace Formularios
                 try
                 {
                     pedidoSeleccionado = (Pedido)dgwListaPedidos.CurrentRow.DataBoundItem;
+
                     PedidoBL p = new PedidoBL();
                     p.generarFactura(pedidoSeleccionado);
                     DialogResult = DialogResult.OK;
@@ -65,6 +66,7 @@ namespace Formularios
                 {
                     MessageBox.Show("Seleccione una factura");
                 }
+
             }
         }
 
