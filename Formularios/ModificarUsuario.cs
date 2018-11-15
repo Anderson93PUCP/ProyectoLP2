@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,40 +31,48 @@ namespace Formularios
         {
             usuarioBL = new UsuarioBL();
             Persona usuario = null;
-            int tipo = cmbrol.SelectedIndex;
-            if (txtnombre.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un nombre.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            int tipo = cmbrol.SelectedIndex;  
+            int r, n, n1, te, te1, em, d1;
+            r = Regexp(@"^[0-9]+$", txtdni, pbdni);
+            n = Regexp(@"^[a-zA-Z\s]+$", txtnombre, pbnombre);
+            n1 = Regexp(@"^[a-zA-Z\s]+$", txtapellido, pbapellido);
+            te = Regexp(@"^[0-9]+$", txttelf, pbtelefono);
 
-            if (txtapellido.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un apellido.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            int valor = r * n * te  * n1;
+            if (valor == 0) return;
+            //if (txtnombre.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese un nombre.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
+
+            //if (txtapellido.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese un apellido.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
 
 
-            try
-            {
-                Int32.Parse(txttelf.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Por favor ingrese un telefono valido.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            //try
+            //{
+            //    Int32.Parse(txttelf.Text);
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Por favor ingrese un telefono valido.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
-            if (txtdni.Text == "")
-            {
-                MessageBox.Show("Por favor ingrese un DNI.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            //if (txtdni.Text == "")
+            //{
+            //    MessageBox.Show("Por favor ingrese un DNI.",
+            //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
 
             //try
             //{
@@ -94,12 +103,15 @@ namespace Formularios
             {
                 case 0:
                     usuario = new Administrador();
+                    cmbrol.SelectedItem =0;
                     break;
                 case 1:
                     usuario = new Vendedor();
+                    cmbrol.SelectedItem = 1;
                     break;
                 case 2:
                     usuario = new Operario();
+                    cmbrol.SelectedItem = 2;
                     break;
                 case -1:
                     MessageBox.Show("Por favor ingrese un rol.",
@@ -114,11 +126,18 @@ namespace Formularios
             //    return;
             //}
             double salario = 0, comision = 0;
-            if (txtsalario.Text != "")
+            if (txtsalario.Text != "" & txtsalario.Visible)
             {
                 try
                 {
                     salario = Double.Parse(txtsalario.Text);
+                    if (salario <= 0)
+                    {
+                        MessageBox.Show("Por favor ingrese un salario valido.",
+   "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    usuario.Monto = salario;
                 }
                 catch
                 {
@@ -127,11 +146,18 @@ namespace Formularios
                     return;
                 }
             }
-            if (txtcomision.Text != "")
+            if (txtcomision.Text != "" & txtcomision.Visible)
             {
                 try
                 {
                     comision = Double.Parse(txtcomision.Text);
+                    if (comision <= 0)
+                    {
+                        MessageBox.Show("Por favor ingrese un comision valido.",
+   "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    usuario.Monto = comision;
                 }
                 catch
                 {
@@ -140,8 +166,21 @@ namespace Formularios
                     return;
                 }
             }
-            
-            
+
+            if (txtsalario.Visible & txtsalario.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese un salario valido.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (txtcomision.Visible & txtcomision.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese una comision valida.",
+                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+
 
             usuario.Nombre = txtnombre.Text;
             usuario.Apellido = txtapellido.Text;
@@ -159,6 +198,22 @@ namespace Formularios
             else MessageBox.Show("El usuario no se modifico");
 
             this.Dispose();
+        }
+
+        public int Regexp(string re, TextBox tb, PictureBox pc)
+        {
+            Regex regex = new Regex(re);
+
+            if (regex.IsMatch(tb.Text))
+            {
+                pc.Image = Properties.Resources.check;
+                return 1;
+            }
+            else
+            {
+                pc.Image = Properties.Resources.cross;
+                return 0;
+            }
         }
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
@@ -191,6 +246,28 @@ namespace Formularios
             if (u.TipoUsuario == 1) { lblcomision.Visible = true; lblsalario.Visible = false; txtcomision.Visible = true; txtsalario.Visible = false; txtcomision.Text = u.Monto.ToString(); }
                 else { lblcomision.Visible = false; lblsalario.Visible = true; txtcomision.Visible = false; txtsalario.Visible = true; txtsalario.Text = u.Monto.ToString(); }
 
+        }
+
+        private void cmbrol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbrol.SelectedIndex == 1)
+            {
+                lblcomision.Visible = true;
+                txtcomision.Visible = true;
+                lblsalario.Visible = false;
+                txtsalario.Visible = false;
+                txtsalario.Text = "";
+            }
+            else
+            {
+                lblcomision.Visible = false;
+                txtcomision.Visible = false;
+
+                txtcomision.Text = "";
+                lblsalario.Visible = true;
+                txtsalario.Visible = true;
+
+            }
         }
     }
 }

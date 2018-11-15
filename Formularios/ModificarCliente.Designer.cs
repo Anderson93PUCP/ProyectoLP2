@@ -45,6 +45,14 @@
             this.btncancelarCliente = new System.Windows.Forms.Button();
             this.btnaceptarCliente = new System.Windows.Forms.Button();
             this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.pbemail = new System.Windows.Forms.PictureBox();
+            this.pbtelefono = new System.Windows.Forms.PictureBox();
+            this.pbnombre = new System.Windows.Forms.PictureBox();
+            this.pbruc = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbemail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbruc)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCelCliente
@@ -114,6 +122,7 @@
             this.txttelfCliente.Enabled = false;
             this.txttelfCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelfCliente.Location = new System.Drawing.Point(164, 110);
+            this.txttelfCliente.MaxLength = 9;
             this.txttelfCliente.Name = "txttelfCliente";
             this.txttelfCliente.Size = new System.Drawing.Size(146, 24);
             this.txttelfCliente.TabIndex = 26;
@@ -132,6 +141,7 @@
             this.txtrucCliente.Enabled = false;
             this.txtrucCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrucCliente.Location = new System.Drawing.Point(164, 31);
+            this.txtrucCliente.MaxLength = 11;
             this.txtrucCliente.Name = "txtrucCliente";
             this.txtrucCliente.Size = new System.Drawing.Size(146, 24);
             this.txtrucCliente.TabIndex = 24;
@@ -229,11 +239,47 @@
             this.btnEditarCliente.UseVisualStyleBackColor = true;
             this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
+            // pbemail
+            // 
+            this.pbemail.Location = new System.Drawing.Point(316, 144);
+            this.pbemail.Name = "pbemail";
+            this.pbemail.Size = new System.Drawing.Size(29, 28);
+            this.pbemail.TabIndex = 53;
+            this.pbemail.TabStop = false;
+            // 
+            // pbtelefono
+            // 
+            this.pbtelefono.Location = new System.Drawing.Point(316, 106);
+            this.pbtelefono.Name = "pbtelefono";
+            this.pbtelefono.Size = new System.Drawing.Size(29, 28);
+            this.pbtelefono.TabIndex = 52;
+            this.pbtelefono.TabStop = false;
+            // 
+            // pbnombre
+            // 
+            this.pbnombre.Location = new System.Drawing.Point(316, 66);
+            this.pbnombre.Name = "pbnombre";
+            this.pbnombre.Size = new System.Drawing.Size(29, 28);
+            this.pbnombre.TabIndex = 51;
+            this.pbnombre.TabStop = false;
+            // 
+            // pbruc
+            // 
+            this.pbruc.Location = new System.Drawing.Point(316, 27);
+            this.pbruc.Name = "pbruc";
+            this.pbruc.Size = new System.Drawing.Size(29, 28);
+            this.pbruc.TabIndex = 50;
+            this.pbruc.TabStop = false;
+            // 
             // ModificarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 330);
+            this.ClientSize = new System.Drawing.Size(359, 330);
+            this.Controls.Add(this.pbemail);
+            this.Controls.Add(this.pbtelefono);
+            this.Controls.Add(this.pbnombre);
+            this.Controls.Add(this.pbruc);
             this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.btndireccionesCliente);
             this.Controls.Add(this.cmbvendedorCliente);
@@ -253,6 +299,10 @@
             this.Controls.Add(this.label1);
             this.Name = "ModificarCliente";
             this.Text = "ModificarCliente";
+            ((System.ComponentModel.ISupportInitialize)(this.pbemail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbruc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +327,9 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.Button btnEditarCliente;
+        private System.Windows.Forms.PictureBox pbemail;
+        private System.Windows.Forms.PictureBox pbtelefono;
+        private System.Windows.Forms.PictureBox pbnombre;
+        private System.Windows.Forms.PictureBox pbruc;
     }
 }

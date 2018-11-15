@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,6 +23,7 @@ namespace Formularios
         {
             InitializeComponent();
             CargarVendedores();
+            validarCampos();
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
@@ -34,49 +36,56 @@ namespace Formularios
             try
             {
                 clienteBL = new ClienteBL();
+                int r, n, te,te1, em;
+                r = Regexp(@"^[0-9]+$", txtrucCliente, pbruc);
+                n = Regexp(@"^[a-zA-Z]+$\s", txtrazonCliente, pbnombre);
+                te = Regexp(@"^[0-9]+$", txttelfCliente, pbtelefono); 
+                te1 = Regexp(@"^[0-9]+$", txtCelCliente, pbtelefono2);
+                em = Regexp(@"^([\w]+)@([\w]+)\.([\w]+)$", txtemailCliente, pbemail);
+                int valor = r * n * te  * em * te1;
+                if (valor == 0) return;
+                //if (txtrucCliente.Text == "")
+                //{
+                //    MessageBox.Show("Por favor ingrese un ruc.",
+                //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    return;
+                //}
 
-                if (txtrucCliente.Text == "")
-                {
-                    MessageBox.Show("Por favor ingrese un ruc.",
-                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                //if (txtrazonCliente.Text == "")
+                //{
+                //    MessageBox.Show("Por favor ingrese un nombre.",
+                //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    return;
+                //}
 
-                if (txtrazonCliente.Text == "")
-                {
-                    MessageBox.Show("Por favor ingrese un nombre.",
-                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                //try
+                //{
+                //    Int32.Parse(txttelfCliente.Text);
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Por favor ingrese el telefono correctamente.",
+                //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    return;
+                //}
 
-                try
-                {
-                    Int32.Parse(txttelfCliente.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Por favor ingrese el telefono correctamente.",
-                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                //try
+                //{
+                //    Int32.Parse(txtCelCliente.Text);
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Por favor ingrese el celular correctamente.",
+                //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    return;
+                //}
 
-                try
-                {
-                    Int32.Parse(txtCelCliente.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Por favor ingrese el celular correctamente.",
-                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                if (txtemailCliente.Text == "")
-                {
-                    MessageBox.Show("Por favor ingrese un correo.",
-                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                //if (txtemailCliente.Text == "")
+                //{
+                //    MessageBox.Show("Por favor ingrese un correo.",
+                //    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    return;
+                //}
 
                 if (cmbvendedorCliente.SelectedIndex== -1)
                 {
@@ -84,7 +93,6 @@ namespace Formularios
                     "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-
                 Cliente a = new Cliente();
                 a.Nombre = txtrazonCliente.Text.ToUpper();
                 a.Ruc = txtrucCliente.Text;
@@ -117,11 +125,29 @@ namespace Formularios
                 //limpiarCamposCliente();
                 this.Dispose();
             }catch {
-                MessageBox.Show("No agrego ninguna direccion nueva para el cliente",
+                
+                MessageBox.Show("No se agrego ninguna direccion para el cliente",
                    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
             }
         }
-        
+
+        public int Regexp(string re, TextBox tb, PictureBox pc)
+        {
+            Regex regex = new Regex(re);
+
+            if (regex.IsMatch(tb.Text))
+            {
+                pc.Image = Properties.Resources.check;
+                return 1;
+            }
+            else
+            {
+                pc.Image = Properties.Resources.cross;
+                return 0;
+            }
+        }
+
         public void limpiarCamposCliente()
         {
             txtCelCliente.Clear();
@@ -169,6 +195,16 @@ namespace Formularios
             cmbvendedorCliente.DataSource = vendedores;
             cmbvendedorCliente.SelectedIndex = -1;
 
+        }
+
+        public void validarCampos()
+        {
+            ToolTip r = new ToolTip();
+            r.SetToolTip(pbruc, "Ingrese un ruc de 11 digitos");
+            r.SetToolTip(pbnombre, "Ingrese un nombre");
+            r.SetToolTip(pbtelefono, "Ingrese un numero telefonico valido");
+            r.SetToolTip(pbtelefono2, "Ingrese una celular valido");
+            r.SetToolTip(pbemail, "Ingrese un correo valido");
         }
     }
 }

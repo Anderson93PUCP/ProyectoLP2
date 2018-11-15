@@ -44,6 +44,16 @@
             this.txtdireccion = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pbemailmod = new System.Windows.Forms.PictureBox();
+            this.pbdirecmod = new System.Windows.Forms.PictureBox();
+            this.pbtelefonomod = new System.Windows.Forms.PictureBox();
+            this.pbnombremod = new System.Windows.Forms.PictureBox();
+            this.pbrucmod = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbemailmod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdirecmod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefonomod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombremod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbrucmod)).BeginInit();
             this.SuspendLayout();
             // 
             // btncancelar
@@ -51,7 +61,7 @@
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.Image = global::Formularios.Properties.Resources.cross;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(218, 316);
+            this.btncancelar.Location = new System.Drawing.Point(229, 293);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(85, 36);
             this.btncancelar.TabIndex = 48;
@@ -62,10 +72,11 @@
             // 
             // btnaceptar
             // 
+            this.btnaceptar.Enabled = false;
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptar.Image = global::Formularios.Properties.Resources.check;
             this.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptar.Location = new System.Drawing.Point(34, 317);
+            this.btnaceptar.Location = new System.Drawing.Point(45, 294);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(86, 36);
             this.btnaceptar.TabIndex = 47;
@@ -180,7 +191,7 @@
             this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.Image = global::Formularios.Properties.Resources.file__3_;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(126, 316);
+            this.btnEditarCliente.Location = new System.Drawing.Point(137, 293);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(86, 36);
             this.btnEditarCliente.TabIndex = 49;
@@ -217,11 +228,56 @@
             this.label2.TabIndex = 51;
             this.label2.Text = "Email:";
             // 
+            // pbemailmod
+            // 
+            this.pbemailmod.Location = new System.Drawing.Point(320, 189);
+            this.pbemailmod.Name = "pbemailmod";
+            this.pbemailmod.Size = new System.Drawing.Size(29, 28);
+            this.pbemailmod.TabIndex = 57;
+            this.pbemailmod.TabStop = false;
+            // 
+            // pbdirecmod
+            // 
+            this.pbdirecmod.Location = new System.Drawing.Point(320, 146);
+            this.pbdirecmod.Name = "pbdirecmod";
+            this.pbdirecmod.Size = new System.Drawing.Size(29, 28);
+            this.pbdirecmod.TabIndex = 56;
+            this.pbdirecmod.TabStop = false;
+            // 
+            // pbtelefonomod
+            // 
+            this.pbtelefonomod.Location = new System.Drawing.Point(320, 104);
+            this.pbtelefonomod.Name = "pbtelefonomod";
+            this.pbtelefonomod.Size = new System.Drawing.Size(29, 28);
+            this.pbtelefonomod.TabIndex = 55;
+            this.pbtelefonomod.TabStop = false;
+            // 
+            // pbnombremod
+            // 
+            this.pbnombremod.Location = new System.Drawing.Point(320, 64);
+            this.pbnombremod.Name = "pbnombremod";
+            this.pbnombremod.Size = new System.Drawing.Size(29, 28);
+            this.pbnombremod.TabIndex = 54;
+            this.pbnombremod.TabStop = false;
+            // 
+            // pbrucmod
+            // 
+            this.pbrucmod.Location = new System.Drawing.Point(320, 25);
+            this.pbrucmod.Name = "pbrucmod";
+            this.pbrucmod.Size = new System.Drawing.Size(29, 28);
+            this.pbrucmod.TabIndex = 53;
+            this.pbrucmod.TabStop = false;
+            // 
             // ModificarTransportista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 378);
+            this.ClientSize = new System.Drawing.Size(363, 344);
+            this.Controls.Add(this.pbemailmod);
+            this.Controls.Add(this.pbdirecmod);
+            this.Controls.Add(this.pbtelefonomod);
+            this.Controls.Add(this.pbnombremod);
+            this.Controls.Add(this.pbrucmod);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtdireccion);
@@ -240,6 +296,11 @@
             this.Controls.Add(this.lblruc);
             this.Name = "ModificarTransportista";
             this.Text = "ModificarTransportista";
+            ((System.ComponentModel.ISupportInitialize)(this.pbemailmod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdirecmod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefonomod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombremod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbrucmod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +324,10 @@
         private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbemailmod;
+        private System.Windows.Forms.PictureBox pbdirecmod;
+        private System.Windows.Forms.PictureBox pbtelefonomod;
+        private System.Windows.Forms.PictureBox pbnombremod;
+        private System.Windows.Forms.PictureBox pbrucmod;
     }
 }

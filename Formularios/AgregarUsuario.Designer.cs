@@ -54,6 +54,22 @@
             this.lblusuario = new System.Windows.Forms.Label();
             this.txtedad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pbedad = new System.Windows.Forms.PictureBox();
+            this.pbdni = new System.Windows.Forms.PictureBox();
+            this.pbtelefono = new System.Windows.Forms.PictureBox();
+            this.pbapellido = new System.Windows.Forms.PictureBox();
+            this.pbnombre = new System.Windows.Forms.PictureBox();
+            this.pbemail = new System.Windows.Forms.PictureBox();
+            this.pbusuario = new System.Windows.Forms.PictureBox();
+            this.pbcomision = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbedad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdni)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbapellido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbemail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbusuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcomision)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbrol
@@ -92,6 +108,7 @@
             // 
             this.txttelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelf.Location = new System.Drawing.Point(177, 115);
+            this.txttelf.MaxLength = 9;
             this.txttelf.Name = "txttelf";
             this.txttelf.Size = new System.Drawing.Size(146, 24);
             this.txttelf.TabIndex = 24;
@@ -194,6 +211,7 @@
             // 
             this.txtsalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalario.Location = new System.Drawing.Point(460, 156);
+            this.txtsalario.MaxLength = 9;
             this.txtsalario.Name = "txtsalario";
             this.txtsalario.Size = new System.Drawing.Size(81, 24);
             this.txtsalario.TabIndex = 36;
@@ -212,6 +230,7 @@
             // 
             this.txtcomision.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcomision.Location = new System.Drawing.Point(460, 156);
+            this.txtcomision.MaxLength = 5;
             this.txtcomision.Name = "txtcomision";
             this.txtcomision.Size = new System.Drawing.Size(81, 24);
             this.txtcomision.TabIndex = 33;
@@ -270,6 +289,7 @@
             // 
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Location = new System.Drawing.Point(460, 36);
+            this.txtusuario.MaxLength = 20;
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(146, 24);
             this.txtusuario.TabIndex = 29;
@@ -314,11 +334,83 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Edad:";
             // 
+            // pbedad
+            // 
+            this.pbedad.Location = new System.Drawing.Point(329, 196);
+            this.pbedad.Name = "pbedad";
+            this.pbedad.Size = new System.Drawing.Size(29, 28);
+            this.pbedad.TabIndex = 62;
+            this.pbedad.TabStop = false;
+            // 
+            // pbdni
+            // 
+            this.pbdni.Location = new System.Drawing.Point(329, 153);
+            this.pbdni.Name = "pbdni";
+            this.pbdni.Size = new System.Drawing.Size(29, 28);
+            this.pbdni.TabIndex = 61;
+            this.pbdni.TabStop = false;
+            // 
+            // pbtelefono
+            // 
+            this.pbtelefono.Location = new System.Drawing.Point(329, 111);
+            this.pbtelefono.Name = "pbtelefono";
+            this.pbtelefono.Size = new System.Drawing.Size(29, 28);
+            this.pbtelefono.TabIndex = 60;
+            this.pbtelefono.TabStop = false;
+            // 
+            // pbapellido
+            // 
+            this.pbapellido.Location = new System.Drawing.Point(329, 71);
+            this.pbapellido.Name = "pbapellido";
+            this.pbapellido.Size = new System.Drawing.Size(29, 28);
+            this.pbapellido.TabIndex = 59;
+            this.pbapellido.TabStop = false;
+            // 
+            // pbnombre
+            // 
+            this.pbnombre.Location = new System.Drawing.Point(329, 32);
+            this.pbnombre.Name = "pbnombre";
+            this.pbnombre.Size = new System.Drawing.Size(29, 28);
+            this.pbnombre.TabIndex = 58;
+            this.pbnombre.TabStop = false;
+            // 
+            // pbemail
+            // 
+            this.pbemail.Location = new System.Drawing.Point(329, 236);
+            this.pbemail.Name = "pbemail";
+            this.pbemail.Size = new System.Drawing.Size(29, 28);
+            this.pbemail.TabIndex = 63;
+            this.pbemail.TabStop = false;
+            // 
+            // pbusuario
+            // 
+            this.pbusuario.Location = new System.Drawing.Point(618, 32);
+            this.pbusuario.Name = "pbusuario";
+            this.pbusuario.Size = new System.Drawing.Size(29, 28);
+            this.pbusuario.TabIndex = 64;
+            this.pbusuario.TabStop = false;
+            // 
+            // pbcomision
+            // 
+            this.pbcomision.Location = new System.Drawing.Point(547, 153);
+            this.pbcomision.Name = "pbcomision";
+            this.pbcomision.Size = new System.Drawing.Size(29, 28);
+            this.pbcomision.TabIndex = 66;
+            this.pbcomision.TabStop = false;
+            // 
             // AgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 337);
+            this.ClientSize = new System.Drawing.Size(659, 337);
+            this.Controls.Add(this.pbcomision);
+            this.Controls.Add(this.pbusuario);
+            this.Controls.Add(this.pbemail);
+            this.Controls.Add(this.pbedad);
+            this.Controls.Add(this.pbdni);
+            this.Controls.Add(this.pbtelefono);
+            this.Controls.Add(this.pbapellido);
+            this.Controls.Add(this.pbnombre);
             this.Controls.Add(this.txtedad);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtcontraseña);
@@ -347,6 +439,14 @@
             this.Controls.Add(this.lblruc);
             this.Name = "AgregarUsuario";
             this.Text = "AgregarUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.pbedad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdni)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbapellido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbnombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbemail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbusuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcomision)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +479,13 @@
         private System.Windows.Forms.Label lblusuario;
         private System.Windows.Forms.TextBox txtedad;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pbedad;
+        private System.Windows.Forms.PictureBox pbdni;
+        private System.Windows.Forms.PictureBox pbtelefono;
+        private System.Windows.Forms.PictureBox pbapellido;
+        private System.Windows.Forms.PictureBox pbnombre;
+        private System.Windows.Forms.PictureBox pbemail;
+        private System.Windows.Forms.PictureBox pbusuario;
+        private System.Windows.Forms.PictureBox pbcomision;
     }
 }
