@@ -57,15 +57,14 @@ namespace Formularios
                 try
                 {
                     pedidoSeleccionado = (Pedido)dgwListaPedidos.CurrentRow.DataBoundItem;
-                }catch(Exception ex2)
-                {
-                    MessageBox.Show("Seleccione un pedido");
+                    PedidoBL p = new PedidoBL();
+                    p.generarFactura(pedidoSeleccionado);
+                    DialogResult = DialogResult.OK;
                 }
-                
-                PedidoBL p = new PedidoBL();
-                p.generarFactura(pedidoSeleccionado);   
-                DialogResult = DialogResult.OK;
-            
+                catch(Exception ex2)
+                {
+                    MessageBox.Show("Seleccione una factura");
+                }
             }
         }
 

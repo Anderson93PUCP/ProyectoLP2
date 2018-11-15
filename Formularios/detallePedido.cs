@@ -19,6 +19,7 @@ namespace Formularios
         private Producto productoSeleccionado;
         private DetallePedido detPed;
         private BindingList<Producto> listaPro;
+        private int agregar_pedido;
 
         public Producto ProductoSeleccionado { get => productoSeleccionado; set => productoSeleccionado = value; }
         public DetallePedido DetPed { get => detPed; set => detPed = value; }
@@ -32,6 +33,7 @@ namespace Formularios
             listaPro = pro.listarProducto();
             dgvProductos.DataSource = listaPro;
             rbtnID.Checked = true;
+            agregar_pedido = 0;
         }
 
 
@@ -63,6 +65,7 @@ namespace Formularios
             dataGridView1.Rows[2].Selected = true;*/
             dgvProductos.CurrentCell = dgvProductos.Rows[0].Cells[0];
             dgvProductos.Rows[0].Selected = true;
+            agregar_pedido = 1;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -107,14 +110,20 @@ namespace Formularios
                         detPed = new DetallePedido();
                     }
 
-
+                    /*
+                        if (productoSeleccionado.Stock - (int)numCant.Value <0)
+                        {
+                            MessageBox.Show("Stock insuficiente.Saldo disponible: " + productoSeleccionado.Stock);
+                            return;
+                        }
+                    */
+                   
                     detPed.Producto = productoSeleccionado;
                     detPed.Cantidad = Int32.Parse(numCant.Value.ToString());
                     detPed.Desc = Int32.Parse(numDesc.Value.ToString());
                     detPed.Subtotal = (1 - (detPed.Desc / 100)) * (detPed.Cantidad * productoSeleccionado.Precio);
-
-
                     this.DialogResult = DialogResult.OK;
+
                 } catch(Exception ex1)
                 {
                     MessageBox.Show("Seleccione producto");

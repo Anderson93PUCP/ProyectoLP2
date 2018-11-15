@@ -73,19 +73,33 @@ namespace Formularios
         private void btnVer_Click(object sender, EventArgs e)
         {
             Factura facturaSeleccionada = new Factura();
-            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
-            verFactura ventana = new verFactura(facturaSeleccionada);
-            ventana.ShowDialog();
+            try
+            {
+                facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+                verFactura ventana = new verFactura(facturaSeleccionada);
+                ventana.ShowDialog();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione una factura");
+            }
+           
         }
 
         private void btnPagoCliente_Click(object sender, EventArgs e)
         {
             Factura facturaSeleccionada = new Factura();
-            facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
-            FacturaBL f = new FacturaBL();
-            f.pagoCliente(facturaSeleccionada.IdVenta);
-            listaFacturas = f.listarFacturas();
-            dgwFacturas.DataSource = listaFacturas;
+            try
+            {
+                facturaSeleccionada = (Factura)dgwFacturas.CurrentRow.DataBoundItem;
+                FacturaBL f = new FacturaBL();
+                f.pagoCliente(facturaSeleccionada.IdVenta);
+                listaFacturas = f.listarFacturas();
+                dgwFacturas.DataSource = listaFacturas;
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione una factura");
+            }
+            
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
