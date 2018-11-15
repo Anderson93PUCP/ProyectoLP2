@@ -163,10 +163,6 @@ namespace Formularios
                     }
                     else
                     {
-                        
-                       
-                        
-                       
                             pedidoRegistrar = new Pedido();
                             pedidoRegistrar.Etapa = EtapaPedido.pendiente;
 
@@ -178,10 +174,6 @@ namespace Formularios
                             pedidoBL.agregarPedido(pedidoRegistrar);
                             // se agrega a la base de datos
                             MessageBox.Show("Se agrego correctamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        
-                        
-
 
                     }
                     DialogResult = DialogResult.OK;

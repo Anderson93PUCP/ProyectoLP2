@@ -54,7 +54,14 @@ namespace Formularios
             if (v == DialogResult.OK)
             {
                 Pedido pedidoSeleccionado = new Pedido();
-                pedidoSeleccionado = (Pedido)dgwListaPedidos.CurrentRow.DataBoundItem;
+                try
+                {
+                    pedidoSeleccionado = (Pedido)dgwListaPedidos.CurrentRow.DataBoundItem;
+                }catch(Exception ex2)
+                {
+                    MessageBox.Show("Seleccione un pedido");
+                }
+                
                 PedidoBL p = new PedidoBL();
                 p.generarFactura(pedidoSeleccionado);   
                 DialogResult = DialogResult.OK;

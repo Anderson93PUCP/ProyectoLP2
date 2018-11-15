@@ -55,8 +55,16 @@ namespace Formularios
         private void btnAcpetarBuscDire_Click(object sender, EventArgs e)
         {
             direccionSeleccionada = new Direccion();
-            direccionSeleccionada = (Direccion)dgvDirecciones.CurrentRow.DataBoundItem;
-            this.DialogResult = DialogResult.OK;
+            try
+            {
+                direccionSeleccionada = (Direccion)dgvDirecciones.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            } catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione una direccion");
+            }
+            
+            
         }
 
         private void btnBuscarDire_Click(object sender, EventArgs e)

@@ -35,12 +35,12 @@
             this.txtbuscarPedido = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgwListaPedidos = new System.Windows.Forms.DataGridView();
-            this.btnAceptarAddFactura = new System.Windows.Forms.Button();
-            this.btnCancelarAddFactura = new System.Windows.Forms.Button();
             this.colRUCGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClienteGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendedorGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaEGestorFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAceptarAddFactura = new System.Windows.Forms.Button();
+            this.btnCancelarAddFactura = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,32 +113,6 @@
             this.dgwListaPedidos.Size = new System.Drawing.Size(652, 150);
             this.dgwListaPedidos.TabIndex = 9;
             // 
-            // btnAceptarAddFactura
-            // 
-            this.btnAceptarAddFactura.Image = global::Formularios.Properties.Resources.check;
-            this.btnAceptarAddFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarAddFactura.Location = new System.Drawing.Point(551, 288);
-            this.btnAceptarAddFactura.Name = "btnAceptarAddFactura";
-            this.btnAceptarAddFactura.Size = new System.Drawing.Size(78, 32);
-            this.btnAceptarAddFactura.TabIndex = 10;
-            this.btnAceptarAddFactura.Text = "Aceptar";
-            this.btnAceptarAddFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptarAddFactura.UseVisualStyleBackColor = true;
-            this.btnAceptarAddFactura.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnCancelarAddFactura
-            // 
-            this.btnCancelarAddFactura.Image = global::Formularios.Properties.Resources.cross;
-            this.btnCancelarAddFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarAddFactura.Location = new System.Drawing.Point(453, 288);
-            this.btnCancelarAddFactura.Name = "btnCancelarAddFactura";
-            this.btnCancelarAddFactura.Size = new System.Drawing.Size(80, 32);
-            this.btnCancelarAddFactura.TabIndex = 11;
-            this.btnCancelarAddFactura.Text = "Cancelar";
-            this.btnCancelarAddFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelarAddFactura.UseVisualStyleBackColor = true;
-            this.btnCancelarAddFactura.Click += new System.EventHandler(this.button2_Click);
-            // 
             // colRUCGestorFactura
             // 
             this.colRUCGestorFactura.DataPropertyName = "ClienteRUC";
@@ -166,6 +140,32 @@
             this.colFechaEGestorFactura.HeaderText = "Fecha";
             this.colFechaEGestorFactura.Name = "colFechaEGestorFactura";
             this.colFechaEGestorFactura.ReadOnly = true;
+            // 
+            // btnAceptarAddFactura
+            // 
+            this.btnAceptarAddFactura.Image = global::Formularios.Properties.Resources.check;
+            this.btnAceptarAddFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptarAddFactura.Location = new System.Drawing.Point(480, 288);
+            this.btnAceptarAddFactura.Name = "btnAceptarAddFactura";
+            this.btnAceptarAddFactura.Size = new System.Drawing.Size(78, 32);
+            this.btnAceptarAddFactura.TabIndex = 10;
+            this.btnAceptarAddFactura.Text = "Aceptar";
+            this.btnAceptarAddFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptarAddFactura.UseVisualStyleBackColor = true;
+            this.btnAceptarAddFactura.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCancelarAddFactura
+            // 
+            this.btnCancelarAddFactura.Image = global::Formularios.Properties.Resources.cross;
+            this.btnCancelarAddFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarAddFactura.Location = new System.Drawing.Point(564, 288);
+            this.btnCancelarAddFactura.Name = "btnCancelarAddFactura";
+            this.btnCancelarAddFactura.Size = new System.Drawing.Size(80, 32);
+            this.btnCancelarAddFactura.TabIndex = 11;
+            this.btnCancelarAddFactura.Text = "Cancelar";
+            this.btnCancelarAddFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelarAddFactura.UseVisualStyleBackColor = true;
+            this.btnCancelarAddFactura.Click += new System.EventHandler(this.button2_Click);
             // 
             // agregarFactura
             // 

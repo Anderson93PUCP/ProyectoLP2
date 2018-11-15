@@ -49,6 +49,8 @@ namespace Formularios
             txtBuscarProducto.Text = detModificar.proCod;
             numCant.Value = detModificar.Cantidad;
             numDesc.Value = (int)detModificar.Desc;
+            txtCantidad.Text= detModificar.Cantidad.ToString();
+            txtDescuento.Text = detModificar.Desc.ToString();
             //dgvProductos.SelectedRows.Clear();
             int indice = 0;
             foreach (Producto p in listaPro)
@@ -59,8 +61,8 @@ namespace Formularios
             }
             /*dataGridView1.CurrentCell = dataGridView1.Rows[2].Cells[0];
             dataGridView1.Rows[2].Selected = true;*/
-            dgvProductos.CurrentCell = dgvProductos.Rows[indice].Cells[0];
-            dgvProductos.Rows[indice].Selected = true;
+            dgvProductos.CurrentCell = dgvProductos.Rows[0].Cells[0];
+            dgvProductos.Rows[0].Selected = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -80,7 +82,14 @@ namespace Formularios
             Int32.TryParse(txtDescuento.Text, out descuento);
             if (txtCantidad.Text == "") numCant.Value = 0;
             if (txtDescuento.Text == "") numDesc.Value = 0;
-            numCant.Value = cantidad;
+            try
+            {
+                numCant.Value = cantidad;
+            }catch(Exception exi)
+            {
+                //MessageBox.Show("Cantidad Invalida");
+            }
+            
             numDesc.Value = descuento;
             
             if (numCant.Value == 0)
@@ -90,20 +99,26 @@ namespace Formularios
             else
             {
                 productoSeleccionado = new Producto();
-                productoSeleccionado = (Producto)dgvProductos.CurrentRow.DataBoundItem;
-                if(detPed == null)
+                try
                 {
-                    detPed = new DetallePedido();
+                    productoSeleccionado = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                    if (detPed == null)
+                    {
+                        detPed = new DetallePedido();
+                    }
+
+
+                    detPed.Producto = productoSeleccionado;
+                    detPed.Cantidad = Int32.Parse(numCant.Value.ToString());
+                    detPed.Desc = Int32.Parse(numDesc.Value.ToString());
+                    detPed.Subtotal = (1 - (detPed.Desc / 100)) * (detPed.Cantidad * productoSeleccionado.Precio);
+
+
+                    this.DialogResult = DialogResult.OK;
+                } catch(Exception ex1)
+                {
+                    MessageBox.Show("Seleccione producto");
                 }
-                
-
-                detPed.Producto = productoSeleccionado;
-                detPed.Cantidad = Int32.Parse(numCant.Value.ToString());
-                detPed.Desc = Int32.Parse(numDesc.Value.ToString());
-                detPed.Subtotal = (1 - (detPed.Desc / 100)) * (detPed.Cantidad * productoSeleccionado.Precio);
-
-
-                this.DialogResult = DialogResult.OK;
             }
            
 

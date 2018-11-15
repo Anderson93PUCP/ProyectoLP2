@@ -38,7 +38,16 @@ namespace ProyectoLP2
         public string proNomb { get => producto.Nombre; }
         public string proDesc { get => producto.Descripcion; }
         public double proPre { get => producto.Precio; }
+        public int obs { get => this.observacion(); }
         
+        public int observacion()
+        {
+            if(Producto.Stock - Cantidad <=0)
+                return -1;
+            if (Producto.Stock - Cantidad <= Producto.MinimoStock)
+                return 1;
+            return 0;
+        }
          
     }
 }

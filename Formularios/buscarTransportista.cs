@@ -45,10 +45,15 @@ namespace Formularios
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             transSeleccionado = new Transportista();
-            transSeleccionado = (Transportista)dgvTransportistas.CurrentRow.DataBoundItem;
-
-
-            this.DialogResult = DialogResult.OK;
+            try
+            {
+                transSeleccionado = (Transportista)dgvTransportistas.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione un transportista");
+            }
         }
 
         private void btnBuscarTran_Click(object sender, EventArgs e)
@@ -96,7 +101,7 @@ namespace Formularios
         private void txtBuscarT_TextChanged(object sender, EventArgs e)
         {
             BindingList<Transportista> listaAux = new BindingList<Transportista>();
-            listaAux = null;
+            
             if (txtBuscarT.Text == "")
             {
                 dgvTransportistas.DataSource = lista;

@@ -38,13 +38,6 @@
             this.txtDireccAddPedido = new System.Windows.Forms.TextBox();
             this.txtTransAddPedido = new System.Windows.Forms.TextBox();
             this.dgvAddPedido = new System.Windows.Forms.DataGridView();
-            this.colCodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductoDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidadDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPUDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescuentoDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDetPedido = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lblTotalAddPedido = new System.Windows.Forms.Label();
@@ -63,6 +56,13 @@
             this.cbEstadoPedido = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.colCodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductoDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidadDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPUDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescuentoDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTDetPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -146,67 +146,10 @@
             this.colDescuentoDetPedido,
             this.colSubTDetPedido});
             this.dgvAddPedido.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvAddPedido.Location = new System.Drawing.Point(32, 203);
+            this.dgvAddPedido.Location = new System.Drawing.Point(32, 200);
             this.dgvAddPedido.Name = "dgvAddPedido";
-            this.dgvAddPedido.Size = new System.Drawing.Size(758, 176);
+            this.dgvAddPedido.Size = new System.Drawing.Size(835, 176);
             this.dgvAddPedido.TabIndex = 10;
-            // 
-            // colCodPro
-            // 
-            this.colCodPro.DataPropertyName = "proCod";
-            this.colCodPro.Frozen = true;
-            this.colCodPro.HeaderText = "Codigo";
-            this.colCodPro.Name = "colCodPro";
-            this.colCodPro.ReadOnly = true;
-            // 
-            // colProductoDetPedido
-            // 
-            this.colProductoDetPedido.DataPropertyName = "proNomb";
-            this.colProductoDetPedido.Frozen = true;
-            this.colProductoDetPedido.HeaderText = "Nombre";
-            this.colProductoDetPedido.Name = "colProductoDetPedido";
-            this.colProductoDetPedido.ReadOnly = true;
-            this.colProductoDetPedido.Width = 80;
-            // 
-            // colDescDetPedido
-            // 
-            this.colDescDetPedido.DataPropertyName = "proDesc";
-            this.colDescDetPedido.Frozen = true;
-            this.colDescDetPedido.HeaderText = "Descripcion";
-            this.colDescDetPedido.Name = "colDescDetPedido";
-            this.colDescDetPedido.ReadOnly = true;
-            // 
-            // colCantidadDetPedido
-            // 
-            this.colCantidadDetPedido.DataPropertyName = "Cantidad";
-            this.colCantidadDetPedido.Frozen = true;
-            this.colCantidadDetPedido.HeaderText = "Cantidad";
-            this.colCantidadDetPedido.Name = "colCantidadDetPedido";
-            this.colCantidadDetPedido.ReadOnly = true;
-            // 
-            // colPUDetPedido
-            // 
-            this.colPUDetPedido.DataPropertyName = "proPre";
-            this.colPUDetPedido.Frozen = true;
-            this.colPUDetPedido.HeaderText = "P.U.";
-            this.colPUDetPedido.Name = "colPUDetPedido";
-            this.colPUDetPedido.ReadOnly = true;
-            // 
-            // colDescuentoDetPedido
-            // 
-            this.colDescuentoDetPedido.DataPropertyName = "Desc";
-            this.colDescuentoDetPedido.Frozen = true;
-            this.colDescuentoDetPedido.HeaderText = "Desc.";
-            this.colDescuentoDetPedido.Name = "colDescuentoDetPedido";
-            this.colDescuentoDetPedido.ReadOnly = true;
-            // 
-            // colSubTDetPedido
-            // 
-            this.colSubTDetPedido.DataPropertyName = "Subtotal";
-            this.colSubTDetPedido.Frozen = true;
-            this.colSubTDetPedido.HeaderText = "Sub. Total";
-            this.colSubTDetPedido.Name = "colSubTDetPedido";
-            this.colSubTDetPedido.ReadOnly = true;
             // 
             // lblDetPedido
             // 
@@ -270,7 +213,7 @@
             // 
             this.btnAceptarAddPedido.Image = global::Formularios.Properties.Resources.check;
             this.btnAceptarAddPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarAddPedido.Location = new System.Drawing.Point(712, 416);
+            this.btnAceptarAddPedido.Location = new System.Drawing.Point(616, 416);
             this.btnAceptarAddPedido.Name = "btnAceptarAddPedido";
             this.btnAceptarAddPedido.Size = new System.Drawing.Size(78, 32);
             this.btnAceptarAddPedido.TabIndex = 16;
@@ -283,7 +226,7 @@
             // 
             this.btnCancelarAddPedido.Image = global::Formularios.Properties.Resources.cross;
             this.btnCancelarAddPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarAddPedido.Location = new System.Drawing.Point(616, 416);
+            this.btnCancelarAddPedido.Location = new System.Drawing.Point(710, 416);
             this.btnCancelarAddPedido.Name = "btnCancelarAddPedido";
             this.btnCancelarAddPedido.Size = new System.Drawing.Size(80, 32);
             this.btnCancelarAddPedido.TabIndex = 15;
@@ -386,11 +329,68 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // colCodPro
+            // 
+            this.colCodPro.DataPropertyName = "proCod";
+            this.colCodPro.Frozen = true;
+            this.colCodPro.HeaderText = "Codigo";
+            this.colCodPro.Name = "colCodPro";
+            this.colCodPro.ReadOnly = true;
+            // 
+            // colProductoDetPedido
+            // 
+            this.colProductoDetPedido.DataPropertyName = "proNomb";
+            this.colProductoDetPedido.Frozen = true;
+            this.colProductoDetPedido.HeaderText = "Nombre";
+            this.colProductoDetPedido.Name = "colProductoDetPedido";
+            this.colProductoDetPedido.ReadOnly = true;
+            this.colProductoDetPedido.Width = 80;
+            // 
+            // colDescDetPedido
+            // 
+            this.colDescDetPedido.DataPropertyName = "proDesc";
+            this.colDescDetPedido.Frozen = true;
+            this.colDescDetPedido.HeaderText = "Descripcion";
+            this.colDescDetPedido.Name = "colDescDetPedido";
+            this.colDescDetPedido.ReadOnly = true;
+            // 
+            // colCantidadDetPedido
+            // 
+            this.colCantidadDetPedido.DataPropertyName = "Cantidad";
+            this.colCantidadDetPedido.Frozen = true;
+            this.colCantidadDetPedido.HeaderText = "Cantidad";
+            this.colCantidadDetPedido.Name = "colCantidadDetPedido";
+            this.colCantidadDetPedido.ReadOnly = true;
+            // 
+            // colPUDetPedido
+            // 
+            this.colPUDetPedido.DataPropertyName = "proPre";
+            this.colPUDetPedido.Frozen = true;
+            this.colPUDetPedido.HeaderText = "P.U.";
+            this.colPUDetPedido.Name = "colPUDetPedido";
+            this.colPUDetPedido.ReadOnly = true;
+            // 
+            // colDescuentoDetPedido
+            // 
+            this.colDescuentoDetPedido.DataPropertyName = "Desc";
+            this.colDescuentoDetPedido.Frozen = true;
+            this.colDescuentoDetPedido.HeaderText = "Desc.";
+            this.colDescuentoDetPedido.Name = "colDescuentoDetPedido";
+            this.colDescuentoDetPedido.ReadOnly = true;
+            // 
+            // colSubTDetPedido
+            // 
+            this.colSubTDetPedido.DataPropertyName = "Subtotal";
+            this.colSubTDetPedido.Frozen = true;
+            this.colSubTDetPedido.HeaderText = "Sub. Total";
+            this.colSubTDetPedido.Name = "colSubTDetPedido";
+            this.colSubTDetPedido.ReadOnly = true;
+            // 
             // frmAddPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 460);
+            this.ClientSize = new System.Drawing.Size(879, 460);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.cbEstadoPedido);
             this.Controls.Add(this.lblSolesSubTotal);
@@ -450,6 +450,10 @@
         private System.Windows.Forms.TextBox txtTotalAddPedido;
         private System.Windows.Forms.Label lblPedidoAddpedido;
         private System.Windows.Forms.TextBox txtVendedor;
+        private System.Windows.Forms.Label lblSolesSubTotal;
+        private System.Windows.Forms.ComboBox cbEstadoPedido;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductoDetPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescDetPedido;
@@ -457,9 +461,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPUDetPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescuentoDetPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTDetPedido;
-        private System.Windows.Forms.Label lblSolesSubTotal;
-        private System.Windows.Forms.ComboBox cbEstadoPedido;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

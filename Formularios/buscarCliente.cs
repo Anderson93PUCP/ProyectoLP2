@@ -42,10 +42,19 @@ namespace Formularios
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             //Close();
-            
+
             clienteSeleccionado = new Cliente();
-            clienteSeleccionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-            this.DialogResult = DialogResult.OK;
+            try
+            {
+                clienteSeleccionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione un cliente");
+            }
+            
+            
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)

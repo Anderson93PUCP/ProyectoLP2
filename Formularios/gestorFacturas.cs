@@ -87,5 +87,60 @@ namespace Formularios
             listaFacturas = f.listarFacturas();
             dgwFacturas.DataSource = listaFacturas;
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if(txtBuscar.Text == "")
+            {
+                dgwFacturas.DataSource = listaFacturas;
+            }
+            else
+            {
+                BindingList<Factura> listaBusq = new BindingList<Factura>();
+                String criterio;
+                if(rbtnRUC.Checked == true)
+                {
+                    criterio = txtBuscar.Text;
+                    foreach(Factura factura in listaFacturas)
+                    {
+                        if (factura.RUC.Contains(criterio))
+                        {
+                            Factura aux = new Factura();
+                            aux = factura;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgwFacturas.DataSource = listaBusq;
+                }
+                if (rbtnNombreCliente.Checked == true)
+                {
+                    criterio = txtBuscar.Text;
+                    foreach (Factura factura in listaFacturas)
+                    {
+                        if (factura.Pedido.ClienteNombre.Contains(criterio))
+                        {
+                            Factura aux = new Factura();
+                            aux = factura;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgwFacturas.DataSource = listaBusq;
+                }
+                if (rbtnVendedor.Checked == true)
+                {
+                    criterio = txtBuscar.Text;
+                    foreach (Factura factura in listaFacturas)
+                    {
+                        if (factura.Pedido.NombreVendedor.Contains(criterio))
+                        {
+                            Factura aux = new Factura();
+                            aux = factura;
+                            listaBusq.Add(aux);
+                        }
+                    }
+                    dgwFacturas.DataSource = listaBusq;
+                }
+            }
+        }
     }
 }

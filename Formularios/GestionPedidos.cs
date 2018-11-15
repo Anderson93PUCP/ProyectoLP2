@@ -180,5 +180,59 @@ namespace Formularios
         {
 
         }
+
+        private void txtBusqPedido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusqPedido.Text == "")
+            {
+                dgvPedidos.DataSource = listaPedidosRegistrados;
+            }
+            else
+            {
+                BindingList<Pedido> listaBusqueda = new BindingList<Pedido>();
+                String criterio;
+                criterio = txtBusqPedido.Text;
+                if (rbtnBusqRuc.Checked == true)
+                {
+
+                    foreach (Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.ClienteRUC.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+                if (rbtnRazonSocial.Checked == true)
+                {
+                    foreach (Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.Cliente.Nombre.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+                if (rbtnVendedor.Checked == true)
+                {
+                    foreach (Pedido p in listaPedidosRegistrados)
+                    {
+                        if (p.Vendedor.Nombre.Contains(criterio))
+                        {
+                            Pedido aux = new Pedido();
+                            aux = p;
+                            listaBusqueda.Add(p);
+                        }
+                    }
+                    dgvPedidos.DataSource = listaBusqueda;
+                }
+            }
+        }
     }
 }

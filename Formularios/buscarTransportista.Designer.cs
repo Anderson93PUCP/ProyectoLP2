@@ -83,6 +83,7 @@
             // 
             // dgvTransportistas
             // 
+            this.dgvTransportistas.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvTransportistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransportistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRUCBuscarTran,
@@ -113,7 +114,7 @@
             // 
             this.btnAceptar.Image = global::Formularios.Properties.Resources.check;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(288, 249);
+            this.btnAceptar.Location = new System.Drawing.Point(203, 249);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 32);
             this.btnAceptar.TabIndex = 5;
@@ -126,7 +127,7 @@
             // 
             this.btnCancelar.Image = global::Formularios.Properties.Resources.cross;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(203, 249);
+            this.btnCancelar.Location = new System.Drawing.Point(289, 249);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 32);
             this.btnCancelar.TabIndex = 6;

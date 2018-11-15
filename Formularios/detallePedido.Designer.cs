@@ -195,7 +195,7 @@
             // 
             this.numCant.Location = new System.Drawing.Point(199, 230);
             this.numCant.Maximum = new decimal(new int[] {
-            5000,
+            100000,
             0,
             0,
             0});
@@ -230,7 +230,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(199, 230);
-            this.txtCantidad.MaxLength = 6;
+            this.txtCantidad.MaxLength = 5;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(51, 20);
             this.txtCantidad.TabIndex = 22;
