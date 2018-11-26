@@ -41,7 +41,16 @@ namespace LogicaNegocio
         {
             PedidoDA p = new PedidoDA();
             // se libera los productos
+            
+            BindingList<DetallePedido> listaDetallePedido = new BindingList<DetallePedido>();
+            listaDetallePedido=p.listarDetallePedido(idPedido);
+            ProductoDA dataPro = new ProductoDA();
+            foreach (DetallePedido det in listaDetallePedido)
+            {
+                dataPro.agregarStock(det.proCod, det.Cantidad);
+            }
             p.eliminar(idPedido);
+            // tengo q eliminar y agregarlo en stock
         }
 
         public BindingList<DetallePedido> listarDetalle(int id)

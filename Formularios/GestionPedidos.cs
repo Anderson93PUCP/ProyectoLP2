@@ -73,6 +73,9 @@ namespace Formularios
                     if (pedidoAEliminar.Etapa == EtapaPedido.pendiente)
                     {
                         PedidoBL p = new PedidoBL();
+                       
+
+
                         p.eliminarPedido(pedidoAEliminar.IdVenta); // se elimino en la base de datos
                         listaPedidosRegistrados.Remove(pedidoAEliminar);
                         dgvPedidos.Refresh();
