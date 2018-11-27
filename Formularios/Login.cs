@@ -106,38 +106,47 @@ namespace Formularios
                 }
                 else
                 {
-                    usuarioBL = new UsuarioBL();
-                    string user = txtusuario.Text.ToString();
-                    Persona usuario = usuarioBL.getUsuario(user);
-                    if (usuario.IDUsuario1 == txtusuario.Text & usuario.Password == txtcontraseña.Text)
+                    try
                     {
-
-                        if (usuario.Ingreso == 0)
+                        usuarioBL = new UsuarioBL();
+                        string user = txtusuario.Text.ToString();
+                        Persona usuario = usuarioBL.getUsuario(user);
+                        if (usuario.IDUsuario1 == txtusuario.Text & usuario.Password == txtcontraseña.Text)
                         {
-                            txtcontraseña.Text = "";
-                            GestionarContraseña frmp = new GestionarContraseña(usuario);
-                            if (frmp.ShowDialog() == DialogResult.OK)
+
+                            if (usuario.Ingreso == 0)
                             {
+                                txtcontraseña.Text = "";
+                                GestionarContraseña frmp = new GestionarContraseña(usuario);
+                                if (frmp.ShowDialog() == DialogResult.OK)
+                                {
+
+                                }
 
                             }
+                            else
+                            {
+                                this.Hide();
 
+                                //Menu fb = new Menu();
+                                Menu fb = new Menu(usuario.IDUsuario1);
+                                if (fb.ShowDialog() == DialogResult.OK)
+                                {
+
+                                }
+
+                                this.Dispose();
+                            }
                         }
                         else
-                        {
-                            this.Hide();
-
-                            //Menu fb = new Menu();
-                            Menu fb = new Menu(usuario.IDUsuario1);
-                            if (fb.ShowDialog() == DialogResult.OK)
-                            {
-
-                            }
-
-                            this.Dispose();
-                        }
+                            MessageBox.Show("Ingrese un usuario correcto");
                     }
-                    else
+                    catch
+                    {
                         MessageBox.Show("Ingrese un usuario correcto");
+                        txtusuario.Text = "";
+                        txtcontraseña.Text = "";
+                    }
                 }
             }
         }

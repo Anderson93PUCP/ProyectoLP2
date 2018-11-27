@@ -39,6 +39,7 @@
             this.lblOlvidoContraseña = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +48,7 @@
             // 
             this.lblusuario.AutoSize = true;
             this.lblusuario.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuario.Location = new System.Drawing.Point(70, 70);
+            this.lblusuario.Location = new System.Drawing.Point(89, 70);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(90, 23);
             this.lblusuario.TabIndex = 0;
@@ -57,7 +58,7 @@
             // 
             this.lblcontraseña.AutoSize = true;
             this.lblcontraseña.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcontraseña.Location = new System.Drawing.Point(70, 142);
+            this.lblcontraseña.Location = new System.Drawing.Point(89, 142);
             this.lblcontraseña.Name = "lblcontraseña";
             this.lblcontraseña.Size = new System.Drawing.Size(125, 23);
             this.lblcontraseña.TabIndex = 1;
@@ -67,7 +68,7 @@
             // txtusuario
             // 
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(103, 105);
+            this.txtusuario.Location = new System.Drawing.Point(122, 105);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(197, 22);
             this.txtusuario.TabIndex = 2;
@@ -75,7 +76,7 @@
             // txtcontraseña
             // 
             this.txtcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcontraseña.Location = new System.Drawing.Point(103, 180);
+            this.txtcontraseña.Location = new System.Drawing.Point(122, 180);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(197, 22);
             this.txtcontraseña.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             // btningresar
             // 
-            this.btningresar.Location = new System.Drawing.Point(142, 217);
+            this.btningresar.Location = new System.Drawing.Point(161, 217);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(104, 32);
             this.btningresar.TabIndex = 4;
@@ -96,7 +97,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Formularios.Properties.Resources.password_ico_2;
-            this.pictureBox2.Location = new System.Drawing.Point(74, 180);
+            this.pictureBox2.Location = new System.Drawing.Point(93, 180);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -107,7 +108,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Formularios.Properties.Resources.user_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(75, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(94, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -117,13 +118,15 @@
             // lblOlvidoContraseña
             // 
             this.lblOlvidoContraseña.AutoSize = true;
+            this.lblOlvidoContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblOlvidoContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOlvidoContraseña.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblOlvidoContraseña.Location = new System.Drawing.Point(139, 263);
+            this.lblOlvidoContraseña.Location = new System.Drawing.Point(158, 263);
             this.lblOlvidoContraseña.Name = "lblOlvidoContraseña";
             this.lblOlvidoContraseña.Size = new System.Drawing.Size(119, 13);
             this.lblOlvidoContraseña.TabIndex = 7;
             this.lblOlvidoContraseña.Text = "¿Olvidó su contraseña?";
+            this.lblOlvidoContraseña.Visible = false;
             this.lblOlvidoContraseña.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
@@ -142,12 +145,23 @@
             this.panel2.Size = new System.Drawing.Size(417, 47);
             this.panel2.TabIndex = 9;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(158, 263);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(119, 13);
+            this.linkLabel1.TabIndex = 10;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "¿Olvidó su contraseña?";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(414, 346);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblOlvidoContraseña);
@@ -160,6 +174,7 @@
             this.Controls.Add(this.lblusuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -180,5 +195,6 @@
         private System.Windows.Forms.Label lblOlvidoContraseña;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

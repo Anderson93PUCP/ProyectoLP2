@@ -52,7 +52,7 @@ namespace AccesoDatos
                     usuario.Apellido = reader.GetString("apellido_paterno");
                     usuario.Estado = reader.GetInt32("estado");
                     usuario.Fecha_ingreso = reader.GetDateTime("fecha_inicio");
-                    usuario.Edad = reader.GetInt32("edad");
+                    usuario.Fecha_nacimiento = reader.GetDateTime("edad");
                     usuario.Direccion = reader.GetString("direccion");
                     usuario.Telefono = reader.GetInt32("telefono1");
                     usuario.Password = reader.GetString("contrasenia");
@@ -223,6 +223,7 @@ namespace AccesoDatos
                 MySqlConnection conn = new MySqlConnection(DBManager.cadena);
                 conn.Open();
                 string fecha = usuario.Fecha_ingreso.Year + "-" + usuario.Fecha_ingreso.Month + "-" + usuario.Fecha_ingreso.Day;
+                string fechanacimiento= usuario.Fecha_nacimiento.Year + "-" + usuario.Fecha_nacimiento.Month + "-" + usuario.Fecha_nacimiento.Day;
                 MySqlCommand cmd = new MySqlCommand();
                 String sql = "INSERT INTO n_usuarios" +
                                 "(dni_empleado,nombre,apellido_paterno,apellido_materno,estado,fecha_inicio," +
@@ -235,8 +236,8 @@ namespace AccesoDatos
                                 " '," +
                                 "1,'" +
                                 fecha + "','" +
-                                "'," +
-                                usuario.Edad.ToString() + ",'" +
+                                "','" +
+                                fechanacimiento + "','" +
                                 "'," +
                                 usuario.Telefono.ToString() + ",'" +
                                 "','" +

@@ -416,5 +416,15 @@ namespace Formularios
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Login lg = new Login();
+            if (lg.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

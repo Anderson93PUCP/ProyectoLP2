@@ -59,10 +59,10 @@ namespace Formularios
             n = Regexp(@"^[a-zA-Z\s]+$", txtnombre, pbnombre);
             n1 = Regexp(@"^[a-zA-Z\s]+$", txtapellido, pbapellido);
             te = Regexp(@"^[0-9]+$", txttelf, pbtelefono);
-            te1 = Regexp(@"^[0-9]+$", txtedad, pbedad);
+            //te1 = Regexp(@"^[0-9]+$", txtedad, pbedad);
             d1 = Regexp(@"^[a-zA-Z0-9_\s]+$", txtusuario , pbusuario);
             em = Regexp(@"^([\w]+)@([\w]+)\.([\w]+)$", txtemail, pbemail);
-            int valor = r * n * te * em*d1*te1*n1;
+            int valor = r * n * te * em*d1*n1;
             if (valor == 0) return;
             //if (txtnombre.Text == "")
             //{
@@ -207,19 +207,33 @@ namespace Formularios
             usuario.Dni = txtdni.Text;
             usuario.Email = txtemail.Text;
             usuario.Fecha_ingreso = DateTime.Parse(datetimeFechaI.Text);
+            usuario.Fecha_nacimiento = DateTime.Parse(dtpnacimiento.Text);
             usuario.IDUsuario1 = txtusuario.Text;
             usuario.Password = txtcontraseña.Text;
             usuario.TipoUsuario = tipo;
-            usuario.Edad = Int32.Parse(txtedad.Text); 
-            if (usuarioBL.registrarUsuario(usuario, salario, comision))
+            //usuario.Edad = Int32.Parse(txtedad.Text); 
+            try
             {
-                MessageBox.Show("El usuario se registro satisfactoriamente");
-                limpiarCampos();
-                
-            }
-            else MessageBox.Show("El usuario no se registro");
+                if (usuarioBL.registrarUsuario(usuario, salario, comision))
+                {
+                    MessageBox.Show("El usuario se registro satisfactoriamente");
+                    limpiarCampos();
+                    
 
-            this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("El usuario ya fue registrado con ese DNI, porfavor vuelva ingresar con un usuario nuevo");
+                    limpiarCampos();
+                }
+                this.Dispose();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se registro el usuario");
+                limpiarCampos();
+            }
         }
 
         public int Regexp(string re, TextBox tb, PictureBox pc)
@@ -244,7 +258,8 @@ namespace Formularios
             txttelf.Text = "";
             txtdni.Text = "";
             txtdni.Text = "";
-            txtedad.Text = "";
+            //txtedad.Text = "";
+            dtpnacimiento.Text = "";
             txtemail.Text = "";
             datetimeFechaI.Text = "";
             txtusuario.Text = "";
