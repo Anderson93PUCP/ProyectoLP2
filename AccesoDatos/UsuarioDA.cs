@@ -116,7 +116,7 @@ namespace AccesoDatos
                     usuario.Apellido = reader.GetString("apellido_paterno");
                     usuario.Estado = reader.GetInt32("estado");
                     usuario.Fecha_ingreso = reader.GetDateTime("fecha_inicio");
-                    usuario.Edad = reader.GetInt32("edad");
+                    usuario.Fecha_nacimiento = reader.GetDateTime("edad");
                     usuario.Direccion = reader.GetString("direccion");
                     usuario.Telefono = reader.GetInt32("telefono1");
                     usuario.Password = reader.GetString("contrasenia");
@@ -199,7 +199,7 @@ namespace AccesoDatos
                     usuario.Apellido = reader.GetString("apellido_paterno");
                     usuario.Estado = reader.GetInt32("estado");
                     usuario.Fecha_ingreso = reader.GetDateTime("fecha_inicio");
-                    usuario.Edad = reader.GetInt32("edad");
+                    usuario.Fecha_nacimiento = reader.GetDateTime("edad");
                     usuario.Direccion = reader.GetString("direccion");
                     usuario.Telefono = reader.GetInt32("telefono1");
                     usuario.Password = reader.GetString("contrasenia");
