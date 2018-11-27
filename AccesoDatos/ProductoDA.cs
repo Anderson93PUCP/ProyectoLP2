@@ -112,5 +112,19 @@ namespace AccesoDatos
             }
             conn.Close();
         }
+        public void descStock(string codigo, int cantidad)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "incrementarStock";
+            cmd.Parameters.Add("_id_producto", MySqlDbType.VarChar).Value = codigo;
+            cmd.Parameters.Add("_stock", MySqlDbType.Int32).Value = cantidad;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            return;
+        }
     }
 }

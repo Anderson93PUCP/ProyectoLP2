@@ -269,11 +269,21 @@ namespace Formularios
                 var v = MessageBox.Show("¿Seguro desee eliminar el producto", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (v == DialogResult.OK)
                 {
-                    DetallePedido detPedidoEliminar = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
-                    listaDetPedido.Remove(detPedidoEliminar);
-                    dgvAddPedido.DataSource = listaDetPedido;
-                    montoTotal = montoTotal - detPedidoEliminar.Subtotal;
-                    txtTotalAddPedido.Text = montoTotal.ToString();
+                    try
+                    {
+                        DetallePedido detPedidoEliminar = (DetallePedido)dgvAddPedido.CurrentRow.DataBoundItem;
+                        listaDetPedido.Remove(detPedidoEliminar);
+                        dgvAddPedido.DataSource = listaDetPedido;
+                        montoTotal = montoTotal - detPedidoEliminar.Subtotal;
+                        txtTotalAddPedido.Text = montoTotal.ToString();
+                        ProductoBL dataProd = new ProductoBL();
+                        dataProd.agregarStock(detPedidoEliminar.proCod,detPedidoEliminar.Cantidad);
+                    }catch(Exception ex1)
+                    {
+                        MessageBox.Show("Seleccione un producto a eliminar");
+                    }
+                    
+                    
                 }
             }
         }
