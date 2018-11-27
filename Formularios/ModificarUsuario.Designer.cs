@@ -105,17 +105,21 @@
             // 
             // datetimeFecha
             // 
+            this.datetimeFecha.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimeFecha.Enabled = false;
-            this.datetimeFecha.Location = new System.Drawing.Point(178, 210);
+            this.datetimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datetimeFecha.Location = new System.Drawing.Point(178, 200);
+            this.datetimeFecha.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
             this.datetimeFecha.Name = "datetimeFecha";
             this.datetimeFecha.Size = new System.Drawing.Size(146, 20);
             this.datetimeFecha.TabIndex = 54;
+            this.datetimeFecha.Value = new System.DateTime(2018, 11, 27, 0, 0, 0, 0);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 210);
+            this.label2.Location = new System.Drawing.Point(41, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 16);
             this.label2.TabIndex = 53;
@@ -143,6 +147,7 @@
             // 
             // cmbrol
             // 
+            this.cmbrol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbrol.Enabled = false;
             this.cmbrol.FormattingEnabled = true;
             this.cmbrol.Items.AddRange(new object[] {
@@ -250,9 +255,9 @@
             this.lbltelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltelefono.Location = new System.Drawing.Point(41, 118);
             this.lbltelefono.Name = "lbltelefono";
-            this.lbltelefono.Size = new System.Drawing.Size(65, 16);
+            this.lbltelefono.Size = new System.Drawing.Size(53, 16);
             this.lbltelefono.TabIndex = 41;
-            this.lbltelefono.Text = "Telefono:";
+            this.lbltelefono.Text = "Celular:";
             // 
             // lblNombre
             // 

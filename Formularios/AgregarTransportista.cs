@@ -150,6 +150,5 @@ namespace Formularios
             r.SetToolTip(pbdirec, "Ingrese una direccion valida");
             r.SetToolTip(pbemail, "Ingrese un correo valido");
         }
-        
     }
 }

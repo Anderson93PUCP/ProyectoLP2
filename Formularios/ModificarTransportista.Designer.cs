@@ -124,6 +124,7 @@
             this.txttelf.Enabled = false;
             this.txttelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelf.Location = new System.Drawing.Point(168, 108);
+            this.txttelf.MaxLength = 7;
             this.txttelf.Name = "txttelf";
             this.txttelf.Size = new System.Drawing.Size(146, 24);
             this.txttelf.TabIndex = 42;

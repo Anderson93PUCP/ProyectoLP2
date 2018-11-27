@@ -19,6 +19,7 @@ namespace ProyectoLP2
         private string email;
         private int estado;
         private DateTime fecha_ingreso;
+        private DateTime fecha_nacimiento;
         private string IDUsuario;
         private string password;
         private string respuestaConfimacion;
@@ -66,5 +67,6 @@ namespace ProyectoLP2
         public int TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
         public int Ingreso { get => ingreso; set => ingreso = value; }
         public double Monto { get => monto; set => monto = value; }
+        public DateTime Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
     }
 }

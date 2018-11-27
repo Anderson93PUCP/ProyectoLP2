@@ -90,6 +90,7 @@
             // 
             // cmbvendedorCliente
             // 
+            this.cmbvendedorCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbvendedorCliente.Enabled = false;
             this.cmbvendedorCliente.FormattingEnabled = true;
             this.cmbvendedorCliente.Location = new System.Drawing.Point(164, 228);

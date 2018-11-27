@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbtnDNI = new System.Windows.Forms.RadioButton();
             this.txtBusqUsuarioDNI = new System.Windows.Forms.TextBox();
             this.rbtRol = new System.Windows.Forms.RadioButton();
@@ -46,6 +39,12 @@
             this.btnElimCliente = new System.Windows.Forms.Button();
             this.btnModCliente = new System.Windows.Forms.Button();
             this.btnAddUsuario = new System.Windows.Forms.Button();
+            this.colTelef = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +60,6 @@
             this.colTelef,
             this.colNombre,
             this.colApellido,
-            this.colEdad,
             this.colUser,
             this.colEmail,
             this.colFechaI});
@@ -71,55 +69,6 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(699, 217);
             this.dgvUsuarios.TabIndex = 28;
-            // 
-            // colTelef
-            // 
-            this.colTelef.DataPropertyName = "Dni";
-            this.colTelef.HeaderText = "DNI";
-            this.colTelef.Name = "colTelef";
-            this.colTelef.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.DataPropertyName = "Nombre";
-            this.colNombre.HeaderText = "NOMBRE";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colApellido
-            // 
-            this.colApellido.DataPropertyName = "Apellido";
-            this.colApellido.HeaderText = "APELLIDO";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
-            // 
-            // colEdad
-            // 
-            this.colEdad.DataPropertyName = "Edad";
-            this.colEdad.HeaderText = "EDAD";
-            this.colEdad.Name = "colEdad";
-            this.colEdad.ReadOnly = true;
-            // 
-            // colUser
-            // 
-            this.colUser.DataPropertyName = "IDUsuario1";
-            this.colUser.HeaderText = "USERNAME";
-            this.colUser.Name = "colUser";
-            this.colUser.ReadOnly = true;
-            // 
-            // colEmail
-            // 
-            this.colEmail.DataPropertyName = "Telefono";
-            this.colEmail.HeaderText = "TELEFONO";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            // 
-            // colFechaI
-            // 
-            this.colFechaI.DataPropertyName = "Fecha_ingreso";
-            this.colFechaI.HeaderText = "FECHA INGRESO";
-            this.colFechaI.Name = "colFechaI";
-            this.colFechaI.ReadOnly = true;
             // 
             // rbtnDNI
             // 
@@ -260,6 +209,48 @@
             this.btnAddUsuario.UseVisualStyleBackColor = false;
             this.btnAddUsuario.Click += new System.EventHandler(this.btnAddUsuario_Click);
             // 
+            // colTelef
+            // 
+            this.colTelef.DataPropertyName = "Dni";
+            this.colTelef.HeaderText = "DNI";
+            this.colTelef.Name = "colTelef";
+            this.colTelef.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "Nombre";
+            this.colNombre.HeaderText = "NOMBRE";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.DataPropertyName = "Apellido";
+            this.colApellido.HeaderText = "APELLIDO";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colUser
+            // 
+            this.colUser.DataPropertyName = "IDUsuario1";
+            this.colUser.HeaderText = "USERNAME";
+            this.colUser.Name = "colUser";
+            this.colUser.ReadOnly = true;
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Telefono";
+            this.colEmail.HeaderText = "TELEFONO";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colFechaI
+            // 
+            this.colFechaI.DataPropertyName = "Fecha_ingreso";
+            this.colFechaI.HeaderText = "FECHA INGRESO";
+            this.colFechaI.Name = "colFechaI";
+            this.colFechaI.ReadOnly = true;
+            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,7 +291,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelef;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEdad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaI;

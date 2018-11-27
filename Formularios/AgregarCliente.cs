@@ -158,11 +158,6 @@ namespace Formularios
             cmbvendedorCliente.SelectedIndex = -1;
         }
 
-        private void AgregarCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void lsboxdireccion_SelectedIndexChanged(object sender, EventArgs e)
         {
 

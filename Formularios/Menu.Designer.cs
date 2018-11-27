@@ -61,6 +61,8 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.panelVerticalPagos = new System.Windows.Forms.Panel();
             this.btnVendedores = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -80,6 +82,8 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.button1);
+            this.MenuVertical.Controls.Add(this.label1);
             this.MenuVertical.Controls.Add(this.button6);
             this.MenuVertical.Controls.Add(this.button5);
             this.MenuVertical.Controls.Add(this.button4);
@@ -89,7 +93,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 788);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 700);
             this.MenuVertical.TabIndex = 0;
             // 
             // button6
@@ -285,7 +289,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelContenedor.Location = new System.Drawing.Point(438, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(862, 738);
+            this.panelContenedor.Size = new System.Drawing.Size(862, 650);
             this.panelContenedor.TabIndex = 4;
             // 
             // panel1
@@ -299,7 +303,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(250, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 738);
+            this.panel1.Size = new System.Drawing.Size(189, 650);
             this.panel1.TabIndex = 5;
             // 
             // panelVerticalAlmacen
@@ -310,7 +314,7 @@
             this.panelVerticalAlmacen.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalAlmacen.Location = new System.Drawing.Point(752, 0);
             this.panelVerticalAlmacen.Name = "panelVerticalAlmacen";
-            this.panelVerticalAlmacen.Size = new System.Drawing.Size(220, 738);
+            this.panelVerticalAlmacen.Size = new System.Drawing.Size(220, 650);
             this.panelVerticalAlmacen.TabIndex = 28;
             // 
             // btnGestionAlmacenes
@@ -353,7 +357,7 @@
             this.panelVerticalPedidos.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalPedidos.Location = new System.Drawing.Point(564, 0);
             this.panelVerticalPedidos.Name = "panelVerticalPedidos";
-            this.panelVerticalPedidos.Size = new System.Drawing.Size(188, 738);
+            this.panelVerticalPedidos.Size = new System.Drawing.Size(188, 650);
             this.panelVerticalPedidos.TabIndex = 25;
             // 
             // btnGestionPedidos
@@ -396,7 +400,7 @@
             this.panelVerticalReportes.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalReportes.Location = new System.Drawing.Point(376, 0);
             this.panelVerticalReportes.Name = "panelVerticalReportes";
-            this.panelVerticalReportes.Size = new System.Drawing.Size(188, 738);
+            this.panelVerticalReportes.Size = new System.Drawing.Size(188, 650);
             this.panelVerticalReportes.TabIndex = 26;
             // 
             // btnReporteProductos
@@ -441,7 +445,7 @@
             this.panelVertical2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVertical2.Location = new System.Drawing.Point(188, 0);
             this.panelVertical2.Name = "panelVertical2";
-            this.panelVertical2.Size = new System.Drawing.Size(188, 738);
+            this.panelVertical2.Size = new System.Drawing.Size(188, 650);
             this.panelVertical2.TabIndex = 23;
             // 
             // btnProveedores
@@ -515,7 +519,7 @@
             this.panelVerticalPagos.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVerticalPagos.Location = new System.Drawing.Point(0, 0);
             this.panelVerticalPagos.Name = "panelVerticalPagos";
-            this.panelVerticalPagos.Size = new System.Drawing.Size(188, 738);
+            this.panelVerticalPagos.Size = new System.Drawing.Size(188, 650);
             this.panelVerticalPagos.TabIndex = 24;
             // 
             // btnVendedores
@@ -534,10 +538,39 @@
             this.btnVendedores.UseVisualStyleBackColor = true;
             this.btnVendedores.Click += new System.EventHandler(this.btnVendedores_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label1.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(24, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 60);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "SIS-CAPA";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Formularios.Properties.Resources.back__1_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 660);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 40);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "SALIR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1300, 788);
+            this.ClientSize = new System.Drawing.Size(1300, 700);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.BarraTitulo);
@@ -548,6 +581,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.MenuVertical.ResumeLayout(false);
+            this.MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
@@ -600,5 +634,7 @@
         private System.Windows.Forms.Panel panelVerticalPagos;
         private System.Windows.Forms.Button btnVendedores;
         private System.Windows.Forms.Label lblusuario;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
