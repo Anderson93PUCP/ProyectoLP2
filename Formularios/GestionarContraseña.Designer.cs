@@ -131,9 +131,9 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(92, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 18);
+            this.label2.Size = new System.Drawing.Size(244, 18);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Vuelva a escribit la contraseña:";
+            this.label2.Text = "Vuelva a escribir la contraseña:";
             // 
             // GestionarContraseña
             // 
@@ -151,6 +151,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "GestionarContraseña";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionarContraseña";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
