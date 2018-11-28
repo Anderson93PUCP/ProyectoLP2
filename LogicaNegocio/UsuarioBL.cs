@@ -55,5 +55,10 @@ namespace LogicaNegocio
         {
             return usuarioDA.modificarUsuario(usuario, salario, comision);
         }
+
+        public bool logueadoUsuario(string dni,int estado)
+        {
+            return usuarioDA.logueadoUsuario(dni,estado);
+        }
     }
 }
