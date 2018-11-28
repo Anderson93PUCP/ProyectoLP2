@@ -101,7 +101,14 @@ namespace Formularios
             var v = MessageBox.Show("¿Esta seguro de salir, no se guardara ningun cambio no guardado", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
-                
+                if(listaDetPedido.Count != 0)
+                {
+                    ProductoBL dataPro = new ProductoBL();
+                    foreach(DetallePedido deti in listaDetPedido)
+                    {
+                        dataPro.agregarStock(deti.proCod, deti.Cantidad);
+                    }
+                }
                 this.DialogResult = DialogResult.Cancel;
             }
 
@@ -119,7 +126,7 @@ namespace Formularios
             {
                 if(listaDetPedido.Count == 0) MessageBox.Show("Falta detalle de pedido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else if(cliente == null) MessageBox.Show("Falta seleccionar cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else if (direccion == null) MessageBox.Show("Falta seleccionar direccion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if (txtDireccAddPedido.Text == "") MessageBox.Show("Falta seleccionar direccion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else  MessageBox.Show("Falta seleccionar transporte", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
