@@ -256,6 +256,7 @@ namespace AccesoDatos
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        
     }
 
 

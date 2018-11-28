@@ -99,11 +99,7 @@ namespace Formularios
             }catch(Exception ex)
             {
                 MessageBox.Show("Descuento no valido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            
-            
-
-            
+            }  
             if (numCant.Value == 0 )
             {
                 MessageBox.Show("Ingrese cantidad valida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -114,25 +110,43 @@ namespace Formularios
                 try
                 {
                     productoSeleccionado = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+
                     if (detPed == null)
                     {
                         detPed = new DetallePedido();
                     }
-
-                    /*
-                        if (productoSeleccionado.Stock - (int)numCant.Value <0)
+                    ProductoBL dataProductos = new ProductoBL();
+                    if (agregar_pedido == 1)
+                    {
+                        // es una modficacion , tenemos q verificar si es el anterior es igual o no 
+                        if(detPed.proCod != productoSeleccionado.Codigo)
                         {
-                            MessageBox.Show("Stock insuficiente.Saldo disponible: " + productoSeleccionado.Stock);
-                            return;
+                            // esto indica q son diferente los codigos por lo que tenemos liberar el stock del producto anterior
+                            dataProductos.agregarStock(detPed.proCod, detPed.Cantidad);
                         }
-                    */
-                   
+                        else
+                        {
+                            // son iguales, tenemos q verificar el stock
+                            productoSeleccionado.Stock += detPed.Cantidad;
+                        }
+                    }
+                    if (productoSeleccionado.Stock - cantidad >= 0)
+                    {
+                        dataProductos.descontarStock(productoSeleccionado, productoSeleccionado.Stock - cantidad);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stock insuficiente.\n Saldo Disponible: " + productoSeleccionado.Stock.ToString());
+                    }
+
+
                     detPed.Producto = productoSeleccionado;
                     detPed.Cantidad = Int32.Parse(numCant.Value.ToString());
                     detPed.Desc = Int32.Parse(numDesc.Value.ToString());
                     detPed.Subtotal = (1 - (detPed.Desc / 100)) * (detPed.Cantidad * productoSeleccionado.Precio);
-                    this.DialogResult = DialogResult.OK;
 
+                    
                 } catch(Exception ex1)
                 {
                     MessageBox.Show("Seleccione producto");

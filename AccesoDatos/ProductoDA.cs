@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AccesoDatos
 {
@@ -24,7 +25,7 @@ namespace AccesoDatos
             conn.Open();
 
             MySqlCommand cmd = new MySqlCommand();
-            String sql = "SELECT * FROM n_producto where estado = 1";
+            String sql = "SELECT * FROM n_producto where estado = 1 and almacenado = 1";
             cmd.CommandText = sql;
             cmd.Connection = conn;
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -64,6 +65,66 @@ namespace AccesoDatos
 
             conn.Close();
             return lista;
+        }
+
+        public void agregarStock(string codProducto, int cantidad)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "SELECCIONAR_PRODUCTO";
+            cmd.Parameters.Add("_IDPRODUCTO", MySqlDbType.VarChar).Value = codProducto;
+            cmd.ExecuteNonQuery();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            int cantidadP = 0;
+            if (reader.Read())
+            {
+                cantidadP = reader.GetInt32("stock");
+            }
+            reader.Close(); 
+            conn.Close();
+            incrementarStock(codProducto, cantidad, cantidadP);
+            
+            
+           
+        }
+
+        private void incrementarStock(string codProducto, int cantidad,int cantidadP)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "incrementarStock";
+            cmd.Parameters.Add("_id_producto", MySqlDbType.VarChar).Value = codProducto;
+            cmd.Parameters.Add("_stock", MySqlDbType.Int32).Value = cantidad + cantidadP;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show(ex1.Message);
+            }
+            conn.Close();
+        }
+        public void descStock(string codigo, int cantidad)
+        {
+            MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "incrementarStock";
+            cmd.Parameters.Add("_id_producto", MySqlDbType.VarChar).Value = codigo;
+            cmd.Parameters.Add("_stock", MySqlDbType.Int32).Value = cantidad;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            return;
         }
     }
 }
