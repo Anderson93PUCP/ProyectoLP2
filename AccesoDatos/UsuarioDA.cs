@@ -205,6 +205,8 @@ namespace AccesoDatos
                     usuario.Password = reader.GetString("contrasenia");
                     usuario.TipoUsuario = reader.GetInt32("tipoUsuario");
                     usuario.Ingreso = reader.GetInt32("ingreso");
+                    usuario.Respuesta = reader.GetString("respuesta");
+                    usuario.Pregunta = reader.GetInt32("pregunta");
                 }
                 conn.Close();
                 return usuario;
@@ -296,7 +298,9 @@ namespace AccesoDatos
                 String sql = "UPDATE n_usuarios " +
                                 "SET " +
                                 "contrasenia ='" + nuevapsw.ToString() + "', " +
-                                "ingreso=1" +
+                                "ingreso=1" + "," +
+                                "pregunta=" + usr.Pregunta +","+
+                                "respuesta='" + usr.Respuesta + "' "+ 
                                  " WHERE dni_empleado = " + usr.Dni;
                 cmd.CommandText = sql;
                 cmd.Connection = conn;

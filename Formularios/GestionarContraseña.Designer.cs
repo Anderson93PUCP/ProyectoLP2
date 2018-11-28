@@ -38,6 +38,12 @@
             this.txtrepetirContra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbpregunta = new System.Windows.Forms.ComboBox();
+            this.txtrespuesta = new System.Windows.Forms.TextBox();
+            this.txtusuario = new System.Windows.Forms.TextBox();
+            this.lblusuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +51,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel2.Location = new System.Drawing.Point(0, 300);
+            this.panel2.Location = new System.Drawing.Point(0, 414);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(417, 47);
             this.panel2.TabIndex = 11;
@@ -61,7 +67,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Formularios.Properties.Resources.password_ico_2;
-            this.pictureBox2.Location = new System.Drawing.Point(96, 108);
+            this.pictureBox2.Location = new System.Drawing.Point(57, 146);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -70,37 +76,37 @@
             // 
             // btningresar
             // 
-            this.btningresar.Location = new System.Drawing.Point(149, 246);
+            this.btningresar.Location = new System.Drawing.Point(116, 376);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(104, 32);
-            this.btningresar.TabIndex = 17;
+            this.btningresar.TabIndex = 24;
             this.btningresar.Text = "MODIFICAR";
             this.btningresar.UseVisualStyleBackColor = true;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // txtcontraseña
             // 
-            this.txtcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcontraseña.Location = new System.Drawing.Point(125, 108);
+            this.txtcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcontraseña.Location = new System.Drawing.Point(87, 149);
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(197, 22);
+            this.txtcontraseña.Size = new System.Drawing.Size(197, 21);
             this.txtcontraseña.TabIndex = 13;
             this.txtcontraseña.UseSystemPasswordChar = true;
             // 
             // lblcontraseña
             // 
             this.lblcontraseña.AutoSize = true;
-            this.lblcontraseña.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcontraseña.Location = new System.Drawing.Point(92, 70);
+            this.lblcontraseña.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcontraseña.Location = new System.Drawing.Point(55, 116);
             this.lblcontraseña.Name = "lblcontraseña";
-            this.lblcontraseña.Size = new System.Drawing.Size(148, 18);
+            this.lblcontraseña.Size = new System.Drawing.Size(131, 16);
             this.lblcontraseña.TabIndex = 12;
             this.lblcontraseña.Text = "Nueva contraseña:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Formularios.Properties.Resources.password_ico_2;
-            this.pictureBox1.Location = new System.Drawing.Point(96, 198);
+            this.pictureBox1.Location = new System.Drawing.Point(57, 213);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -109,10 +115,10 @@
             // 
             // txtrepetirContra
             // 
-            this.txtrepetirContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtrepetirContra.Location = new System.Drawing.Point(125, 198);
+            this.txtrepetirContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtrepetirContra.Location = new System.Drawing.Point(87, 216);
             this.txtrepetirContra.Name = "txtrepetirContra";
-            this.txtrepetirContra.Size = new System.Drawing.Size(197, 22);
+            this.txtrepetirContra.Size = new System.Drawing.Size(197, 21);
             this.txtrepetirContra.TabIndex = 14;
             this.txtrepetirContra.UseSystemPasswordChar = true;
             // 
@@ -120,7 +126,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 160);
+            this.label1.Location = new System.Drawing.Point(54, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 23);
             this.label1.TabIndex = 16;
@@ -128,18 +134,84 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 160);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(55, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 18);
+            this.label2.Size = new System.Drawing.Size(214, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "Vuelva a escribir la contraseña:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(54, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 16);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Pregunta de seguridad";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(55, 319);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 16);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Respuesta de seguridad";
+            // 
+            // cmbpregunta
+            // 
+            this.cmbpregunta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbpregunta.FormattingEnabled = true;
+            this.cmbpregunta.Items.AddRange(new object[] {
+            "1. ¿Cuál es tu comida favorita?",
+            "2. ¿Cuál es tu ciudad de nacimiento?",
+            "3. ¿Cuál es el segundo nombre de tu padre?"});
+            this.cmbpregunta.Location = new System.Drawing.Point(57, 283);
+            this.cmbpregunta.Name = "cmbpregunta";
+            this.cmbpregunta.Size = new System.Drawing.Size(227, 21);
+            this.cmbpregunta.TabIndex = 22;
+            // 
+            // txtrespuesta
+            // 
+            this.txtrespuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtrespuesta.Location = new System.Drawing.Point(57, 347);
+            this.txtrespuesta.Name = "txtrespuesta";
+            this.txtrespuesta.Size = new System.Drawing.Size(227, 21);
+            this.txtrespuesta.TabIndex = 23;
+            // 
+            // txtusuario
+            // 
+            this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusuario.Location = new System.Drawing.Point(87, 83);
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.ReadOnly = true;
+            this.txtusuario.Size = new System.Drawing.Size(197, 21);
+            this.txtusuario.TabIndex = 26;
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.Location = new System.Drawing.Point(54, 60);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(61, 16);
+            this.lblusuario.TabIndex = 25;
+            this.lblusuario.Text = "Usuario:";
             // 
             // GestionarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 346);
+            this.ClientSize = new System.Drawing.Size(346, 460);
+            this.Controls.Add(this.txtusuario);
+            this.Controls.Add(this.lblusuario);
+            this.Controls.Add(this.txtrespuesta);
+            this.Controls.Add(this.cmbpregunta);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtrepetirContra);
@@ -172,5 +244,11 @@
         private System.Windows.Forms.TextBox txtrepetirContra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbpregunta;
+        private System.Windows.Forms.TextBox txtrespuesta;
+        private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.Label lblusuario;
     }
 }

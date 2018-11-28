@@ -72,7 +72,7 @@ namespace Formularios
                         }
                     }
                     else
-                        MessageBox.Show("Ingrese un usuario correcto");
+                        MessageBox.Show("La contraseña no es valida");
                 }
                 catch
                 {
@@ -168,6 +168,34 @@ namespace Formularios
         private void txtcontraseña_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (txtusuario.Text == "")
+            {
+                MessageBox.Show("El usuario no es valido, ingrese un usuario");
+            }else
+            {
+                usuarioBL = new UsuarioBL();
+                string user = txtusuario.Text.ToString();
+                Persona usuario = usuarioBL.getUsuario(user);
+                if (usuario != null)
+                {
+
+                    GestionarContraseña fgvpsw = new GestionarContraseña(usuario,1);
+                    if (fgvpsw.ShowDialog() == DialogResult.OK)
+                    {
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("El usuario no se encuentra registrado");
+                    txtusuario.Text = "";
+                }
+            }
         }
     }
 }
