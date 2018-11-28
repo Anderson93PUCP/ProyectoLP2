@@ -26,6 +26,8 @@ namespace ProyectoLP2
         private int tipoUsuario;
         private int ingreso;
         private double monto;
+        private int pregunta;
+        private string respuesta;
 
         public Persona()
         {
@@ -68,5 +70,7 @@ namespace ProyectoLP2
         public int Ingreso { get => ingreso; set => ingreso = value; }
         public double Monto { get => monto; set => monto = value; }
         public DateTime Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
+        public int Pregunta { get => pregunta; set => pregunta = value; }
+        public string Respuesta { get => respuesta; set => respuesta = value; }
     }
 }
