@@ -207,6 +207,7 @@ namespace AccesoDatos
                     usuario.Ingreso = reader.GetInt32("ingreso");
                     usuario.Respuesta = reader.GetString("respuesta");
                     usuario.Pregunta = reader.GetInt32("pregunta");
+                    usuario.Logueado = reader.GetInt32("logeado");
                 }
                 conn.Close();
                 return usuario;
@@ -275,6 +276,31 @@ namespace AccesoDatos
                                 "SET " +
                                 "estado = 0 " +
                                  "WHERE dni_empleado = " + dni;
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool logueadoUsuario(string dni,int estado)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                String sql = "UPDATE n_usuarios " +
+                                "SET " +
+                                "logeado =" + estado.ToString() +
+                                 " WHERE dni_empleado = " + dni;
                 cmd.CommandText = sql;
                 cmd.Connection = conn;
                 cmd.CommandText = sql;

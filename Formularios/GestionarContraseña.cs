@@ -61,12 +61,14 @@ namespace Formularios
                         {
                             MessageBox.Show("Se modifico la contraseña correctamente");
                             this.Dispose();
+                            usuarioBL.logueadoUsuario(usr.Dni, 0);
 
                         }
                         else
                         {
                             MessageBox.Show("No se pudo modificar la contraseña");
                             this.Dispose();
+                            usuarioBL.logueadoUsuario(usr.Dni, 0);
                         }
                     }
                     else
@@ -100,12 +102,14 @@ namespace Formularios
                         {
                             MessageBox.Show("Se modifico la contraseña correctamente");
                             this.Dispose();
+                            usuarioBL.logueadoUsuario(usr.Dni, 0);
 
                         }
                         else
                         {
                             MessageBox.Show("No se pudo modificar la contraseña");
                             this.Dispose();
+                            usuarioBL.logueadoUsuario(usr.Dni, 0);
                         }
                     }
                     

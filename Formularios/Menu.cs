@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using LogicaNegocio;
+using ProyectoLP2;
 
 namespace Formularios
 {
     public partial class Menu : Form
     {
+        Persona usr;
+        string dni = "";
+        int tipoUsuario = 0;
+        UsuarioBL usuarioBL;
         public Menu()
         {
             InitializeComponent();
@@ -25,6 +31,14 @@ namespace Formularios
 
         public Menu(string username)
         {
+            usuarioBL = new UsuarioBL();
+            Persona usuario = usuarioBL.getUsuario(username);
+            if (usuario != null)
+            {
+                usr = usuario;
+                dni = usuario.Dni;
+                tipoUsuario = usuario.TipoUsuario;
+            }
             InitializeComponent();
             lblusuario.Text = "Bienvenido "+ username.ToString();
             panelVertical2.Visible = false;
@@ -33,6 +47,7 @@ namespace Formularios
             panelVerticalPagos.Visible = false;
             panelVerticalPedidos.Visible = false;
         }
+
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -76,6 +91,8 @@ namespace Formularios
 
         private void iconcerrar_Click(object sender, EventArgs e)
         {
+            usuarioBL = new UsuarioBL();
+            usuarioBL.logueadoUsuario(dni, 0);
             Application.Exit();
         }
 
@@ -181,32 +198,36 @@ namespace Formularios
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (MenuVertical.Width != 250)
-            {
-                MenuVertical.Width = 250;
-                panel1.Width = 0;
-                panelContenedor.Width = 1042;
-
-            }
+            if (tipoUsuario == 1) MessageBox.Show("Usted no tiene permisos para esta operacion");
             else
             {
-                if (panelVerticalAlmacen.Visible)
+                if (MenuVertical.Width != 250)
                 {
-                    panelVerticalAlmacen.Visible = false;
+                    MenuVertical.Width = 250;
                     panel1.Width = 0;
-                    if (MenuVertical.Width == 250)
-                    {
-                        panelContenedor.Width = 180 + 862;
-                    }
-                    localizacionInicialPanelVertical2();
+                    panelContenedor.Width = 1042;
+
                 }
                 else
                 {
-                    panelVerticalAlmacen.Visible = true;
-                    panel1.Width = 188;
-                    panelContenedor.Width = 862;
-                    estadosAlmacen();
+                    if (panelVerticalAlmacen.Visible)
+                    {
+                        panelVerticalAlmacen.Visible = false;
+                        panel1.Width = 0;
+                        if (MenuVertical.Width == 250)
+                        {
+                            panelContenedor.Width = 180 + 862;
+                        }
+                        localizacionInicialPanelVertical2();
+                    }
+                    else
+                    {
+                        panelVerticalAlmacen.Visible = true;
+                        panel1.Width = 188;
+                        panelContenedor.Width = 862;
+                        estadosAlmacen();
 
+                    }
                 }
             }
             
@@ -214,64 +235,72 @@ namespace Formularios
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (MenuVertical.Width != 250)
-            {
-                MenuVertical.Width = 250;
-                panel1.Width = 0;
-                panelContenedor.Width = 1042;
-
-            }
+            if (tipoUsuario == 1 || tipoUsuario==2) MessageBox.Show("Usted no tiene permisos para esta operacion");
             else
             {
-                if (panelVerticalPagos.Visible)
+                if (MenuVertical.Width != 250)
                 {
-                    panelVerticalPagos.Visible = false;
+                    MenuVertical.Width = 250;
                     panel1.Width = 0;
-                    if (MenuVertical.Width == 250)
-                    {
-                        panelContenedor.Width = 180 + 862;
-                    }
-                    localizacionInicialPanelVertical2();
+                    panelContenedor.Width = 1042;
+
                 }
                 else
                 {
-                    panelVerticalPagos.Visible = true;
-                    panel1.Width = 188;
-                    panelContenedor.Width = 862;
-                    estadosPagos();
+                    if (panelVerticalPagos.Visible)
+                    {
+                        panelVerticalPagos.Visible = false;
+                        panel1.Width = 0;
+                        if (MenuVertical.Width == 250)
+                        {
+                            panelContenedor.Width = 180 + 862;
+                        }
+                        localizacionInicialPanelVertical2();
+                    }
+                    else
+                    {
+                        panelVerticalPagos.Visible = true;
+                        panel1.Width = 188;
+                        panelContenedor.Width = 862;
+                        estadosPagos();
 
+                    }
                 }
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (MenuVertical.Width != 250)
-            {
-                MenuVertical.Width = 250;
-                panel1.Width = 0;
-                panelContenedor.Width = 1042;
-
-            }
+            if (tipoUsuario == 1 || tipoUsuario==2) MessageBox.Show("Usted no tiene permisos para esta operacion");
             else
             {
-                if (panelVerticalReportes.Visible)
+                if (MenuVertical.Width != 250)
                 {
-                    panelVerticalReportes.Visible = false;
+                    MenuVertical.Width = 250;
                     panel1.Width = 0;
-                    if (MenuVertical.Width == 250)
-                    {
-                        panelContenedor.Width = 180 + 862;
-                    }
-                    localizacionInicialPanelVertical2();
+                    panelContenedor.Width = 1042;
+
                 }
                 else
                 {
-                    panelVerticalReportes.Visible = true;
-                    panel1.Width = 188;
-                    panelContenedor.Width = 862;
-                    estadosReporte();
+                    if (panelVerticalReportes.Visible)
+                    {
+                        panelVerticalReportes.Visible = false;
+                        panel1.Width = 0;
+                        if (MenuVertical.Width == 250)
+                        {
+                            panelContenedor.Width = 180 + 862;
+                        }
+                        localizacionInicialPanelVertical2();
+                    }
+                    else
+                    {
+                        panelVerticalReportes.Visible = true;
+                        panel1.Width = 188;
+                        panelContenedor.Width = 862;
+                        estadosReporte();
 
+                    }
                 }
             }
         }
@@ -332,9 +361,13 @@ namespace Formularios
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            if (tipoUsuario == 2) MessageBox.Show("Usted no tiene permisos para esta operacion");
+            else
+            {
                 AbrirFormInPanel(new GestionClientes());
-            
+            }
             
         }
 
@@ -354,12 +387,24 @@ namespace Formularios
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new GestionUsuarios());
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            if (tipoUsuario == 1 || tipoUsuario == 2) MessageBox.Show("Usted no tiene permisos para esta operacion");
+            else
+            {
+                AbrirFormInPanel(new GestionUsuarios());
+            }
         }
 
         private void btnTransportistas_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new GestionTransportistas());
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            if (tipoUsuario == 1 || tipoUsuario==2) MessageBox.Show("Usted no tiene permisos para esta operacion");
+            else
+            {
+                AbrirFormInPanel(new GestionTransportistas());
+            }
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
@@ -409,7 +454,11 @@ namespace Formularios
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
-            MessageBox.Show("Este modulo fue implementado en java");
+            if (tipoUsuario == 1) MessageBox.Show("Usted no tiene permisos para esta operacion");
+            else
+            {
+                MessageBox.Show("Este modulo fue implementado en java");
+            }
         }
 
         private void BarraTitulo_Paint(object sender, PaintEventArgs e)
@@ -420,6 +469,8 @@ namespace Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            usuarioBL = new UsuarioBL();
+            usuarioBL.logueadoUsuario(dni, 0);
             Login lg = new Login();
             if (lg.ShowDialog() == DialogResult.OK)
             {

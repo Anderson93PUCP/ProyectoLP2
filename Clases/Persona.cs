@@ -28,6 +28,7 @@ namespace ProyectoLP2
         private double monto;
         private int pregunta;
         private string respuesta;
+        private int logueado;
 
         public Persona()
         {
@@ -72,5 +73,6 @@ namespace ProyectoLP2
         public DateTime Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
         public int Pregunta { get => pregunta; set => pregunta = value; }
         public string Respuesta { get => respuesta; set => respuesta = value; }
+        public int Logueado { get => logueado; set => logueado = value; }
     }
 }

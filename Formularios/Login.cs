@@ -44,35 +44,43 @@ namespace Formularios
                     usuarioBL = new UsuarioBL();
                     string user = txtusuario.Text.ToString();
                     Persona usuario = usuarioBL.getUsuario(user);
-                    if (usuario.IDUsuario1 == txtusuario.Text & usuario.Password == txtcontraseña.Text)
+                    if (usuario.Logueado == 0)
                     {
 
-                        if (usuario.Ingreso == 0)
+                        if (usuario.IDUsuario1 == txtusuario.Text & usuario.Password == txtcontraseña.Text)
                         {
-                            txtcontraseña.Text = "";
-                            GestionarContraseña frmp = new GestionarContraseña(usuario);
-                            if (frmp.ShowDialog() == DialogResult.OK)
+                            usuarioBL.logueadoUsuario(usuario.Dni, 1);
+                            if (usuario.Ingreso == 0)
                             {
+                                txtcontraseña.Text = "";
+                                GestionarContraseña frmp = new GestionarContraseña(usuario);
+                                if (frmp.ShowDialog() == DialogResult.OK)
+                                {
+
+                                }
 
                             }
+                            else
+                            {
+                                this.Hide();
 
+                                //Menu fb = new Menu();
+                                Menu fb = new Menu(usuario.IDUsuario1);
+                                if (fb.ShowDialog() == DialogResult.OK)
+                                {
+
+                                }
+
+                                this.Dispose();
+                            }
                         }
                         else
-                        {
-                            this.Hide();
-
-                            //Menu fb = new Menu();
-                            Menu fb = new Menu(usuario.IDUsuario1);
-                            if (fb.ShowDialog() == DialogResult.OK)
-                            {
-
-                            }
-
-                            this.Dispose();
-                        }
+                            MessageBox.Show("La contraseña no es valida");
                     }
                     else
-                        MessageBox.Show("La contraseña no es valida");
+                    {
+                        MessageBox.Show("El usuario ya se encuentra logueado");
+                    }
                 }
                 catch
                 {
@@ -120,35 +128,43 @@ namespace Formularios
                         usuarioBL = new UsuarioBL();
                         string user = txtusuario.Text.ToString();
                         Persona usuario = usuarioBL.getUsuario(user);
-                        if (usuario.IDUsuario1 == txtusuario.Text & usuario.Password == txtcontraseña.Text)
+                        if (usuario.Logueado == 0)
                         {
 
-                            if (usuario.Ingreso == 0)
+                            if (usuario.IDUsuario1 == txtusuario.Text & usuario.Password == txtcontraseña.Text)
                             {
-                                txtcontraseña.Text = "";
-                                GestionarContraseña frmp = new GestionarContraseña(usuario);
-                                if (frmp.ShowDialog() == DialogResult.OK)
+                                usuarioBL.logueadoUsuario(usuario.Dni, 1);
+                                if (usuario.Ingreso == 0)
                                 {
+                                    txtcontraseña.Text = "";
+                                    GestionarContraseña frmp = new GestionarContraseña(usuario);
+                                    if (frmp.ShowDialog() == DialogResult.OK)
+                                    {
+
+                                    }
 
                                 }
+                                else
+                                {
+                                    this.Hide();
 
+                                    //Menu fb = new Menu();
+                                    Menu fb = new Menu(usuario.IDUsuario1);
+                                    if (fb.ShowDialog() == DialogResult.OK)
+                                    {
+
+                                    }
+
+                                    this.Dispose();
+                                }
                             }
                             else
-                            {
-                                this.Hide();
-
-                                //Menu fb = new Menu();
-                                Menu fb = new Menu(usuario.IDUsuario1);
-                                if (fb.ShowDialog() == DialogResult.OK)
-                                {
-
-                                }
-
-                                this.Dispose();
-                            }
+                                MessageBox.Show("La contraseña no es valida");
                         }
                         else
-                            MessageBox.Show("Ingrese un usuario correcto");
+                        {
+                            MessageBox.Show("El usuario ya se encuentra logueado");
+                        }
                     }
                     catch
                     {
@@ -182,11 +198,14 @@ namespace Formularios
                 Persona usuario = usuarioBL.getUsuario(user);
                 if (usuario != null)
                 {
-
-                    GestionarContraseña fgvpsw = new GestionarContraseña(usuario,1);
-                    if (fgvpsw.ShowDialog() == DialogResult.OK)
+                    if (usuario.Ingreso == 0) MessageBox.Show("Su usuario es nuevo, se le recuerda que la primera vez se debe loguear con el mismo nombre de usuario y cambiar su contraseña antes de restablecerla");
+                    else
                     {
+                        GestionarContraseña fgvpsw = new GestionarContraseña(usuario, 1);
+                        if (fgvpsw.ShowDialog() == DialogResult.OK)
+                        {
 
+                        }
                     }
 
                 }
