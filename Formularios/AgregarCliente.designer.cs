@@ -275,7 +275,8 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 68;
-            this.label5.Text = "(Obligatorio)";
+            this.label5.Text = "(11 enteros)";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label2
             // 
@@ -284,9 +285,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label2.Location = new System.Drawing.Point(162, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(131, 13);
             this.label2.TabIndex = 69;
-            this.label2.Text = "(Obligatorio)";
+            this.label2.Text = "(caracteros alfanumericos)";
             // 
             // label4
             // 
@@ -295,9 +296,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label4.Location = new System.Drawing.Point(162, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 70;
-            this.label4.Text = "(Obligatorio)";
+            this.label4.Text = "(7 enteros)";
             // 
             // label6
             // 
@@ -306,9 +307,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label6.Location = new System.Drawing.Point(162, 219);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 71;
-            this.label6.Text = "(Obligatorio)";
+            this.label6.Text = "(9 enteros)";
             // 
             // label7
             // 
@@ -317,9 +318,10 @@
             this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label7.Location = new System.Drawing.Point(162, 268);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.Size = new System.Drawing.Size(153, 13);
             this.label7.TabIndex = 72;
-            this.label7.Text = "(Obligatorio)";
+            this.label7.Text = "(ejemplo : nombre@domain.pe)";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
