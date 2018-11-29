@@ -38,5 +38,20 @@ namespace ProyectoLP2
         public string Llegada { get => llegada; set => llegada = value; }
         public BindingList<DetallePedido> DetallesPedido { get => detallesPedido; set => detallesPedido = value; }
         public string NombreVendedor { get => Vendedor.Nombre + " " + Vendedor.Apellido; }
+        public string Etapa1 { get => this.NombreEtapa(); }
+        public string NombreEtapa()
+        {
+            int e = (int)this.etapa;
+            if (e == 1)
+            {
+                return "pendiente";
+            }else if(e== 2)
+            {
+                return "en proceso";
+            }else
+            {
+                return "verificado";
+            }
+        }
     }
 }

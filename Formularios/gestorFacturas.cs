@@ -114,7 +114,7 @@ namespace Formularios
                 String criterio;
                 if(rbtnRUC.Checked == true)
                 {
-                    criterio = txtBuscar.Text;
+                    criterio = txtBuscar.Text.ToUpper();
                     foreach(Factura factura in listaFacturas)
                     {
                         if (factura.RUC.Contains(criterio))

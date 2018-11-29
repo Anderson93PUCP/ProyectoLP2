@@ -227,7 +227,7 @@ namespace Formularios
             }
             else
             {
-                string criterio = txtBuscarProducto.Text;
+                string criterio = txtBuscarProducto.Text.ToUpper();
                 BindingList<Producto> listaBusqueda = new BindingList<Producto>();
                 if (rbtnDescp.Checked == true)
                 {

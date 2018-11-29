@@ -361,5 +361,10 @@ namespace Formularios
                 }
             }
         }
+
+        private void txtTransAddPedido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -91,7 +91,7 @@
             this.dgvTransportistas.Location = new System.Drawing.Point(26, 94);
             this.dgvTransportistas.Name = "dgvTransportistas";
             this.dgvTransportistas.Size = new System.Drawing.Size(343, 134);
-            this.dgvTransportistas.TabIndex = 4;
+            this.dgvTransportistas.TabIndex = 3;
             // 
             // colRUCBuscarTran
             // 
@@ -117,7 +117,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(203, 249);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 32);
-            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(289, 249);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 32);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;

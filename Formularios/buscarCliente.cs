@@ -110,7 +110,7 @@ namespace Formularios
                 String criterio;
                 if (rbtnBusqRuc.Checked == true)
                 {
-                    criterio = txtBuscarCliente.Text;
+                    criterio = txtBuscarCliente.Text.ToUpper();
                     foreach (Cliente c in lista)
                     {
                         if (c.Ruc.Contains(criterio))

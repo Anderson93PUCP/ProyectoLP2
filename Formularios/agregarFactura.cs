@@ -86,7 +86,7 @@ namespace Formularios
             {
                 BindingList<Pedido> listaBusqueda = new BindingList<Pedido>();
                 String criterio;
-                criterio = txtbuscarPedido.Text;
+                criterio = txtbuscarPedido.Text.ToUpper();
                 if (rbtnRuc.Checked == true)
                 {
 

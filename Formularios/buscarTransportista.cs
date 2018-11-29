@@ -113,7 +113,7 @@ namespace Formularios
                 String criterio;
                 if (rbtnNombre.Checked == true)
                 {
-                    criterio = txtBuscarT.Text;
+                    criterio = txtBuscarT.Text.ToUpper();
                     foreach (Transportista t in lista)
                     {
                         if (t.Nombre.Contains(criterio))
