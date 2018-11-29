@@ -185,6 +185,18 @@
     <Compile Include="gestorFacturas.Designer.cs">
       <DependentUpon>gestorFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuOperario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuOperario.Designer.cs">
+      <DependentUpon>MenuOperario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVendedor.Designer.cs">
+      <DependentUpon>MenuVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +348,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gestorFacturas.resx">
       <DependentUpon>gestorFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuOperario.resx">
+      <DependentUpon>MenuOperario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuVendedor.resx">
+      <DependentUpon>MenuVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

@@ -25,6 +25,13 @@ namespace Formularios
             
         }
 
+        public GestionClientes(Persona usr)
+        {
+            InitializeComponent();
+            cargarClientes();
+
+        }
+
         private void ModificarCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
             cargarClientes();
