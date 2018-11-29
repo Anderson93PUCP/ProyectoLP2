@@ -401,9 +401,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label5.Location = new System.Drawing.Point(174, 63);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.Size = new System.Drawing.Size(117, 13);
             this.label5.TabIndex = 67;
-            this.label5.Text = "(Obligatorio)";
+            this.label5.Text = "(caracteres alfabeticos)";
             // 
             // label6
             // 
@@ -412,9 +412,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label6.Location = new System.Drawing.Point(174, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.Size = new System.Drawing.Size(117, 13);
             this.label6.TabIndex = 68;
-            this.label6.Text = "(Obligatorio)";
+            this.label6.Text = "(caracteres alfabeticos)";
             // 
             // label7
             // 
@@ -423,9 +423,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label7.Location = new System.Drawing.Point(174, 162);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 69;
-            this.label7.Text = "(Obligatorio)";
+            this.label7.Text = "(9 enteros)";
             // 
             // label8
             // 
@@ -434,9 +434,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label8.Location = new System.Drawing.Point(174, 217);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 70;
-            this.label8.Text = "(Obligatorio)";
+            this.label8.Text = "(8 enteros)";
             // 
             // label9
             // 
@@ -456,9 +456,9 @@
             this.label10.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label10.Location = new System.Drawing.Point(174, 315);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.Size = new System.Drawing.Size(153, 13);
             this.label10.TabIndex = 72;
-            this.label10.Text = "(Obligatorio)";
+            this.label10.Text = "(ejemplo : nombre@domain.pe)";
             // 
             // label11
             // 
@@ -467,9 +467,9 @@
             this.label11.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label11.Location = new System.Drawing.Point(457, 63);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 13);
+            this.label11.Size = new System.Drawing.Size(131, 13);
             this.label11.TabIndex = 73;
-            this.label11.Text = "(Obligatorio)";
+            this.label11.Text = "(caracteros alfanumericos)";
             // 
             // label12
             // 
@@ -478,9 +478,9 @@
             this.label12.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label12.Location = new System.Drawing.Point(457, 112);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.Size = new System.Drawing.Size(131, 13);
             this.label12.TabIndex = 74;
-            this.label12.Text = "(Obligatorio)";
+            this.label12.Text = "(caracteros alfanumericos)";
             // 
             // label13
             // 
@@ -500,9 +500,9 @@
             this.label14.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label14.Location = new System.Drawing.Point(457, 217);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 13);
+            this.label14.Size = new System.Drawing.Size(71, 13);
             this.label14.TabIndex = 76;
-            this.label14.Text = "(Obligatorio)";
+            this.label14.Text = "(maximo 10%)";
             // 
             // txtemail
             // 

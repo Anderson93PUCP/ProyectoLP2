@@ -261,7 +261,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 68;
-            this.label5.Text = "(Obligatorio)";
+            this.label5.Text = "(11 enteros)";
             // 
             // label3
             // 
@@ -270,9 +270,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label3.Location = new System.Drawing.Point(162, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(117, 13);
             this.label3.TabIndex = 69;
-            this.label3.Text = "(Obligatorio)";
+            this.label3.Text = "(caracteres alfabeticos)";
             // 
             // label4
             // 
@@ -281,9 +281,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label4.Location = new System.Drawing.Point(162, 149);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 70;
-            this.label4.Text = "(Obligatorio)";
+            this.label4.Text = "(7 enteros)";
             // 
             // label6
             // 
@@ -292,9 +292,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label6.Location = new System.Drawing.Point(162, 197);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.Size = new System.Drawing.Size(131, 13);
             this.label6.TabIndex = 71;
-            this.label6.Text = "(Obligatorio)";
+            this.label6.Text = "(caracteros alfanumericos)";
             // 
             // label7
             // 
@@ -303,9 +303,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label7.Location = new System.Drawing.Point(162, 247);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.Size = new System.Drawing.Size(153, 13);
             this.label7.TabIndex = 72;
-            this.label7.Text = "(Obligatorio)";
+            this.label7.Text = "(ejemplo : nombre@domain.pe)";
             // 
             // AgregarTransportista
             // 
