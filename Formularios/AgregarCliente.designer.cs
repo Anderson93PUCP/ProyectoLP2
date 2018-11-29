@@ -128,6 +128,7 @@
             this.txtrazonCliente.Name = "txtrazonCliente";
             this.txtrazonCliente.Size = new System.Drawing.Size(146, 24);
             this.txtrazonCliente.TabIndex = 6;
+            this.txtrazonCliente.TextChanged += new System.EventHandler(this.txtrazonCliente_TextChanged);
             // 
             // txttelfCliente
             // 

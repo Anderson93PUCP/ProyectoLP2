@@ -52,7 +52,7 @@ namespace AccesoDatos
                     usuario.Apellido = reader.GetString("apellido_paterno");
                     usuario.Estado = reader.GetInt32("estado");
                     usuario.Fecha_ingreso = reader.GetDateTime("fecha_inicio");
-                    usuario.Fecha_nacimiento = reader.GetDateTime("edad");
+                    usuario.Fecha_nacimiento = reader.GetDateTime("fecha_nacimiento");
                     usuario.Direccion = reader.GetString("direccion");
                     usuario.Telefono = reader.GetInt32("telefono1");
                     usuario.Password = reader.GetString("contrasenia");
@@ -199,7 +199,7 @@ namespace AccesoDatos
                     usuario.Apellido = reader.GetString("apellido_paterno");
                     usuario.Estado = reader.GetInt32("estado");
                     usuario.Fecha_ingreso = reader.GetDateTime("fecha_inicio");
-                    usuario.Fecha_nacimiento = reader.GetDateTime("edad");
+                    usuario.Fecha_nacimiento = reader.GetDateTime("fecha_nacimiento");
                     usuario.Direccion = reader.GetString("direccion");
                     usuario.Telefono = reader.GetInt32("telefono1");
                     usuario.Password = reader.GetString("contrasenia");
@@ -230,7 +230,7 @@ namespace AccesoDatos
                 MySqlCommand cmd = new MySqlCommand();
                 String sql = "INSERT INTO n_usuarios" +
                                 "(dni_empleado,nombre,apellido_paterno,apellido_materno,estado,fecha_inicio," +
-                                "fecha_fin,edad,direccion,telefono1,telefono2,IDusuario,contrasenia,respuestaConfirmacion," +
+                                "fecha_fin,fecha_nacimiento,direccion,telefono1,telefono2,IDusuario,contrasenia,respuestaConfirmacion," +
                                 "tipoUsuario,salario,comision,monto) " +
                                 "VALUES('" +
                                 usuario.Dni + "','" +

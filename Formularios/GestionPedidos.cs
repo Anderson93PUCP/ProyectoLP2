@@ -129,9 +129,18 @@ namespace Formularios
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            verPedido ventana = new verPedido((Pedido)dgvPedidos.CurrentRow.DataBoundItem);
+            try
+            {
+                verPedido ventana = new verPedido((Pedido)dgvPedidos.CurrentRow.DataBoundItem);
+                ventana.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione un pedido");
+            }
+            
 
-            ventana.ShowDialog();
+            
         }
 
         private void rbtnBusqRuc_CheckedChanged(object sender, EventArgs e)

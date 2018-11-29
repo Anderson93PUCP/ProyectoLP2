@@ -38,7 +38,7 @@ namespace Formularios
                 clienteBL = new ClienteBL();
                 int r, n, te,te1, em;
                 r = Regexp(@"^[0-9]+$", txtrucCliente, pbruc);
-                n = Regexp(@"^[a-zA-Z]+$\s", txtrazonCliente, pbnombre);
+                n = Regexp(@"^[a-zA-Z]+$", txtrazonCliente, pbnombre);
                 te = Regexp(@"^[0-9]+$", txttelfCliente, pbtelefono); 
                 te1 = Regexp(@"^[0-9]+$", txtCelCliente, pbtelefono2);
                 em = Regexp(@"^([\w]+)@([\w]+)\.([\w]+)$", txtemailCliente, pbemail);
@@ -200,6 +200,11 @@ namespace Formularios
             r.SetToolTip(pbtelefono, "Ingrese un numero telefonico valido");
             r.SetToolTip(pbtelefono2, "Ingrese una celular valido");
             r.SetToolTip(pbemail, "Ingrese un correo valido");
+        }
+
+        private void txtrazonCliente_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
