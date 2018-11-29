@@ -136,7 +136,7 @@ namespace Formularios
                 String criterio;
                 if (rbtnDep.Checked == true)
                 {
-                    criterio = txtbuscarDire.Text;
+                    criterio = txtbuscarDire.Text.ToUpper();
                     foreach (Direccion d in listaDirec)
                     {
                         if (d.Departamento.Contains(criterio))

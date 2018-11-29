@@ -101,17 +101,9 @@ namespace Formularios
             var v = MessageBox.Show("¿Esta seguro de salir, no se guardara ningun cambio no guardado", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (v == DialogResult.OK)
             {
-                if(agregarPedido == 0)
-                {
-                    if (listaDetPedido.Count != 0)
-                    {
-                        ProductoBL dataPro = new ProductoBL();
-                        foreach (DetallePedido deti in listaDetPedido)
-                        {
-                            dataPro.agregarStock(deti.proCod, deti.Cantidad);
-                        }
-                    }
-                }
+                
+                    
+                
                 
                 this.DialogResult = DialogResult.Cancel;
             }
@@ -353,6 +345,24 @@ namespace Formularios
         }
 
         private void cbEstadoPedido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAddPedido_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            /*this.btnCancelarAddPedido_Click(sender, e);*/
+            if (listaDetPedido.Count != 0)
+            {
+                ProductoBL dataPro = new ProductoBL();
+                foreach (DetallePedido deti in listaDetPedido)
+                {
+                    dataPro.agregarStock(deti.proCod, deti.Cantidad);
+                }
+            }
+        }
+
+        private void txtTransAddPedido_TextChanged(object sender, EventArgs e)
         {
 
         }

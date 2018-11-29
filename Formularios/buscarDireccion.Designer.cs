@@ -60,7 +60,7 @@
             this.rbtnProv.Location = new System.Drawing.Point(180, 12);
             this.rbtnProv.Name = "rbtnProv";
             this.rbtnProv.Size = new System.Drawing.Size(69, 17);
-            this.rbtnProv.TabIndex = 1;
+            this.rbtnProv.TabIndex = 2;
             this.rbtnProv.TabStop = true;
             this.rbtnProv.Text = "Provincia";
             this.rbtnProv.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             this.rbtnDist.Location = new System.Drawing.Point(117, 13);
             this.rbtnDist.Name = "rbtnDist";
             this.rbtnDist.Size = new System.Drawing.Size(57, 17);
-            this.rbtnDist.TabIndex = 2;
+            this.rbtnDist.TabIndex = 1;
             this.rbtnDist.TabStop = true;
             this.rbtnDist.Text = "Distrito";
             this.rbtnDist.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.btnBuscarDire.Location = new System.Drawing.Point(193, 34);
             this.btnBuscarDire.Name = "btnBuscarDire";
             this.btnBuscarDire.Size = new System.Drawing.Size(31, 24);
-            this.btnBuscarDire.TabIndex = 4;
+            this.btnBuscarDire.TabIndex = 1000;
             this.btnBuscarDire.UseVisualStyleBackColor = true;
             this.btnBuscarDire.Click += new System.EventHandler(this.btnBuscarDire_Click);
             // 
@@ -115,7 +115,7 @@
             this.dgvDirecciones.Name = "dgvDirecciones";
             this.dgvDirecciones.ReadOnly = true;
             this.dgvDirecciones.Size = new System.Drawing.Size(543, 150);
-            this.dgvDirecciones.TabIndex = 5;
+            this.dgvDirecciones.TabIndex = 4;
             this.dgvDirecciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colDirecBuscarDireccion
@@ -153,7 +153,7 @@
             this.btnAcpetarBuscDire.Location = new System.Drawing.Point(398, 238);
             this.btnAcpetarBuscDire.Name = "btnAcpetarBuscDire";
             this.btnAcpetarBuscDire.Size = new System.Drawing.Size(80, 32);
-            this.btnAcpetarBuscDire.TabIndex = 6;
+            this.btnAcpetarBuscDire.TabIndex = 5;
             this.btnAcpetarBuscDire.Text = "Aceptar";
             this.btnAcpetarBuscDire.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAcpetarBuscDire.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             this.btnCancelarBuscarDire.Location = new System.Drawing.Point(485, 238);
             this.btnCancelarBuscarDire.Name = "btnCancelarBuscarDire";
             this.btnCancelarBuscarDire.Size = new System.Drawing.Size(80, 32);
-            this.btnCancelarBuscarDire.TabIndex = 7;
+            this.btnCancelarBuscarDire.TabIndex = 6;
             this.btnCancelarBuscarDire.Text = "Cancelar";
             this.btnCancelarBuscarDire.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarBuscarDire.UseVisualStyleBackColor = true;

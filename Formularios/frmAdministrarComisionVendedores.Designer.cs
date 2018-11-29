@@ -46,6 +46,8 @@
             // 
             // dgvpagos
             // 
+            this.dgvpagos.AllowUserToAddRows = false;
+            this.dgvpagos.AllowUserToDeleteRows = false;
             this.dgvpagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvpagos.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvpagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -56,6 +58,7 @@
             this.colComAdminComision});
             this.dgvpagos.Location = new System.Drawing.Point(12, 98);
             this.dgvpagos.Name = "dgvpagos";
+            this.dgvpagos.ReadOnly = true;
             this.dgvpagos.Size = new System.Drawing.Size(648, 150);
             this.dgvpagos.TabIndex = 0;
             this.dgvpagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
