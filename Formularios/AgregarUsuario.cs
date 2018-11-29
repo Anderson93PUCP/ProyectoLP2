@@ -173,9 +173,9 @@ namespace Formularios
                 try
                 {
                     comision = Double.Parse(txtcomision.Text);
-                    if(comision <= 0)
+                    if(comision <= 0 || comision>10)
                     {
-                        MessageBox.Show("Por favor ingrese un comision valido.",
+                        MessageBox.Show("Por favor ingrese una comision valida.",
    "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
@@ -183,7 +183,7 @@ namespace Formularios
                 }
                 catch
                 {
-                    MessageBox.Show("Por favor ingrese una comision valido.",
+                    MessageBox.Show("Por favor ingrese una comision valida.",
                     "Registro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
