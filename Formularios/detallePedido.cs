@@ -93,19 +93,22 @@ namespace Formularios
             {
                 //MessageBox.Show("Cantidad Invalida");
             }
-            try
-            {
-                numDesc.Value = descuento;
-            }catch(Exception ex)
-            {
-                MessageBox.Show("Descuento no valido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }  
+              
             if (numCant.Value == 0 )
             {
                 MessageBox.Show("Ingrese cantidad valida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
+                try
+                {
+                    numDesc.Value = descuento;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Descuento no valido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
                 productoSeleccionado = new Producto();
                 try
                 {
