@@ -397,12 +397,14 @@ namespace Formularios
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new gestorFacturas()); 
+            AbrirFormInPanel(new gestorFacturas());
+            //AbrirFormInPanel(new gestorFacturas(usr));
         }
 
         private void btnGestionPedidos_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new GestionPedidos()); 
+            AbrirFormInPanel(new GestionPedidos());
+            //AbrirFormInPanel(new GestionPedidos(usr)); 
         }
 
         private void btnVendedores_Click(object sender, EventArgs e)

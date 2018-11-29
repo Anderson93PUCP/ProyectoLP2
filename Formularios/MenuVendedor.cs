@@ -356,7 +356,8 @@ namespace Formularios
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
 
-                AbrirFormInPanel(new GestionClientes());
+                AbrirFormInPanel(new GestionClientes(usr));
+                
             
             
         }
@@ -400,7 +401,8 @@ namespace Formularios
 
         private void btnGestionPedidos_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new GestionPedidos()); 
+            AbrirFormInPanel(new GestionPedidos());
+            //AbrirFormInPanel(new GestionPedidos(usr));
         }
 
         private void btnVendedores_Click(object sender, EventArgs e)

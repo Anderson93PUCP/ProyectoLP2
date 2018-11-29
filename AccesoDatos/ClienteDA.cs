@@ -56,6 +56,47 @@ namespace AccesoDatos
             }
         }
 
+
+        //public BindingList<Cliente> listarClientes(string dniVendedor)
+        //{
+        //    try
+        //    {
+        //        BindingList<Cliente> clientes = new BindingList<Cliente>();
+        //        MySqlConnection conn = new MySqlConnection(DBManager.cadena);
+        //        conn.Open();
+
+        //        MySqlCommand cmd = new MySqlCommand();
+        //        String sql = "select * from n_cliente c,n_usuarios u where  c.dni_vendedor=u.dni_empleado and c.estado='ACTIVO' and c.dni_vendedor='"+ dni.ToString()+"'";
+        //        cmd.CommandText = sql;
+        //        cmd.Connection = conn;
+        //        MySqlDataReader reader = cmd.ExecuteReader();
+
+        //        while (reader.Read())
+        //        {
+        //            Cliente cliente = new Cliente();
+        //            Vendedor vendedor = new Vendedor();
+        //            //10
+        //            vendedor.Nombre = reader.GetString(10);
+        //            vendedor.Apellido = reader.GetString(11);
+        //            cliente.Vendedor = vendedor;
+        //            cliente.Id = reader.GetInt32("id_cliente");
+        //            cliente.Ruc = reader.GetString("ruc");
+        //            cliente.Nombre = reader.GetString("nombre");
+        //            cliente.ApellidoPaterno = reader.GetString("apellido");
+        //            cliente.Email = reader.GetString("correo_electronico");
+        //            cliente.Telefono = reader.GetInt32("telefono");
+        //            cliente.Dni_vendedor = reader.GetString("dni_vendedor");
+        //            clientes.Add(cliente);
+        //        }
+        //        conn.Close();
+        //        return clientes;
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //}
+
         public BindingList<Cliente> listarClientes(string ruc)
         {
             try
