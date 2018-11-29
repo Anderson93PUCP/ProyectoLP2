@@ -16,6 +16,7 @@ namespace Formularios
 {
     public partial class AgregarCliente : Form
     {
+
         UsuarioBL usuarioBL;
         ClienteBL clienteBL;
         BindingList<Direccion> listaDirecciones;
@@ -24,6 +25,16 @@ namespace Formularios
             InitializeComponent();
             CargarVendedores();
             validarCampos();
+        }
+
+        public AgregarCliente(int v,Persona p)
+        {
+            InitializeComponent();
+            if (v==0)
+            CargarVendedores();
+            else 
+                
+            CargarVendedor(p.Dni);
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
@@ -189,6 +200,19 @@ namespace Formularios
             cmbvendedorCliente.DisplayMember = "Nombre";
             cmbvendedorCliente.DataSource = vendedores;
             cmbvendedorCliente.SelectedIndex = -1;
+
+        }
+
+        private void CargarVendedor(string dni)
+        {
+            usuarioBL = new UsuarioBL();
+            BindingList<Persona> vendedores = new BindingList<Persona>();
+            vendedores = usuarioBL.listarVendedores();
+            cmbvendedorCliente.ValueMember = "Dni";
+            cmbvendedorCliente.DisplayMember = "Nombre";
+            cmbvendedorCliente.DataSource = vendedores;
+            cmbvendedorCliente.SelectedValue = dni;
+            cmbvendedorCliente.Enabled = false;
 
         }
 

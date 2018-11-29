@@ -18,6 +18,9 @@ namespace Formularios
     {
         ClienteBL clienteBL;
         Cliente cliente;
+        Persona u;
+        int v = 0;
+
         public GestionClientes()
         {
             InitializeComponent();
@@ -28,18 +31,22 @@ namespace Formularios
         public GestionClientes(Persona usr)
         {
             InitializeComponent();
-            cargarClientes();
+            u = usr;
+            v = 1;
+            cargarClientesVendedor();
+
 
         }
 
         private void ModificarCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
-            cargarClientes();
+            if (v == 0) cargarClientes();
+            else cargarClientesVendedor();
         }
 
         private void btnAddCliente_Click(object sender, EventArgs e)
         {
-            AgregarCliente aclientes = new AgregarCliente();
+            AgregarCliente aclientes = new AgregarCliente(v, u);
 
             aclientes.FormClosed += new System.Windows.Forms.FormClosedEventHandler(AgregarCliente_FormClosed);
             if (aclientes.ShowDialog() == DialogResult.OK)
@@ -51,7 +58,8 @@ namespace Formularios
         private void AgregarCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
 
-            cargarClientes();
+            if (v == 0) cargarClientes();
+            else cargarClientesVendedor();
 
         }
 
@@ -61,6 +69,15 @@ namespace Formularios
             clienteBL = new ClienteBL();
             BindingList<Cliente> clientes = new BindingList<Cliente>();
             clientes = clienteBL.listarCliente();
+            dgvClientes.AutoGenerateColumns = false;
+            dgvClientes.DataSource = clientes;
+        }
+
+        private void cargarClientesVendedor()
+        {
+            clienteBL = new ClienteBL();
+            BindingList<Cliente> clientes = new BindingList<Cliente>();
+            clientes = clienteBL.listarClientexVendedor(u.Dni);
             dgvClientes.AutoGenerateColumns = false;
             dgvClientes.DataSource = clientes;
         }
@@ -126,7 +143,10 @@ namespace Formularios
                     dgvClientes.AutoGenerateColumns = false;
                     dgvClientes.DataSource = clientes;
                 }
-                else cargarClientes();
+                else {
+                    if (v == 0) cargarClientes();
+                    else cargarClientesVendedor();
+                }
             }
         }
 
