@@ -65,11 +65,31 @@ namespace Formularios
                                 this.Hide();
 
                                 //Menu fb = new Menu();
-                                Menu fb = new Menu(usuario.IDUsuario1);
-                                if (fb.ShowDialog() == DialogResult.OK)
+                                if (usuario.TipoUsuario == 0)
                                 {
+                                    Menu fb = new Menu(usuario.IDUsuario1);
+                                    if (fb.ShowDialog() == DialogResult.OK)
+                                    {
 
+                                    }
                                 }
+                                else if (usuario.TipoUsuario == 1)
+                                {
+                                    MenuVendedor fb = new MenuVendedor(usuario.IDUsuario1);
+                                    if (fb.ShowDialog() == DialogResult.OK)
+                                    {
+
+                                    }
+                                }
+                                else
+                                {
+                                    MenuOperario fb = new MenuOperario(usuario.IDUsuario1);
+                                    if (fb.ShowDialog() == DialogResult.OK)
+                                    {
+
+                                    }
+                                }
+                                
 
                                 this.Dispose();
                             }
@@ -149,10 +169,29 @@ namespace Formularios
                                     this.Hide();
 
                                     //Menu fb = new Menu();
-                                    Menu fb = new Menu(usuario.IDUsuario1);
-                                    if (fb.ShowDialog() == DialogResult.OK)
+                                    if (usuario.TipoUsuario == 0)
                                     {
+                                        Menu fb = new Menu(usuario.IDUsuario1);
+                                        if (fb.ShowDialog() == DialogResult.OK)
+                                        {
 
+                                        }
+                                    }
+                                    else if (usuario.TipoUsuario == 1)
+                                    {
+                                        MenuVendedor fb = new MenuVendedor(usuario.IDUsuario1);
+                                        if (fb.ShowDialog() == DialogResult.OK)
+                                        {
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MenuOperario fb = new MenuOperario(usuario.IDUsuario1);
+                                        if (fb.ShowDialog() == DialogResult.OK)
+                                        {
+
+                                        }
                                     }
 
                                     this.Dispose();
